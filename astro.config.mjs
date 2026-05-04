@@ -6,8 +6,11 @@ import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+	site: 'https://jovidalao.com',
+	integrations: [
+		mdx(),
+		sitemap(),
+	],
 	fonts: [
 		{
 			provider: fontProviders.local(),
@@ -32,4 +35,11 @@ export default defineConfig({
 			},
 		},
 	],
+	i18n: {
+		defaultLocale: 'zh',
+		locales: ['zh', 'en'],
+		routing: {
+			prefixDefaultLocale: false,
+		},
+	},
 });

@@ -1,17 +1,35 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+
+const lang = Astro.currentLocale;
+const base = lang === 'en' ? '/en' : '';
+const targetLang = lang === 'en' ? 'zh' : 'en';
+const targetLabel = lang === 'en' ? '中文' : 'English';
+
+// 计算切换链接的路径
+const pathname = Astro.url.pathname;
+let targetPath;
+if (lang === 'en') {
+	// 英文切中文：去掉 /en 前缀
+	targetPath = pathname.replace(/^\/en/, '') || '/';
+} else {
+	// 中文切英文：加上 /en 前缀
+	targetPath = `/en${pathname === '/' ? '' : pathname}`;
+}
 ---
 
 <header>
 	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<h2><a href={base || '/'}>{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href={base || '/'}>Home</HeaderLink>
+			<HeaderLink href={`${base}/blog`}>Blog</HeaderLink>
+			<HeaderLink href={`${base}/about`}>About</HeaderLink>
 		</div>
-		<div class="social-links">
+		<div class="right-section">
+			<a href={targetPath} class="lang-switcher">{targetLabel}</a>
+			<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
@@ -40,6 +58,7 @@ import HeaderLink from './HeaderLink.astro';
 				>
 			</a>
 		</div>
+	</div>
 	</nav>
 </header>
 <style>
@@ -72,6 +91,23 @@ import HeaderLink from './HeaderLink.astro';
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
+	}
+	.lang-switcher {
+		padding: 0.2em 0.6em !important;
+		border: 1px solid var(--accent) !important;
+		border-radius: 4px;
+		font-size: 0.9em;
+		border-bottom: 1px solid var(--accent) !important;
+		text-decoration: none;
+	}
+	.lang-switcher:hover {
+		background: var(--accent);
+		color: white !important;
+	}
+	.right-section {
+		display: flex;
+		align-items: center;
+		gap: 1em;
 	}
 	.social-links,
 	.social-links a {
