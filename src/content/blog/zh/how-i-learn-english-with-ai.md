@@ -2,7 +2,7 @@
 title: '我是如何利用 AI 学习英语的'
 description: '分享我利用 AI 学习英语的三个阶段：从备忘录 Prompt 到 Agent Skills，再到使用 Hermes Agent 实现全方位的听说读写练习。'
 pubDate: '2026-05-04'
-heroImage: '../../../assets/cleanshot-1.png'
+heroImage: '../../../assets/claude-hero.jpg'
 ---
 
 ## 第一阶段：用备忘录保存Prompt

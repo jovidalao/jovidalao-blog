@@ -1,22 +1,13 @@
 ---
 import { SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
-
 const lang = Astro.currentLocale;
-const base = lang === 'en' ? '/en' : '';
-const targetLang = lang === 'en' ? 'zh' : 'en';
-const targetLabel = lang === 'en' ? '中文' : 'English';
+const base = lang === 'zh' ? '/zh' : '';
 
 // 计算切换链接的路径
 const pathname = Astro.url.pathname;
-let targetPath;
-if (lang === 'en') {
-	// 英文切中文：去掉 /en 前缀
-	targetPath = pathname.replace(/^\/en/, '') || '/';
-} else {
-	// 中文切英文：加上 /en 前缀
-	targetPath = `/en${pathname === '/' ? '' : pathname}`;
-}
+const zhPath = lang === 'zh' ? pathname : `/zh${pathname === '/' ? '' : pathname}`;
+const enPath = lang === 'en' ? pathname : pathname.replace(/^\/zh/, '') || '/';
 ---
 
 <header>
@@ -28,7 +19,16 @@ if (lang === 'en') {
 			<HeaderLink href={`${base}/about`}>About</HeaderLink>
 		</div>
 		<div class="right-section">
-			<a href={targetPath} class="lang-switcher">{targetLabel}</a>
+			<div class="lang-dropdown">
+				<button class="lang-btn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+					<span>{lang === 'zh' ? '中文' : 'English'}</span>
+				</button>
+				<div class="dropdown-content">
+					<a href={enPath} class={lang === 'en' ? 'active' : ''}>English</a>
+					<a href={zhPath} class={lang === 'zh' ? 'active' : ''}>中文</a>
+				</div>
+			</div>
 			<div class="social-links">
 			<a href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
@@ -92,17 +92,60 @@ if (lang === 'en') {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.lang-switcher {
-		padding: 0.2em 0.6em !important;
-		border: 1px solid var(--accent) !important;
-		border-radius: 4px;
-		font-size: 0.9em;
-		border-bottom: 1px solid var(--accent) !important;
-		text-decoration: none;
+	.lang-dropdown {
+		position: relative;
+		display: inline-block;
 	}
-	.lang-switcher:hover {
-		background: var(--accent);
-		color: white !important;
+	.lang-btn {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+		background: none;
+		border: 1px solid #ddd;
+		padding: 0.4em 0.8em;
+		border-radius: 20px;
+		cursor: pointer;
+		font-size: 0.9em;
+		color: var(--black);
+		transition: all 0.2s;
+	}
+	.lang-btn:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: white;
+		min-width: 120px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+		z-index: 100;
+		border-radius: 8px;
+		margin-top: 8px;
+		overflow: hidden;
+		border: 1px solid #eee;
+	}
+	.dropdown-content a {
+		color: var(--black);
+		padding: 10px 16px;
+		text-decoration: none;
+		display: block;
+		font-size: 0.9em;
+		text-align: left;
+		border-bottom: none !important;
+	}
+	.dropdown-content a:hover {
+		background-color: #f9f9f9;
+		color: var(--accent);
+	}
+	.dropdown-content a.active {
+		font-weight: bold;
+		color: var(--accent);
+		background-color: #f0f7ff;
+	}
+	.lang-dropdown:hover .dropdown-content {
+		display: block;
 	}
 	.right-section {
 		display: flex;
