@@ -1,0 +1,39 @@
+---
+import { STICKO } from '../consts';
+import { getLegal } from '../i18n/legal';
+import { getUi, localeBase } from '../i18n/ui';
+
+interface Props {
+	type: 'privacy' | 'terms';
+}
+
+const { type } = Astro.props;
+const legal = getLegal(Astro.currentLocale);
+const t = getUi(Astro.currentLocale);
+const base = localeBase(Astro.currentLocale);
+const doc = type === 'privacy' ? legal.privacy : legal.terms;
+---
+
+<a class="sticko-back-link" href={`${base}/sticko`}>{t.legal.backToSticko}</a>
+
+<p class="legal-updated">
+	{Astro.currentLocale === 'zh' ? '最后更新：' : 'Last updated: '}{STICKO.lastUpdated}
+</p>
+
+<p class="legal-intro">{doc.intro}</p>
+
+{
+	doc.sections.map((section) => (
+		<section class="sticko-legal-section">
+			<h2>{section.title}</h2>
+			{'body' in section && section.body && <p>{section.body}</p>}
+			{'bullets' in section && section.bullets && (
+				<ul>
+					{section.bullets.map((bullet) => (
+						<li>{bullet}</li>
+					))}
+				</ul>
+			)}
+		</section>
+	))
+}

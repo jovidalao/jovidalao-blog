@@ -1,0 +1,28 @@
+---
+import { getUi, localeBase } from '../i18n/ui';
+
+interface Props {
+	href?: string;
+}
+
+const { href } = Astro.props;
+const base = localeBase(Astro.currentLocale);
+const t = getUi(Astro.currentLocale);
+const stickoHref = href ?? `${base}/sticko`;
+---
+
+<a class="app-card" href={stickoHref}>
+	<div class="app-card-top">
+		<img class="app-card-icon" src="/sticko/app-icon.png" alt="" width="64" height="64" />
+		<div class="app-card-meta">
+			<span class="app-card-badge">{t.home.stickoBadge}</span>
+			<h3>{t.home.stickoTitle}</h3>
+		</div>
+	</div>
+	<p class="app-card-desc">{t.home.stickoDescription}</p>
+	<span class="app-card-cta">{t.home.stickoCta} →</span>
+</a>
+
+<style is:global>
+	@import '../styles/sticko.css';
+</style>

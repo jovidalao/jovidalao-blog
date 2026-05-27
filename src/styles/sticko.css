@@ -1,0 +1,350 @@
+/* Sticko brand tokens — aligned with the iOS app design system */
+:root {
+	--sticko-paper: #f7f1e5;
+	--sticko-paper-dark: #ede6d9;
+	--sticko-ink: #2a2620;
+	--sticko-ink-muted: #5c544a;
+	--sticko-red: #c84b45;
+	--sticko-green: #5c7a6a;
+	--sticko-gold: #c9a668;
+	--sticko-shadow: 0 12px 40px rgba(42, 38, 32, 0.08);
+}
+
+main.sticko-main {
+	width: min(960px, calc(100% - 2em));
+}
+
+.sticko-hero {
+	display: grid;
+	grid-template-columns: 1.1fr 0.9fr;
+	gap: 2.5rem;
+	align-items: center;
+	padding: 1rem 0 3rem;
+}
+
+.sticko-hero-copy h1 {
+	font-size: clamp(2.4rem, 5vw, 3.4rem);
+	margin-bottom: 0.35em;
+	line-height: 1.05;
+}
+
+.sticko-hero-copy .tagline {
+	font-size: 1.15rem;
+	color: var(--sticko-red);
+	font-weight: 700;
+	margin: 0 0 1rem;
+}
+
+.sticko-hero-copy .subtitle {
+	font-size: 1.1rem;
+	color: var(--sticko-ink-muted);
+	max-width: 34ch;
+	margin: 0 0 1.5rem;
+}
+
+.sticko-hero-visual {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.sticko-phone-frame {
+	width: min(100%, 320px);
+	border-radius: 28px;
+	padding: 12px;
+	background: linear-gradient(145deg, #fff 0%, var(--sticko-paper-dark) 100%);
+	box-shadow: var(--sticko-shadow);
+	border: 1px solid rgba(42, 38, 32, 0.08);
+}
+
+.sticko-phone-frame img.hero-shot {
+	display: block;
+	width: 100%;
+	border-radius: 18px;
+}
+
+.sticko-app-icon-float {
+	position: absolute;
+	left: -8%;
+	bottom: 8%;
+	width: 88px;
+	height: 88px;
+	border-radius: 22%;
+	box-shadow: 0 8px 24px rgba(42, 38, 32, 0.18);
+	border: 3px solid #fff;
+}
+
+.sticko-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+}
+
+.sticko-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.75em 1.25em;
+	border-radius: 999px;
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-decoration: none;
+	border: none;
+	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sticko-btn:active {
+	transform: translateY(1px);
+}
+
+.sticko-btn-primary {
+	background: var(--sticko-red);
+	color: #fff7e8;
+	box-shadow: 0 4px 14px rgba(200, 75, 69, 0.35);
+}
+
+.sticko-btn-primary:hover {
+	box-shadow: 0 6px 20px rgba(200, 75, 69, 0.45);
+}
+
+.sticko-btn-muted {
+	background: var(--sticko-paper-dark);
+	color: var(--sticko-ink);
+	border: 1px solid rgba(42, 38, 32, 0.1);
+}
+
+.sticko-features {
+	padding: 1rem 0 3rem;
+}
+
+.sticko-features h2 {
+	text-align: center;
+	margin-bottom: 1.75rem;
+	font-size: 1.75rem;
+}
+
+.sticko-feature-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+
+.sticko-feature-card {
+	background: rgba(255, 255, 255, 0.55);
+	border: 1px solid rgba(42, 38, 32, 0.08);
+	border-radius: 16px;
+	padding: 1.25rem 1.35rem;
+	box-shadow: 0 2px 8px rgba(42, 38, 32, 0.04);
+}
+
+.sticko-feature-card h3 {
+	font-size: 1.05rem;
+	margin: 0 0 0.5rem;
+	color: var(--sticko-ink);
+}
+
+.sticko-feature-card p {
+	margin: 0;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	color: var(--sticko-ink-muted);
+}
+
+.sticko-legal-bar {
+	margin-top: 2rem;
+	padding: 1.5rem 0 0;
+	border-top: 1px dashed rgba(42, 38, 32, 0.15);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem 1.25rem;
+}
+
+.sticko-legal-bar a {
+	color: var(--sticko-ink-muted);
+	font-size: 0.9rem;
+	text-decoration: none;
+}
+
+.sticko-legal-bar a:hover {
+	color: var(--sticko-red);
+	text-decoration: underline;
+}
+
+.sticko-legal-page .legal-updated {
+	color: var(--sticko-ink-muted);
+	font-size: 0.9rem;
+	margin: 0 0 1.5rem;
+}
+
+.sticko-legal-page .legal-intro {
+	font-size: 1.05rem;
+	line-height: 1.65;
+	margin-bottom: 1.5rem;
+	color: var(--sticko-ink-muted);
+}
+
+.sticko-legal-section {
+	background: rgba(255, 255, 255, 0.55);
+	border: 1px solid rgba(42, 38, 32, 0.08);
+	border-radius: 16px;
+	padding: 1.25rem 1.35rem;
+	margin-bottom: 1rem;
+}
+
+.sticko-legal-section h2 {
+	font-size: 1.1rem;
+	margin: 0 0 0.65rem;
+}
+
+.sticko-legal-section p,
+.sticko-legal-section li {
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: var(--sticko-ink-muted);
+}
+
+.sticko-legal-section ul {
+	margin: 0;
+	padding-left: 1.2rem;
+}
+
+.sticko-legal-section li + li {
+	margin-top: 0.5rem;
+}
+
+.sticko-back-link {
+	display: inline-block;
+	margin-bottom: 1.5rem;
+	color: var(--sticko-red);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.sticko-back-link:hover {
+	text-decoration: underline;
+}
+
+/* Homepage app card */
+.app-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	background: linear-gradient(135deg, #fff 0%, var(--sticko-paper, #f7f1e5) 100%);
+	border: 1px solid rgba(42, 38, 32, 0.1);
+	border-radius: 20px;
+	padding: 1.5rem;
+	box-shadow: 0 8px 30px rgba(42, 38, 32, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	max-width: 520px;
+}
+
+.app-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 14px 40px rgba(42, 38, 32, 0.1);
+}
+
+.app-card-top {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.app-card-icon {
+	width: 64px;
+	height: 64px;
+	border-radius: 16px;
+	box-shadow: 0 4px 12px rgba(42, 38, 32, 0.12);
+}
+
+.app-card-meta h3 {
+	margin: 0 0 0.2rem;
+	font-size: 1.35rem;
+}
+
+.app-card-badge {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--sticko-red, #c84b45);
+	background: rgba(200, 75, 69, 0.1);
+	padding: 0.2em 0.55em;
+	border-radius: 999px;
+}
+
+.app-card-desc {
+	margin: 0 0 1rem;
+	color: rgb(var(--gray-dark));
+	line-height: 1.6;
+	font-size: 0.98rem;
+}
+
+.app-card-cta {
+	font-weight: 700;
+	color: var(--sticko-red, #c84b45);
+	font-size: 0.95rem;
+}
+
+.home-intro h1 {
+	margin-bottom: 0.35em;
+}
+
+.home-intro .lead {
+	font-size: 1.15rem;
+	color: rgb(var(--gray-dark));
+	max-width: 42ch;
+	margin-bottom: 2.5rem;
+}
+
+.home-section-title {
+	font-size: 0.85rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: rgb(var(--gray));
+	margin: 0 0 1rem;
+}
+
+@media (max-width: 820px) {
+	.sticko-hero {
+		grid-template-columns: 1fr;
+		text-align: center;
+	}
+
+	.sticko-hero-copy .subtitle {
+		margin-inline: auto;
+	}
+
+	.sticko-hero-visual {
+		order: -1;
+	}
+
+	.sticko-app-icon-float {
+		left: 4%;
+	}
+
+	.sticko-cta-row {
+		justify-content: center;
+	}
+
+	.sticko-feature-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 720px) {
+	.sticko-feature-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (min-width: 721px) and (max-width: 960px) {
+	.sticko-feature-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

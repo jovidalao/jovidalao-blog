@@ -1,9 +1,16 @@
 ---
+import { getUi, localeBase } from '../i18n/ui';
 const today = new Date();
+const base = localeBase(Astro.currentLocale);
+const t = getUi(Astro.currentLocale);
 ---
 
 <footer>
-	&copy; {today.getFullYear()} jovidalao. All rights reserved.
+	<nav class="footer-nav" aria-label="Footer">
+		<a href={base || '/'}>{t.nav.home}</a>
+		<a href={`${base}/sticko`}>{t.nav.sticko}</a>
+	</nav>
+	<p class="copyright">&copy; {today.getFullYear()} jovidalao. All rights reserved.</p>
 	<div class="social-links">
 		<a href="https://x.com/jovidalao" target="_blank">
 			<span class="sr-only">Follow jovidalao on X</span>
@@ -31,6 +38,25 @@ const today = new Date();
 		background: linear-gradient(var(--gray-gradient)) no-repeat;
 		color: rgb(var(--gray));
 		text-align: center;
+	}
+	.footer-nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.75em 1.5em;
+		margin-bottom: 1em;
+	}
+	.footer-nav a {
+		color: rgb(var(--gray-dark));
+		text-decoration: none;
+		font-size: 0.95em;
+	}
+	.footer-nav a:hover {
+		color: rgb(var(--black));
+		text-decoration: underline;
+	}
+	.copyright {
+		margin: 0;
 	}
 	.social-links {
 		display: flex;
