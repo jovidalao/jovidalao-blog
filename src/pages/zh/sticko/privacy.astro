@@ -1,14 +1,5 @@
 ---
-import StickoLegalDoc from '../../../components/StickoLegalDoc.astro';
-import StickoLayout from '../../../layouts/StickoLayout.astro';
-import { getUi } from '../../../i18n/ui';
-
-const t = getUi(Astro.currentLocale);
+import LegalPage from '../../../views/LegalPage.astro';
 ---
 
-<StickoLayout title={t.legal.privacyTitle} description={t.sticko.metaDescription} showLegalBar={false}>
-	<div class="sticko-legal-page">
-		<h1>{t.sticko.legal.privacy}</h1>
-		<StickoLegalDoc type="privacy" />
-	</div>
-</StickoLayout>
+<LegalPage type="privacy" />

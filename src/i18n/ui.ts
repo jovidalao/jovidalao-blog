@@ -22,6 +22,7 @@ export const ui = {
 				"Sticko — an offline-first visual diary for iOS. Daily sticker pages, smart cutouts, calendar browse, widget, and optional iCloud sync.",
 			heroSubtitle:
 				"A diary for the little things. Photos, stickers, and notes — kept on paper that's just yours.",
+			heroImageAlt: "Sticko app screenshot",
 			download: "Download on the App Store",
 			comingSoon: "Coming to the App Store",
 			featuresHeading: "What you can do",
@@ -83,6 +84,7 @@ export const ui = {
 				"Sticko — 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
 			heroSubtitle:
 				"记录日常小确幸。照片、贴纸和笔记——保存在只属于你自己的纸张上。",
+			heroImageAlt: "Sticko 应用截图",
 			download: "在 App Store 下载",
 			comingSoon: "即将登陆 App Store",
 			featuresHeading: "你可以做什么",

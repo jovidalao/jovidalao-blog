@@ -1,0 +1,21 @@
+---
+import StickoLegalDoc from '../components/StickoLegalDoc.astro';
+import StickoLayout from '../layouts/StickoLayout.astro';
+import { getUi } from '../i18n';
+
+interface Props {
+	type: 'privacy' | 'terms';
+}
+
+const { type } = Astro.props;
+const t = getUi(Astro.currentLocale);
+const pageTitle = type === 'privacy' ? t.legal.privacyTitle : t.legal.termsTitle;
+const heading = type === 'privacy' ? t.sticko.legal.privacy : t.sticko.legal.terms;
+---
+
+<StickoLayout title={pageTitle} description={t.sticko.metaDescription} showLegalBar={false}>
+	<div class="sticko-legal-page">
+		<h1>{heading}</h1>
+		<StickoLegalDoc type={type} />
+	</div>
+</StickoLayout>

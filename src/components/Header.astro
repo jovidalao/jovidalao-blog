@@ -1,15 +1,14 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { SITE_TITLE } from '../consts';
-import { getUi, localeBase } from '../i18n/ui';
+import { getUi, localeBase } from '../i18n';
 import HeaderLink from './HeaderLink.astro';
+
 const lang = Astro.currentLocale;
 const base = localeBase(lang);
 const t = getUi(lang);
-
-// 计算切换链接的路径
-const pathname = Astro.url.pathname;
-const zhPath = lang === 'zh' ? pathname : `/zh${pathname === '/' ? '' : pathname}`;
-const enPath = lang === 'en' ? pathname : pathname.replace(/^\/zh/, '') || '/';
+const enPath = getRelativeLocaleUrl('en', Astro.url.pathname);
+const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 ---
 
 <header>
