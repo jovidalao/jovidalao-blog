@@ -1,0 +1,14 @@
+---
+import { PEELDAY } from '../consts';
+import { getUi, localeBase } from '../i18n';
+
+const base = localeBase(Astro.currentLocale);
+const t = getUi(Astro.currentLocale);
+const peeldayBase = `${base}/peelday`;
+---
+
+<nav class="peelday-legal-bar" aria-label="Legal">
+	<a href={`${peeldayBase}/privacy`}>{t.peelday.legal.privacy}</a>
+	<a href={`${peeldayBase}/terms`}>{t.peelday.legal.terms}</a>
+	<a href={`mailto:${PEELDAY.contactEmail}`}>{t.peelday.legal.contact}</a>
+</nav>

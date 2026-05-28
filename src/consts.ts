@@ -3,10 +3,10 @@
 
 export const SITE_TITLE = "jovidalao";
 export const SITE_DESCRIPTION =
-	"Personal homepage of jovidalao — indie developer building Sticko, a visual diary for iOS.";
+	"Personal homepage of jovidalao — indie developer building Peelday, a visual diary for iOS.";
 
-export const STICKO = {
-	name: "Sticko",
+export const PEELDAY = {
+	name: "Peelday",
 	tagline: "A visual diary for everyday joy",
 	appStoreUrl: "", // Set when live on the App Store
 	contactEmail: "jovidalao@gmail.com",

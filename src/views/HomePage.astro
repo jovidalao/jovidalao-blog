@@ -2,10 +2,10 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import StickoCard from '../components/StickoCard.astro';
+import PeeldayCard from '../components/PeeldayCard.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { getUi } from '../i18n';
-import '../styles/sticko.css';
+import '../styles/peelday.css';
 
 const t = getUi(Astro.currentLocale);
 ---
@@ -24,7 +24,7 @@ const t = getUi(Astro.currentLocale);
 			</section>
 			<section>
 				<h2 class="home-section-title">{t.home.appsHeading}</h2>
-				<StickoCard />
+				<PeeldayCard />
 			</section>
 		</main>
 		<Footer />

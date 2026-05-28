@@ -4,25 +4,25 @@ export const ui = {
 	en: {
 		nav: {
 			home: "Home",
-			sticko: "Sticko",
+			peelday: "Peelday",
 		},
 		home: {
 			greeting: "Hi, I'm jovidalao",
 			intro:
 				"Indie developer. I build thoughtful iOS apps and occasionally write about how I learn and build.",
 			appsHeading: "Apps I build",
-			stickoBadge: "iOS App",
-			stickoTitle: "Sticko",
-			stickoDescription:
+			peeldayBadge: "iOS App",
+			peeldayTitle: "Peelday",
+			peeldayDescription:
 				"An offline-first visual diary with ticket-stub aesthetics. Collect photos, stickers, and notes on paper that's just yours — one page per day.",
-			stickoCta: "Learn more",
+			peeldayCta: "Learn more",
 		},
-		sticko: {
+		peelday: {
 			metaDescription:
-				"Sticko — an offline-first visual diary for iOS. Daily sticker pages, smart cutouts, calendar browse, widget, and optional iCloud sync.",
+				"Peelday — an offline-first visual diary for iOS. Daily sticker pages, smart cutouts, calendar browse, widget, and optional iCloud sync.",
 			heroSubtitle:
 				"A diary for the little things. Photos, stickers, and notes — kept on paper that's just yours.",
-			heroImageAlt: "Sticko app screenshot",
+			heroImageAlt: "Peelday app screenshot",
 			download: "Download on the App Store",
 			comingSoon: "Coming to the App Store",
 			featuresHeading: "What you can do",
@@ -37,7 +37,7 @@ export const ui = {
 				},
 				{
 					title: "Batch add",
-					body: "Drop many photos at once; Sticko cuts them out and arranges them on your page.",
+					body: "Drop many photos at once; Peelday cuts them out and arranges them on your page.",
 				},
 				{
 					title: "Calendar & widget",
@@ -59,32 +59,32 @@ export const ui = {
 			},
 		},
 		legal: {
-			privacyTitle: "Privacy Policy — Sticko",
-			termsTitle: "Terms of Use — Sticko",
-			backToSticko: "← Back to Sticko",
+			privacyTitle: "Privacy Policy — Peelday",
+			termsTitle: "Terms of Use — Peelday",
+			backToPeelday: "← Back to Peelday",
 		},
 	},
 	zh: {
 		nav: {
 			home: "首页",
-			sticko: "Sticko",
+			peelday: "Peelday",
 		},
 		home: {
 			greeting: "你好，我是 jovidalao",
 			intro: "独立开发者。我在做 iOS 应用，偶尔写写学习和构建的过程。",
 			appsHeading: "我开发的应用",
-			stickoBadge: "iOS 应用",
-			stickoTitle: "Sticko",
-			stickoDescription:
+			peeldayBadge: "iOS 应用",
+			peeldayTitle: "Peelday",
+			peeldayDescription:
 				"一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",
-			stickoCta: "了解更多",
+			peeldayCta: "了解更多",
 		},
-		sticko: {
+		peelday: {
 			metaDescription:
-				"Sticko — 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
+				"Peelday — 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
 			heroSubtitle:
 				"记录日常小确幸。照片、贴纸和笔记——保存在只属于你自己的纸张上。",
-			heroImageAlt: "Sticko 应用截图",
+			heroImageAlt: "Peelday 应用截图",
 			download: "在 App Store 下载",
 			comingSoon: "即将登陆 App Store",
 			featuresHeading: "你可以做什么",
@@ -121,9 +121,9 @@ export const ui = {
 			},
 		},
 		legal: {
-			privacyTitle: "隐私政策 — Sticko",
-			termsTitle: "用户协议 — Sticko",
-			backToSticko: "← 返回 Sticko",
+			privacyTitle: "隐私政策 — Peelday",
+			termsTitle: "用户协议 — Peelday",
+			backToPeelday: "← 返回 Peelday",
 		},
 	},
 } as const;

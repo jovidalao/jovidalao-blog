@@ -2,8 +2,8 @@
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import StickoLegalBar from '../components/StickoLegalBar.astro';
-import '../styles/sticko.css';
+import PeeldayLegalBar from '../components/PeeldayLegalBar.astro';
+import '../styles/peelday.css';
 
 interface Props {
 	title: string;
@@ -21,9 +21,9 @@ const { title, description, showLegalBar = true } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<main class="sticko-main">
+		<main class="peelday-main">
 			<slot />
-			{showLegalBar && <StickoLegalBar />}
+			{showLegalBar && <PeeldayLegalBar />}
 		</main>
 		<Footer />
 	</body>

@@ -1,6 +1,6 @@
 ---
-import StickoLegalDoc from '../components/StickoLegalDoc.astro';
-import StickoLayout from '../layouts/StickoLayout.astro';
+import PeeldayLegalDoc from '../components/PeeldayLegalDoc.astro';
+import PeeldayLayout from '../layouts/PeeldayLayout.astro';
 import { getUi } from '../i18n';
 
 interface Props {
@@ -10,12 +10,12 @@ interface Props {
 const { type } = Astro.props;
 const t = getUi(Astro.currentLocale);
 const pageTitle = type === 'privacy' ? t.legal.privacyTitle : t.legal.termsTitle;
-const heading = type === 'privacy' ? t.sticko.legal.privacy : t.sticko.legal.terms;
+const heading = type === 'privacy' ? t.peelday.legal.privacy : t.peelday.legal.terms;
 ---
 
-<StickoLayout title={pageTitle} description={t.sticko.metaDescription} showLegalBar={false}>
-	<div class="sticko-legal-page">
+<PeeldayLayout title={pageTitle} description={t.peelday.metaDescription} showLegalBar={false}>
+	<div class="peelday-legal-page">
 		<h1>{heading}</h1>
-		<StickoLegalDoc type={type} />
+		<PeeldayLegalDoc type={type} />
 	</div>
-</StickoLayout>
+</PeeldayLayout>

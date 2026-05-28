@@ -1,0 +1,55 @@
+---
+import PeeldayLayout from '../layouts/PeeldayLayout.astro';
+import { PEELDAY } from '../consts';
+import { getUi } from '../i18n';
+
+const t = getUi(Astro.currentLocale);
+---
+
+<PeeldayLayout title={`${PEELDAY.name} — ${PEELDAY.tagline}`} description={t.peelday.metaDescription}>
+	<section class="peelday-hero">
+		<div class="peelday-hero-copy">
+			<p class="tagline">{PEELDAY.tagline}</p>
+			<h1>{PEELDAY.name}</h1>
+			<p class="subtitle">{t.peelday.heroSubtitle}</p>
+			<div class="peelday-cta-row">
+				{
+					PEELDAY.appStoreUrl ? (
+						<a class="peelday-btn peelday-btn-primary" href={PEELDAY.appStoreUrl} target="_blank" rel="noopener noreferrer">
+							{t.peelday.download}
+						</a>
+					) : (
+						<span class="peelday-btn peelday-btn-muted">{t.peelday.comingSoon}</span>
+					)
+				}
+			</div>
+		</div>
+		<div class="peelday-hero-visual">
+			<div class="peelday-phone-frame">
+				<img
+					class="hero-shot"
+					src="/peelday/hero.jpg"
+					alt={t.peelday.heroImageAlt}
+					width="296"
+					height="640"
+					loading="eager"
+				/>
+			</div>
+			<img class="peelday-app-icon-float" src="/peelday/app-icon.png" alt="" width="88" height="88" />
+		</div>
+	</section>
+
+	<section class="peelday-features">
+		<h2>{t.peelday.featuresHeading}</h2>
+		<div class="peelday-feature-grid">
+			{
+				t.peelday.features.map((feature) => (
+					<article class="peelday-feature-card">
+						<h3>{feature.title}</h3>
+						<p>{feature.body}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+</PeeldayLayout>
