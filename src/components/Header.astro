@@ -59,8 +59,8 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: var(--surface);
+		box-shadow: var(--header-shadow);
 	}
 	h2 {
 		margin: 0;
@@ -82,7 +82,7 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 	}
 	nav a {
 		padding: 1em 0.5em;
-		color: var(--black);
+		color: rgb(var(--black));
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
 	}
@@ -99,12 +99,12 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		align-items: center;
 		gap: 0.5em;
 		background: none;
-		border: 1px solid #ddd;
+		border: 1px solid var(--control-border);
 		padding: 0.4em 0.8em;
 		border-radius: 20px;
 		cursor: pointer;
 		font-size: 0.9em;
-		color: var(--black);
+		color: rgb(var(--black));
 		transition: all 0.2s;
 	}
 	.lang-btn:hover {
@@ -122,18 +122,18 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		padding-top: 10px; /* This is the clickable 'bridge' gap */
 	}
 	.dropdown-content-inner {
-		background-color: white;
-		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+		background-color: var(--surface);
+		box-shadow: var(--popover-shadow);
 		border-radius: 8px;
 		overflow: hidden;
-		border: 1px solid #eee;
+		border: 1px solid var(--surface-border);
 	}
 	/* Remove the old bridge */
 	.lang-dropdown:hover .dropdown-content {
 		display: block;
 	}
 	.dropdown-content a {
-		color: var(--black);
+		color: rgb(var(--black));
 		padding: 10px 16px;
 		text-decoration: none;
 		display: block;
@@ -142,13 +142,13 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		border-bottom: none !important;
 	}
 	.dropdown-content a:hover {
-		background-color: #f9f9f9;
+		background-color: var(--surface-hover);
 		color: var(--accent);
 	}
 	.dropdown-content a.active {
 		font-weight: bold;
 		color: var(--accent);
-		background-color: #f0f7ff;
+		background-color: var(--surface-active);
 	}
 	.right-section {
 		display: flex;

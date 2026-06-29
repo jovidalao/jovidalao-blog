@@ -8,6 +8,35 @@
 	--peelday-green: #5c7a6a;
 	--peelday-gold: #c9a668;
 	--peelday-shadow: 0 12px 40px rgba(42, 38, 32, 0.08);
+	--peelday-surface: rgba(255, 255, 255, 0.55);
+	--peelday-border: rgba(42, 38, 32, 0.08);
+	--peelday-border-strong: rgba(42, 38, 32, 0.1);
+	--peelday-border-dashed: rgba(42, 38, 32, 0.15);
+	--peelday-frame-bg: linear-gradient(145deg, #fff 0%, var(--peelday-paper-dark) 100%);
+	--peelday-card-bg: linear-gradient(135deg, #fff 0%, var(--peelday-paper, #f7f1e5) 100%);
+	--peelday-icon-border: #fff;
+	--peelday-badge-bg: rgba(200, 75, 69, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--peelday-paper: #211c16;
+		--peelday-paper-dark: #2c241b;
+		--peelday-ink: #f6ede1;
+		--peelday-ink-muted: #c8bbaa;
+		--peelday-red: #ff8f86;
+		--peelday-green: #91c7a9;
+		--peelday-gold: #e0c27c;
+		--peelday-shadow: 0 14px 42px rgba(0, 0, 0, 0.32);
+		--peelday-surface: rgba(36, 30, 23, 0.74);
+		--peelday-border: rgba(226, 214, 197, 0.14);
+		--peelday-border-strong: rgba(226, 214, 197, 0.2);
+		--peelday-border-dashed: rgba(226, 214, 197, 0.22);
+		--peelday-frame-bg: linear-gradient(145deg, #33291f 0%, var(--peelday-paper-dark) 100%);
+		--peelday-card-bg: linear-gradient(135deg, #261f18 0%, var(--peelday-paper) 100%);
+		--peelday-icon-border: rgba(246, 237, 225, 0.72);
+		--peelday-badge-bg: rgba(255, 143, 134, 0.16);
+	}
 }
 
 main.peelday-main {
@@ -52,9 +81,9 @@ main.peelday-main {
 	width: min(100%, 320px);
 	border-radius: 28px;
 	padding: 12px;
-	background: linear-gradient(145deg, #fff 0%, var(--peelday-paper-dark) 100%);
+	background: var(--peelday-frame-bg);
 	box-shadow: var(--peelday-shadow);
-	border: 1px solid rgba(42, 38, 32, 0.08);
+	border: 1px solid var(--peelday-border);
 }
 
 .peelday-phone-frame img.hero-shot {
@@ -71,7 +100,7 @@ main.peelday-main {
 	height: 88px;
 	border-radius: 22%;
 	box-shadow: 0 8px 24px rgba(42, 38, 32, 0.18);
-	border: 3px solid #fff;
+	border: 3px solid var(--peelday-icon-border);
 }
 
 .peelday-cta-row {
@@ -113,7 +142,7 @@ main.peelday-main {
 .peelday-btn-muted {
 	background: var(--peelday-paper-dark);
 	color: var(--peelday-ink);
-	border: 1px solid rgba(42, 38, 32, 0.1);
+	border: 1px solid var(--peelday-border-strong);
 }
 
 .peelday-features {
@@ -133,8 +162,8 @@ main.peelday-main {
 }
 
 .peelday-feature-card {
-	background: rgba(255, 255, 255, 0.55);
-	border: 1px solid rgba(42, 38, 32, 0.08);
+	background: var(--peelday-surface);
+	border: 1px solid var(--peelday-border);
 	border-radius: 16px;
 	padding: 1.25rem 1.35rem;
 	box-shadow: 0 2px 8px rgba(42, 38, 32, 0.04);
@@ -156,7 +185,7 @@ main.peelday-main {
 .peelday-legal-bar {
 	margin-top: 2rem;
 	padding: 1.5rem 0 0;
-	border-top: 1px dashed rgba(42, 38, 32, 0.15);
+	border-top: 1px dashed var(--peelday-border-dashed);
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -188,8 +217,8 @@ main.peelday-main {
 }
 
 .peelday-legal-section {
-	background: rgba(255, 255, 255, 0.55);
-	border: 1px solid rgba(42, 38, 32, 0.08);
+	background: var(--peelday-surface);
+	border: 1px solid var(--peelday-border);
 	border-radius: 16px;
 	padding: 1.25rem 1.35rem;
 	margin-bottom: 1rem;
@@ -233,8 +262,8 @@ main.peelday-main {
 	display: block;
 	text-decoration: none;
 	color: inherit;
-	background: linear-gradient(135deg, #fff 0%, var(--peelday-paper, #f7f1e5) 100%);
-	border: 1px solid rgba(42, 38, 32, 0.1);
+	background: var(--peelday-card-bg);
+	border: 1px solid var(--peelday-border-strong);
 	border-radius: 20px;
 	padding: 1.5rem;
 	box-shadow: 0 8px 30px rgba(42, 38, 32, 0.06);
@@ -273,7 +302,7 @@ main.peelday-main {
 	text-transform: uppercase;
 	letter-spacing: 0.04em;
 	color: var(--peelday-red, #c84b45);
-	background: rgba(200, 75, 69, 0.1);
+	background: var(--peelday-badge-bg);
 	padding: 0.2em 0.55em;
 	border-radius: 999px;
 }

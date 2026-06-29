@@ -40,6 +40,10 @@ const drillIcons: Record<string, string> = {
 <ConverloopLayout title={`${CONVERLOOP.name} — ${c.tagline}`} description={c.metaDescription}>
 	<section class="cl-hero">
 		<div class="cl-hero-copy">
+			<div class="cl-brand-lockup">
+				<img class="cl-brand-logo" src="/converloop-logo.svg" alt="" width="48" height="48" />
+				<span>{CONVERLOOP.name}</span>
+			</div>
 			<p class="eyebrow">{c.tagline}</p>
 			<h1 set:html={c.heroTitleHtml} />
 			<p class="subtitle">{c.heroSubtitle}</p>
