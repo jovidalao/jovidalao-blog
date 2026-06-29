@@ -18,25 +18,23 @@
 	--peelday-badge-bg: rgba(200, 75, 69, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--peelday-paper: #211c16;
-		--peelday-paper-dark: #2c241b;
-		--peelday-ink: #f6ede1;
-		--peelday-ink-muted: #c8bbaa;
-		--peelday-red: #ff8f86;
-		--peelday-green: #91c7a9;
-		--peelday-gold: #e0c27c;
-		--peelday-shadow: 0 14px 42px rgba(0, 0, 0, 0.32);
-		--peelday-surface: rgba(36, 30, 23, 0.74);
-		--peelday-border: rgba(226, 214, 197, 0.14);
-		--peelday-border-strong: rgba(226, 214, 197, 0.2);
-		--peelday-border-dashed: rgba(226, 214, 197, 0.22);
-		--peelday-frame-bg: linear-gradient(145deg, #33291f 0%, var(--peelday-paper-dark) 100%);
-		--peelday-card-bg: linear-gradient(135deg, #261f18 0%, var(--peelday-paper) 100%);
-		--peelday-icon-border: rgba(246, 237, 225, 0.72);
-		--peelday-badge-bg: rgba(255, 143, 134, 0.16);
-	}
+:root[data-theme="dark"] {
+	--peelday-paper: #211c16;
+	--peelday-paper-dark: #2c241b;
+	--peelday-ink: #f6ede1;
+	--peelday-ink-muted: #c8bbaa;
+	--peelday-red: #ff8f86;
+	--peelday-green: #91c7a9;
+	--peelday-gold: #e0c27c;
+	--peelday-shadow: 0 14px 42px rgba(0, 0, 0, 0.32);
+	--peelday-surface: rgba(36, 30, 23, 0.74);
+	--peelday-border: rgba(226, 214, 197, 0.14);
+	--peelday-border-strong: rgba(226, 214, 197, 0.2);
+	--peelday-border-dashed: rgba(226, 214, 197, 0.22);
+	--peelday-frame-bg: linear-gradient(145deg, #33291f 0%, var(--peelday-paper-dark) 100%);
+	--peelday-card-bg: linear-gradient(135deg, #261f18 0%, var(--peelday-paper) 100%);
+	--peelday-icon-border: rgba(246, 237, 225, 0.72);
+	--peelday-badge-bg: rgba(255, 143, 134, 0.16);
 }
 
 main.peelday-main {

@@ -14,21 +14,19 @@
 	--cl-shadow: 0 12px 40px rgba(35, 55, 255, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--cl-brand: #78d6ff;
-		--cl-brand-dark: #2f80ed;
-		--cl-brand-soft: rgba(47, 128, 237, 0.18);
-		--cl-on-brand: #071426;
-		--cl-ink: #f1f7ff;
-		--cl-ink-muted: #aab8cf;
-		--cl-surface: #101827;
-		--cl-border: rgba(148, 163, 184, 0.18);
-		--cl-bg-soft: #151f33;
-		--cl-del: #ff8a80;
-		--cl-ins: #6ee7b7;
-		--cl-shadow: 0 16px 44px rgba(0, 0, 0, 0.32);
-	}
+:root[data-theme="dark"] {
+	--cl-brand: #78d6ff;
+	--cl-brand-dark: #2f80ed;
+	--cl-brand-soft: rgba(47, 128, 237, 0.18);
+	--cl-on-brand: #071426;
+	--cl-ink: #f1f7ff;
+	--cl-ink-muted: #aab8cf;
+	--cl-surface: #101827;
+	--cl-border: rgba(148, 163, 184, 0.18);
+	--cl-bg-soft: #151f33;
+	--cl-del: #ff8a80;
+	--cl-ins: #6ee7b7;
+	--cl-shadow: 0 16px 44px rgba(0, 0, 0, 0.32);
 }
 
 main.converloop-main {
@@ -1217,17 +1215,7 @@ section.cl-panel {
 	width: 64px;
 	height: 64px;
 	border-radius: 16px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	box-shadow: 0 4px 12px rgba(35, 55, 255, 0.25);
-}
-
-.cl-card-icon img {
-	width: 64px;
-	height: 64px;
-	display: block;
-	border-radius: 16px;
 }
 
 .cl-card-meta h3 {

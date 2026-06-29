@@ -26,28 +26,26 @@
 		0 16px 32px rgba(var(--gray), 33%);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		color-scheme: dark;
-		--accent: #8ea2ff;
-		--accent-dark: #c7d2fe;
-		--black: 245, 247, 255;
-		--gray: 148, 163, 184;
-		--gray-light: 39, 49, 67;
-		--gray-dark: 213, 220, 235;
-		--gray-gradient: rgba(22, 28, 43, 0.9), #0b1020;
-		--page-bg: #0b1020;
-		--surface: #111827;
-		--surface-hover: #182236;
-		--surface-active: rgba(142, 162, 255, 0.16);
-		--surface-border: rgba(148, 163, 184, 0.18);
-		--control-border: rgba(148, 163, 184, 0.32);
-		--header-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
-		--popover-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.35);
-		--box-shadow:
-			0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.38),
-			0 16px 32px rgba(0, 0, 0, 0.38);
-	}
+:root[data-theme="dark"] {
+	color-scheme: dark;
+	--accent: #8ea2ff;
+	--accent-dark: #c7d2fe;
+	--black: 245, 247, 255;
+	--gray: 148, 163, 184;
+	--gray-light: 39, 49, 67;
+	--gray-dark: 213, 220, 235;
+	--gray-gradient: rgba(22, 28, 43, 0.9), #0b1020;
+	--page-bg: #0b1020;
+	--surface: #111827;
+	--surface-hover: #182236;
+	--surface-active: rgba(142, 162, 255, 0.16);
+	--surface-border: rgba(148, 163, 184, 0.18);
+	--control-border: rgba(148, 163, 184, 0.32);
+	--header-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
+	--popover-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.35);
+	--box-shadow:
+		0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.38),
+		0 16px 32px rgba(0, 0, 0, 0.38);
 }
 
 body {

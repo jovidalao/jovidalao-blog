@@ -20,6 +20,35 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 			<HeaderLink href={`${base}/converloop`}>{t.nav.converloop}</HeaderLink>
 		</div>
 		<div class="right-section">
+			<div class="theme-dropdown">
+				<button class="theme-btn" aria-label={t.theme.system}>
+					<span class="theme-icon" data-icon="light" hidden>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+					</span>
+					<span class="theme-icon" data-icon="dark" hidden>
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+					</span>
+					<span class="theme-icon" data-icon="system">
+						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+					</span>
+				</button>
+				<div class="dropdown-content">
+					<div class="dropdown-content-inner">
+						<button data-theme-value="light">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+							<span>{t.theme.light}</span>
+						</button>
+						<button data-theme-value="dark">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+							<span>{t.theme.dark}</span>
+						</button>
+						<button data-theme-value="system">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+							<span>{t.theme.system}</span>
+						</button>
+					</div>
+				</div>
+			</div>
 			<div class="lang-dropdown">
 				<button class="lang-btn">
 					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
@@ -90,11 +119,13 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
-	.lang-dropdown {
+	.lang-dropdown,
+	.theme-dropdown {
 		position: relative;
 		display: inline-block;
 	}
-	.lang-btn {
+	.lang-btn,
+	.theme-btn {
 		display: flex;
 		align-items: center;
 		gap: 0.5em;
@@ -107,9 +138,20 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		color: rgb(var(--black));
 		transition: all 0.2s;
 	}
-	.lang-btn:hover {
+	.theme-btn {
+		padding: 0.4em;
+		justify-content: center;
+	}
+	.lang-btn:hover,
+	.theme-btn:hover {
 		border-color: var(--accent);
 		color: var(--accent);
+	}
+	.theme-icon {
+		display: inline-flex;
+	}
+	.theme-icon[hidden] {
+		display: none;
 	}
 	.dropdown-content {
 		display: none;
@@ -129,10 +171,12 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		border: 1px solid var(--surface-border);
 	}
 	/* Remove the old bridge */
-	.lang-dropdown:hover .dropdown-content {
+	.lang-dropdown:hover .dropdown-content,
+	.theme-dropdown:hover .dropdown-content {
 		display: block;
 	}
-	.dropdown-content a {
+	.dropdown-content a,
+	.dropdown-content button {
 		color: rgb(var(--black));
 		padding: 10px 16px;
 		text-decoration: none;
@@ -141,11 +185,23 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		text-align: left;
 		border-bottom: none !important;
 	}
-	.dropdown-content a:hover {
+	.dropdown-content button {
+		display: flex;
+		align-items: center;
+		gap: 0.6em;
+		width: 100%;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-family: inherit;
+	}
+	.dropdown-content a:hover,
+	.dropdown-content button:hover {
 		background-color: var(--surface-hover);
 		color: var(--accent);
 	}
-	.dropdown-content a.active {
+	.dropdown-content a.active,
+	.dropdown-content button.active {
 		font-weight: bold;
 		color: var(--accent);
 		background-color: var(--surface-active);
@@ -166,3 +222,41 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		}
 	}
 </style>
+<script>
+	const KEY = 'theme';
+	const mql = window.matchMedia('(prefers-color-scheme: dark)');
+	const options = document.querySelectorAll<HTMLButtonElement>(
+		'.theme-dropdown button[data-theme-value]',
+	);
+	const icons = document.querySelectorAll<HTMLElement>('.theme-btn .theme-icon');
+
+	const getPref = () => localStorage.getItem(KEY) ?? 'system';
+	const resolve = (pref: string) =>
+		pref === 'dark' || (pref === 'system' && mql.matches) ? 'dark' : 'light';
+
+	const apply = (pref: string) => {
+		document.documentElement.dataset.theme = resolve(pref);
+		icons.forEach((el) => {
+			el.hidden = el.dataset.icon !== pref;
+		});
+		options.forEach((b) => {
+			const on = b.dataset.themeValue === pref;
+			b.classList.toggle('active', on);
+			b.setAttribute('aria-pressed', String(on));
+		});
+	};
+
+	options.forEach((b) => {
+		b.addEventListener('click', () => {
+			const value = b.dataset.themeValue;
+			if (!value) return;
+			localStorage.setItem(KEY, value);
+			apply(value);
+		});
+	});
+
+	apply(getPref());
+	mql.addEventListener('change', () => {
+		if (getPref() === 'system') apply('system');
+	});
+</script>

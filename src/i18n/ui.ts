@@ -7,6 +7,11 @@ export const ui = {
 			peelday: "Peelday",
 			converloop: "Converloop",
 		},
+		theme: {
+			light: "Light",
+			dark: "Dark",
+			system: "System",
+		},
 		home: {
 			greeting: "Hi, I'm jovidalao",
 			intro:
@@ -300,6 +305,11 @@ export const ui = {
 			home: "首页",
 			peelday: "Peelday",
 			converloop: "Converloop",
+		},
+		theme: {
+			light: "浅色",
+			dark: "深色",
+			system: "跟随系统",
 		},
 		home: {
 			greeting: "你好，我是 jovidalao",
