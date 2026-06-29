@@ -1,0 +1,399 @@
+---
+import ConverloopLayout from '../layouts/ConverloopLayout.astro';
+import { CONVERLOOP } from '../consts';
+import { getUi } from '../i18n';
+
+const t = getUi(Astro.currentLocale);
+const c = t.converloop;
+const d = c.demo;
+const f = c.flow;
+const s = c.showcase;
+const r = s.reply;
+const dict = c.dictation;
+const listen = c.listening;
+const derive = c.derive;
+const drills = c.drills;
+
+const actionIcons: Record<string, string> = {
+	branch:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>',
+	harder:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>',
+	easier:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>',
+	swap:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>',
+	scene:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>',
+	calendar:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>',
+};
+
+const drillIcons: Record<string, string> = {
+	zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+	pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+	target:
+		'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>',
+};
+---
+
+<ConverloopLayout title={`${CONVERLOOP.name} — ${c.tagline}`} description={c.metaDescription}>
+	<section class="cl-hero">
+		<div class="cl-hero-copy">
+			<p class="eyebrow">{c.tagline}</p>
+			<h1 set:html={c.heroTitleHtml} />
+			<p class="subtitle">{c.heroSubtitle}</p>
+			<div class="cl-cta-row">
+				<a class="cl-btn cl-btn-primary" href={CONVERLOOP.repoUrl} target="_blank" rel="noopener noreferrer">
+					<svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.2-3.37-1.2-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"></path></svg>
+					{c.viewOnGithub}
+				</a>
+			</div>
+			<p class="cl-hero-note">{c.heroNote}</p>
+		</div>
+
+		<div class="cl-chat" role="group" aria-label="Converloop demo">
+			<p class="cl-chat-meta">{d.convo}</p>
+			<p class="cl-ai">{d.aiOpen}</p>
+			<div class="cl-bubble">
+				<span>{d.userPre}<del class="cl-del">{d.userDel}</del> <ins class="cl-ins">{d.userIns}</ins>{d.userPost}</span>
+				<span class="cl-natural">
+					<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.9 5.6L19.5 9l-5.6 1.9L12 16.5 10.1 11 4.5 9l5.6-1.4L12 2z"/></svg>
+					<span>{d.natural}</span>
+				</span>
+			</div>
+			<div class="cl-issue">
+				<div class="cl-issue-head">
+					<span class="cl-cat">{d.issueCat}</span>
+					<span class="cl-sev">{d.issueSev}</span>
+				</div>
+				<p class="cl-diff"><del class="cl-del">{d.userDel}</del><span class="cl-arrow">→</span><ins class="cl-ins">{d.userIns}</ins></p>
+				<p class="cl-issue-exp">{d.issueExp}</p>
+			</div>
+			<p class="cl-ai">{d.reply}</p>
+		</div>
+	</section>
+
+	<section class="cl-intro">
+		<div class="cl-section-head">
+			<p class="cl-kicker">{c.intro.kicker}</p>
+			<h2>{c.intro.heading}</h2>
+			<p>{c.intro.body}</p>
+		</div>
+		<div class="cl-intro-grid">
+			{
+				c.intro.pillars.map((pillar) => (
+					<article class="cl-intro-card">
+						<h3>{pillar.title}</h3>
+						<p>{pillar.body}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+
+	<section class="cl-flow-section cl-panel">
+		<div class="cl-section-head">
+			<p class="cl-kicker">{f.kicker}</p>
+			<h2>{f.heading}</h2>
+			<p>{f.intro}</p>
+		</div>
+		<div class="cl-flow">
+			<div class="cl-flow-card cl-flow-card--input">
+				<strong>{f.input.title}</strong>
+				<span class="cl-flow-body">{f.input.body}</span>
+			</div>
+			<div class="cl-flow-connector"><span class="cl-flow-chip">{f.inParallel}</span></div>
+			<div class="cl-flow-split">
+				<div class="cl-flow-card">
+					<span class="cl-flow-tag">{f.convAgent.tag}</span>
+					<strong>{f.convAgent.title}</strong>
+					<span class="cl-flow-body">{f.convAgent.body}</span>
+				</div>
+				<div class="cl-flow-card">
+					<span class="cl-flow-tag">{f.tutorAgent.tag}</span>
+					<strong>{f.tutorAgent.title}</strong>
+					<span class="cl-flow-body">{f.tutorAgent.body}</span>
+				</div>
+			</div>
+			<div class="cl-flow-connector"><span class="cl-flow-chip">{f.signals}</span></div>
+			<div class="cl-flow-card cl-flow-card--memory">
+				<strong>{f.memory.title}</strong>
+				<span class="cl-flow-body">{f.memory.body}</span>
+			</div>
+			<div class="cl-flow-connector"><span class="cl-flow-chip">{f.whenDue}</span></div>
+			<div class="cl-flow-card cl-flow-card--review">
+				<strong>{f.review.title}</strong>
+				<span class="cl-flow-body">{f.review.body}</span>
+			</div>
+			<p class="cl-flow-loopback">{f.loopback}</p>
+		</div>
+	</section>
+
+	<section class="cl-showcase">
+		<div class="cl-section-head">
+			<p class="cl-kicker">{s.kicker}</p>
+			<h2>{s.heading}</h2>
+			<p>{s.intro}</p>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-reply">
+					<p class="cl-chat-meta">{d.convo}</p>
+					<div class="cl-reply-bubble">
+						{
+							r.bubble.map((ln) => (
+								<p class="cl-bi-line">
+									<span class="cl-bi-target">{ln.target}</span>
+									<span class="cl-bi-native">{ln.native}</span>
+								</p>
+							))
+						}
+					</div>
+					<div class="cl-reply-actions">
+						<span class="cl-reply-act"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>{r.actions.speak}</span>
+						<span class="cl-reply-act is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>{r.actions.explain}</span>
+						<span class="cl-reply-act is-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>{r.actions.bilingual}</span>
+					</div>
+					<div class="cl-reply-explain">
+						<span class="cl-reply-explain-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"/><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>{r.explainLabel}</span>
+						<p>{r.explainBody}</p>
+					</div>
+				</div>
+			</div>
+			<div class="cl-showcase-copy">
+				<h3>{r.title}</h3>
+				<p>{r.body}</p>
+			</div>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-copy">
+				<h3>{s.selection.title}</h3>
+				<p>{s.selection.body}</p>
+			</div>
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-select">
+					<p class="cl-select-source">{s.selection.sourcePre}<mark class="cl-select-hl">{s.selection.sourceHl}</mark>{s.selection.sourcePost}</p>
+					<div class="cl-island">
+						<div class="cl-island-head">
+							<button class="cl-island-btn is-active" type="button">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+								{s.selection.actions.analyze}
+							</button>
+							<button class="cl-island-btn" type="button">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+								{s.selection.actions.speak}
+							</button>
+							<button class="cl-island-btn" type="button">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/><path d="M12 7v6"/><path d="M9 10h6"/></svg>
+								{s.selection.actions.add}
+							</button>
+							<span class="cl-island-x">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+							</span>
+						</div>
+						<div class="cl-island-body">
+							<div class="cl-island-sel">{s.selection.sourceHl}</div>
+							<p class="cl-island-analysis">{s.selection.analysis}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-slash">
+					<div class="cl-slash-menu">
+						{
+							s.slash.rows.map((row, i) => (
+								<div class:list={["cl-slash-row", { "is-selected": i === 0 }]}>
+									<span class="cl-slash-name">/{row.name}</span>
+									{"args" in row && row.args && <span class="cl-slash-args">{row.args}</span>}
+									<span class="cl-slash-desc">{row.desc}</span>
+								</div>
+							))
+						}
+						<div class="cl-slash-foot">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+							{s.slash.foot}
+						</div>
+					</div>
+					<div class="cl-input-bar">
+						<span class="cl-input-slash">/</span>
+						<span class="cl-input-caret"></span>
+						<span class="cl-input-ph">{s.slash.inputPlaceholder}</span>
+						<span class="cl-input-send">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="cl-showcase-copy">
+				<h3>{s.slash.title}</h3>
+				<p set:html={s.slash.body} />
+			</div>
+		</div>
+	</section>
+
+	<section class="cl-showcase cl-learn cl-panel">
+		<div class="cl-section-head">
+			<p class="cl-kicker">{c.methodsKicker}</p>
+			<h2>{c.methodsHeading}</h2>
+			<p>{c.methodsIntro}</p>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-listen">
+					<p class="cl-listen-source">{listen.mock.source}</p>
+					<div class="cl-listen-now">
+						<span class="cl-listen-side">{listen.mock.side}</span>
+						<span class="cl-listen-line">{listen.mock.line}</span>
+					</div>
+					<div class="cl-listen-controls">
+						<button class="cl-listen-play" type="button" aria-label="Play">
+							<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+						</button>
+						<span class="cl-listen-toggle">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+							{listen.mock.showText}
+						</span>
+					</div>
+					<div class="cl-listen-chips">
+						<span class="cl-listen-chip">{listen.mock.repeatLabel} <b>{listen.mock.repeatVal}</b></span>
+						<span class="cl-listen-chip">{listen.mock.speedLabel} <b>{listen.mock.speedVal}</b></span>
+						<span class="cl-listen-chip">{listen.mock.gapLabel} <b>{listen.mock.gapVal}</b></span>
+						<span class="cl-listen-chip cl-listen-chip--on">{listen.mock.loopLabel}</span>
+					</div>
+				</div>
+			</div>
+			<div class="cl-showcase-copy">
+				<h3>{listen.title}</h3>
+				<p>{listen.body}</p>
+				<ul class="cl-dict-points">
+					{listen.points.map((point) => <li>{point}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-copy">
+				<h3>{dict.title}</h3>
+				<p>{dict.body}</p>
+				<ul class="cl-dict-points">
+					{dict.points.map((point) => <li>{point}</li>)}
+				</ul>
+			</div>
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-dictation">
+					<div class="cl-dict-prompt">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+						<span class="cl-dict-prompt-text">{dict.mock.prompt}</span>
+						<span class="cl-dict-replays">
+							<button class="cl-dict-replay" type="button" aria-label="Replay">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+							</button>
+							<button class="cl-dict-replay cl-dict-replay--slow" type="button" aria-label="Replay slowly">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0"/><circle cx="10" cy="13" r="8"/><path d="M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 0 0-4 0v6"/><path d="M18 3 19.1 5.2"/><path d="M22 3 20.9 5.2"/></svg>
+								<span class="cl-dict-rate">{dict.mock.rate}</span>
+							</button>
+						</span>
+					</div>
+					<div class="cl-dict-slots" aria-hidden="true">
+						{
+							dict.mock.typed.map((word, i) => (
+								<span class:list={["cl-dict-slot", { "is-miss": i === dict.mock.missIndex }]}>
+									<span class="cl-dict-slot-word">{word}</span>
+									<span class="cl-dict-slot-line" />
+								</span>
+							))
+						}
+					</div>
+					<div class="cl-dict-reveal">
+						<span class="cl-dict-verdict">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+							{dict.mock.verdict}
+						</span>
+						<p class="cl-dict-answer">{dict.mock.pre}<mark class="cl-dict-miss">{dict.mock.miss}</mark>{dict.mock.post}</p>
+					</div>
+					<p class="cl-dict-note">{dict.mock.note}</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-actions">
+					<p class="cl-actions-cap">{derive.mock.cap}</p>
+					<div class="cl-actions-grid">
+						{
+							derive.mock.actions.map((action) => (
+								<span class="cl-action">
+									<span class="cl-action-ic" set:html={actionIcons[action.icon]} />
+									{action.label}
+								</span>
+							))
+						}
+					</div>
+				</div>
+			</div>
+			<div class="cl-showcase-copy">
+				<h3>{derive.title}</h3>
+				<p>{derive.body}</p>
+				<ul class="cl-dict-points">
+					{derive.points.map((point) => <li>{point}</li>)}
+				</ul>
+			</div>
+		</div>
+
+		<div class="cl-showcase-row">
+			<div class="cl-showcase-copy">
+				<h3>{drills.title}</h3>
+				<p>{drills.body}</p>
+				<ul class="cl-dict-points">
+					{drills.points.map((point) => <li>{point}</li>)}
+				</ul>
+			</div>
+			<div class="cl-showcase-visual">
+				<div class="cl-mock cl-mock-drills">
+					<p class="cl-drills-title">{drills.mock.title}</p>
+					<div class="cl-drill-list">
+						{
+							drills.mock.drills.map((drill) => (
+								<div class="cl-drill">
+									<span class="cl-drill-ic" set:html={drillIcons[drill.icon]} />
+									<div class="cl-drill-text">
+										<strong>{drill.name}</strong>
+										<span>{drill.desc}</span>
+									</div>
+									{"badge" in drill && drill.badge && <span class="cl-drill-badge">{drill.badge}</span>}
+								</div>
+							))
+						}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cl-features">
+		<div class="cl-section-head">
+			<p class="cl-kicker">{c.featuresKicker}</p>
+			<h2>{c.featuresHeading}</h2>
+			<p>{c.featuresIntro}</p>
+		</div>
+		<div class="cl-feature-grid">
+			{
+				c.features.map((feature) => (
+					<article class="cl-feature-card">
+						<h3>{feature.title}</h3>
+						<p>{feature.body}</p>
+					</article>
+				))
+			}
+		</div>
+	</section>
+</ConverloopLayout>

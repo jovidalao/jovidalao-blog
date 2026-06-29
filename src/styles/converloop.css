@@ -1,0 +1,1256 @@
+/* Converloop brand tokens — blue accent, ported from the app's design system. */
+:root {
+	--cl-brand: #2337ff;
+	--cl-brand-dark: #000d8a;
+	--cl-brand-soft: #eef1ff;
+	--cl-ink: #14181f;
+	--cl-ink-muted: #4a5568;
+	--cl-surface: #ffffff;
+	--cl-border: rgba(20, 24, 31, 0.1);
+	--cl-bg-soft: #f6f8ff;
+	--cl-del: #c0392b;
+	--cl-ins: #1a7f5a;
+	--cl-shadow: 0 12px 40px rgba(35, 55, 255, 0.08);
+}
+
+main.converloop-main {
+	width: min(960px, calc(100% - 2em));
+}
+
+/* ---------- Hero ---------- */
+.cl-hero {
+	display: grid;
+	grid-template-columns: 1fr 1.05fr;
+	gap: 2.5rem;
+	align-items: center;
+	padding: 1rem 0 3rem;
+}
+
+.cl-hero-copy .eyebrow {
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.8rem;
+	letter-spacing: 0.02em;
+	color: var(--cl-brand);
+	margin: 0 0 1rem;
+}
+
+.cl-hero-copy h1 {
+	font-size: clamp(2.2rem, 4.6vw, 3.2rem);
+	line-height: 1.06;
+	margin: 0 0 0.6em;
+}
+
+.cl-hero-copy h1 .cl-accent {
+	color: var(--cl-brand);
+}
+
+.cl-hero-copy .subtitle {
+	font-size: 1.1rem;
+	color: var(--cl-ink-muted);
+	max-width: 34ch;
+	margin: 0 0 1.5rem;
+}
+
+.cl-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+.cl-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	padding: 0.7em 1.2em;
+	border-radius: 999px;
+	font-size: 0.95rem;
+	font-weight: 700;
+	text-decoration: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cl-btn:active {
+	transform: translateY(1px);
+}
+
+.cl-btn-primary {
+	background: var(--cl-brand);
+	color: #fff;
+	box-shadow: 0 4px 14px rgba(35, 55, 255, 0.3);
+}
+
+.cl-btn-primary:hover {
+	color: #fff;
+	box-shadow: 0 6px 20px rgba(35, 55, 255, 0.4);
+}
+
+.cl-btn .icon {
+	width: 18px;
+	height: 18px;
+}
+
+.cl-hero-note {
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.72rem;
+	color: var(--cl-ink-muted);
+	margin: 0;
+}
+
+/* ---------- Hero chat mockup ---------- */
+.cl-chat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	background: var(--cl-surface);
+	border: 1px solid var(--cl-border);
+	border-radius: 18px;
+	padding: 1.25rem;
+	box-shadow: var(--cl-shadow);
+}
+
+.cl-chat-meta {
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.72rem;
+	color: var(--cl-ink-muted);
+	margin: 0;
+}
+
+.cl-ai {
+	margin: 0;
+	color: var(--cl-ink);
+	font-size: 0.98rem;
+	line-height: 1.5;
+}
+
+.cl-bubble {
+	background: var(--cl-bg-soft);
+	border: 1px solid var(--cl-border);
+	border-radius: 14px;
+	padding: 0.7rem 0.85rem;
+	font-size: 0.98rem;
+	line-height: 1.55;
+}
+
+.cl-del {
+	color: var(--cl-del);
+	text-decoration: line-through;
+	text-decoration-thickness: 2px;
+}
+
+.cl-ins {
+	color: var(--cl-ins);
+	font-weight: 700;
+}
+
+.cl-natural {
+	display: flex;
+	align-items: baseline;
+	gap: 0.4rem;
+	margin-top: 0.5rem;
+	color: var(--cl-brand);
+	font-size: 0.9rem;
+}
+
+.cl-natural svg {
+	flex: none;
+	width: 14px;
+	height: 14px;
+	transform: translateY(2px);
+}
+
+.cl-issue {
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	padding: 0.65rem 0.8rem;
+	background: var(--cl-surface);
+}
+
+.cl-issue-head {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 0.4rem;
+}
+
+.cl-cat {
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: var(--cl-ink-muted);
+}
+
+.cl-sev {
+	font-size: 0.68rem;
+	font-weight: 700;
+	padding: 0.1em 0.5em;
+	border-radius: 999px;
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+}
+
+.cl-diff {
+	margin: 0 0 0.35rem;
+	font-size: 0.92rem;
+}
+
+.cl-arrow {
+	margin: 0 0.4em;
+	color: var(--cl-ink-muted);
+}
+
+.cl-issue-exp {
+	margin: 0;
+	font-size: 0.86rem;
+	color: var(--cl-ink-muted);
+	line-height: 1.5;
+}
+
+/* ---------- Intro & section heads ---------- */
+.cl-intro {
+	padding: 2rem 0 1rem;
+}
+
+.cl-section-head {
+	text-align: center;
+	max-width: 40ch;
+	margin: 0 auto 2rem;
+}
+
+.cl-kicker {
+	margin: 0 0 0.6rem;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--cl-brand);
+}
+
+.cl-section-head h2 {
+	font-size: clamp(1.6rem, 3vw, 2rem);
+	margin: 0 0 0.5rem;
+}
+
+.cl-section-head p {
+	margin: 0;
+	color: var(--cl-ink-muted);
+	font-size: 1.02rem;
+}
+
+/* Soft contained "zone" panel — gives the page visual rhythm between
+   plain sections. `section.` raises specificity above the section's own
+   padding rule so this override wins. */
+section.cl-panel {
+	background: var(--cl-bg-soft);
+	border: 1px solid var(--cl-border);
+	border-radius: 24px;
+	padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2.5rem);
+	margin: clamp(1rem, 3vw, 1.75rem) 0;
+}
+
+.cl-intro-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+.cl-intro-card {
+	border: 1px solid var(--cl-border);
+	border-radius: 16px;
+	padding: 1.4rem 1.5rem;
+	background: var(--cl-surface);
+}
+
+.cl-intro-card h3 {
+	font-size: 1.15rem;
+	margin: 0 0 0.55rem;
+	color: var(--cl-ink);
+}
+
+.cl-intro-card p {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	color: var(--cl-ink-muted);
+}
+
+/* ---------- Ear-training / listening player mockup ---------- */
+.cl-mock-listen {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.cl-listen-source {
+	margin: 0;
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.72rem;
+	color: var(--cl-ink-muted);
+}
+
+.cl-listen-now {
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	background: var(--cl-bg-soft);
+	padding: 0.85rem 0.9rem;
+}
+
+.cl-listen-side {
+	display: inline-block;
+	font-size: 0.66rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--cl-brand);
+	margin-bottom: 0.35rem;
+}
+
+.cl-listen-line {
+	display: block;
+	color: var(--cl-ink);
+	font-size: 1.02rem;
+	line-height: 1.5;
+}
+
+.cl-listen-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.7rem;
+}
+
+.cl-listen-play {
+	width: 38px;
+	height: 38px;
+	border-radius: 999px;
+	background: var(--cl-brand);
+	color: #fff;
+	border: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+}
+
+.cl-listen-play svg {
+	width: 16px;
+	height: 16px;
+	margin-left: 1px;
+}
+
+.cl-listen-toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.82rem;
+	color: var(--cl-ink-muted);
+}
+
+.cl-listen-toggle svg {
+	width: 15px;
+	height: 15px;
+}
+
+.cl-listen-chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.45rem;
+}
+
+.cl-listen-chip {
+	font-size: 0.78rem;
+	color: var(--cl-ink-muted);
+	border: 1px solid var(--cl-border);
+	border-radius: 999px;
+	padding: 0.25rem 0.65rem;
+}
+
+.cl-listen-chip b {
+	color: var(--cl-ink);
+	font-weight: 600;
+}
+
+.cl-listen-chip--on {
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+	border-color: transparent;
+	font-weight: 600;
+}
+
+/* ---------- Derive — conversation actions mockup ---------- */
+.cl-mock-actions {
+	padding: 1rem;
+}
+
+.cl-actions-cap {
+	margin: 0 0 0.7rem;
+	font-size: 0.8rem;
+	color: var(--cl-ink-muted);
+}
+
+.cl-actions-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.5rem;
+}
+
+.cl-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.6rem 0.7rem;
+	border: 1px solid var(--cl-border);
+	border-radius: 10px;
+	font-size: 0.86rem;
+	color: var(--cl-ink);
+	background: var(--cl-surface);
+}
+
+.cl-action-ic {
+	display: inline-flex;
+	color: var(--cl-brand);
+	flex: none;
+}
+
+.cl-action-ic svg {
+	width: 16px;
+	height: 16px;
+}
+
+/* ---------- Focused drills — practice center mockup ---------- */
+.cl-mock-drills {
+	padding: 1rem;
+}
+
+.cl-drills-title {
+	margin: 0 0 0.7rem;
+	font-size: 0.92rem;
+	font-weight: 700;
+	color: var(--cl-ink);
+}
+
+.cl-drill-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.cl-drill {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	padding: 0.7rem 0.8rem;
+}
+
+.cl-drill-ic {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 9px;
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+	flex: none;
+}
+
+.cl-drill-ic svg {
+	width: 18px;
+	height: 18px;
+}
+
+.cl-drill-text {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.cl-drill-text strong {
+	color: var(--cl-ink);
+	font-size: 0.92rem;
+}
+
+.cl-drill-text span {
+	color: var(--cl-ink-muted);
+	font-size: 0.8rem;
+}
+
+.cl-drill-badge {
+	flex: none;
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: var(--cl-brand);
+	background: var(--cl-brand-soft);
+	border-radius: 999px;
+	padding: 0.18rem 0.55rem;
+}
+
+/* ---------- Features ---------- */
+.cl-features {
+	padding: 3.5rem 0 1.5rem;
+}
+
+.cl-features .cl-section-head {
+	margin-bottom: 2.75rem;
+}
+
+.cl-feature-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: clamp(1.25rem, 2.5vw, 1.85rem);
+}
+
+.cl-feature-card {
+	background: var(--cl-surface);
+	border: 1px solid var(--cl-border);
+	border-radius: 18px;
+	padding: 1.85rem 1.7rem;
+}
+
+.cl-feature-card h3 {
+	font-size: 1.08rem;
+	margin: 0 0 0.7rem;
+	color: var(--cl-ink);
+}
+
+.cl-feature-card p {
+	margin: 0;
+	font-size: 0.92rem;
+	line-height: 1.7;
+	color: var(--cl-ink-muted);
+}
+
+/* ---------- Dictation spotlight ---------- */
+.cl-dict-points {
+	margin: 1.1rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cl-dict-points li {
+	position: relative;
+	padding-left: 1.4rem;
+	margin-bottom: 0.6rem;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	color: var(--cl-ink-muted);
+}
+
+.cl-dict-points li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0.5em;
+	width: 7px;
+	height: 7px;
+	border-radius: 2px;
+	background: var(--cl-brand);
+}
+
+.cl-dict-prompt {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	background: var(--cl-bg-soft);
+	padding: 0.7rem 0.85rem;
+	font-size: 0.92rem;
+	color: var(--cl-ink-muted);
+	margin-bottom: 0.85rem;
+}
+
+.cl-dict-prompt > svg {
+	width: 16px;
+	height: 16px;
+	color: var(--cl-brand);
+	flex: none;
+}
+
+.cl-dict-prompt-text {
+	flex: 1;
+}
+
+.cl-dict-replays {
+	display: inline-flex;
+	gap: 0.35rem;
+}
+
+.cl-dict-replay {
+	width: 28px;
+	height: 28px;
+	border-radius: 999px;
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	flex: none;
+}
+
+.cl-dict-replay svg {
+	width: 15px;
+	height: 15px;
+}
+
+.cl-dict-replay--slow {
+	width: auto;
+	padding: 0 0.5rem;
+	gap: 0.28rem;
+	font-size: 0.72rem;
+	font-weight: 700;
+}
+
+.cl-dict-rate {
+	line-height: 1;
+}
+
+.cl-dict-slots {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.55rem 0.7rem;
+	padding: 0.5rem 0.2rem 0.1rem;
+}
+
+.cl-dict-slot {
+	display: inline-flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.3rem;
+	min-width: 2.2rem;
+}
+
+.cl-dict-slot-word {
+	font-size: 1.02rem;
+	line-height: 1.2;
+	color: var(--cl-ink);
+}
+
+.cl-dict-slot-line {
+	height: 2px;
+	width: 100%;
+	border-radius: 2px;
+	background: rgba(20, 24, 31, 0.28);
+}
+
+.cl-dict-slot.is-miss .cl-dict-slot-word {
+	color: var(--cl-del);
+}
+
+.cl-dict-slot.is-miss .cl-dict-slot-line {
+	background: var(--cl-del);
+}
+
+.cl-dict-reveal {
+	margin-top: 0.9rem;
+	padding: 0.85rem 0.9rem;
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	background: var(--cl-bg-soft);
+}
+
+.cl-dict-verdict {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.74rem;
+	font-weight: 700;
+	color: var(--cl-del);
+	background: rgba(192, 57, 43, 0.1);
+	border-radius: 999px;
+	padding: 0.18rem 0.6rem;
+}
+
+.cl-dict-verdict svg {
+	width: 14px;
+	height: 14px;
+}
+
+.cl-dict-answer {
+	margin: 0.65rem 0 0;
+	font-size: 1.05rem;
+	line-height: 1.5;
+	color: var(--cl-ink);
+}
+
+.cl-dict-miss {
+	background: rgba(192, 57, 43, 0.14);
+	color: var(--cl-del);
+	border-radius: 5px;
+	padding: 0.02em 0.28em;
+}
+
+.cl-dict-note {
+	margin: 0.65rem 0 0;
+	font-size: 0.84rem;
+	line-height: 1.5;
+	color: var(--cl-ink-muted);
+	border-top: 1px dashed var(--cl-border);
+	padding-top: 0.65rem;
+}
+
+/* ---------- Turn flow diagram ---------- */
+.cl-flow-section {
+	padding: 2rem 0 1rem;
+}
+
+.cl-flow {
+	max-width: 620px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.cl-flow-card {
+	border: 1px solid var(--cl-border);
+	border-radius: 14px;
+	background: var(--cl-surface);
+	padding: 0.9rem 1.05rem;
+}
+
+.cl-flow-card strong {
+	display: block;
+	color: var(--cl-ink);
+	font-size: 1rem;
+	margin-bottom: 0.1rem;
+}
+
+.cl-flow-body {
+	display: block;
+	color: var(--cl-ink-muted);
+	font-size: 0.85rem;
+	line-height: 1.5;
+}
+
+.cl-flow-tag {
+	display: inline-block;
+	font-size: 0.66rem;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: var(--cl-brand);
+	margin-bottom: 0.3rem;
+}
+
+.cl-flow-card--input {
+	border-color: color-mix(in srgb, var(--cl-brand) 35%, var(--cl-border));
+}
+
+.cl-flow-split {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.9rem;
+}
+
+.cl-flow-split .cl-flow-card {
+	border-top: 3px solid var(--cl-brand);
+}
+
+.cl-flow-card--memory {
+	background: var(--cl-brand-soft);
+	border-color: color-mix(in srgb, var(--cl-brand) 30%, var(--cl-border));
+}
+
+.cl-flow-card--review {
+	background: var(--cl-surface);
+}
+
+.cl-flow-connector {
+	position: relative;
+	height: 2.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.cl-flow-connector::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	width: 2px;
+	background: var(--cl-border);
+	transform: translateX(-50%);
+}
+
+.cl-flow-chip {
+	position: relative;
+	z-index: 1;
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+	font-size: 0.68rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	padding: 0.15rem 0.6rem;
+	border-radius: 999px;
+}
+
+.cl-flow-loopback {
+	margin: 1.1rem 0 0;
+	text-align: center;
+	font-size: 0.84rem;
+	font-weight: 600;
+	color: var(--cl-brand);
+}
+
+/* ---------- Showcase (mockups + copy) ---------- */
+.cl-showcase {
+	padding: 2.5rem 0 1rem;
+}
+
+.cl-showcase-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2.2rem;
+	align-items: center;
+	margin-bottom: 2.5rem;
+}
+
+.cl-showcase-row:last-child {
+	margin-bottom: 0;
+}
+
+.cl-showcase-copy h3 {
+	font-size: 1.3rem;
+	margin: 0 0 0.6rem;
+	color: var(--cl-ink);
+}
+
+.cl-showcase-copy p {
+	margin: 0;
+	color: var(--cl-ink-muted);
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.cl-showcase-copy code {
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+	padding: 0.05em 0.35em;
+	border-radius: 5px;
+	font-size: 0.85em;
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.cl-mock {
+	background: var(--cl-surface);
+	border: 1px solid var(--cl-border);
+	border-radius: 18px;
+	padding: 1.1rem;
+	box-shadow: var(--cl-shadow);
+}
+
+/* slash command mockup */
+.cl-slash-menu {
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 8px 24px rgba(20, 24, 31, 0.08);
+	margin-bottom: 0.75rem;
+}
+
+.cl-slash-row {
+	display: flex;
+	align-items: baseline;
+	gap: 0.55rem;
+	padding: 0.5rem 0.7rem;
+}
+
+.cl-slash-row.is-selected {
+	background: var(--cl-brand-soft);
+}
+
+.cl-slash-name {
+	font-weight: 600;
+	color: var(--cl-ink);
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	font-size: 0.85rem;
+}
+
+.cl-slash-args {
+	color: var(--cl-ink-muted);
+	font-size: 0.74rem;
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.cl-slash-desc {
+	margin-left: auto;
+	color: var(--cl-ink-muted);
+	font-size: 0.76rem;
+	text-align: right;
+}
+
+.cl-slash-foot {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.5rem 0.7rem;
+	border-top: 1px solid var(--cl-border);
+	color: var(--cl-ink-muted);
+	font-size: 0.76rem;
+}
+
+.cl-slash-foot svg {
+	width: 13px;
+	height: 13px;
+}
+
+.cl-input-bar {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	border: 1.5px solid var(--cl-brand);
+	border-radius: 12px;
+	padding: 0.6rem 0.7rem;
+}
+
+.cl-input-slash {
+	font-family: ui-monospace, "SF Mono", Menlo, monospace;
+	color: var(--cl-ink);
+	font-size: 0.9rem;
+}
+
+.cl-input-caret {
+	width: 2px;
+	height: 1.05em;
+	background: var(--cl-brand);
+	display: inline-block;
+	animation: cl-blink 1.05s step-end infinite;
+}
+
+@keyframes cl-blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+.cl-input-ph {
+	color: var(--cl-ink-muted);
+	font-size: 0.88rem;
+}
+
+.cl-input-send {
+	margin-left: auto;
+	width: 26px;
+	height: 26px;
+	border-radius: 8px;
+	background: var(--cl-brand);
+	color: #fff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: none;
+}
+
+.cl-input-send svg {
+	width: 15px;
+	height: 15px;
+}
+
+/* selection island mockup */
+.cl-select-source {
+	font-size: 1rem;
+	line-height: 1.6;
+	color: var(--cl-ink);
+	background: var(--cl-bg-soft);
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	padding: 0.8rem 0.9rem;
+	margin: 0 0 0.9rem;
+}
+
+.cl-select-hl {
+	background: color-mix(in srgb, var(--cl-brand) 22%, transparent);
+	color: inherit;
+	border-radius: 3px;
+	padding: 0 1px;
+}
+
+.cl-island {
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	background: var(--cl-surface);
+	box-shadow: 0 12px 32px rgba(20, 24, 31, 0.16);
+	overflow: hidden;
+	max-width: 330px;
+	margin-left: auto;
+}
+
+.cl-island-head {
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	padding: 0.4rem 0.5rem;
+	border-bottom: 1px solid var(--cl-border);
+}
+
+.cl-island-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.3rem 0.45rem;
+	border-radius: 7px;
+	font-size: 0.78rem;
+	font-weight: 500;
+	color: var(--cl-ink-muted);
+	border: none;
+	background: none;
+}
+
+.cl-island-btn svg {
+	width: 14px;
+	height: 14px;
+}
+
+.cl-island-btn.is-active {
+	background: var(--cl-brand-soft);
+	color: var(--cl-brand);
+}
+
+.cl-island-x {
+	margin-left: auto;
+	color: var(--cl-ink-muted);
+	display: inline-flex;
+}
+
+.cl-island-x svg {
+	width: 14px;
+	height: 14px;
+}
+
+.cl-island-body {
+	padding: 0.6rem 0.75rem 0.8rem;
+}
+
+.cl-island-sel {
+	font-weight: 600;
+	color: var(--cl-ink-muted);
+	font-size: 0.8rem;
+	margin-bottom: 0.4rem;
+}
+
+.cl-island-analysis {
+	margin: 0;
+	font-size: 0.86rem;
+	line-height: 1.55;
+	color: var(--cl-ink);
+}
+
+/* reply helpers mock — bilingual reading + explain */
+.cl-mock-reply {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+}
+
+.cl-reply-bubble {
+	border: 1px solid var(--cl-border);
+	border-radius: 14px;
+	border-top-left-radius: 4px;
+	background: var(--cl-surface);
+	padding: 0.4rem 1rem;
+	box-shadow: 0 4px 16px rgba(20, 24, 31, 0.05);
+}
+
+.cl-bi-line {
+	margin: 0;
+	padding: 0.45rem 0;
+}
+
+.cl-bi-line + .cl-bi-line {
+	border-top: 1px dashed var(--cl-border);
+}
+
+.cl-bi-target {
+	display: block;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--cl-ink);
+}
+
+.cl-bi-native {
+	display: block;
+	margin-top: 0.15rem;
+	font-size: 0.84rem;
+	line-height: 1.5;
+	color: var(--cl-ink-muted);
+}
+
+.cl-reply-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+}
+
+.cl-reply-act {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: 0.78rem;
+	font-weight: 600;
+	color: var(--cl-ink-muted);
+	background: var(--cl-bg-soft);
+	border: 1px solid var(--cl-border);
+	border-radius: 999px;
+	padding: 0.28rem 0.6rem;
+}
+
+.cl-reply-act svg {
+	width: 14px;
+	height: 14px;
+}
+
+.cl-reply-act.is-active {
+	color: var(--cl-brand);
+	background: var(--cl-brand-soft);
+	border-color: transparent;
+}
+
+.cl-reply-explain {
+	border: 1px solid var(--cl-border);
+	border-radius: 12px;
+	background: var(--cl-surface);
+	padding: 0.7rem 0.85rem;
+}
+
+.cl-reply-explain-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.7rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--cl-ink-muted);
+}
+
+.cl-reply-explain-label svg {
+	width: 13px;
+	height: 13px;
+	color: var(--cl-brand);
+}
+
+.cl-reply-explain p {
+	margin: 0.4rem 0 0;
+	font-size: 0.9rem;
+	line-height: 1.55;
+	color: var(--cl-ink);
+}
+
+/* ---------- Homepage app cards ---------- */
+.home-app-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1rem;
+	align-items: start;
+}
+
+.cl-card {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	background: linear-gradient(135deg, #fff 0%, var(--cl-brand-soft) 100%);
+	border: 1px solid var(--cl-border);
+	border-radius: 20px;
+	padding: 1.5rem;
+	box-shadow: 0 8px 30px rgba(35, 55, 255, 0.06);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	max-width: 520px;
+}
+
+.cl-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 14px 40px rgba(35, 55, 255, 0.12);
+}
+
+.cl-card-top {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.cl-card-icon {
+	width: 64px;
+	height: 64px;
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--cl-brand);
+	color: #fff;
+	box-shadow: 0 4px 12px rgba(35, 55, 255, 0.25);
+}
+
+.cl-card-icon svg {
+	width: 34px;
+	height: 34px;
+}
+
+.cl-card-meta h3 {
+	margin: 0 0 0.2rem;
+	font-size: 1.35rem;
+}
+
+.cl-card-badge {
+	display: inline-block;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: var(--cl-brand);
+	background: var(--cl-brand-soft);
+	padding: 0.2em 0.55em;
+	border-radius: 999px;
+}
+
+.cl-card-desc {
+	margin: 0 0 1rem;
+	color: rgb(var(--gray-dark));
+	line-height: 1.6;
+	font-size: 0.98rem;
+}
+
+.cl-card-cta {
+	font-weight: 700;
+	color: var(--cl-brand);
+	font-size: 0.95rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+	.cl-hero {
+		grid-template-columns: 1fr;
+	}
+	.cl-feature-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.cl-showcase-row {
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
+	.cl-showcase-row .cl-showcase-visual {
+		order: -1;
+	}
+}
+
+@media (max-width: 600px) {
+	.cl-intro-grid,
+	.cl-feature-grid {
+		grid-template-columns: 1fr;
+	}
+	.cl-flow-split {
+		grid-template-columns: 1fr;
+	}
+	.cl-actions-grid {
+		grid-template-columns: 1fr;
+	}
+}

@@ -12,3 +12,9 @@ export const PEELDAY = {
 	contactEmail: "jovidalao@gmail.com",
 	lastUpdated: "May 13, 2026",
 } as const;
+
+export const CONVERLOOP = {
+	name: "Converloop",
+	tagline: "A local-first AI language tutor",
+	repoUrl: "https://github.com/jovidalao/Converloop",
+} as const;
