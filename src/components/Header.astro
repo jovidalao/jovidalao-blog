@@ -14,7 +14,7 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 <header>
 	<nav>
 		<h2><a href={base || '/'}>{SITE_TITLE}</a></h2>
-		<div class="internal-links">
+		<div class="internal-links" id="nav-menu">
 			<HeaderLink href={base || '/'}>{t.nav.home}</HeaderLink>
 			<HeaderLink href={`${base}/peelday`}>{t.nav.peelday}</HeaderLink>
 			<HeaderLink href={`${base}/converloop`}>{t.nav.converloop}</HeaderLink>
@@ -81,15 +81,27 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 				>
 			</a>
 		</div>
+			<button
+				class="nav-toggle"
+				type="button"
+				aria-label={t.nav.menu}
+				aria-expanded="false"
+				aria-controls="nav-menu"
+			>
+				<svg class="nav-toggle-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+				<svg class="nav-toggle-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+			</button>
 	</div>
 	</nav>
 </header>
 <style>
 	header {
+		position: relative;
 		margin: 0;
 		padding: 0 1em;
 		background: var(--surface);
 		box-shadow: var(--header-shadow);
+		z-index: 50;
 	}
 	h2 {
 		margin: 0;
@@ -170,9 +182,16 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 		overflow: hidden;
 		border: 1px solid var(--surface-border);
 	}
-	/* Remove the old bridge */
-	.lang-dropdown:hover .dropdown-content,
-	.theme-dropdown:hover .dropdown-content {
+	/* Pointer devices reveal the menu on hover; touch devices tap to toggle
+	   the `.open` class (see script), so the menu works without a real hover. */
+	@media (hover: hover) {
+		.lang-dropdown:hover .dropdown-content,
+		.theme-dropdown:hover .dropdown-content {
+			display: block;
+		}
+	}
+	.lang-dropdown.open .dropdown-content,
+	.theme-dropdown.open .dropdown-content {
 		display: block;
 	}
 	.dropdown-content a,
@@ -216,8 +235,86 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 	.social-links a {
 		display: flex;
 	}
+	.nav-toggle {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		padding: 0.4em;
+		background: none;
+		border: 1px solid var(--control-border);
+		border-radius: 10px;
+		color: rgb(var(--black));
+		cursor: pointer;
+		transition: border-color 0.2s, color 0.2s;
+	}
+	.nav-toggle:hover {
+		border-color: var(--accent);
+		color: var(--accent);
+	}
+	.nav-toggle-close {
+		display: none;
+	}
+	.nav-toggle[aria-expanded="true"] .nav-toggle-open {
+		display: none;
+	}
+	.nav-toggle[aria-expanded="true"] .nav-toggle-close {
+		display: block;
+	}
 	@media (max-width: 720px) {
 		.social-links {
+			display: none;
+		}
+		nav {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 0.5em;
+		}
+		.nav-toggle {
+			display: inline-flex;
+		}
+		.right-section {
+			gap: 0.5em;
+		}
+		.nav-toggle,
+		.theme-btn,
+		.lang-btn {
+			min-height: 40px;
+		}
+		.nav-toggle,
+		.theme-btn {
+			min-width: 40px;
+		}
+		.internal-links {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			flex-direction: column;
+			align-items: stretch;
+			background: var(--surface);
+			box-shadow: var(--header-shadow);
+			border-top: 1px solid var(--surface-border);
+			padding: 0.35em 0;
+			display: none;
+		}
+		.internal-links.open {
+			display: flex;
+		}
+		.internal-links a {
+			box-sizing: border-box;
+			width: 100%;
+			padding: 0.85em 1.25em;
+			border-bottom: none;
+		}
+		.internal-links a.active {
+			border-bottom-color: transparent;
+			color: var(--accent);
+			background: var(--surface-active);
+		}
+	}
+	@media (max-width: 380px) {
+		.lang-btn span {
 			display: none;
 		}
 	}
@@ -258,5 +355,46 @@ const zhPath = getRelativeLocaleUrl('zh', Astro.url.pathname);
 	apply(getPref());
 	mql.addEventListener('change', () => {
 		if (getPref() === 'system') apply('system');
+	});
+
+	// Mobile nav toggle
+	const navToggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+	const navMenu = document.getElementById('nav-menu');
+	const setMenu = (open: boolean) => {
+		navMenu?.classList.toggle('open', open);
+		navToggle?.setAttribute('aria-expanded', String(open));
+	};
+	navToggle?.addEventListener('click', (e) => {
+		e.stopPropagation();
+		setMenu(!navMenu?.classList.contains('open'));
+	});
+
+	// Tap-to-toggle dropdowns (works on touch where :hover is unreliable)
+	const dropdowns = Array.from(
+		document.querySelectorAll<HTMLElement>('.theme-dropdown, .lang-dropdown'),
+	);
+	const closeDropdowns = () => dropdowns.forEach((d) => d.classList.remove('open'));
+	dropdowns.forEach((dd) => {
+		const trigger = dd.querySelector<HTMLElement>('.theme-btn, .lang-btn');
+		trigger?.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const isOpen = dd.classList.contains('open');
+			closeDropdowns();
+			if (!isOpen) dd.classList.add('open');
+		});
+	});
+	// Close theme dropdown after picking an option
+	options.forEach((b) => b.addEventListener('click', closeDropdowns));
+
+	// Dismiss any open overlay on outside click or Escape
+	document.addEventListener('click', () => {
+		closeDropdowns();
+		setMenu(false);
+	});
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') {
+			closeDropdowns();
+			setMenu(false);
+		}
 	});
 </script>

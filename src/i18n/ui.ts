@@ -6,6 +6,7 @@ export const ui = {
 			home: "Home",
 			peelday: "Peelday",
 			converloop: "Converloop",
+			menu: "Menu",
 		},
 		theme: {
 			light: "Light",
@@ -15,20 +16,22 @@ export const ui = {
 		home: {
 			greeting: "Hi, I'm jovidalao",
 			intro:
-				"Indie developer. I build thoughtful iOS apps and occasionally write about how I learn and build.",
+				"Indie developer based in Hobart. I build thoughtful apps and occasionally write about how I learn and build.",
 			appsHeading: "Apps I build",
 			peeldayBadge: "iOS App",
 			peeldayTitle: "Peelday",
 			peeldayDescription:
 				"An offline-first visual diary with ticket-stub aesthetics. Collect photos, stickers, and notes on paper that's just yours — one page per day.",
 			peeldayCta: "Learn more",
-			converloopBadge: "Desktop App",
+			converloopBadge: "Desktop App · iOS soon",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"A local-first AI language tutor for macOS & Windows. It talks with you, corrects the sentence you just wrote, and remembers every gap — open source.",
+				"A local-first AI language tutor for macOS and Windows, with iOS coming soon. It talks with you, corrects the sentence you just wrote, and remembers every gap — open source.",
 			converloopCta: "Learn more",
 		},
 		peelday: {
+			name: "Peelday",
+			tagline: "A visual diary for everyday joy",
 			metaDescription:
 				"Peelday — an offline-first visual diary for iOS. Daily sticker pages, smart cutouts, calendar browse, widget, and optional iCloud sync.",
 			heroSubtitle:
@@ -71,8 +74,8 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop — a local-first AI language tutor for macOS and Windows. It talks with you, corrects the sentence you just wrote, and remembers every gap. Bring your own model keys; nothing leaves your device.",
-			tagline: "Local-first AI language tutor · macOS & Windows",
+				"Converloop — a local-first AI language tutor for macOS and Windows, with iOS coming soon. It talks with you, corrects the sentence you just wrote, and remembers every gap. Bring your own model keys; nothing leaves your device.",
+			tagline: "Local-first AI language tutor · macOS, Windows & iOS soon",
 			heroTitleHtml: 'Converse. Correct. <span class="cl-accent">Remember.</span> Repeat.',
 			heroSubtitle:
 				"An AI tutor that talks with you, corrects the sentence you just wrote, and remembers every gap — so your next conversation already knows where you're weak.",
@@ -303,8 +306,9 @@ export const ui = {
 	zh: {
 		nav: {
 			home: "首页",
-			peelday: "Peelday",
+			peelday: "贴贴手账",
 			converloop: "Converloop",
+			menu: "菜单",
 		},
 		theme: {
 			light: "浅色",
@@ -313,25 +317,27 @@ export const ui = {
 		},
 		home: {
 			greeting: "你好，我是 jovidalao",
-			intro: "独立开发者。我在做 iOS 应用，偶尔写写学习和构建的过程。",
+			intro: "base 在霍巴特的独立开发者。我在做有意思的应用，偶尔写写学习和构建的过程。",
 			appsHeading: "我开发的应用",
 			peeldayBadge: "iOS 应用",
-			peeldayTitle: "Peelday",
+			peeldayTitle: "贴贴手账",
 			peeldayDescription:
-				"一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",
+				"贴贴手账是一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",
 			peeldayCta: "了解更多",
-			converloopBadge: "桌面应用",
+			converloopBadge: "桌面应用 · iOS 即将上线",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"一款本地优先的 AI 语言导师，支持 macOS 与 Windows。和你对话、就在你刚写的句子上纠错、记住每个表达缺口——开源。",
+				"一款本地优先的 AI 语言导师，支持 macOS 与 Windows，iOS 版即将上线。和你对话、就在你刚写的句子上纠错、记住每个表达缺口——开源。",
 			converloopCta: "了解更多",
 		},
 		peelday: {
+			name: "贴贴手账",
+			tagline: "记录日常小确幸的视觉手账",
 			metaDescription:
-				"Peelday — 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
+				"贴贴手账（Peelday）— 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
 			heroSubtitle:
 				"记录日常小确幸。照片、贴纸和笔记——保存在只属于你自己的纸张上。",
-			heroImageAlt: "Peelday 应用截图",
+			heroImageAlt: "贴贴手账应用截图",
 			download: "在 App Store 下载",
 			comingSoon: "即将登陆 App Store",
 			featuresHeading: "你可以做什么",
@@ -369,8 +375,8 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop —— 一款本地优先的 AI 语言导师，支持 macOS 与 Windows。它和你对话、就在你刚写的句子上纠错、记住每一个表达缺口。自带模型密钥，数据不出本机。",
-			tagline: "本地优先的 AI 语言导师 · macOS & Windows",
+				"Converloop —— 一款本地优先的 AI 语言导师，支持 macOS 与 Windows，iOS 版即将上线。它和你对话、就在你刚写的句子上纠错、记住每一个表达缺口。自带模型密钥，数据不出本机。",
+			tagline: "本地优先的 AI 语言导师 · macOS、Windows 与 iOS 即将上线",
 			heroTitleHtml: '对话。纠错。<span class="cl-accent">记住。</span>循环。',
 			heroSubtitle:
 				"一个 AI 语言导师：和你对话、就在你刚写的句子上纠错、记住每一个表达缺口——于是下一次对话，它已经知道你弱在哪里。",
@@ -592,9 +598,9 @@ export const ui = {
 			],
 		},
 		legal: {
-			privacyTitle: "隐私政策 — Peelday",
-			termsTitle: "用户协议 — Peelday",
-			backToPeelday: "← 返回 Peelday",
+			privacyTitle: "隐私政策 — 贴贴手账",
+			termsTitle: "用户协议 — 贴贴手账",
+			backToPeelday: "← 返回贴贴手账",
 		},
 	},
 } as const;

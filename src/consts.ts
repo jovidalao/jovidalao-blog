@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "jovidalao";
 export const SITE_DESCRIPTION =
-	"Personal homepage of jovidalao — indie developer building Peelday, a visual diary for iOS.";
+	"Personal homepage of jovidalao — a Hobart-based indie developer building Peelday and Converloop.";
 
 export const PEELDAY = {
 	name: "Peelday",

@@ -6,11 +6,11 @@ import { getUi } from '../i18n';
 const t = getUi(Astro.currentLocale);
 ---
 
-<PeeldayLayout title={`${PEELDAY.name} — ${PEELDAY.tagline}`} description={t.peelday.metaDescription}>
+<PeeldayLayout title={`${t.peelday.name} — ${t.peelday.tagline}`} description={t.peelday.metaDescription}>
 	<section class="peelday-hero">
 		<div class="peelday-hero-copy">
-			<p class="tagline">{PEELDAY.tagline}</p>
-			<h1>{PEELDAY.name}</h1>
+			<p class="tagline">{t.peelday.tagline}</p>
+			<h1>{t.peelday.name}</h1>
 			<p class="subtitle">{t.peelday.heroSubtitle}</p>
 			<div class="peelday-cta-row">
 				{
