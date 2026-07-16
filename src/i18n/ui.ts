@@ -18,7 +18,7 @@ export const ui = {
 			intro:
 				"Indie developer based in Hobart. I build thoughtful apps and occasionally write about how I learn and build.",
 			appsHeading: "Apps I build",
-			peeldayBadge: "iOS App",
+			peeldayBadge: "Now on the App Store",
 			peeldayTitle: "Peelday",
 			peeldayDescription:
 				"An offline-first visual diary with ticket-stub aesthetics. Collect photos, stickers, and notes on paper that's just yours — one page per day.",
@@ -319,7 +319,7 @@ export const ui = {
 			greeting: "你好，我是 jovidalao",
 			intro: "base 在霍巴特的独立开发者。我在做有意思的应用，偶尔写写学习和构建的过程。",
 			appsHeading: "我开发的应用",
-			peeldayBadge: "iOS 应用",
+			peeldayBadge: "App Store 已上线",
 			peeldayTitle: "贴贴手账",
 			peeldayDescription:
 				"贴贴手账是一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",

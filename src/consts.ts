@@ -8,7 +8,8 @@ export const SITE_DESCRIPTION =
 export const PEELDAY = {
 	name: "Peelday",
 	tagline: "A visual diary for everyday joy",
-	appStoreUrl: "", // Set when live on the App Store
+	// Storefront-neutral URL lets Apple route visitors to their local App Store.
+	appStoreUrl: "https://apps.apple.com/app/id6774051647",
 	contactEmail: "jovidalao@gmail.com",
 	lastUpdated: "May 13, 2026",
 } as const;

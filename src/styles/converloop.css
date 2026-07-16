@@ -64,7 +64,9 @@ main.converloop-main {
 	width: 48px;
 	height: 48px;
 	display: block;
+	flex: 0 0 auto;
 	border-radius: 13px;
+	background: url('/converloop-icon.png') center / 124.3% 124.3% no-repeat;
 }
 
 .cl-hero-copy h1 {
@@ -1214,8 +1216,11 @@ section.cl-panel {
 .cl-card-icon {
 	width: 64px;
 	height: 64px;
+	display: block;
+	flex: 0 0 auto;
 	border-radius: 16px;
-	box-shadow: 0 4px 12px rgba(35, 55, 255, 0.25);
+	background: url('/converloop-icon.png') center / 124.3% 124.3% no-repeat;
+	box-shadow: 0 4px 12px rgba(42, 38, 32, 0.12);
 }
 
 .cl-card-meta h3 {
