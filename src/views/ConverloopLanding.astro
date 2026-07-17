@@ -261,12 +261,22 @@ const reply = s.reply;
 
 	<section class="cl2-section cl2-privacy-section">
 		<div class="cl2-shell cl2-privacy">
-			<div>
+			<div class="cl2-privacy-copy">
 				<p class="cl2-kicker">{l.privacy.badge}</p>
 				<h2>{l.privacy.heading}</h2>
 				<p>{l.privacy.body}</p>
+				<ul class="cl2-privacy-trust">{l.privacy.points.map((point) => <li><span>✓</span>{point}</li>)}</ul>
 			</div>
-			<ul>{l.privacy.points.map((point) => <li><span>✓</span>{point}</li>)}</ul>
+			<div class="cl2-memory-boundary">
+				<article class="cl2-memory-boundary-card cl2-memory-boundary-card--kept">
+					<div><span aria-hidden="true">✓</span><h3>{l.privacy.keptTitle}</h3></div>
+					<ul>{l.privacy.kept.map((item) => <li>{item}</li>)}</ul>
+				</article>
+				<article class="cl2-memory-boundary-card cl2-memory-boundary-card--private">
+					<div><span aria-hidden="true">—</span><h3>{l.privacy.privateTitle}</h3></div>
+					<ul>{l.privacy.private.map((item) => <li>{item}</li>)}</ul>
+				</article>
+			</div>
 		</div>
 	</section>
 

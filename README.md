@@ -1,63 +1,29 @@
-# Astro Starter Kit: Blog
+# jovidalao.com
+
+Personal site and product home for [Converloop](https://jovidalao.com/converloop/) and Peelday, built with Astro.
+
+## Converloop product story
+
+The Converloop page presents the same product contract as the desktop and mobile apps:
+
+- conversation-first practice with correction attached to the learner's original sentence;
+- a natural version, grammar detail, bilingual reading, text selection analysis, and composing help inside the conversation;
+- one cross-platform learning loop: express, notice, remember, reuse;
+- learning-only memory for languages, level, goals, practice preferences, mastery signals, recurring errors, expression gaps, listening gaps, and review state;
+- no cross-conversation memory of identity, work, education, location, family, relationships, interests, routines, purchases, health, beliefs, finances, travel, plans, or life events;
+- a shared portable backup format, with desktop and mobile interfaces adapted to the strengths of each device.
+
+Conversation history can keep a thread coherent, but personal details from that thread are never promoted into long-term memory. Legacy personal or persona-relationship memory is not presented as a product capability and is not restored through the new backup contract.
+
+The interactive correction, natural-expression, composing-hint, bilingual-reply, and selection-analysis demonstrations are intentional product documentation. Keep them visible when revising the landing page.
+
+## Local development
 
 ```sh
-pnpm create astro@latest -- --template blog
+pnpm install
+pnpm dev
+pnpm build
+pnpm preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and Open Graph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
-
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+The Converloop landing pages are available at `/converloop/` and `/zh/converloop/`. Shared markup lives in `src/views/ConverloopLanding.astro`; bilingual copy is in `src/i18n/ui.ts`; product-specific styles are in `src/styles/converloop.css`.

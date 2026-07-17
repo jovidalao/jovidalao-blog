@@ -1066,12 +1066,23 @@ main.converloop-main {
 
 /* Privacy */
 .cl2-privacy-section { padding-bottom: 44px; background: var(--cl-surface); }
-.cl2-privacy { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 70px; padding: 50px; border: 1px solid var(--cl-border-strong); border-radius: 28px; background: linear-gradient(135deg, var(--cl-brand-faint), var(--cl-surface)); box-shadow: 0 20px 60px rgba(29, 65, 161, 0.07); }
+.cl2-privacy { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 54px; padding: 50px; border: 1px solid var(--cl-border-strong); border-radius: 28px; background: linear-gradient(135deg, var(--cl-brand-faint), var(--cl-surface)); box-shadow: 0 20px 60px rgba(29, 65, 161, 0.07); }
 .cl2-privacy h2 { margin: 0 0 18px; }
-.cl2-privacy > div > p:last-child { margin: 0; font-size: 0.94rem; line-height: 1.65; }
-.cl2-privacy ul { align-self: center; display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
-.cl2-privacy li { display: flex; align-items: center; gap: 11px; color: var(--cl-ink); font-size: 0.87rem; }
-.cl2-privacy li span { display: grid; place-items: center; flex: 0 0 26px; width: 26px; height: 26px; border-radius: 99px; color: var(--cl-success); background: color-mix(in srgb, var(--cl-success) 13%, transparent); font-size: 0.73rem; font-weight: 700; }
+.cl2-privacy-copy > p:not(.cl2-kicker) { margin: 0; font-size: 0.94rem; line-height: 1.65; }
+.cl2-privacy-trust { display: grid; gap: 10px; margin: 28px 0 0; padding: 0; list-style: none; }
+.cl2-privacy-trust li { display: flex; align-items: center; gap: 9px; color: var(--cl-ink); font-size: 0.79rem; }
+.cl2-privacy-trust li span { display: grid; place-items: center; flex: 0 0 22px; width: 22px; height: 22px; border-radius: 99px; color: var(--cl-success); background: color-mix(in srgb, var(--cl-success) 13%, transparent); font-size: 0.65rem; font-weight: 700; }
+.cl2-memory-boundary { display: grid; gap: 12px; }
+.cl2-memory-boundary-card { padding: 22px; border: 1px solid var(--cl-border); border-radius: 18px; background: color-mix(in srgb, var(--cl-surface) 88%, transparent); }
+.cl2-memory-boundary-card > div { display: flex; align-items: center; gap: 10px; }
+.cl2-memory-boundary-card > div > span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 9px; font-size: 0.72rem; font-weight: 800; }
+.cl2-memory-boundary-card--kept > div > span { color: var(--cl-success); background: color-mix(in srgb, var(--cl-success) 13%, transparent); }
+.cl2-memory-boundary-card--private > div > span { color: var(--cl-ink-muted); background: var(--cl-surface-soft); }
+.cl2-memory-boundary-card h3 { margin: 0; font-size: 0.96rem; }
+.cl2-memory-boundary-card ul { display: grid; gap: 7px; margin: 15px 0 0; padding: 0 0 0 36px; list-style: none; }
+.cl2-memory-boundary-card li { position: relative; color: var(--cl-ink-muted); font-size: 0.76rem; line-height: 1.45; }
+.cl2-memory-boundary-card li::before { content: ''; position: absolute; left: -15px; top: 0.62em; width: 5px; height: 5px; border-radius: 99px; background: var(--cl-brand); }
+.cl2-memory-boundary-card--private li::before { background: var(--cl-ink-faint); }
 
 /* Release and FAQ */
 .cl2-release-section { background: var(--cl-surface); }

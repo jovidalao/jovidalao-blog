@@ -26,7 +26,7 @@ export const ui = {
 			converloopBadge: "macOS available · More platforms in development",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"A local-first AI language tutor that turns conversation into correction, learning memory, and targeted practice. macOS available now; iPhone, iPad, and Windows in development.",
+				"A local-first AI language tutor with inline correction and learning-only memory: it remembers how you use language, not your personal life.",
 			converloopCta: "Learn more",
 		},
 		peelday: {
@@ -74,7 +74,7 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop is a local-first AI language tutor that turns every conversation into correction, learning memory, and targeted practice. Download for macOS; iPhone, iPad, and Windows are in development.",
+				"Converloop is a local-first AI language tutor with inline correction, natural rewrites, composing help, and learning-only memory. It remembers how you use language—not your personal life.",
 			tagline: "Local-first AI language tutor · macOS available now",
 			launch: {
 				status: "macOS available now · iPhone, iPad & Windows in development",
@@ -82,11 +82,11 @@ export const ui = {
 				heroTitle: "Speak. Notice. Remember.",
 				heroAccent: "Reuse.",
 				heroBody:
-					"Converloop keeps practice moving like a real conversation, corrects you in context, and turns every gap into learning memory that can return when it matters.",
+					"Converloop keeps practice moving like a real conversation, corrects you in context, and turns language gaps—not personal life—into learning memory that returns when it matters.",
 				download: "Download for macOS",
 				downloadNote: "Apple Silicon + Intel · v0.1.1",
 				source: "View source",
-				trust: "Free and open source · bring your own provider · portable learning backup",
+				trust: "Free and open source · only language learning is remembered · portable learning backup",
 				preview: {
 					desktopLabel: "Desktop · deep practice",
 					sidebar: ["Release roleplay", "Coffee shop", "Weekly recap"],
@@ -143,7 +143,7 @@ export const ui = {
 					heading: "Everything behind the conversation",
 					items: [
 						{ title: "Inline correction", body: "The wrong span, the fix, and a natural rewrite stay attached to the sentence you actually wrote." },
-						{ title: "Learning memory", body: "The app remembers discrete strengths and gaps instead of treating every conversation as a blank slate." },
+					{ title: "Learning-only memory", body: "The app keeps goals, practice preferences, strengths, gaps, and review state—never identity, relationships, routines, or life events." },
 						{ title: "Listening and dictation", body: "Turn your own conversations into listening material, then practise the words you genuinely missed." },
 						{ title: "Roles and branches", body: "Change the scene, swap roles, adjust difficulty, or branch without losing the original conversation." },
 						{ title: "Provider freedom", body: "Use supported remote providers or compatible local endpoints and keep your choice separate from your learning data." },
@@ -162,10 +162,14 @@ export const ui = {
 					],
 				},
 				privacy: {
-					badge: "Local-first, accurately described",
-					heading: "Your learning history stays yours",
-					body: "Conversations and learning data are stored on your device by default. When you use a remote model or speech provider, only the content needed for that request is sent to the provider you chose.",
+					badge: "A memory with a clear boundary",
+					heading: "It remembers how you learn—not who you are",
+					body: "A conversation can stay coherent inside its own thread, but personal details are never promoted into cross-conversation memory. Learning data stays on your device by default; a remote provider receives only what the request needs.",
 					points: ["No Converloop account required", "Provider credentials stay in secure storage", "Credentials are excluded from portable backups"],
+					keptTitle: "Kept as learning memory",
+					kept: ["Languages, level, goals, and practice preferences", "Errors, correct uses, expression and listening gaps", "Mastery signals, review state, and communication skills"],
+					privateTitle: "Not turned into memory",
+					private: ["Name, age, job, school, location, or identity", "Family, relationships, interests, routines, or purchases", "Health, beliefs, finances, travel, plans, or life events"],
 				},
 				release: {
 					kicker: "Get Converloop",
@@ -179,6 +183,7 @@ export const ui = {
 				faq: {
 					heading: "Good to know",
 					items: [
+						{ title: "What does Converloop remember?", body: "Only language-learning state: your languages and level, learning goals, practice preferences, mastery signals, recurring errors, expression gaps, and review progress. Personal facts and relationship histories are not retained as cross-conversation memory." },
 						{ title: "Does Converloop sync automatically?", body: "Not yet. Use the portable backup to move shared learning data between supported builds with an explicit import preview." },
 						{ title: "Does everything stay offline?", body: "Your database is local by default. Requests to a remote AI or speech provider send the content required to complete that request." },
 						{ title: "Do I need a Converloop account?", body: "No. You choose and configure the model or speech providers you want to use." },
@@ -191,7 +196,7 @@ export const ui = {
 			},
 			heroTitleHtml: 'Converse. Correct. <span class="cl-accent">Remember.</span> Repeat.',
 			heroSubtitle:
-				"An AI tutor that talks with you, corrects the sentence you just wrote, and remembers every gap — so your next conversation already knows where you're weak.",
+				"An AI tutor that talks with you, corrects the sentence you just wrote, and remembers every language gap—not your personal life—so the next practice starts where you need it.",
 			viewOnGithub: "View on GitHub",
 			heroNote:
 				"Free & open source · AGPL-3.0 · bring your own provider · local data by default",
@@ -445,7 +450,7 @@ export const ui = {
 			converloopBadge: "macOS 现已提供 · 更多平台开发中",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"一款本地优先的 AI 语言导师，把对话变成纠错、学习记忆和针对性练习。macOS 现已提供，iPhone、iPad 与 Windows 正在开发。",
+				"一款本地优先的 AI 语言导师，提供就地纠错与纯语言学习记忆：记住你怎样使用语言，而不是你的个人生活。",
 			converloopCta: "了解更多",
 		},
 		peelday: {
@@ -493,7 +498,7 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop 是一款本地优先的 AI 语言导师，把每次对话变成就地纠错、学习记忆和针对性练习。macOS 版现已可下载，iPhone、iPad 与 Windows 版正在开发。",
+				"Converloop 是一款本地优先的 AI 语言导师，提供就地纠错、地道改写、输入提示与纯语言学习记忆：记住你如何使用语言，而不是你的个人生活。",
 			tagline: "本地优先的 AI 语言导师 · macOS 现已提供",
 			launch: {
 				status: "macOS 现已提供 · iPhone、iPad 与 Windows 正在开发",
@@ -501,11 +506,11 @@ export const ui = {
 				heroTitle: "表达。发现。记\u2060住。",
 				heroAccent: "再用出来。",
 				heroBody:
-					"Converloop 让练习像真实对话一样自然推进，在语境里纠正你，并把每个表达缺口变成会在恰当时机再次出现的学习记忆。",
+					"Converloop 让练习像真实对话一样自然推进，在语境里纠正你，并把语言缺口——而不是个人生活——变成会在恰当时机再次出现的学习记忆。",
 				download: "下载 macOS 版",
 				downloadNote: "Apple 芯片 + Intel · v0.1.1",
 				source: "查看源代码",
-				trust: "免费开源 · 自选服务提供商 · 学习数据可迁移",
+				trust: "免费开源 · 只记语言学习 · 学习数据可迁移",
 				preview: {
 					desktopLabel: "桌面端 · 深度练习",
 					sidebar: ["发布演练", "咖啡店", "每周回顾"],
@@ -562,7 +567,7 @@ export const ui = {
 					heading: "支撑每段对话的完整学习系统",
 					items: [
 						{ title: "就地纠错", body: "错误片段、正确写法和地道改写，都紧贴在你真正写出的那句话上。" },
-						{ title: "学习记忆", body: "应用会记住离散的强项与缺口，而不是把每段新对话都当成一张白纸。" },
+					{ title: "纯语言学习记忆", body: "应用会记住学习目标、练习偏好、强项、缺口与复习状态；不会保存身份、关系、日常安排或生活事件。" },
 						{ title: "听力与听写", body: "把你自己的对话变成听力材料，再针对真正听错的词继续练习。" },
 						{ title: "角色与分支", body: "换场景、交换角色、调节难度，或从任意节点分支，又不丢掉原对话。" },
 						{ title: "模型选择自由", body: "使用受支持的远程服务或兼容的本地端点，让模型选择与学习数据彼此独立。" },
@@ -581,10 +586,14 @@ export const ui = {
 					],
 				},
 				privacy: {
-					badge: "准确描述的本地优先",
-					heading: "学习历史始终属于你",
-					body: "对话和学习数据默认保存在你的设备上。使用远程模型或语音服务时，只会把完成该次请求所需的内容发送给你选择的服务提供商。",
+					badge: "边界明确的记忆",
+					heading: "记住你怎样学语言，而不是你是谁",
+					body: "一段对话可以在自己的会话里保持连贯，但其中的个人细节不会被提升为跨会话记忆。学习数据默认留在设备上；远程服务商只会收到完成当次请求所需的内容。",
 					points: ["无需 Converloop 账号", "服务凭据保存在系统安全存储中", "凭据不会写入便携备份"],
+					keptTitle: "会成为学习记忆",
+					kept: ["语言、水平、学习目标与练习偏好", "错误、正确运用、表达缺口与听力遗漏", "掌握信号、复习状态与沟通技能表现"],
+					privateTitle: "不会变成长期记忆",
+					private: ["姓名、年龄、职业、学校、地点或身份", "家人、关系、兴趣、作息、日常活动或购买", "健康、信仰、财务、旅行、计划或生活事件"],
 				},
 				release: {
 					kicker: "获取 Converloop",
@@ -598,6 +607,7 @@ export const ui = {
 				faq: {
 					heading: "开始前你可能想知道",
 					items: [
+						{ title: "Converloop 会记住什么？", body: "只记语言学习状态：学习语言与水平、学习目标、练习偏好、掌握信号、反复错误、表达缺口和复习进度。个人事实和关系历史不会作为跨会话记忆保留。" },
 						{ title: "Converloop 会自动同步吗？", body: "目前不会。你可以通过便携备份在受支持的版本间迁移共享学习数据，导入前会先显示预览。" },
 						{ title: "所有内容都完全离线吗？", body: "数据库默认保存在本地。调用远程 AI 或语音服务时，会发送完成该次请求所需的内容。" },
 						{ title: "需要注册 Converloop 账号吗？", body: "不需要。你可以自行选择和配置想使用的模型或语音服务。" },
@@ -610,7 +620,7 @@ export const ui = {
 			},
 			heroTitleHtml: '对话。纠错。<span class="cl-accent">记住。</span>循环。',
 			heroSubtitle:
-				"一个 AI 语言导师：和你对话、就在你刚写的句子上纠错、记住每一个表达缺口——于是下一次对话，它已经知道你弱在哪里。",
+				"一个 AI 语言导师：和你对话、就在原句上纠错，只记住语言缺口而不记个人生活——于是下一次练习能接着真正的弱项继续。",
 			viewOnGithub: "在 GitHub 查看",
 			heroNote: "免费开源 · AGPL-3.0 · 自选服务提供商 · 数据默认保存在本地",
 			demo: {
