@@ -18,4 +18,6 @@ export const CONVERLOOP = {
 	name: "Converloop",
 	tagline: "A local-first AI language tutor",
 	repoUrl: "https://github.com/jovidalao/Converloop",
+	releaseUrl: "https://github.com/jovidalao/Converloop/releases/latest",
+	version: "0.1.1",
 } as const;

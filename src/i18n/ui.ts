@@ -23,10 +23,10 @@ export const ui = {
 			peeldayDescription:
 				"An offline-first visual diary with ticket-stub aesthetics. Collect photos, stickers, and notes on paper that's just yours — one page per day.",
 			peeldayCta: "Learn more",
-			converloopBadge: "Desktop App · iOS soon",
+			converloopBadge: "macOS available · More platforms in development",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"A local-first AI language tutor for macOS and Windows, with iOS coming soon. It talks with you, corrects the sentence you just wrote, and remembers every gap — open source.",
+				"A local-first AI language tutor that turns conversation into correction, learning memory, and targeted practice. macOS available now; iPhone, iPad, and Windows in development.",
 			converloopCta: "Learn more",
 		},
 		peelday: {
@@ -74,14 +74,127 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop — a local-first AI language tutor for macOS and Windows, with iOS coming soon. It talks with you, corrects the sentence you just wrote, and remembers every gap. Bring your own model keys; nothing leaves your device.",
-			tagline: "Local-first AI language tutor · macOS, Windows & iOS soon",
+				"Converloop is a local-first AI language tutor that turns every conversation into correction, learning memory, and targeted practice. Download for macOS; iPhone, iPad, and Windows are in development.",
+			tagline: "Local-first AI language tutor · macOS available now",
+			launch: {
+				status: "macOS available now · iPhone, iPad & Windows in development",
+				heroEyebrow: "Your conversations become your curriculum",
+				heroTitle: "Speak. Notice. Remember.",
+				heroAccent: "Reuse.",
+				heroBody:
+					"Converloop keeps practice moving like a real conversation, corrects you in context, and turns every gap into learning memory that can return when it matters.",
+				download: "Download for macOS",
+				downloadNote: "Apple Silicon + Intel · v0.1.1",
+				source: "View source",
+				trust: "Free and open source · bring your own provider · portable learning backup",
+				preview: {
+					desktopLabel: "Desktop · deep practice",
+					sidebar: ["Release roleplay", "Coffee shop", "Weekly recap"],
+					conversation: "Release roleplay",
+					aiLine: "How did the demo go?",
+					userPre: "It went great — I ",
+					userWrong: "have fix",
+					userRight: "fixed",
+					userPost: " the login bug.",
+					correction: "Finished action → use the simple past.",
+					phoneLabel: "iPhone · quick turns",
+					phonePrompt: "Ready for one more turn?",
+					phoneReply: "Tell me about the decision in one sentence.",
+					chips: ["Give me a topic", "Make it simpler", "Roleplay", "Recap"],
+				},
+				loop: {
+					kicker: "One learning loop",
+					heading: "The useful part of a conversation doesn't disappear",
+					body: "Every platform follows the same four-step contract, so practice feels familiar even when the interface adapts to the device.",
+					steps: [
+						{ number: "01", title: "Express", body: "Write or speak naturally. Ask for a topic, simpler wording, a roleplay, or a recap whenever you need momentum." },
+						{ number: "02", title: "Notice", body: "See the exact span that needs work, a natural rewrite, and an explanation in the conversation itself." },
+						{ number: "03", title: "Remember", body: "Errors, successful uses, expression gaps, and listening misses become structured learning signals." },
+						{ number: "04", title: "Reuse", body: "Due material returns through conversation, review, dictation, listening, and focused practice." },
+					],
+				},
+				platforms: {
+					kicker: "One product, native rhythms",
+					heading: "Familiar logic. The right experience for each screen.",
+					body: "You should never relearn the product when you change devices. The learning model stays consistent; navigation, input, and density adapt.",
+					items: [
+						{
+							tag: "macOS · available",
+							title: "A coach beside your work",
+							body: "A roomy conversation workspace for longer sessions, comparison, configuration, and migration.",
+							points: ["Keyboard-first navigation and slash commands", "Persistent context for conversations and learning detail", "Full local backup plus cross-platform portable export"],
+						},
+						{
+							tag: "iPhone · in development",
+							title: "Practice in the gaps of your day",
+							body: "Fast entry, thumb-friendly actions, and voice make a useful turn possible before the moment passes.",
+							points: ["Quick intent chips instead of command memorisation", "Swipe, long-press, dictation, and spoken playback", "Background audio for listening and shadowing"],
+						},
+						{
+							tag: "iPad · in development",
+							title: "A focused learning desk",
+							body: "A persistent split view keeps conversations visible while the larger canvas supports focused practice.",
+							points: ["Sidebar and conversation stay visible together", "Hardware-keyboard shortcuts match the desktop model", "Touch remains first-class when the keyboard is away"],
+						},
+					],
+				},
+				features: {
+					kicker: "Built around real practice",
+					heading: "More than a chat box",
+					items: [
+						{ title: "Inline correction", body: "The wrong span, the fix, and a natural rewrite stay attached to the sentence you actually wrote." },
+						{ title: "Learning memory", body: "The app remembers discrete strengths and gaps instead of treating every conversation as a blank slate." },
+						{ title: "Listening and dictation", body: "Turn your own conversations into listening material, then practise the words you genuinely missed." },
+						{ title: "Roles and branches", body: "Change the scene, swap roles, adjust difficulty, or branch without losing the original conversation." },
+						{ title: "Provider freedom", body: "Use supported remote providers or compatible local endpoints and keep your choice separate from your learning data." },
+						{ title: "Readable, portable data", body: "Export a documented JSON backup that both desktop and mobile can understand, with native detail preserved." },
+					],
+				},
+				continuity: {
+					kicker: "Carry learning, not friction",
+					heading: "One learning history, adapted to every device",
+					body: "Converloop's portable backup keeps the shared learning model stable across platforms. Transfer is explicit and user-controlled today — not a hidden cloud sync.",
+					file: "converloop-backup.json",
+					points: [
+						{ title: "Shared core", body: "Conversations, messages, corrections, learning items, review state, and portable preferences move together." },
+						{ title: "Safe adaptation", body: "Desktop-only tools and mobile-only settings stay native instead of being flattened or silently deleted." },
+						{ title: "Preview before import", body: "See the source platform and import scope, then confirm replace or merge behaviour before data changes." },
+					],
+				},
+				privacy: {
+					badge: "Local-first, accurately described",
+					heading: "Your learning history stays yours",
+					body: "Conversations and learning data are stored on your device by default. When you use a remote model or speech provider, only the content needed for that request is sent to the provider you chose.",
+					points: ["No Converloop account required", "Provider credentials stay in secure storage", "Credentials are excluded from portable backups"],
+				},
+				release: {
+					kicker: "Get Converloop",
+					heading: "Start on macOS today",
+					body: "The current public release includes download assets for Apple Silicon and Intel Macs. The code is open for inspection, contribution, and self-hosted experimentation.",
+					macTitle: "macOS v0.1.1",
+					macBody: "Choose the Apple Silicon or Intel disk image from the latest release.",
+					roadTitle: "iPhone, iPad & Windows",
+					roadBody: "Native experiences are in active development. Public installers are not available yet.",
+				},
+				faq: {
+					heading: "Good to know",
+					items: [
+						{ title: "Does Converloop sync automatically?", body: "Not yet. Use the portable backup to move shared learning data between supported builds with an explicit import preview." },
+						{ title: "Does everything stay offline?", body: "Your database is local by default. Requests to a remote AI or speech provider send the content required to complete that request." },
+						{ title: "Do I need a Converloop account?", body: "No. You choose and configure the model or speech providers you want to use." },
+					],
+				},
+				final: {
+					heading: "Make every conversation teach the next one.",
+					body: "Download the macOS app or follow development in the open.",
+				},
+			},
 			heroTitleHtml: 'Converse. Correct. <span class="cl-accent">Remember.</span> Repeat.',
 			heroSubtitle:
 				"An AI tutor that talks with you, corrects the sentence you just wrote, and remembers every gap — so your next conversation already knows where you're weak.",
 			viewOnGithub: "View on GitHub",
 			heroNote:
-				"Free & open source · AGPL-3.0 · bring your own keys · nothing leaves your device",
+				"Free & open source · AGPL-3.0 · bring your own provider · local data by default",
 			demo: {
 				convo: "conversation · english b2",
 				aiOpen: "How did the demo go?",
@@ -289,11 +402,11 @@ export const ui = {
 				},
 				{
 					title: "Bring your own model",
-					body: "OpenAI-compatible, Anthropic, Gemini, or Claude / ChatGPT subscription login. Runs on macOS and Windows.",
+					body: "OpenAI-compatible, Anthropic, Gemini, or supported subscription login. macOS is available now; mobile and Windows builds are in development.",
 				},
 				{
 					title: "Local-first & private",
-					body: "No account, no cloud. Your data stays encrypted on device, with one-click readable backups you can move.",
+					body: "No Converloop account. Learning data stays on your device by default; remote providers receive only the content needed for each request. Backups are readable and portable.",
 				},
 			],
 		},
@@ -324,10 +437,10 @@ export const ui = {
 			peeldayDescription:
 				"贴贴手账是一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",
 			peeldayCta: "了解更多",
-			converloopBadge: "桌面应用 · iOS 即将上线",
+			converloopBadge: "macOS 现已提供 · 更多平台开发中",
 			converloopTitle: "Converloop",
 			converloopDescription:
-				"一款本地优先的 AI 语言导师，支持 macOS 与 Windows，iOS 版即将上线。和你对话、就在你刚写的句子上纠错、记住每个表达缺口——开源。",
+				"一款本地优先的 AI 语言导师，把对话变成纠错、学习记忆和针对性练习。macOS 现已提供，iPhone、iPad 与 Windows 正在开发。",
 			converloopCta: "了解更多",
 		},
 		peelday: {
@@ -375,13 +488,126 @@ export const ui = {
 		},
 		converloop: {
 			metaDescription:
-				"Converloop —— 一款本地优先的 AI 语言导师，支持 macOS 与 Windows，iOS 版即将上线。它和你对话、就在你刚写的句子上纠错、记住每一个表达缺口。自带模型密钥，数据不出本机。",
-			tagline: "本地优先的 AI 语言导师 · macOS、Windows 与 iOS 即将上线",
+				"Converloop 是一款本地优先的 AI 语言导师，把每次对话变成就地纠错、学习记忆和针对性练习。macOS 版现已可下载，iPhone、iPad 与 Windows 版正在开发。",
+			tagline: "本地优先的 AI 语言导师 · macOS 现已提供",
+			launch: {
+				status: "macOS 现已提供 · iPhone、iPad 与 Windows 正在开发",
+				heroEyebrow: "让你的每次对话，都成为下一次学习的素材",
+				heroTitle: "表达。发现。记\u2060住。",
+				heroAccent: "再用出来。",
+				heroBody:
+					"Converloop 让练习像真实对话一样自然推进，在语境里纠正你，并把每个表达缺口变成会在恰当时机再次出现的学习记忆。",
+				download: "下载 macOS 版",
+				downloadNote: "Apple 芯片 + Intel · v0.1.1",
+				source: "查看源代码",
+				trust: "免费开源 · 自选服务提供商 · 学习数据可迁移",
+				preview: {
+					desktopLabel: "桌面端 · 深度练习",
+					sidebar: ["发布演练", "咖啡店", "每周回顾"],
+					conversation: "发布演练",
+					aiLine: "How did the demo go?",
+					userPre: "It went great — I ",
+					userWrong: "have fix",
+					userRight: "fixed",
+					userPost: " the login bug.",
+					correction: "已经结束的动作 → 使用一般过去时。",
+					phoneLabel: "iPhone · 随手练一轮",
+					phonePrompt: "准备好再说一轮了吗？",
+					phoneReply: "用一句话告诉我，你最后做了什么决定。",
+					chips: ["给我一个话题", "说简单一点", "角色扮演", "总结一下"],
+				},
+				loop: {
+					kicker: "一套学习闭环",
+					heading: "一段对话里真正有用的部分，不会聊完就消失",
+					body: "每个平台都遵循同一套四步逻辑；界面会适应设备，但学习方法不需要重新摸索。",
+					steps: [
+						{ number: "01", title: "表达", body: "自然地写或说。需要推动时，随时要一个话题、简化表达、进入角色扮演或回顾重点。" },
+						{ number: "02", title: "发现", body: "直接看到需要改进的片段、地道改写，以及紧贴原句的解释。" },
+						{ number: "03", title: "记住", body: "错误、正确运用、表达缺口和听力遗漏，会成为结构化的学习信号。" },
+						{ number: "04", title: "再用", body: "到期内容会回到对话、复习、听写、听力和专项练习里。" },
+					],
+				},
+				platforms: {
+					kicker: "同一个产品，各自原生的节奏",
+					heading: "逻辑始终熟悉，体验真正适合当前屏幕",
+					body: "换设备不应该等于重新学习产品。学习模型保持一致，导航、输入方式和信息密度则顺应平台。",
+					items: [
+						{
+							tag: "macOS · 现已提供",
+							title: "工作旁边的一位语言教练",
+							body: "宽阔的对话工作区适合长时间练习、对照查看、配置和数据迁移。",
+							points: ["键盘优先的导航与斜杠命令", "持续可见的对话上下文和学习详情", "完整本地备份，以及跨平台便携导出"],
+						},
+						{
+							tag: "iPhone · 正在开发",
+							title: "把一天里的碎片时间变成练习",
+							body: "快速进入、拇指友好的操作和语音输入，让转瞬即逝的空档也足够完成有价值的一轮。",
+							points: ["快捷意图标签，不必背命令", "滑动、长按、听写和语音播放", "后台音频支持听力与跟读"],
+						},
+						{
+							tag: "iPad · 正在开发",
+							title: "一张专注学习的桌面",
+							body: "常驻分栏让对话列表一直可见，更大的画布则承载更专注的练习。",
+							points: ["侧边栏与当前对话同时可见", "外接键盘快捷键延续桌面端心智模型", "拿开键盘后，触控依然是完整的一等体验"],
+						},
+					],
+				},
+				features: {
+					kicker: "围绕真实练习设计",
+					heading: "远不止一个聊天框",
+					items: [
+						{ title: "就地纠错", body: "错误片段、正确写法和地道改写，都紧贴在你真正写出的那句话上。" },
+						{ title: "学习记忆", body: "应用会记住离散的强项与缺口，而不是把每段新对话都当成一张白纸。" },
+						{ title: "听力与听写", body: "把你自己的对话变成听力材料，再针对真正听错的词继续练习。" },
+						{ title: "角色与分支", body: "换场景、交换角色、调节难度，或从任意节点分支，又不丢掉原对话。" },
+						{ title: "模型选择自由", body: "使用受支持的远程服务或兼容的本地端点，让模型选择与学习数据彼此独立。" },
+						{ title: "可读、可迁移的数据", body: "导出桌面端与移动端都能理解的 JSON 备份，同时保留各平台自己的原生细节。" },
+					],
+				},
+				continuity: {
+					kicker: "带走学习，不带走阻力",
+					heading: "一份学习历史，在每台设备上恰当呈现",
+					body: "Converloop 的便携备份让跨平台共享的学习模型保持稳定。当前迁移由你明确发起和控制，并不是藏在背后的云同步。",
+					file: "converloop-backup.json",
+					points: [
+						{ title: "共享核心", body: "对话、消息、纠错、学习项、复习状态和可迁移偏好会一起移动。" },
+						{ title: "安全适配", body: "桌面端专属工具和移动端专属设置会留在原平台，不会被压平或静默删除。" },
+						{ title: "导入前预览", body: "先看来源平台和导入范围，再确认替换或合并行为，然后才真正改变数据。" },
+					],
+				},
+				privacy: {
+					badge: "准确描述的本地优先",
+					heading: "学习历史始终属于你",
+					body: "对话和学习数据默认保存在你的设备上。使用远程模型或语音服务时，只会把完成该次请求所需的内容发送给你选择的服务提供商。",
+					points: ["无需 Converloop 账号", "服务凭据保存在系统安全存储中", "凭据不会写入便携备份"],
+				},
+				release: {
+					kicker: "获取 Converloop",
+					heading: "现在就从 macOS 开始",
+					body: "当前公开版本为 Apple 芯片与 Intel Mac 提供下载文件。源代码完全开放，欢迎检查、贡献或自行构建实验。",
+					macTitle: "macOS v0.1.1",
+					macBody: "在最新发布页选择 Apple 芯片版或 Intel 版磁盘映像。",
+					roadTitle: "iPhone、iPad 与 Windows",
+					roadBody: "原生体验正在积极开发，目前尚未提供公开安装包。",
+				},
+				faq: {
+					heading: "开始前你可能想知道",
+					items: [
+						{ title: "Converloop 会自动同步吗？", body: "目前不会。你可以通过便携备份在受支持的版本间迁移共享学习数据，导入前会先显示预览。" },
+						{ title: "所有内容都完全离线吗？", body: "数据库默认保存在本地。调用远程 AI 或语音服务时，会发送完成该次请求所需的内容。" },
+						{ title: "需要注册 Converloop 账号吗？", body: "不需要。你可以自行选择和配置想使用的模型或语音服务。" },
+					],
+				},
+				final: {
+					heading: "让每次对话，都为下一次学习服务。",
+					body: "下载 macOS 版，或在开源仓库中关注开发进展。",
+				},
+			},
 			heroTitleHtml: '对话。纠错。<span class="cl-accent">记住。</span>循环。',
 			heroSubtitle:
 				"一个 AI 语言导师：和你对话、就在你刚写的句子上纠错、记住每一个表达缺口——于是下一次对话，它已经知道你弱在哪里。",
 			viewOnGithub: "在 GitHub 查看",
-			heroNote: "免费开源 · AGPL-3.0 · 自带模型密钥 · 数据不出本机",
+			heroNote: "免费开源 · AGPL-3.0 · 自选服务提供商 · 数据默认保存在本地",
 			demo: {
 				convo: "对话 · 英语 b2",
 				aiOpen: "How did the demo go?",
@@ -589,11 +815,11 @@ export const ui = {
 				},
 				{
 					title: "接入任意模型",
-					body: "OpenAI 兼容、Anthropic、Gemini，或 Claude / ChatGPT 订阅登录。支持 macOS 与 Windows。",
+					body: "OpenAI 兼容、Anthropic、Gemini，或受支持的订阅登录。macOS 现已提供，移动端与 Windows 版正在开发。",
 				},
 				{
 					title: "本地优先，私密",
-					body: "无账号、无云端。数据加密保存在设备上，一键导出可读、可迁移的备份。",
+					body: "无需 Converloop 账号。学习数据默认留在设备上；远程服务商只会收到完成当次请求所需的内容。备份可读、可迁移。",
 				},
 			],
 		},
