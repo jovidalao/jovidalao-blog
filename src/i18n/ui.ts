@@ -140,7 +140,7 @@ export const ui = {
 				},
 				features: {
 					kicker: "Built around real practice",
-					heading: "More than a chat box",
+					heading: "Everything behind the conversation",
 					items: [
 						{ title: "Inline correction", body: "The wrong span, the fix, and a natural rewrite stay attached to the sentence you actually wrote." },
 						{ title: "Learning memory", body: "The app remembers discrete strengths and gaps instead of treating every conversation as a blank slate." },
@@ -340,20 +340,25 @@ export const ui = {
 			},
 			showcase: {
 				kicker: "In the conversation",
-				heading: "More than a chat box",
+				heading: "The conversation is the interface",
 				intro:
-					"The helpers live right where you already are — the line you type in, the replies you read, and any text on the screen.",
+					"Correction, natural phrasing, help composing your turn, bilingual reading, and explanation all live where the learning moment happens — inside the conversation.",
+				correction: {
+					title: "Correction stays attached to what you wrote",
+					body: "The exact error is marked in place. The fix sits beside it, a more natural version appears underneath, and the grammar explanation stays one layer away — no separate report to decode.",
+					naturalLabel: "Natural version",
+				},
 				slash: {
 					title: "Stuck for words? Help is right where you type",
-					body: "The hard part of a new language is often your turn — when you don't know what to say. Converloop puts the help right where you type: when you need it, it hands you an editable draft, shows the natural way to say what you mean, offers a few words to work with, or asks your partner to slow down. You're never staring at an empty box.",
+					body: "When your turn stalls, help begins in the composer. Type “/” on desktop, or tap the same intent as a chip on iPhone and iPad. Start a topic, simplify the reply, enter a roleplay, recap the thread, or ask how to say exactly what you mean.",
 					inputPlaceholder: 'Type a message, or "/" for help…',
-					foot: "Customize commands…",
+					foot: "The same intents become touch chips on iPhone and iPad",
 					rows: [
-						{ name: "reply", desc: "Draft a reply — a ready-to-edit suggestion in the box" },
-						{ name: "how", args: "<what you want to say>", desc: "The natural way to say it" },
-						{ name: "keywords", desc: "A few words you could use to reply" },
+						{ name: "topic", desc: "Suggest a topic and start the next turn" },
 						{ name: "simpler", desc: "Ask your partner to say it more simply" },
-						{ name: "btw", args: "<ask anything>", desc: "Side question — off the record" },
+						{ name: "roleplay", desc: "Move into a concrete scene and role" },
+						{ name: "recap", desc: "Summarise what mattered in this thread" },
+						{ name: "how", args: "<what you mean>", desc: "Show the natural way to say it" },
 					],
 				},
 				selection: {
@@ -554,7 +559,7 @@ export const ui = {
 				},
 				features: {
 					kicker: "围绕真实练习设计",
-					heading: "远不止一个聊天框",
+					heading: "支撑每段对话的完整学习系统",
 					items: [
 						{ title: "就地纠错", body: "错误片段、正确写法和地道改写，都紧贴在你真正写出的那句话上。" },
 						{ title: "学习记忆", body: "应用会记住离散的强项与缺口，而不是把每段新对话都当成一张白纸。" },
@@ -753,20 +758,25 @@ export const ui = {
 			},
 			showcase: {
 				kicker: "对话之中",
-				heading: "不只是一个聊天框",
+				heading: "对话本身，就是学习界面",
 				intro:
-					"这些小助手就藏在你本来就在的地方——你打字的那一行、你读的每一句回复，和屏幕上的任意文本。",
+					"就地纠错、地道表达、接话提示、双语阅读与详细解释，都留在学习真正发生的地方——对话之中。",
+				correction: {
+					title: "纠错始终贴着你真正写出的那句话",
+					body: "错误片段被原地标出，正确写法就在旁边，更地道的版本紧随其后，语法解释则只隔一层——不用离开对话去读另一份报告。",
+					naturalLabel: "地道版本",
+				},
 				slash: {
 					title: "不知道怎么接话？提示就在你打字的地方",
-					body: "学一门语言，最卡的往往是轮到你、却不知道该说什么。Converloop 把帮助放在你打字的地方——需要时，它给你一句可以直接改的草稿、告诉你想说的话最地道怎么说、递几个能用上的词，或者让对方说得更简单。对着空白输入框发愣的时刻，被接住了。",
+					body: "轮到你却卡住时，帮助直接从输入框开始。桌面端输入“/”，iPhone 与 iPad 则点击同样的快捷意图：开始一个话题、让回复更简单、进入角色扮演、回顾对话，或询问一句话最地道的说法。",
 					inputPlaceholder: "输入消息，或按“/”看提示…",
-					foot: "自定义命令…",
+					foot: "在 iPhone 与 iPad 上，同一组意图会变成触控快捷标签",
 					rows: [
-						{ name: "reply", desc: "起草回复——把一句可改的建议放进输入框" },
-						{ name: "how", args: "<你想说的话>", desc: "最地道的说法" },
-						{ name: "keywords", desc: "给你几个能用来回复的词" },
+						{ name: "topic", desc: "建议一个话题，开始下一轮" },
 						{ name: "simpler", desc: "让对方说得更简单些" },
-						{ name: "btw", args: "<随便问点什么>", desc: "小问题——不计入对话" },
+						{ name: "roleplay", desc: "进入一个具体场景与角色" },
+						{ name: "recap", desc: "总结这段对话里真正重要的内容" },
+						{ name: "how", args: "<你想表达的意思>", desc: "给出最地道的说法" },
 					],
 				},
 				selection: {

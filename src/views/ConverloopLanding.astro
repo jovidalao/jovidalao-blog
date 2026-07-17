@@ -6,6 +6,9 @@ import { getUi } from '../i18n';
 const t = getUi(Astro.currentLocale);
 const c = t.converloop;
 const l = c.launch;
+const d = c.demo;
+const s = c.showcase;
+const reply = s.reply;
 ---
 
 <ConverloopLayout title={`${CONVERLOOP.name} — ${c.tagline}`} description={c.metaDescription}>
@@ -91,6 +94,105 @@ const l = c.launch;
 						<p>{step.body}</p>
 					</article>
 				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="cl2-section cl2-interactions-section">
+		<div class="cl2-shell">
+			<div class="cl2-section-head cl2-section-head--center">
+				<p class="cl2-kicker">{s.kicker}</p>
+				<h2>{s.heading}</h2>
+				<p>{s.intro}</p>
+			</div>
+
+			<article class="cl2-correction-spotlight">
+				<div class="cl2-interaction-copy">
+					<span class="cl2-demo-number">01 · correction</span>
+					<h3>{s.correction.title}</h3>
+					<p>{s.correction.body}</p>
+				</div>
+				<div class="cl2-correction-demo" role="group" aria-label={s.correction.title}>
+					<div class="cl2-demo-title"><span>{d.convo}</span><i></i></div>
+					<div class="cl2-demo-conversation">
+						<p class="cl2-demo-ai">{d.aiOpen}</p>
+						<div class="cl2-demo-user">
+							<p>{d.userPre}<del>{d.userDel}</del> <ins>{d.userIns}</ins>{d.userPost}</p>
+							<div class="cl2-natural-version">
+								<span aria-hidden="true">✦</span>
+								<div><small>{s.correction.naturalLabel}</small><strong>{d.natural}</strong></div>
+							</div>
+						</div>
+						<div class="cl2-grammar-card">
+							<div><span>{d.issueCat}</span><small>{d.issueSev}</small></div>
+							<p><del>{d.userDel}</del><b>→</b><ins>{d.userIns}</ins></p>
+							<small>{d.issueExp}</small>
+						</div>
+						<p class="cl2-demo-ai">{d.reply}</p>
+					</div>
+				</div>
+			</article>
+
+			<div class="cl2-interaction-grid">
+				<article class="cl2-interaction-card cl2-interaction-card--wide">
+					<div class="cl2-interaction-copy">
+						<span class="cl2-demo-number">02 · compose</span>
+						<h3>{s.slash.title}</h3>
+						<p>{s.slash.body}</p>
+					</div>
+					<div class="cl2-slash-demo" role="group" aria-label={s.slash.title}>
+						<div class="cl2-slash-menu">
+							{s.slash.rows.map((row, index) => (
+								<div class:list={['cl2-slash-row', { selected: index === 0 }]}>
+									<code>/{row.name}</code>
+									{'args' in row && row.args && <span>{row.args}</span>}
+									<small>{row.desc}</small>
+								</div>
+							))}
+							<p class="cl2-slash-foot"><span aria-hidden="true">⌁</span>{s.slash.foot}</p>
+						</div>
+						<div class="cl2-showcase-input"><b>/</b><i></i><span>{s.slash.inputPlaceholder}</span><strong>↑</strong></div>
+					</div>
+				</article>
+
+				<article class="cl2-interaction-card">
+					<div class="cl2-interaction-copy">
+						<span class="cl2-demo-number">03 · understand</span>
+						<h3>{reply.title}</h3>
+						<p>{reply.body}</p>
+					</div>
+					<div class="cl2-reply-demo" role="group" aria-label={reply.title}>
+						<div class="cl2-bilingual-bubble">
+							{reply.bubble.map((line) => <p><span>{line.target}</span><small>{line.native}</small></p>)}
+						</div>
+						<div class="cl2-reply-actions">
+							<span>◖)) {reply.actions.speak}</span>
+							<span class="active">◎ {reply.actions.explain}</span>
+							<span class="active">文 {reply.actions.bilingual}</span>
+						</div>
+						<div class="cl2-explain-card"><b>{reply.explainLabel}</b><p>{reply.explainBody}</p></div>
+					</div>
+				</article>
+
+				<article class="cl2-interaction-card">
+					<div class="cl2-interaction-copy">
+						<span class="cl2-demo-number">04 · explore</span>
+						<h3>{s.selection.title}</h3>
+						<p>{s.selection.body}</p>
+					</div>
+					<div class="cl2-selection-demo" role="group" aria-label={s.selection.title}>
+						<p>{s.selection.sourcePre}<mark>{s.selection.sourceHl}</mark>{s.selection.sourcePost}</p>
+						<div class="cl2-analysis-island">
+							<div>
+								<span class="active">⌁ {s.selection.actions.analyze}</span>
+								<span>◖)) {s.selection.actions.speak}</span>
+								<span>＋ {s.selection.actions.add}</span>
+							</div>
+							<b>{s.selection.sourceHl}</b>
+							<p>{s.selection.analysis}</p>
+						</div>
+					</div>
+				</article>
 			</div>
 		</div>
 	</section>
