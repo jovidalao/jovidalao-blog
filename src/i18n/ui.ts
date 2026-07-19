@@ -88,19 +88,10 @@ export const ui = {
 				source: "View source",
 				trust: "Free and open source · only language learning is remembered · portable learning backup",
 				preview: {
-					desktopLabel: "Desktop · deep practice",
-					sidebar: ["Release roleplay", "Coffee shop", "Weekly recap"],
-					conversation: "Release roleplay",
-					aiLine: "How did the demo go?",
-					userPre: "It went great — I ",
-					userWrong: "have fix",
-					userRight: "fixed",
-					userPost: " the login bug.",
-					correction: "Finished action → use the simple past.",
-					phoneLabel: "iPhone · quick turns",
-					phonePrompt: "Ready for one more turn?",
-					phoneReply: "Tell me about the decision in one sentence.",
-					chips: ["Give me a topic", "Make it simpler", "Roleplay", "Recap"],
+					realScreenshotAlt: "Real Converloop conversations running on macOS and iPhone",
+					desktopScreenshotAlt: "Converloop macOS conversation showing inline corrections, a natural rewrite, input guidance, and the learning coach",
+					mobileScreenshotAlt: "Converloop iPhone conversation showing praise, expression guidance, inline corrections, and a natural rewrite",
+					realScreenshotLabel: "Real macOS + iPhone conversations · current builds",
 				},
 				loop: {
 					kicker: "One learning loop",
@@ -111,9 +102,9 @@ export const ui = {
 						{ number: "02", title: "Notice", body: "See the exact span that needs work, a natural rewrite, and an explanation in the conversation itself." },
 						{ number: "03", title: "Remember", body: "Errors, successful uses, expression gaps, and listening misses become structured learning signals." },
 						{ number: "04", title: "Reuse", body: "Due material returns through conversation, review, dictation, listening, and focused practice." },
-					],
-				},
-				platforms: {
+						],
+					},
+					platforms: {
 					kicker: "One product, native rhythms",
 					heading: "Familiar logic. The right experience for each screen.",
 					body: "You should never relearn the product when you change devices. The learning model stays consistent; navigation, input, and density adapt.",
@@ -128,7 +119,7 @@ export const ui = {
 							tag: "iPhone · in development",
 							title: "Practice in the gaps of your day",
 							body: "Fast entry, thumb-friendly actions, and voice make a useful turn possible before the moment passes.",
-							points: ["Quick intent chips instead of command memorisation", "Swipe, long-press, dictation, and spoken playback", "Background audio for listening and shadowing"],
+								points: ["New conversation opens directly into speaking or a recurring grammar lesson", "Swipe, long-press, dictation, and spoken playback", "Background audio for listening and shadowing"],
 						},
 						{
 							tag: "iPad · in development",
@@ -260,7 +251,7 @@ export const ui = {
 				points: [
 					"Replay at normal speed or slowed to 0.7× — as many times as you need.",
 					"Your replay count quietly tunes how hard the next sentence is.",
-					"Words you mishear are saved to a separate listening memory and woven back into later sentences.",
+						"Words you mishear become listening evidence in the same learning record and return in later sentences.",
 				],
 				mock: {
 					prompt: "Listen and type what you hear",
@@ -271,7 +262,7 @@ export const ui = {
 					pre: "Can you ",
 					miss: "walk",
 					post: " me through the rollback plan?",
-					note: "“walk” → saved to a separate listening memory, woven back into a later sentence.",
+						note: "“walk” → added as listening evidence, then woven into a later sentence.",
 				},
 			},
 			derive: {
@@ -355,9 +346,9 @@ export const ui = {
 				},
 				slash: {
 					title: "Stuck for words? Help is right where you type",
-					body: "When your turn stalls, help begins in the composer. Type “/” on desktop, or tap the same intent as a chip on iPhone and iPad. Start a topic, simplify the reply, enter a roleplay, recap the thread, or ask how to say exactly what you mean.",
+						body: "When your turn stalls, help begins in the composer. Type “/” on desktop for precise keyboard commands; on iPhone and iPad, simply ask for a topic, simpler wording, a roleplay, a recap, or the natural way to say what you mean.",
 					inputPlaceholder: 'Type a message, or "/" for help…',
-					foot: "The same intents become touch chips on iPhone and iPad",
+						foot: "Desktop adds keyboard commands; mobile keeps the same help available through natural conversation and voice",
 					rows: [
 						{ name: "topic", desc: "Suggest a topic and start the next turn" },
 						{ name: "simpler", desc: "Ask your partner to say it more simply" },
@@ -512,19 +503,10 @@ export const ui = {
 				source: "查看源代码",
 				trust: "免费开源 · 只记语言学习 · 学习数据可迁移",
 				preview: {
-					desktopLabel: "桌面端 · 深度练习",
-					sidebar: ["发布演练", "咖啡店", "每周回顾"],
-					conversation: "发布演练",
-					aiLine: "How did the demo go?",
-					userPre: "It went great — I ",
-					userWrong: "have fix",
-					userRight: "fixed",
-					userPost: " the login bug.",
-					correction: "已经结束的动作 → 使用一般过去时。",
-					phoneLabel: "iPhone · 随手练一轮",
-					phonePrompt: "准备好再说一轮了吗？",
-					phoneReply: "用一句话告诉我，你最后做了什么决定。",
-					chips: ["给我一个话题", "说简单一点", "角色扮演", "总结一下"],
+					realScreenshotAlt: "Converloop 在 macOS 与 iPhone 上运行真实对话的界面",
+					desktopScreenshotAlt: "Converloop macOS 对话真实截图，展示行内纠错、地道改写、输入提示和学习教练",
+					mobileScreenshotAlt: "Converloop iPhone 对话真实截图，展示肯定反馈、表达引导、行内纠错和地道改写",
+					realScreenshotLabel: "真实 macOS + iPhone 对话 · 当前版本",
 				},
 				loop: {
 					kicker: "一套学习闭环",
@@ -535,9 +517,9 @@ export const ui = {
 						{ number: "02", title: "发现", body: "直接看到需要改进的片段、地道改写，以及紧贴原句的解释。" },
 						{ number: "03", title: "记住", body: "错误、正确运用、表达缺口和听力遗漏，会成为结构化的学习信号。" },
 						{ number: "04", title: "再用", body: "到期内容会回到对话、复习、听写、听力和专项练习里。" },
-					],
-				},
-				platforms: {
+						],
+					},
+					platforms: {
 					kicker: "同一个产品，各自原生的节奏",
 					heading: "逻辑始终熟悉，体验真正适合当前屏幕",
 					body: "换设备不应该等于重新学习产品。学习模型保持一致，导航、输入方式和信息密度则顺应平台。",
@@ -552,7 +534,7 @@ export const ui = {
 							tag: "iPhone · 正在开发",
 							title: "把一天里的碎片时间变成练习",
 							body: "快速进入、拇指友好的操作和语音输入，让转瞬即逝的空档也足够完成有价值的一轮。",
-							points: ["快捷意图标签，不必背命令", "滑动、长按、听写和语音播放", "后台音频支持听力与跟读"],
+								points: ["「新对话」直接开始表达或进入常错语法教学", "滑动、长按、听写和语音播放", "后台音频支持听力与跟读"],
 						},
 						{
 							tag: "iPad · 正在开发",
@@ -683,7 +665,7 @@ export const ui = {
 				points: [
 					"可正常重听，也能放慢到 0.7×——想听几遍听几遍。",
 					"你重听的次数会悄悄调节下一句的难度。",
-					"听错的词会存进一份单独的听力记忆，编回后面的句子里再考你。",
+						"听错的词会作为听力证据写进同一份学习记录，再编回后面的句子里考你。",
 				],
 				mock: {
 					prompt: "听一句，把听到的打出来",
@@ -694,7 +676,7 @@ export const ui = {
 					pre: "Can you ",
 					miss: "walk",
 					post: " me through the rollback plan?",
-					note: "“walk” → 存进单独的听力记忆，过会儿编回某句话里再考你。",
+						note: "“walk” → 记为听力证据，过会儿编回某句话里再考你。",
 				},
 			},
 			derive: {
@@ -778,9 +760,9 @@ export const ui = {
 				},
 				slash: {
 					title: "不知道怎么接话？提示就在你打字的地方",
-					body: "轮到你却卡住时，帮助直接从输入框开始。桌面端输入“/”，iPhone 与 iPad 则点击同样的快捷意图：开始一个话题、让回复更简单、进入角色扮演、回顾对话，或询问一句话最地道的说法。",
+						body: "轮到你却卡住时，帮助直接从输入框开始。桌面端输入“/”可精准调用键盘命令；在 iPhone 与 iPad 上，直接自然地说出需求：开始一个话题、说简单些、进入角色扮演、回顾对话，或询问最地道的说法。",
 					inputPlaceholder: "输入消息，或按“/”看提示…",
-					foot: "在 iPhone 与 iPad 上，同一组意图会变成触控快捷标签",
+						foot: "桌面端提供键盘命令；移动端通过自然对话与语音提供同样的帮助",
 					rows: [
 						{ name: "topic", desc: "建议一个话题，开始下一轮" },
 						{ name: "simpler", desc: "让对方说得更简单些" },

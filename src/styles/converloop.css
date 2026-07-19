@@ -281,8 +281,123 @@ main.converloop-main {
 /* Product preview */
 .cl2-product-stage {
 	position: relative;
-	min-height: 570px;
-	perspective: 1400px;
+	isolation: isolate;
+	min-height: 540px;
+	margin: 0;
+}
+
+.cl2-real-shot-backdrop {
+	position: absolute;
+	z-index: -1;
+	top: 7%;
+	left: 4%;
+	width: min(560px, 88%);
+	aspect-ratio: 1;
+	border: 1px solid rgba(255, 255, 255, 0.72);
+	border-radius: 34%;
+	background:
+		linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(228, 236, 255, 0.48)),
+		radial-gradient(circle at 72% 20%, rgba(255, 139, 40, 0.2), transparent 38%);
+	box-shadow: 0 38px 100px rgba(27, 48, 108, 0.14);
+	transform: rotate(9deg);
+}
+
+.cl2-real-device {
+	position: absolute;
+}
+
+.cl2-real-device img {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: #fff;
+}
+
+.cl2-real-device--desktop {
+	top: 64px;
+	left: 0;
+	width: min(610px, 94%);
+	border: 1px solid rgba(28, 35, 50, 0.2);
+	border-radius: 17px;
+	box-shadow:
+		0 34px 80px rgba(17, 32, 79, 0.24),
+		0 0 0 1px rgba(255, 255, 255, 0.68);
+	overflow: visible;
+	transform: rotate(-1deg);
+}
+
+.cl2-real-device--desktop img {
+	border-radius: inherit;
+}
+
+.cl2-real-device--mobile {
+	right: 0;
+	bottom: 44px;
+	width: min(184px, 31%);
+	padding: 6px;
+	border-radius: 38px;
+	background: #111318;
+	box-shadow:
+		0 30px 70px rgba(17, 32, 79, 0.3),
+		0 0 0 1px rgba(255, 255, 255, 0.7);
+	transform: rotate(2.2deg);
+}
+
+.cl2-real-device--mobile img {
+	border-radius: 32px;
+}
+
+.cl2-device-label {
+	position: absolute;
+	z-index: 2;
+	top: -30px;
+	left: 10px;
+	display: inline-flex;
+	align-items: center;
+	min-height: 22px;
+	padding: 0 9px;
+	border: 1px solid rgba(255, 255, 255, 0.76);
+	border-radius: 999px;
+	color: #536078;
+	background: rgba(255, 255, 255, 0.82);
+	box-shadow: 0 8px 20px rgba(32, 52, 103, 0.1);
+	font-size: 0.62rem;
+	font-weight: 750;
+	letter-spacing: 0.04em;
+	backdrop-filter: blur(12px);
+	transform: rotate(1deg);
+}
+
+.cl2-real-device--mobile .cl2-device-label {
+	top: 10px;
+	left: auto;
+	right: calc(100% + 10px);
+}
+
+.cl2-product-stage figcaption {
+	position: absolute;
+	left: 3%;
+	bottom: 8px;
+	display: flex;
+	align-items: center;
+	gap: 7px;
+	padding: 8px 11px;
+	border: 1px solid rgba(255, 255, 255, 0.76);
+	border-radius: 999px;
+	color: #536078;
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: 0 10px 28px rgba(32, 52, 103, 0.12);
+	font-size: 0.66rem;
+	font-weight: 700;
+	backdrop-filter: blur(12px);
+}
+
+.cl2-product-stage figcaption span {
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: #24b26b;
+	box-shadow: 0 0 0 3px rgba(36, 178, 107, 0.13);
 }
 
 .cl2-desktop {
@@ -494,21 +609,39 @@ main.converloop-main {
 .cl2-phone-prompt { margin: 20px 12px 10px; border-radius: 4px 12px 12px; color: #39455a !important; background: #ebf0f7; }
 .cl2-phone-reply { margin: 0 12px 20px auto; border-radius: 12px 4px 12px 12px; color: #17316e !important; background: #e3ecff; }
 
-.cl2-chip-row {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 5px;
-	padding: 0 10px;
+.cl2-phone-stats {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 6px;
+	padding: 0 12px;
 }
 
-.cl2-chip-row span {
-	padding: 5px 7px;
-	border: 1px solid #dbe4f4;
-	border-radius: 99px;
-	color: #40506b;
+.cl2-phone-stats span {
+	padding: 8px 4px;
+	border: 1px solid #e3e9f3;
+	border-radius: 9px;
+	color: #526078;
 	background: white;
 	font-size: 6.5px;
-	line-height: 1;
+	font-weight: 700;
+	text-align: center;
+}
+
+.cl2-phone-start {
+	position: absolute;
+	left: 12px;
+	right: 12px;
+	bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 12px;
+	border: 0;
+	border-radius: 11px;
+	color: white;
+	background: #3157f6;
+	font-size: 7.5px;
+	font-weight: 700;
 }
 
 .cl2-phone-compose {
@@ -1138,11 +1271,13 @@ main.converloop-main {
 .cl-card-desc { margin: 0 0 1rem; color: rgb(var(--gray-dark)); font-size: 0.98rem; line-height: 1.6; }
 .cl-card-cta { color: var(--cl-brand); font-size: 0.95rem; font-weight: 700; }
 
-@media (max-width: 1040px) {
+	@media (max-width: 1040px) {
 	.cl2-hero { padding-top: 64px; }
 	.cl2-hero-grid { grid-template-columns: 1fr; gap: 24px; }
 	.cl2-hero-copy { max-width: 760px; }
-	.cl2-product-stage { min-height: 590px; width: min(760px, 100%); margin-inline: auto; }
+	.cl2-product-stage { min-height: 610px; width: min(760px, 100%); margin-inline: auto; }
+	.cl2-real-device--desktop { width: min(680px, 94%); }
+	.cl2-real-device--mobile { width: min(190px, 27%); }
 	.cl2-desktop { width: min(680px, 92%); }
 	.cl2-phone { left: 0; }
 	.cl2-loop-grid { grid-template-columns: repeat(2, 1fr); row-gap: 44px; }
@@ -1166,9 +1301,23 @@ main.converloop-main {
 	.cl2-shell { width: min(100% - 32px, 680px); }
 	.cl2-section { padding: 80px 0; }
 	.cl2-hero { min-height: 0; padding: 48px 0 80px; }
+	.cl2-hero-grid { gap: 0; }
+	.cl2-hero-copy { display: contents; }
+	.cl2-brand { order: 1; }
+	.cl2-status { order: 2; }
+	.cl2-eyebrow { order: 3; }
+	.cl2-hero h1 { order: 4; }
+	.cl2-product-stage { order: 5; }
+	.cl2-hero-body { order: 6; }
+	.cl2-actions { order: 7; }
+	.cl2-trust { order: 8; }
 	.cl2-hero h1 { font-size: clamp(2.75rem, 13vw, 4.4rem); }
 	.cl2-hero-body { font-size: 1rem; }
-	.cl2-product-stage { min-height: 520px; }
+	.cl2-product-stage { min-height: 460px; margin-bottom: 38px; }
+	.cl2-real-device--desktop { top: 52px; width: 96%; }
+	.cl2-real-device--mobile { right: 0; bottom: 34px; width: min(176px, 32%); padding: 5px; border-radius: 34px; }
+	.cl2-real-device--mobile img { border-radius: 29px; }
+	.cl2-product-stage figcaption { left: 0; bottom: 5px; }
 	.cl2-desktop { top: 28px; width: 100%; transform: none; }
 	.cl2-desktop-body { grid-template-columns: 105px 1fr; height: 350px; }
 	.cl2-desktop aside { padding-inline: 7px; }
@@ -1177,8 +1326,8 @@ main.converloop-main {
 	.cl2-phone-screen { height: 335px; }
 	.cl2-phone-prompt,
 	.cl2-phone-reply { font-size: 6.4px; }
-	.cl2-chip-row span { font-size: 5.2px; }
-	.cl2-phone-compose { bottom: 14px; }
+	.cl2-phone-stats span { font-size: 5.2px; }
+	.cl2-phone-start { bottom: 16px; }
 	.cl2-section-head { margin-bottom: 38px; }
 	.cl2-loop-grid { grid-template-columns: 1fr; gap: 36px; }
 	.cl2-step-top i,
@@ -1209,7 +1358,13 @@ main.converloop-main {
 	.cl2-status span { margin-top: 3px; }
 	.cl2-actions { display: grid; }
 	.cl2-button { width: 100%; box-sizing: border-box; }
-	.cl2-product-stage { min-height: 465px; margin-top: 8px; }
+	.cl2-product-stage { min-height: 360px; margin-top: 0; margin-bottom: 32px; }
+	.cl2-real-device--desktop { top: 28px; width: 100%; border-radius: 12px; }
+	.cl2-real-device--mobile { bottom: 24px; width: 31%; padding: 4px; border-radius: 28px; }
+	.cl2-real-device--mobile img { border-radius: 24px; }
+	.cl2-real-device--mobile .cl2-device-label { top: 8px; right: calc(100% + 7px); }
+	.cl2-device-label { top: -27px; font-size: 0.56rem; }
+	.cl2-product-stage figcaption { left: 0; bottom: 4px; max-width: 70%; border-radius: 12px; font-size: 0.56rem; line-height: 1.35; }
 	.cl2-desktop-body { grid-template-columns: 82px 1fr; height: 310px; }
 	.cl2-desktop aside > span { padding: 7px 5px; font-size: 7.5px; }
 	.cl2-mini-brand { margin-inline: 0; }
@@ -1221,8 +1376,8 @@ main.converloop-main {
 	.cl2-phone { left: -4px; width: 140px; }
 	.cl2-phone-screen { height: 285px; }
 	.cl2-phone-head { padding-inline: 8px; }
-	.cl2-chip-row { padding-inline: 7px; }
-	.cl2-phone-compose { left: 7px; right: 7px; }
+	.cl2-phone-stats { padding-inline: 7px; }
+	.cl2-phone-start { left: 7px; right: 7px; }
 	.cl2-section h2,
 	.cl2-final h2 { font-size: 2rem; }
 	.cl2-demo-conversation { padding: 15px 11px; }

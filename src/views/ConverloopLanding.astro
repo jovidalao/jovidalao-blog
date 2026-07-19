@@ -40,42 +40,32 @@ const reply = s.reply;
 				<p class="cl2-trust">{l.trust}</p>
 			</div>
 
-			<div class="cl2-product-stage" aria-label="Converloop product preview">
-				<div class="cl2-desktop">
-					<div class="cl2-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>{l.preview.desktopLabel}</span></div>
-					<div class="cl2-desktop-body">
-						<aside>
-							<div class="cl2-mini-brand"><img src="/converloop-icon.png" width="26" height="26" alt="" /><b>C</b></div>
-							{l.preview.sidebar.map((item, index) => <span class:list={{ active: index === 0 }}>{item}</span>)}
-						</aside>
-						<div class="cl2-chat-pane">
-							<div class="cl2-chat-title"><b>{l.preview.conversation}</b><span>•••</span></div>
-							<div class="cl2-chat-scroll">
-								<p class="cl2-ai-bubble">{l.preview.aiLine}</p>
-								<div class="cl2-user-bubble">
-									<p>{l.preview.userPre}<del>{l.preview.userWrong}</del> <ins>{l.preview.userRight}</ins>{l.preview.userPost}</p>
-									<span><b>{l.preview.userWrong}</b> → <strong>{l.preview.userRight}</strong></span>
-									<small>{l.preview.correction}</small>
-								</div>
-								<div class="cl2-thinking"><i></i><i></i><i></i></div>
-							</div>
-							<div class="cl2-composer"><span>/</span><i></i><b>↑</b></div>
-						</div>
-					</div>
+			<figure class="cl2-product-stage" aria-label={l.preview.realScreenshotAlt}>
+				<div class="cl2-real-shot-backdrop" aria-hidden="true"></div>
+				<div class="cl2-real-device cl2-real-device--desktop">
+					<span class="cl2-device-label">macOS</span>
+					<img
+						src="/converloop-desktop-conversation.jpg?v=1"
+						width="1040"
+						height="720"
+						alt={l.preview.desktopScreenshotAlt}
+						loading="eager"
+						fetchpriority="high"
+					/>
 				</div>
-
-				<div class="cl2-phone">
-					<div class="cl2-phone-screen">
-						<div class="cl2-phone-status"><span>9:41</span><i></i></div>
-						<div class="cl2-phone-head"><b>‹</b><span>{l.preview.phoneLabel}</span><b>•••</b></div>
-						<p class="cl2-phone-prompt">{l.preview.phonePrompt}</p>
-						<p class="cl2-phone-reply">{l.preview.phoneReply}</p>
-						<div class="cl2-chip-row">{l.preview.chips.map((chip) => <span>{chip}</span>)}</div>
-						<div class="cl2-phone-compose"><i></i><span>⌁</span><b>↑</b></div>
-						<div class="cl2-home-indicator"></div>
-					</div>
+				<div class="cl2-real-device cl2-real-device--mobile">
+					<span class="cl2-device-label">iPhone</span>
+					<img
+						src="/converloop-ios-conversation.png?v=1"
+						width="1206"
+						height="2622"
+						alt={l.preview.mobileScreenshotAlt}
+						loading="eager"
+						fetchpriority="high"
+					/>
 				</div>
-			</div>
+				<figcaption><span aria-hidden="true"></span>{l.preview.realScreenshotLabel}</figcaption>
+			</figure>
 		</div>
 	</section>
 
