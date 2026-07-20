@@ -1,0 +1,27 @@
+.footer {
+  padding: 2rem 1rem;
+  background: linear-gradient(var(--gray-gradient)) no-repeat;
+  color: rgb(var(--gray));
+  text-align: center;
+}
+
+.copyright {
+  margin: 0;
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.socialLinks a {
+  display: flex;
+  color: rgb(var(--gray));
+  text-decoration: none;
+}
+
+.socialLinks a:hover {
+  color: rgb(var(--gray-dark));
+}

@@ -1,23 +1,15 @@
 # jovidalao.com
 
-Personal site and product home for [Converloop](https://jovidalao.com/converloop/) and Peelday, built with Astro.
+Personal site and product home for [Converloop](https://jovidalao.com/converloop/) and Peelday, rebuilt with Next.js while preserving the original Astro site's pages, content, and interactions.
 
-## Converloop product story
+## Stack
 
-The Converloop page presents the same product contract as the desktop and mobile apps:
+- React + Next.js App Router + TypeScript
+- CSS Modules
+- Local Markdown content rendered at build time
+- Vercel deployment
 
-- conversation-first practice with correction attached to the learner's original sentence;
-- a natural version, grammar detail, bilingual reading, text selection analysis, and composing help inside the conversation;
-- a shared **New conversation** start point with recommendations, progress, and one-tap teaching for recurring grammar errors;
-- one cross-platform learning loop: express, notice, remember, reuse;
-- learning-only memory for languages, level, goals, practice preferences, mastery signals, recurring errors, expression gaps, listening gaps, and review state;
-- one **Conversation replay** area for listening back and dictation, with listening misses stored as a learning dimension rather than a separate personal profile;
-- no cross-conversation memory of identity, work, education, location, family, relationships, interests, routines, purchases, health, beliefs, finances, travel, plans, or life events;
-- a shared portable backup format, with desktop and mobile interfaces adapted to the strengths of each device.
-
-Conversation history can keep a thread coherent, but personal details from that thread are never promoted into long-term memory. Legacy personal or persona-relationship memory is not presented as a product capability and is not restored through the new backup contract.
-
-The interactive correction, natural-expression, composing-hint, bilingual-reply, selection-analysis, and focused grammar-conversation demonstrations are intentional product documentation. Keep them visible when revising the landing page.
+The site intentionally has no account system, authentication, database, or runtime content API because the original product is a public, read-only personal site.
 
 ## Local development
 
@@ -25,7 +17,21 @@ The interactive correction, natural-expression, composing-hint, bilingual-reply,
 pnpm install
 pnpm dev
 pnpm build
-pnpm preview
 ```
 
-The Converloop landing pages are available at `/converloop/` and `/zh/converloop/`. Shared markup lives in `src/views/ConverloopLanding.astro`; bilingual copy is in `src/i18n/ui.ts`; product-specific styles are in `src/styles/converloop.css`.
+Blog posts live in `content/blog/en` and `content/blog/zh`. Images referenced by posts live in `public/blog`.
+
+## Routes
+
+- `/` and `/zh`
+- `/blog` and `/zh/blog`
+- `/converloop` and `/zh/converloop`
+- `/peelday` and `/zh/peelday`
+- Peelday privacy and terms pages in both languages
+- `/rss.xml`, `/sitemap.xml`, and `/robots.txt`
+
+## Deployment
+
+Import the repository into Vercel. No environment variables or external services are required; `vercel.json` uses the standard Next.js build.
+
+The Converloop landing page keeps the product contract documented by the original project: inline correction, natural expression, composing help, bilingual reading, text selection analysis, learning-only memory, conversation replay, portable backup, and the local-first privacy boundary.
