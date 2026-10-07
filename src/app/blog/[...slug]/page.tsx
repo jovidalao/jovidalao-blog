@@ -22,5 +22,5 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
   const post = await getPost("en", (await params).slug.join("/"));
   if (!post) notFound();
-  return <SiteShell locale="en"><BlogPost post={post} /></SiteShell>;
+  return <SiteShell locale="en"><BlogPost post={post} locale="en" /></SiteShell>;
 }

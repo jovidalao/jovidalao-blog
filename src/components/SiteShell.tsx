@@ -4,5 +4,5 @@ import { Footer } from "./Footer";
 import { Header } from "./Header";
 
 export function SiteShell({ locale, children }: { locale: Locale; children: ReactNode }) {
-  return <><Header locale={locale} />{children}<Footer /></>;
+  return <><Header locale={locale} />{children}<Footer locale={locale} /></>;
 }

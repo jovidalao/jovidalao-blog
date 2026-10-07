@@ -17,7 +17,14 @@ export const PEELDAY = {
 export const CONVERLOOP = {
 	name: "Converloop",
 	tagline: "A local-first AI language tutor",
+	// Empty until the iOS app is live; then "https://apps.apple.com/app/id6788364286"
+	// turns every "Coming soon" on /converloop into a download button.
+	appStoreUrl: "",
 	repoUrl: "https://github.com/jovidalao/Converloop",
 	releaseUrl: "https://github.com/jovidalao/Converloop/releases/latest",
 	version: "0.1.1",
+	contactEmail: "jovidalao@gmail.com",
+	lastUpdated: "August 1, 2026",
+	// A date is copy too: "最后更新：August 1, 2026" reads as a half-translated page.
+	lastUpdatedZh: "2026 年 8 月 1 日",
 } as const;

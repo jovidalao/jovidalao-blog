@@ -1,0 +1,430 @@
+/*
+  Peelday page. The sections are the Converloop page's (ConverloopPage.module.css);
+  this file re-points their tokens to Peelday's paper-and-postal-red palette — taken
+  from the app's AppColor — and adds the few visuals only this page has.
+  Overrides are written `.page .x` so they win over the shared classes without
+  depending on stylesheet order.
+*/
+
+.page {
+	--peel-red: #c84b45;
+	--peel-green: #5c7a6a;
+	--peel-amber: #d4a05c;
+
+	/* Site tokens, warmed to the app's paper. Everything inside `main` reads these. */
+	--bg: #fbf8f2;
+	--card: #fffdf8;
+	--card-soft: #fbf8f2;
+	--paper: #f4eee3;
+	--ink: #2a2620;
+	--ink-2: #5c544a;
+	--ink-3: #8c8478;
+	--line: #ece4d6;
+	--line-strong: #ddd3c2;
+	--blue: #c84b45;
+	--blue-deep: #a3352f;
+	--blue-tint: #f8e5e1;
+
+	/* Shared landing tokens. */
+	--brand-grad: linear-gradient(135deg, #ec9a7c 0%, #c84b45 52%, #9e3a33 100%);
+	--glow-a: rgba(200, 75, 69, 0.13);
+	--glow-b: rgba(212, 160, 92, 0.18);
+	--glow-c: rgba(92, 122, 106, 0.14);
+	--dots: rgba(42, 38, 32, 0.13);
+
+	--tone-0: #c84b45;
+	--tone-1: #4f7a62;
+	--tone-2: #b9822f;
+	--tone-3: #7b6f8e;
+	--tone-4: #3f78a8;
+
+	/* In-page mock-ups, drawn the way the app draws its sheets. */
+	--app-bg: #fffaf1;
+	--app-fill: rgba(42, 38, 32, 0.06);
+	--app-ink: #2a2620;
+	--app-ink-2: #8c8478;
+	--app-sep: rgba(42, 38, 32, 0.1);
+	--app-shadow: 0 1px 2px rgba(60, 40, 20, 0.06), 0 22px 44px -22px rgba(60, 40, 20, 0.32);
+
+	background: var(--bg);
+	overflow-x: clip;
+	interpolate-size: allow-keywords;
+}
+
+:global(:root[data-theme="dark"]) .page {
+	--peel-red: #e0675f;
+	--peel-green: #8fb39f;
+	--peel-amber: #e2b373;
+
+	--bg: #12100d;
+	--card: #1b1714;
+	--card-soft: #171410;
+	--paper: #221d18;
+	--ink: #f4eedf;
+	--ink-2: #d0c6b3;
+	--ink-3: #9d937f;
+	--line: #2d2620;
+	--line-strong: #3b322a;
+	--blue: #e0675f;
+	--blue-deep: #f19089;
+	--blue-tint: rgba(224, 103, 95, 0.16);
+
+	--glow-a: rgba(224, 103, 95, 0.2);
+	--glow-b: rgba(226, 179, 115, 0.12);
+	--glow-c: rgba(143, 179, 159, 0.12);
+	--dots: rgba(244, 238, 223, 0.1);
+
+	--tone-0: #ef7d74;
+	--tone-1: #8fc4a6;
+	--tone-2: #e8b86c;
+	--tone-3: #b9aed0;
+	--tone-4: #7fb4e0;
+
+	--app-bg: #24201b;
+	--app-fill: rgba(244, 238, 223, 0.08);
+	--app-ink: #f4eedf;
+	--app-ink-2: #a89f8e;
+	--app-sep: rgba(244, 238, 223, 0.12);
+	--app-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 24px 48px -24px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- hero ---------- */
+
+.icon {
+	border-radius: 7px;
+}
+
+/* A green "live" dot: the shared dot pings in var(--blue), so re-point it here. */
+.live {
+	--blue: var(--peel-green);
+}
+
+/* The rotating word sits mid-line here, so it hugs the words before it. */
+.page .rotator > span {
+	justify-self: start;
+}
+
+.page .strip li:nth-child(1) {
+	--hue: #c84b45;
+}
+.page .strip li:nth-child(2) {
+	--hue: #b9822f;
+}
+.page .strip li:nth-child(3) {
+	--hue: #4f7a62;
+}
+.page .strip li:nth-child(4) {
+	--hue: #7b6f8e;
+}
+
+:global(:root[data-theme="dark"]) .page .strip li:nth-child(1) {
+	--hue: #ef7d74;
+}
+:global(:root[data-theme="dark"]) .page .strip li:nth-child(2) {
+	--hue: #e8b86c;
+}
+:global(:root[data-theme="dark"]) .page .strip li:nth-child(3) {
+	--hue: #8fc4a6;
+}
+:global(:root[data-theme="dark"]) .page .strip li:nth-child(4) {
+	--hue: #b9aed0;
+}
+
+/* The app's Movie Stub template, small. */
+.miniTicket {
+	display: grid;
+	gap: 3px;
+	padding: 9px 14px 10px;
+	border-radius: 4px;
+	background: #24201b;
+	box-shadow: inset 0 0 0 1px #9c7c48, inset 0 0 0 4px #24201b, inset 0 0 0 5px rgba(156, 124, 72, 0.6);
+	color: #f6ead0;
+}
+
+.miniTicket b {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 17px;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+}
+
+.miniTicket small {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	color: #c9a668;
+	white-space: nowrap;
+}
+
+/* ---------- how a page happens ---------- */
+
+.page .visual[data-tone="0"] {
+	--hue-a: #c84b45;
+	--hue-b: #d4a05c;
+}
+.page .visual[data-tone="1"] {
+	--hue-a: #d4a05c;
+	--hue-b: #5c7a6a;
+}
+.page .visual[data-tone="2"] {
+	--hue-a: #7b6f8e;
+	--hue-b: #c84b45;
+}
+.page .visual[data-tone="3"] {
+	--hue-a: #5c7a6a;
+	--hue-b: #d4a05c;
+}
+
+/* The + menu, as the app draws it above its add button. */
+.menu {
+	display: grid;
+	justify-items: center;
+	gap: 18px;
+	width: min(100%, 300px);
+}
+
+.menuList {
+	width: 100%;
+	padding: 6px 0;
+	border-radius: 24px;
+	background: color-mix(in srgb, var(--app-bg) 88%, transparent);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	box-shadow: var(--app-shadow);
+}
+
+.menuTitle {
+	padding: 8px 18px 6px;
+	font-size: 12.5px;
+	font-weight: 600;
+	color: var(--app-ink-2);
+}
+
+.menuItem {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 11px 18px;
+	font-size: 16px;
+}
+
+.menuItem + .menuItem {
+	border-top: 1px solid var(--app-sep);
+}
+
+.page .menuItem svg {
+	width: 20px;
+	height: 20px;
+	color: var(--peel-red);
+}
+
+.plus {
+	position: relative;
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: var(--peel-red);
+	box-shadow: 0 14px 26px -12px color-mix(in srgb, var(--peel-red) 80%, transparent);
+}
+
+.plus::before,
+.plus::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 22px;
+	height: 3px;
+	border-radius: 3px;
+	background: #fff7e8;
+	transform: translate(-50%, -50%);
+}
+
+.plus::after {
+	transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* A phone rising out of the bottom of the visual. */
+.peek {
+	align-self: end;
+	width: min(100%, 272px);
+	margin-bottom: -34px;
+}
+
+.peek > div {
+	max-width: none;
+}
+
+/* A torn-out piece of the page: no device, just paper. */
+.sheet {
+	width: min(100%, 360px);
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: var(--app-shadow);
+	transform: rotate(-1.5deg);
+}
+
+.sheet img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 5 / 4;
+	object-fit: cover;
+	object-position: center 72%;
+}
+
+/* ---------- styles & stickers ---------- */
+
+.page .library [data-c="0"] {
+	--tint: #c84b45;
+}
+.page .library [data-c="1"] {
+	--tint: #d4a05c;
+}
+.page .library [data-c="2"] {
+	--tint: #5c7a6a;
+}
+
+/* ---------- calendar & search, widget ---------- */
+
+.split {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 64px;
+	align-items: center;
+}
+
+.splitFlip > :first-child {
+	order: 2;
+}
+
+.points {
+	margin-top: 36px;
+}
+
+.pair {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-block: 8px 24px;
+}
+
+.pair > div {
+	flex: none;
+}
+
+.pair > div > div {
+	max-width: none;
+}
+
+.pair > :first-child {
+	position: relative;
+	z-index: 1;
+	width: 256px;
+	transform: rotate(-3deg);
+}
+
+.pair > :last-child {
+	width: 236px;
+	margin-top: 72px;
+	margin-left: -52px;
+	transform: rotate(4deg);
+}
+
+/* Only the top of the Home Screen matters; the rest fades out rather than ending in a stubby phone. */
+.solo {
+	width: min(100%, 300px);
+	margin-inline: auto;
+	mask-image: linear-gradient(180deg, #000 70%, transparent 98%);
+}
+
+.solo > div {
+	max-width: none;
+}
+
+.checks {
+	margin-top: 32px;
+}
+
+/* site.checks draws a blue tick; this one is postal red. */
+.page .checks li::before {
+	background: var(--blue-tint) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c84b45' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center / 11px no-repeat;
+}
+
+/* ---------- privacy: what stays reads green, the way the app marks a saved day ---------- */
+
+.privacy {
+	--blue: var(--peel-green);
+	--blue-tint: color-mix(in srgb, var(--peel-green) 16%, transparent);
+}
+
+/* ---------- pricing ---------- */
+
+.page .featured {
+	box-shadow: 0 34px 64px -40px rgba(200, 75, 69, 0.5);
+}
+
+/* ---------- closing ---------- */
+
+.page .finalCard {
+	color: #3a1e18;
+	border-color: rgba(200, 75, 69, 0.16);
+	background:
+		radial-gradient(60% 70% at 50% 0%, rgba(255, 255, 255, 0.85), transparent 70%),
+		radial-gradient(var(--dots) 1px, transparent 1.4px) 0 0 / 22px 22px,
+		linear-gradient(160deg, #fbefe1 0%, #f6e2d2 50%, #efe6d2 100%);
+}
+
+:global(:root[data-theme="dark"]) .page .finalCard {
+	color: #f4eedf;
+	border-color: rgba(224, 103, 95, 0.22);
+	background:
+		radial-gradient(60% 70% at 50% 0%, rgba(224, 103, 95, 0.24), transparent 70%),
+		radial-gradient(var(--dots) 1px, transparent 1.4px) 0 0 / 22px 22px,
+		linear-gradient(160deg, #2a1b16 0%, #1d1512 50%, #1c1a12 100%);
+}
+
+.finalIcon {
+	width: 104px;
+	height: 104px;
+	margin: 0 auto 28px;
+	border-radius: 24px;
+	box-shadow: 0 22px 36px -18px rgba(158, 58, 51, 0.6);
+	animation: bob 6s ease-in-out infinite alternate;
+}
+
+@keyframes bob {
+	from {
+		transform: translateY(-6px) rotate(-3deg);
+	}
+	to {
+		transform: translateY(6px) rotate(2deg);
+	}
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 980px) {
+	.split {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 48px;
+	}
+	.splitFlip > :first-child {
+		order: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.pair > :first-child {
+		width: 62vw;
+	}
+	.pair > :last-child {
+		width: 56vw;
+		margin-left: -18vw;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.finalIcon {
+		animation: none;
+	}
+}

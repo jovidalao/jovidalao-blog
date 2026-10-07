@@ -1,9 +1,18 @@
 import type { Metadata } from "next";
 import { PeeldayPage } from "@/components/PeeldayPage";
 import { SiteShell } from "@/components/SiteShell";
-import { getUi } from "@/i18n";
+import { getPeelday } from "@/i18n";
 
-const t = getUi("zh");
-export const metadata: Metadata = { title: `${t.peelday.name} — ${t.peelday.tagline}`, description: t.peelday.metaDescription, alternates: { canonical: "/zh/peelday", languages: { en: "/peelday", zh: "/zh/peelday" } } };
+const p = getPeelday("zh");
 
-export default function Page() { return <SiteShell locale="zh"><PeeldayPage locale="zh" /></SiteShell>; }
+export const metadata: Metadata = {
+  title: p.meta.title,
+  description: p.meta.description,
+  openGraph: { images: ["/peelday/app-icon.png"] },
+  twitter: { card: "summary", images: ["/peelday/app-icon.png"] },
+  alternates: { canonical: "/zh/peelday", languages: { en: "/peelday", zh: "/zh/peelday" } },
+};
+
+export default function Page() {
+  return <SiteShell locale="zh"><PeeldayPage locale="zh" /></SiteShell>;
+}

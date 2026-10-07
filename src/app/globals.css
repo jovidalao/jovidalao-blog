@@ -1,236 +1,227 @@
 /*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+  Design system for jovidalao.com.
+  Light, Apple-flavoured product marketing: near-white page, white cards on hairline
+  borders, one blue accent, and headings that carry the page.
+*/
 
 :root {
 	color-scheme: light;
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--page-bg: #fff;
-	--surface: #fff;
-	--surface-hover: #f9f9f9;
-	--surface-active: #f0f7ff;
-	--surface-border: #eee;
-	--control-border: #ddd;
-	--header-shadow: 0 2px 8px rgba(var(--black), 5%);
-	--popover-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-	--cl-brand: #3157f6;
-	--cl-brand-strong: #1738c9;
-	--cl-cyan: #56c9f5;
-	--cl-brand-soft: #eaf2ff;
-	--cl-brand-faint: #f5f8ff;
-	--cl-ink: #111827;
-	--cl-ink-muted: #596579;
-	--cl-surface: #ffffff;
-	--cl-surface-soft: #f7f9fd;
-	--cl-border: rgba(43, 61, 91, 0.12);
-	--cl-border-strong: rgba(49, 87, 246, 0.2);
-	--cl-success: #16835b;
-	--cl-error: #c9465a;
-	--cl-shadow: 0 28px 80px rgba(28, 55, 128, 0.15);
-	--peelday-paper: #f7f1e5;
-	--peelday-paper-dark: #ede6d9;
-	--peelday-ink: #2a2620;
-	--peelday-ink-muted: #5c544a;
-	--peelday-red: #c84b45;
-	--peelday-green: #5c7a6a;
-	--peelday-gold: #c9a668;
-	--peelday-shadow: 0 12px 40px rgba(42, 38, 32, 0.08);
-	--peelday-surface: rgba(255, 255, 255, 0.55);
-	--peelday-border: rgba(42, 38, 32, 0.08);
-	--peelday-border-strong: rgba(42, 38, 32, 0.1);
-	--peelday-border-dashed: rgba(42, 38, 32, 0.15);
-	--peelday-frame-bg: linear-gradient(145deg, #fff 0%, var(--peelday-paper-dark) 100%);
-	--peelday-card-bg: linear-gradient(135deg, #fff 0%, var(--peelday-paper) 100%);
-	--peelday-icon-border: #fff;
-	--peelday-badge-bg: rgba(200, 75, 69, 0.1);
+
+	/* Surfaces */
+	--bg: #fbfbfd;
+	--paper: #f5f5f7;
+	--card: #ffffff;
+	--card-soft: #fbfbfd;
+
+	/* Ink */
+	--ink: #1d1d1f;
+	--ink-2: #51515a;
+	--ink-3: #86868b;
+
+	/* Lines */
+	--line: #e8e8ed;
+	--line-strong: #d9d9e0;
+
+	/* Accent */
+	--blue: #0071e3;
+	--blue-deep: #0058c2;
+	--blue-tint: #eaf2ff;
+	--green: #237a4b;
+
+	/* Product tints behind screenshots */
+	--tint-peelday: #f6f0e6;
+	--tint-desktop: #eef3f9;
+	--tint-ios: #f0eef8;
+	--tint-neutral: #f5f5f7;
+
+	--shadow-card: 0 1px 2px rgba(20, 30, 60, 0.04), 0 14px 36px -20px rgba(20, 30, 60, 0.16);
+	--shadow-pop: 0 2px 6px rgba(20, 30, 60, 0.05), 0 28px 64px -28px rgba(20, 30, 60, 0.25);
+	--shadow-device: 0 2px 8px rgba(20, 30, 60, 0.06), 0 40px 80px -32px rgba(20, 30, 60, 0.32);
+
+	/* Type */
+	--fs-h1: clamp(34px, 4.6vw, 52px);
+	--fs-h2: clamp(28px, 3.4vw, 44px);
+	--fs-h3: 17px;
+	--fs-lead: 16.5px;
+	--fs-body: 15px;
+	--fs-small: 14.5px;
+	--fs-label: 11px;
+
+	--wt-display: 780;
+	--wt-heading: 750;
+	--wt-strong: 700;
+	--wt-medium: 600;
+
+	/* Rhythm */
+	--wrap: 1120px;
+	--wrap-narrow: 760px;
+	--gap-section: 104px;
+	--rad: 18px;
+	--rad-lg: 24px;
+	--rad-sm: 12px;
 }
 
 :root[data-theme="dark"] {
 	color-scheme: dark;
-	--accent: #8ea2ff;
-	--accent-dark: #c7d2fe;
-	--black: 245, 247, 255;
-	--gray: 148, 163, 184;
-	--gray-light: 39, 49, 67;
-	--gray-dark: 213, 220, 235;
-	--gray-gradient: rgba(22, 28, 43, 0.9), #0b1020;
-	--page-bg: #0b1020;
-	--surface: #111827;
-	--surface-hover: #182236;
-	--surface-active: rgba(142, 162, 255, 0.16);
-	--surface-border: rgba(148, 163, 184, 0.18);
-	--control-border: rgba(148, 163, 184, 0.32);
-	--header-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
-	--popover-shadow: 0px 8px 18px 0px rgba(0, 0, 0, 0.35);
-	--box-shadow:
-		0 2px 6px rgba(0, 0, 0, 0.35), 0 8px 24px rgba(0, 0, 0, 0.38),
-		0 16px 32px rgba(0, 0, 0, 0.38);
-	--cl-brand: #77bfff;
-	--cl-brand-strong: #a7d6ff;
-	--cl-cyan: #69dcff;
-	--cl-brand-soft: rgba(62, 125, 255, 0.17);
-	--cl-brand-faint: #101a2c;
-	--cl-ink: #f3f7ff;
-	--cl-ink-muted: #aab8cf;
-	--cl-surface: #101827;
-	--cl-surface-soft: #121d2f;
-	--cl-border: rgba(148, 163, 184, 0.18);
-	--cl-border-strong: rgba(119, 191, 255, 0.3);
-	--cl-success: #6ee7b7;
-	--cl-error: #ff9aa9;
-	--cl-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
-	--peelday-paper: #211c16;
-	--peelday-paper-dark: #2c241b;
-	--peelday-ink: #f6ede1;
-	--peelday-ink-muted: #c8bbaa;
-	--peelday-red: #ff8f86;
-	--peelday-green: #91c7a9;
-	--peelday-gold: #e0c27c;
-	--peelday-shadow: 0 14px 42px rgba(0, 0, 0, 0.32);
-	--peelday-surface: rgba(36, 30, 23, 0.74);
-	--peelday-border: rgba(226, 214, 197, 0.14);
-	--peelday-border-strong: rgba(226, 214, 197, 0.2);
-	--peelday-border-dashed: rgba(226, 214, 197, 0.22);
-	--peelday-frame-bg: linear-gradient(145deg, #33291f 0%, var(--peelday-paper-dark) 100%);
-	--peelday-card-bg: linear-gradient(135deg, #261f18 0%, var(--peelday-paper) 100%);
-	--peelday-icon-border: rgba(246, 237, 225, 0.72);
-	--peelday-badge-bg: rgba(255, 143, 134, 0.16);
+
+	--bg: #0b0b10;
+	--paper: #141419;
+	--card: #17171d;
+	--card-soft: #121217;
+
+	--ink: #f5f5f7;
+	--ink-2: #a9a9b4;
+	--ink-3: #7c7c88;
+
+	--line: #26262e;
+	--line-strong: #33333d;
+
+	--blue: #2e97ff;
+	--blue-deep: #66b4ff;
+	--blue-tint: rgba(46, 151, 255, 0.14);
+	--green: #4ec98a;
+
+	--tint-peelday: #1e1a13;
+	--tint-desktop: #111820;
+	--tint-ios: #16141d;
+	--tint-neutral: #141419;
+
+	--shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 14px 36px -20px rgba(0, 0, 0, 0.7);
+	--shadow-pop: 0 2px 6px rgba(0, 0, 0, 0.5), 0 28px 64px -28px rgba(0, 0, 0, 0.85);
+	--shadow-device: 0 2px 8px rgba(0, 0, 0, 0.5), 0 40px 80px -32px rgba(0, 0, 0, 0.9);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-	font-family: var(--font-atkinson);
 	margin: 0;
-	padding: 0;
-	text-align: left;
-	background-color: var(--page-bg);
-	background-image: linear-gradient(var(--gray-gradient));
-	background-repeat: no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
+	background: var(--bg);
+	color: var(--ink);
+	font-family: var(--font-sans);
+	font-size: var(--fs-body);
+	line-height: 1.6;
+	font-synthesis-weight: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
 }
 
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
+	margin: 0;
+	color: var(--ink);
+	letter-spacing: -0.028em;
+	line-height: 1.08;
+	font-weight: var(--wt-heading);
 }
+
 h1 {
-	font-size: 3.052em;
+	font-size: var(--fs-h1);
+	font-weight: var(--wt-display);
 }
+
 h2 {
-	font-size: 2.441em;
+	font-size: var(--fs-h2);
 }
+
 h3 {
-	font-size: 1.953em;
+	font-size: var(--fs-h3);
+	font-weight: var(--wt-strong);
+	letter-spacing: -0.015em;
+	line-height: 1.3;
 }
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
+
 p {
-	margin-bottom: 1em;
+	margin: 0;
 }
-.prose p {
-	margin-bottom: 2em;
+
+a {
+	color: inherit;
+	text-decoration: none;
 }
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
+
+img,
+svg,
+video {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	display: block;
 }
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: 0;
+	padding: 0;
+	cursor: pointer;
 }
+
+code,
+kbd,
+samp,
 pre {
-	padding: 1.5em;
-	border-radius: 8px;
+	font-family: var(--font-mono);
+	font-size: 0.92em;
 }
-pre > code {
-	all: unset;
+
+::selection {
+	background: var(--blue);
+	color: #fff;
 }
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0;
-	font-size: 1.333em;
+
+:focus-visible {
+	outline: 2px solid var(--blue);
+	outline-offset: 2px;
+	border-radius: 6px;
 }
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
+
 @media (max-width: 720px) {
-	body {
-		font-size: 18px;
+	:root {
+		--gap-section: 72px;
 	}
-	main {
-		padding: 1em;
+}
+
+/*
+  Chromium keeps painting the old background-color when a custom property behind a
+  transitioned property changes, so the theme toggle suppresses transitions for the
+  frame in which the tokens flip. It also stops every card cross-fading at once.
+*/
+:root.theme-switching *,
+:root.theme-switching *::before,
+:root.theme-switching *::after {
+	transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
 	}
 }
 
 .sr-only {
-	border: 0;
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
 	padding: 0;
 	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
 	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
 	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+	border: 0;
 }

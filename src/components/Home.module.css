@@ -1,0 +1,414 @@
+/*
+  Home page. Sections and tokens come from the Converloop page (ConverloopPage.module.css),
+  whose blue is also the site's own accent; this file only lays out what is home's alone:
+  the hero stage, the app cards, the rules and the latest writing.
+*/
+
+/* ---------- hero ---------- */
+
+.avatar {
+	display: grid;
+	place-items: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 7px;
+	background: var(--brand-grad);
+	color: #fff;
+	font-size: 13px;
+	font-weight: 800;
+}
+
+.accent {
+	color: transparent;
+	background: linear-gradient(100deg, #2f5bea 0%, #7c3aed 52%, #c84b45 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+:global(:root[data-theme="dark"]) .accent {
+	background-image: linear-gradient(100deg, #6aa8ff 0%, #b69cff 52%, #ef7d74 100%);
+}
+
+/* Peelday's name gets Peelday's red; Converloop keeps the page blue. */
+.peel {
+	--blue: #c84b45;
+}
+
+/* The desktop app behind, both phones in front. Faded at the foot like the product pages. */
+.stage {
+	position: relative;
+	max-width: 1080px;
+	margin: 76px auto 0;
+	padding: 0 24px 56px;
+	mask-image: linear-gradient(180deg, #000 78%, transparent 99%);
+}
+
+.stage::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	top: 4%;
+	width: 70%;
+	height: 80%;
+	transform: translateX(-50%);
+	background: radial-gradient(closest-side, color-mix(in srgb, var(--blue) 28%, transparent), transparent);
+	filter: blur(30px);
+	z-index: -1;
+}
+
+.window {
+	width: min(100%, 760px);
+	margin-inline: auto;
+	border-radius: 14px;
+	overflow: hidden;
+	box-shadow: var(--shadow-device);
+}
+
+.window img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.phone {
+	position: absolute;
+	bottom: 0;
+	z-index: 2;
+	width: 236px;
+}
+
+.phone > div {
+	max-width: none;
+}
+
+.phoneLeft {
+	left: calc(50% - 500px);
+	transform: rotate(-6deg);
+}
+
+.phoneRight {
+	right: calc(50% - 500px);
+	transform: rotate(6deg);
+}
+
+/* ---------- apps ---------- */
+
+.apps {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 56px;
+}
+
+.app {
+	--tint: #3b82f6;
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+	min-height: 660px;
+	padding: 34px 34px 0;
+	border-radius: 32px;
+	border: 1px solid var(--line);
+	overflow: hidden;
+	background:
+		radial-gradient(80% 60% at 100% 100%, color-mix(in srgb, var(--tint) 18%, transparent), transparent 72%),
+		linear-gradient(170deg, color-mix(in srgb, var(--tint) 7%, var(--card)), var(--card) 58%);
+}
+
+.appPeelday {
+	--tint: #c84b45;
+}
+
+.appDesktop {
+	--tint: #7c3aed;
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+	align-items: center;
+	gap: 48px;
+	min-height: 0;
+	padding: 34px;
+}
+
+.appHead {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+.appHead img {
+	width: 44px;
+	height: 44px;
+	border-radius: 11px;
+}
+
+.appName {
+	font-size: 18px;
+	font-weight: 750;
+	letter-spacing: -0.02em;
+}
+
+.status {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	padding: 4px 11px 4px 9px;
+	border-radius: 100px;
+	border: 1px solid var(--line);
+	background: color-mix(in srgb, var(--card) 70%, transparent);
+	font-size: 12.5px;
+	font-weight: 600;
+	color: var(--ink-2);
+}
+
+.status::before {
+	content: "";
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background: var(--dot, #22a06b);
+}
+
+.soon {
+	--dot: #d97706;
+}
+
+.desktop {
+	--dot: #7c3aed;
+}
+
+.app h3 {
+	margin-top: 26px;
+	max-width: 18ch;
+	font-size: clamp(26px, 2.7vw, 34px);
+	font-weight: 800;
+	letter-spacing: -0.035em;
+	line-height: 1.1;
+	text-wrap: balance;
+}
+
+.app p {
+	margin-top: 12px;
+	max-width: 48ch;
+	font-size: 15.5px;
+	line-height: 1.65;
+	color: var(--ink-2);
+	text-wrap: pretty;
+}
+
+.facts {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin: 20px 0 0;
+	padding: 0;
+}
+
+.facts li {
+	padding: 5px 11px;
+	border-radius: 100px;
+	border: 1px solid var(--line);
+	background: color-mix(in srgb, var(--card) 72%, transparent);
+	font-size: 12.5px;
+	color: var(--ink-2);
+}
+
+.appActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 26px;
+}
+
+.appActions a {
+	min-height: 42px;
+	padding: 9px 18px;
+	font-size: 14px;
+}
+
+/* The phone rises out of the bottom edge of its card. */
+.appShot {
+	width: min(72%, 290px);
+	margin: auto auto -150px;
+	padding-top: 40px;
+	transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.appShot > div {
+	max-width: none;
+}
+
+.app:hover .appShot {
+	transform: translateY(-10px);
+}
+
+.appWindow {
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: var(--shadow-device);
+	transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.appWindow img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.app:hover .appWindow {
+	transform: translateY(-6px);
+}
+
+/* ---------- rules ---------- */
+
+.rules {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 48px;
+}
+
+/* ---------- writing ---------- */
+
+.postsHead {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+
+.allPosts {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 15px;
+	font-weight: 600;
+	color: var(--blue);
+}
+
+.allPosts svg {
+	width: 16px;
+	height: 16px;
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.posts {
+	display: grid;
+	gap: 12px;
+	margin-top: 40px;
+}
+
+.post {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: center;
+	gap: 32px;
+	padding: 26px 30px;
+	border-radius: 24px;
+	border: 1px solid var(--line);
+	background: var(--card);
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+	border-color: color-mix(in srgb, var(--blue) 35%, var(--line));
+	box-shadow: var(--shadow-card);
+}
+
+.post h3 {
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+.post p {
+	margin-top: 8px;
+	max-width: 72ch;
+	font-size: 15px;
+	line-height: 1.6;
+	color: var(--ink-2);
+}
+
+.post time {
+	font-family: var(--font-mono);
+	font-size: 12px;
+	color: var(--ink-3);
+	white-space: nowrap;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 1100px) {
+	.phoneLeft {
+		left: 0;
+	}
+	.phoneRight {
+		right: 0;
+	}
+}
+
+@media (max-width: 980px) {
+	.apps,
+	.appDesktop {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.appDesktop {
+		gap: 32px;
+	}
+	.rules {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 720px) {
+	.stage {
+		margin-top: 52px;
+		padding-bottom: 40px;
+	}
+	.phone {
+		width: 32vw;
+	}
+	.phoneLeft {
+		left: 2vw;
+	}
+	.phoneRight {
+		right: 2vw;
+	}
+	.window {
+		width: 100%;
+		margin-bottom: 18vw;
+	}
+	.app {
+		min-height: 0;
+		padding: 26px 24px 0;
+		border-radius: 26px;
+	}
+	.appDesktop {
+		padding: 26px 24px;
+	}
+	.appShot {
+		margin-bottom: -110px;
+	}
+}
+
+@media (max-width: 560px) {
+	.rules,
+	.post {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.post {
+		gap: 12px;
+		padding: 22px;
+	}
+	.post time {
+		order: -1;
+	}
+}

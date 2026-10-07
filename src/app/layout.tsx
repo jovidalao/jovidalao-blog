@@ -1,15 +1,24 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
 import "./globals.css";
 
-const atkinson = localFont({
-  src: [
-    { path: "../assets/fonts/atkinson-regular.woff", weight: "400", style: "normal" },
-    { path: "../assets/fonts/atkinson-bold.woff", weight: "700", style: "normal" },
-  ],
-  variable: "--font-atkinson",
+// Both faces carry Latin only; the CJK fallbacks handle the /zh pages.
+// next/font requires these option objects to be inline literals.
+const sans = Hanken_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
   display: "swap",
+  fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "sans-serif"],
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
+  display: "swap",
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "PingFang SC", "Microsoft YaHei", "monospace"],
 });
 
 const siteUrl = "https://jovidalao.com";
@@ -35,7 +44,7 @@ const themeScript = `
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={atkinson.variable} suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body>{children}</body>
     </html>

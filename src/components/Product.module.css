@@ -1,0 +1,394 @@
+/* Shared shape for the product pages. */
+
+/* ---------- split hero: copy left, product right ---------- */
+
+.heroSection {
+	padding-block: 72px 88px;
+}
+
+.heroGrid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+	gap: 64px;
+	align-items: center;
+}
+
+.heroCopy {
+	max-width: 540px;
+}
+
+.brandRow {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 26px;
+}
+
+.brandRow img {
+	width: 46px;
+	height: 46px;
+	border-radius: 12px;
+}
+
+.brandName {
+	font-size: var(--fs-h3);
+	font-weight: var(--wt-strong);
+	letter-spacing: -0.02em;
+}
+
+.heroStatus {
+	margin-bottom: 22px;
+}
+
+.heroTitle {
+	text-wrap: balance;
+}
+
+.heroBody {
+	margin-top: 22px;
+	font-size: var(--fs-lead);
+	line-height: 1.6;
+	color: var(--ink-2);
+}
+
+.heroActions {
+	margin-top: 32px;
+}
+
+.heroChecks {
+	margin-top: 32px;
+}
+
+.heroVisual {
+	display: grid;
+	justify-items: center;
+}
+
+/* ---------- numbered steps ---------- */
+
+.steps {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 48px;
+}
+
+.stepsThree {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step {
+	position: relative;
+	background: var(--card-soft);
+	border: 1px solid var(--line);
+	border-radius: var(--rad);
+	padding: 22px 22px 20px;
+}
+
+.stepNumber {
+	display: block;
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	color: var(--blue);
+	margin-bottom: 10px;
+}
+
+.stepTitle {
+	font-size: var(--fs-h3);
+	font-weight: var(--wt-strong);
+	letter-spacing: -0.015em;
+}
+
+.stepBody {
+	margin-top: 8px;
+	font-size: var(--fs-small);
+	line-height: 1.6;
+	color: var(--ink-2);
+}
+
+/* ---------- copy beside a list ---------- */
+
+.split {
+	display: grid;
+	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	gap: 64px;
+	align-items: start;
+}
+
+.splitCopy p {
+	margin-top: 18px;
+	font-size: var(--fs-small);
+	line-height: 1.7;
+	color: var(--ink-2);
+}
+
+.splitList {
+	display: grid;
+	gap: 16px;
+}
+
+/* ---------- spotlight: one feature, stated large, with its screen ---------- */
+
+.spotlight {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+	gap: 56px;
+	align-items: center;
+	padding: 48px;
+	border-radius: var(--rad-lg);
+	background: var(--card);
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow-card);
+}
+
+.spotlightFlip {
+	grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+}
+
+.spotlightFlip > :first-child {
+	order: 2;
+}
+
+.spotlightPeelday .spotlightVisual,
+.spotlightDesktop .spotlightVisual {
+	border-radius: var(--rad);
+	padding: 28px;
+}
+
+.spotlightPeelday .spotlightVisual {
+	background: var(--tint-peelday);
+}
+.spotlightDesktop .spotlightVisual {
+	background: var(--tint-desktop);
+}
+
+.spotlightCopy h3 {
+	font-size: clamp(24px, 2.6vw, 32px);
+	font-weight: var(--wt-heading);
+	letter-spacing: -0.025em;
+	line-height: 1.12;
+}
+
+.spotlightCopy > p {
+	margin-top: 16px;
+	font-size: var(--fs-small);
+	line-height: 1.7;
+	color: var(--ink-2);
+}
+
+.spotlightEyebrow {
+	font-family: var(--font-mono);
+	font-size: var(--fs-label);
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--blue);
+	margin-bottom: 16px;
+}
+
+.spotlightList {
+	margin-top: 26px;
+}
+
+.spotlightVisual {
+	display: grid;
+	justify-items: center;
+}
+
+/* ---------- release cards ---------- */
+
+.releases {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 16px;
+	margin-top: 48px;
+}
+
+.release {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+	padding: 28px;
+	border-radius: var(--rad);
+	background: var(--card);
+	border: 1px solid var(--line);
+}
+
+.releaseBody {
+	font-size: var(--fs-small);
+	line-height: 1.6;
+	color: var(--ink-2);
+}
+
+.releaseLink {
+	margin-top: auto;
+	padding-top: 10px;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-size: var(--fs-small);
+	font-weight: var(--wt-medium);
+	color: var(--blue);
+}
+
+.releaseLink:hover {
+	color: var(--blue-deep);
+}
+
+/* ---------- closing block ---------- */
+
+.final {
+	padding: 96px 32px;
+	text-align: center;
+	background: var(--card);
+	border: 1px solid var(--line);
+	border-radius: var(--rad-lg);
+	box-shadow: var(--shadow-card);
+}
+
+.final img {
+	width: 62px;
+	height: 62px;
+	border-radius: 16px;
+	margin: 0 auto 26px;
+}
+
+.finalBody {
+	margin-top: 16px;
+	font-size: var(--fs-lead);
+	color: var(--ink-2);
+	max-width: 56ch;
+	margin-inline: auto;
+}
+
+.finalActions {
+	margin-top: 32px;
+}
+
+/* ---------- legal ---------- */
+
+.legalBar {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	margin-top: 56px;
+	padding-top: 26px;
+	border-top: 1px solid var(--line);
+	font-size: var(--fs-small);
+}
+
+.legalBar a {
+	color: var(--ink-3);
+	transition: color 0.16s ease;
+}
+
+.legalBar a:hover {
+	color: var(--ink);
+}
+
+.legalDoc {
+	max-width: 760px;
+}
+
+.legalBack {
+	display: inline-flex;
+	font-size: var(--fs-small);
+	font-weight: var(--wt-medium);
+	color: var(--blue);
+	margin-bottom: 32px;
+}
+
+.legalMeta {
+	margin-top: 16px;
+	font-family: var(--font-mono);
+	font-size: 12px;
+	color: var(--ink-3);
+}
+
+.legalIntro {
+	margin-top: 24px;
+	font-size: var(--fs-lead);
+	line-height: 1.7;
+	color: var(--ink-2);
+}
+
+.legalSection {
+	margin-top: 44px;
+}
+
+.legalSection h2 {
+	font-size: 22px;
+}
+
+.legalSection p {
+	margin-top: 12px;
+	font-size: var(--fs-small);
+	line-height: 1.75;
+	color: var(--ink-2);
+}
+
+.legalSection ul {
+	margin: 14px 0 0;
+	padding-left: 20px;
+	display: grid;
+	gap: 8px;
+}
+
+.legalSection li {
+	font-size: var(--fs-small);
+	line-height: 1.65;
+	color: var(--ink-2);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 980px) {
+	.heroGrid {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 48px;
+	}
+	.heroCopy {
+		max-width: 620px;
+	}
+	.steps {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.split {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 40px;
+	}
+	.spotlight,
+	.spotlightFlip {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 36px;
+		padding: 32px;
+	}
+	.spotlightFlip > :first-child {
+		order: 0;
+	}
+}
+
+@media (max-width: 640px) {
+	.heroSection {
+		padding-block: 48px 64px;
+	}
+	.steps,
+	.stepsThree,
+	.releases {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	.spotlight,
+	.spotlightFlip {
+		padding: 24px;
+	}
+	.spotlightPeelday .spotlightVisual,
+	.spotlightDesktop .spotlightVisual {
+		padding: 18px;
+	}
+	.final {
+		padding: 56px 24px;
+		border-radius: var(--rad);
+	}
+}
