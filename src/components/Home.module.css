@@ -1,0 +1,190 @@
+.hero {
+	max-width: 720px;
+	padding-block: 88px 24px;
+}
+
+.mark {
+	width: 52px;
+	height: 52px;
+	border-radius: 15px;
+	background: var(--blue-tint);
+	color: var(--blue);
+	display: grid;
+	place-items: center;
+	font-size: 22px;
+	font-weight: var(--wt-display);
+	margin-bottom: 30px;
+}
+
+.heroTitle {
+	text-wrap: balance;
+}
+
+.heroIntro {
+	margin-top: 16px;
+	font-size: var(--fs-lead);
+	color: var(--ink-2);
+}
+
+.heroBody {
+	margin-top: 22px;
+	font-size: var(--fs-lead);
+	line-height: 1.65;
+	color: var(--ink-2);
+	max-width: 58ch;
+}
+
+/* ---------- product cards ---------- */
+
+.products {
+	margin-top: 48px;
+	display: grid;
+	gap: 16px;
+}
+
+.product {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 300px;
+	align-items: center;
+	gap: 40px;
+	padding: 32px;
+	border-radius: var(--rad-lg);
+	background: var(--card);
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow-card);
+	transition: border-color 0.18s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product:hover {
+	border-color: var(--blue);
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-pop);
+}
+
+.productHead {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+
+.productName {
+	font-size: clamp(20px, 2vw, 25px);
+	font-weight: var(--wt-heading);
+	letter-spacing: -0.025em;
+}
+
+.productBody {
+	margin-top: 14px;
+	font-size: var(--fs-small);
+	line-height: 1.65;
+	color: var(--ink-2);
+	max-width: 56ch;
+}
+
+.productMeta {
+	margin-top: 20px;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: var(--fs-small);
+	font-weight: var(--wt-medium);
+	color: var(--blue);
+}
+
+.productMeta svg {
+	width: 15px;
+	height: 15px;
+	stroke: currentColor;
+	fill: none;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	transition: transform 0.2s ease;
+}
+
+.product:hover .productMeta svg {
+	transform: translateX(3px);
+}
+
+.productPlatform {
+	font-family: var(--font-mono);
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--ink-3);
+	margin-top: 18px;
+}
+
+/*
+  A cropped screenshot tile per product. Fixed proportions keep the three rows the
+  same height whatever shape the underlying screenshot is.
+*/
+.productShot {
+	border-radius: var(--rad);
+	overflow: hidden;
+	background: var(--tint-neutral);
+	padding: 16px 16px 0;
+}
+
+.productShotPeelday {
+	background: var(--tint-peelday);
+}
+.productShotDesktop {
+	background: var(--tint-desktop);
+}
+.productShotIos {
+	background: var(--tint-ios);
+}
+
+.productShot img {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	object-position: top center;
+	border-radius: 10px 10px 0 0;
+	border: 1px solid var(--line);
+	border-bottom: 0;
+	box-shadow: 0 12px 28px -18px rgba(20, 30, 60, 0.55);
+	transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.product:hover .productShot img {
+	transform: translateY(-5px);
+}
+
+/* ---------- elsewhere ---------- */
+
+.elsewhere {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-top: 36px;
+}
+
+@media (max-width: 900px) {
+	.product {
+		grid-template-columns: minmax(0, 1fr) 230px;
+		gap: 28px;
+		padding: 26px;
+	}
+}
+
+@media (max-width: 700px) {
+	.hero {
+		padding-block: 56px 8px;
+	}
+	.product {
+		grid-template-columns: minmax(0, 1fr);
+		padding: 22px;
+		gap: 22px;
+	}
+	.productShot {
+		order: -1;
+		padding: 12px 12px 0;
+	}
+	.productShot img {
+		aspect-ratio: 16 / 10;
+	}
+}

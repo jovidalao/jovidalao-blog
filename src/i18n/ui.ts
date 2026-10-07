@@ -13,403 +13,302 @@ export const ui = {
 			dark: "Dark",
 			system: "System",
 		},
+		footer: {
+			blurb: "Indie developer in Hobart, Tasmania. I build small, private, local-first apps.",
+			appsTitle: "Apps",
+			moreTitle: "More",
+			legalTitle: "Legal",
+			converloopDesktop: "Converloop for Desktop",
+			converloopIos: "Converloop for iPhone",
+			source: "Source on GitHub",
+			email: "Email",
+		},
 		home: {
-			greeting: "Hi, I'm jovidalao",
-			intro:
-				"Indie developer based in Hobart. I build thoughtful apps and occasionally write about how I learn and build.",
-			appsHeading: "Apps I build",
-			peeldayBadge: "Now on the App Store",
-			peeldayTitle: "Peelday",
-			peeldayDescription:
-				"An offline-first visual diary with ticket-stub aesthetics. Collect photos, stickers, and notes on paper that's just yours — one page per day.",
-			peeldayCta: "Learn more",
-			converloopBadge: "macOS available · More platforms in development",
-			converloopTitle: "Converloop",
-			converloopDescription:
-				"A local-first AI language tutor with inline correction and learning-only memory: it remembers how you use language, not your personal life.",
-			converloopCta: "Learn more",
+			greeting: "jovidalao",
+			intro: "Indie developer in Hobart, Tasmania.",
+			body: "I build small apps that keep your data on your device — a paper diary that never asks for an account, and a language tutor that remembers how you use language, not who you are.",
+			productsKicker: "Apps",
+			productsHeading: "Two products, three builds.",
+			productsBody: "Everything runs locally first. No accounts, no analytics, nothing collected that the app doesn't need to do its job.",
+			products: {
+				peelday: {
+					name: "Peelday",
+					platform: "iPhone",
+					status: "On the App Store",
+					live: true,
+					body: "An offline-first visual diary with ticket-stub aesthetics. One page a day on dotted paper — photos cut out on device, stickers, notes, and the weather.",
+				},
+				converloopDesktop: {
+					name: "Converloop for Desktop",
+					platform: "macOS · Windows",
+					status: "macOS available",
+					live: true,
+					body: "The full learning workspace. Conversation partners and group chat, an inspectable evidence timeline, learning projects, and custom drills — all on local SQLite.",
+				},
+				converloopIos: {
+					name: "Converloop for iPhone & iPad",
+					platform: "iOS · iPadOS",
+					status: "Coming soon to the App Store",
+					live: false,
+					body: "An AI conversation partner, native in SwiftUI. Every sentence corrected inline, 54 real-life scenes to role-play, and listening and dictation built from your own sentences.",
+				},
+			},
+			cta: "Learn more",
+			aboutKicker: "Elsewhere",
+			aboutHeading: "Say hello.",
+			aboutBody: "I read everything. The fastest way to reach me is email; source code and half-finished things live on GitHub.",
+		},
+		blog: {
+			kicker: "Writing",
+			heading: "Notes on learning and building",
+			body: "Infrequent posts, in English and Chinese.",
+			empty: "Nothing published yet.",
+			back: "← All posts",
+			updated: "Updated",
 		},
 		peelday: {
 			name: "Peelday",
 			tagline: "A visual diary for everyday joy",
 			metaDescription:
-				"Peelday — an offline-first visual diary for iOS. Daily sticker pages, smart cutouts, calendar browse, widget, and optional iCloud sync.",
-			heroSubtitle:
-				"A diary for the little things. Photos, stickers, and notes — kept on paper that's just yours.",
-			heroImageAlt: "Peelday app screenshot",
+				"Peelday — an offline-first visual diary for iPhone. Daily sticker pages, on-device photo cutouts, ticket OCR, calendar browse, a Home Screen widget, and optional iCloud sync.",
+			status: "On the App Store · iPhone · one-time purchase",
+			heroEyebrow: "Offline-first visual diary",
+			heroTitle: "Sticker your day",
+			heroAccent: "into a page.",
+			heroBody:
+				"A diary for the little things. Photos, ticket stubs, and notes, arranged by hand on dotted paper that's just yours. No account, no feed, no one else looking.",
 			download: "Download on the App Store",
-			comingSoon: "Coming to the App Store",
-			featuresHeading: "What you can do",
-			features: [
-				{
-					title: "Daily canvas",
-					body: "Build each day on dotted paper with draggable stickers — stamps, cutouts, tickets, text, and weather.",
+			downloadNote: "iPhone · iOS 18 or later",
+			heroChecks: ["No account, no ads, no analytics", "Cutouts and ticket OCR run on device", "iCloud sync is opt-in, on your own container"],
+			shots: {
+				hero: {
+					title: "Today's page, filled in",
+					note: "A finished daily page on dotted paper: two photo cutouts, a ticket stub, a handwritten-style text sticker, and the weather stamp. Show the page well populated rather than empty.",
+					meta: "iPhone · portrait · 1290×2796",
+					alt: "A Peelday daily page on dotted paper with photo cutouts, stickers, and notes",
 				},
-				{
-					title: "Smart creator",
-					body: "Snap or import photos, auto cutout with Vision, OCR for tickets, and polaroid or stamp templates.",
+				creator: {
+					title: "Sticker maker, mid-cutout",
+					note: "The creation sheet with a photo whose subject has just been lifted out by Vision, template row (polaroid / stamp / ticket) visible underneath.",
+					meta: "iPhone · portrait · 1290×2796",
 				},
-				{
-					title: "Batch add",
-					body: "Drop many photos at once; Peelday cuts them out and arranges them on your page.",
+				ticket: {
+					title: "Ticket scan with OCR",
+					note: "A scanned cinema or gig ticket where the recognised title and date have already been filled into the sticker fields.",
+					meta: "iPhone · portrait · 1290×2796",
 				},
-				{
-					title: "Calendar & widget",
-					body: "Browse past days on a calendar and pin today's page to your Home Screen widget.",
+				calendar: {
+					title: "Calendar browse",
+					note: "Month view with page thumbnails on the days that have entries, so the year reads as a wall of pages.",
+					meta: "iPhone · portrait · 1290×2796",
 				},
-				{
-					title: "Private by default",
-					body: "No account, no ads, no analytics. Your journal stays on your device — iCloud sync is optional.",
+				widget: {
+					title: "Home Screen widget",
+					note: "An iPhone Home Screen with the Peelday widget showing today's page among ordinary app icons.",
+					meta: "iPhone · portrait · 1290×2796",
 				},
-				{
-					title: "One-time unlock",
-					body: "Extra styles, full sticker catalog, sharing, and Family Sharing with a single purchase.",
-				},
+			},
+			makeKicker: "How a page happens",
+			makeHeading: "Snap it, cut it, stick it down.",
+			makeBody: "Every sticker is made on your device. Nothing is uploaded to be processed, so it works on a plane, in a tunnel, or with the Wi-Fi off.",
+			makeSteps: [
+				{ number: "01", title: "Snap or import", body: "Take a photo or pull one from your library. Drop in a whole batch and Peelday handles them together." },
+				{ number: "02", title: "Cut it out", body: "Vision lifts the subject off its background on device. Ticket stubs get OCR so the title and date fill themselves in." },
+				{ number: "03", title: "Place it", body: "Drag, rotate, and layer it onto today's dotted page alongside stamps, text, and the weather." },
 			],
+			featuresKicker: "What you can do",
+			featuresHeading: "Everything that fits on a page.",
+			features: [
+				{ title: "Daily canvas", body: "Build each day on dotted paper with draggable stickers — stamps, cutouts, tickets, text, and weather." },
+				{ title: "Smart creator", body: "Snap or import photos, auto cutout with Vision, OCR for tickets, and polaroid or stamp templates." },
+				{ title: "Batch add", body: "Drop many photos at once; Peelday cuts them out and arranges them on your page." },
+				{ title: "Calendar browse", body: "Flip back through the year as a calendar of pages and reopen any day you kept." },
+				{ title: "Home Screen widget", body: "Pin today's page to your Home Screen and tap straight through to it." },
+				{ title: "Optional iCloud", body: "Sync is off by default. Turn it on and your pages travel through your own iCloud, not a server of mine." },
+			],
+			spotlights: {
+				calendar: {
+					eyebrow: "Browse",
+					title: "Your year, as a calendar of pages.",
+					body: "Every page you keep stays exactly where you made it. Open the calendar and the months fill in with thumbnails — the days you filled in stand out, the empty ones stay quiet. Tap any one to reopen it and keep going.",
+					points: ["Month view with a thumbnail on every page you made", "Reopen any past day and keep editing it", "Nothing is archived away or hidden behind a paywall"],
+				},
+				widget: {
+					eyebrow: "Home Screen",
+					title: "Today, one tap away.",
+					body: "Peelday only works if it's easy to reach. The widget shows today's page as it currently stands, so the diary is a glance rather than a chore — and tapping it opens straight into today, not a menu.",
+					points: ["Today's page, live on your Home Screen", "Tap through directly to today — no navigation", "Updates as you add to the page"],
+				},
+			},
+			privacyKicker: "Private by default",
+			privacyHeading: "There is nowhere for it to go.",
+			privacyBody:
+				"Peelday has no account system, so there is nothing to sign up for and nothing to sign in to. Your pages live in the app's own store on your iPhone. Photo cutouts and ticket OCR run on device, so your images are never uploaded to be processed.",
+			privacyPoints: [
+				"No account, no ads, no analytics SDK",
+				"On-device cutout and OCR — images are never uploaded",
+				"iCloud sync is opt-in and uses your own iCloud container",
+				"Sticker images are included in your device backup",
+			],
+			priceKicker: "Pricing",
+			priceHeading: "One purchase. Yours forever.",
+			priceBody:
+				"The diary itself is free. A single unlock adds the full sticker catalogue, extra page styles, sharing, and iCloud sync — bought once, shared with your family, never billed again.",
+			pricePoints: ["Full sticker catalogue and extra page styles", "Sharing and export", "Optional iCloud sync", "Family Sharing included"],
+			finalHeading: "Keep the little things.",
+			finalBody: "Free to start. One page a day is enough.",
 			legal: {
 				privacy: "Privacy Policy",
 				terms: "Terms of Use",
 				contact: "Contact",
 			},
 		},
-		converloop: {
+		converloopDesktop: {
+			name: "Converloop for Desktop",
+			tagline: "The full learning workspace for macOS and Windows",
 			metaDescription:
-				"Converloop is a local-first AI language tutor with inline correction, natural rewrites, composing help, and learning-only memory. It remembers how you use language—not your personal life.",
-			tagline: "Local-first AI language tutor · macOS available now",
-			launch: {
-				status: "macOS available now · iPhone, iPad & Windows in development",
-				heroEyebrow: "Your conversations become your curriculum",
-				heroTitle: "Speak. Notice. Remember.",
-				heroAccent: "Reuse.",
-				heroBody:
-					"Converloop keeps practice moving like a real conversation, corrects you in context, and turns language gaps—not personal life—into learning memory that returns when it matters.",
-				download: "Download for macOS",
-				downloadNote: "Apple Silicon + Intel · v0.1.1",
-				source: "View source",
-				trust: "Free and open source · only language learning is remembered · portable learning backup",
-				preview: {
-					realScreenshotAlt: "Real Converloop conversations running on macOS and iPhone",
-					desktopScreenshotAlt: "Converloop macOS conversation showing inline corrections, a natural rewrite, input guidance, and the learning coach",
-					mobileScreenshotAlt: "Converloop iPhone conversation showing praise, expression guidance, inline corrections, and a natural rewrite",
-					realScreenshotLabel: "Real macOS + iPhone conversations · current builds",
+				"Converloop for Desktop — a local-first AI language tutor for macOS and Windows. Conversation partners, group chat, an auditable evidence timeline, learning projects, and custom Markdown drills, all on local SQLite.",
+			status: "macOS available · Windows validated in CI",
+			heroEyebrow: "macOS · Windows",
+			heroTitle: "A coach beside",
+			heroAccent: "your work.",
+			heroBody:
+				"The roomy build. Longer sessions, side-by-side comparison, a learning record you can actually open and audit, and the tooling to turn a vague goal into a real practice plan.",
+			download: "Download for macOS",
+			downloadNote: "Apple Silicon + Intel · v0.1.1",
+			source: "View source",
+			heroChecks: ["Free and open source, AGPL-3.0", "Mastery evidence in local SQLite", "Bring your own model and API keys"],
+			shots: {
+				// The site draws the macOS window itself, so captures should exclude the app's own chrome.
+				chromeHint: "app content only — the site draws the window",
+				hero: {
+					title: "The conversation workspace",
+					note: "A populated ordinary conversation with all three surfaces visible at once: conversation history in the middle, an inline correction on a learner turn, and the Coach panel on the right. Realistic learning content, no empty states or settings.",
+					meta: "macOS · 1600×1000",
+					alt: "Converloop on macOS showing a conversation with inline corrections, a natural rewrite, and the learning coach",
 				},
-				loop: {
-					kicker: "One learning loop",
-					heading: "The useful part of a conversation doesn't disappear",
-					body: "Every platform follows the same four-step contract, so practice feels familiar even when the interface adapts to the device.",
-					steps: [
-						{ number: "01", title: "Express", body: "Write or speak naturally. Ask for a topic, simpler wording, a roleplay, or a recap whenever you need momentum." },
-						{ number: "02", title: "Notice", body: "See the exact span that needs work, a natural rewrite, and an explanation in the conversation itself." },
-						{ number: "03", title: "Remember", body: "Errors, successful uses, expression gaps, and listening misses become structured learning signals." },
-						{ number: "04", title: "Reuse", body: "Due material returns through conversation, review, dictation, listening, and focused practice." },
-						],
-					},
-					platforms: {
-					kicker: "One product, native rhythms",
-					heading: "Familiar logic. The right experience for each screen.",
-					body: "You should never relearn the product when you change devices. The learning model stays consistent; navigation, input, and density adapt.",
-					items: [
-						{
-							tag: "macOS · available",
-							title: "A coach beside your work",
-							body: "A roomy conversation workspace for longer sessions, comparison, configuration, and migration.",
-							points: ["Keyboard-first navigation and slash commands", "Persistent context for conversations and learning detail", "Full local backup plus cross-platform portable export"],
-						},
-						{
-							tag: "iPhone · in development",
-							title: "Practice in the gaps of your day",
-							body: "Fast entry, thumb-friendly actions, and voice make a useful turn possible before the moment passes.",
-								points: ["New conversation opens directly into speaking or a recurring grammar lesson", "Swipe, long-press, dictation, and spoken playback", "Background audio for listening and shadowing"],
-						},
-						{
-							tag: "iPad · in development",
-							title: "A focused learning desk",
-							body: "A persistent split view keeps conversations visible while the larger canvas supports focused practice.",
-							points: ["Sidebar and conversation stay visible together", "Hardware-keyboard shortcuts match the desktop model", "Touch remains first-class when the keyboard is away"],
-						},
-					],
-				},
-				features: {
-					kicker: "Built around real practice",
-					heading: "Everything behind the conversation",
-					items: [
-						{ title: "Inline correction", body: "The wrong span, the fix, and a natural rewrite stay attached to the sentence you actually wrote." },
-					{ title: "Learning-only memory", body: "The app keeps goals, practice preferences, strengths, gaps, and review state—never identity, relationships, routines, or life events." },
-						{ title: "Listening and dictation", body: "Turn your own conversations into listening material, then practise the words you genuinely missed." },
-						{ title: "Roles and branches", body: "Change the scene, swap roles, adjust difficulty, or branch without losing the original conversation." },
-						{ title: "Provider freedom", body: "Use supported remote providers or compatible local endpoints and keep your choice separate from your learning data." },
-						{ title: "Readable, portable data", body: "Export a documented JSON backup that both desktop and mobile can understand, with native detail preserved." },
-					],
-				},
-				continuity: {
-					kicker: "Carry learning, not friction",
-					heading: "One learning history, adapted to every device",
-					body: "Converloop's portable backup keeps the shared learning model stable across platforms. Transfer is explicit and user-controlled today — not a hidden cloud sync.",
-					file: "converloop-backup.json",
-					points: [
-						{ title: "Shared core", body: "Conversations, messages, corrections, learning items, review state, and portable preferences move together." },
-						{ title: "Safe adaptation", body: "Desktop-only tools and mobile-only settings stay native instead of being flattened or silently deleted." },
-						{ title: "Preview before import", body: "See the source platform and import scope, then confirm replace or merge behaviour before data changes." },
-					],
-				},
-				privacy: {
-					badge: "A memory with a clear boundary",
-					heading: "It remembers how you learn—not who you are",
-					body: "A conversation can stay coherent inside its own thread, but personal details are never promoted into cross-conversation memory. Learning data stays on your device by default; a remote provider receives only what the request needs.",
-					points: ["No Converloop account required", "Provider credentials stay in secure storage", "Credentials are excluded from portable backups"],
-					keptTitle: "Kept as learning memory",
-					kept: ["Languages, level, goals, and practice preferences", "Errors, correct uses, expression and listening gaps", "Mastery signals, review state, and communication skills"],
-					privateTitle: "Not turned into memory",
-					private: ["Name, age, job, school, location, or identity", "Family, relationships, interests, routines, or purchases", "Health, beliefs, finances, travel, plans, or life events"],
-				},
-				release: {
-					kicker: "Get Converloop",
-					heading: "Start on macOS today",
-					body: "The current public release includes download assets for Apple Silicon and Intel Macs. The code is open for inspection, contribution, and self-hosted experimentation.",
-					macTitle: "macOS v0.1.1",
-					macBody: "Choose the Apple Silicon or Intel disk image from the latest release.",
-					roadTitle: "iPhone, iPad & Windows",
-					roadBody: "Native experiences are in active development. Public installers are not available yet.",
-				},
-				faq: {
-					heading: "Good to know",
-					items: [
-						{ title: "What does Converloop remember?", body: "Only language-learning state: your languages and level, learning goals, practice preferences, mastery signals, recurring errors, expression gaps, and review progress. Personal facts and relationship histories are not retained as cross-conversation memory." },
-						{ title: "Does Converloop sync automatically?", body: "Not yet. Use the portable backup to move shared learning data between supported builds with an explicit import preview." },
-						{ title: "Does everything stay offline?", body: "Your database is local by default. Requests to a remote AI or speech provider send the content required to complete that request." },
-						{ title: "Do I need a Converloop account?", body: "No. You choose and configure the model or speech providers you want to use." },
-					],
-				},
-				final: {
-					heading: "Make every conversation teach the next one.",
-					body: "Download the macOS app or follow development in the open.",
-				},
-			},
-			heroTitleHtml: 'Converse. Correct. <span class="cl-accent">Remember.</span> Repeat.',
-			heroSubtitle:
-				"An AI tutor that talks with you, corrects the sentence you just wrote, and remembers every language gap—not your personal life—so the next practice starts where you need it.",
-			viewOnGithub: "View on GitHub",
-			heroNote:
-				"Free & open source · AGPL-3.0 · bring your own provider · local data by default",
-			demo: {
-				convo: "conversation · english b2",
-				aiOpen: "How did the demo go?",
-				userPre: "It went great — I ",
-				userDel: "have fix",
-				userIns: "fixed",
-				userPost: " the login bug.",
-				natural: "It went great — I nailed the login bug.",
-				issueCat: "Grammar",
-				issueSev: "Minor",
-				issueExp: "Simple past for a finished action — “fixed”, not “have fix”.",
-				reply: "Nice work — did QA sign off before you shipped it?",
-			},
-			intro: {
-				kicker: "What it is",
-				heading: "A chat app built for learning a language",
-				body: "Converloop isn't a general-purpose chatbot with a learning skin. It starts from conversation and turns every exchange into precise learning — a chat partner built for language learning, and an AI-native learning app at the same time.",
-				pillars: [
-					{
-						title: "A language-learning-native chatbot",
-						body: "Chatting with it is the lesson. Corrections land on the sentence you just wrote, replies come bilingual or fully explained, any text is explained the moment you select it, and when you're stuck the input box suggests how to keep going — all the help lives inside the conversation, never interrupting it.",
-					},
-					{
-						title: "An AI-native language-learning app",
-						body: "It remembers you. Every slip, every win, every expression gap is recorded precisely — a real picture of where you're weak — and due items quietly weave back into your conversations and drills. The more you talk, the better it knows you.",
-					},
-				],
-			},
-			methodsKicker: "Practice modes",
-			methodsHeading: "Many ways to practice — not just chat",
-			methodsIntro:
-				"Conversation is just the start. Each mode below feeds the same learning memory — so listening, dictation, spin-off chats, and drills all reinforce the exact gaps your conversations turned up.",
-			listening: {
-				title: "Ear-training, from your own conversations",
-				body: "Every chat becomes listening material. The AI's replies and the polished version of your own lines play back in order — so you train on language you've actually used, not a generic audio deck.",
-				points: [
-					"Repeat a line, slow it down, set a gap to shadow it, and loop.",
-					"Reveal the text only once you've caught it by ear.",
-					"Built from the conversations you pick — your words, your topics.",
-				],
-				mock: {
-					source: "from 2 conversations · 14 lines",
-					side: "Reply",
-					line: "Did QA sign off before we shipped the fix?",
-					showText: "Show text",
-					repeatLabel: "Repeat",
-					repeatVal: "2×",
-					speedLabel: "Speed",
-					speedVal: "0.9×",
-					gapLabel: "Gap",
-					gapVal: "2s",
-					loopLabel: "Loop",
-				},
-			},
-			dictation: {
-				title: "Dictation — listen, type it back, see what you missed",
-				body: "Pick a theme and Converloop reads out sentences one at a time. Type exactly what you hear, then it marks your transcription against the real sentence and explains the gap — no multiple choice, you produce every word.",
-				points: [
-					"Replay at normal speed or slowed to 0.7× — as many times as you need.",
-					"Your replay count quietly tunes how hard the next sentence is.",
-						"Words you mishear become listening evidence in the same learning record and return in later sentences.",
-				],
-				mock: {
-					prompt: "Listen and type what you hear",
-					rate: "0.7×",
-					typed: ["Can", "you", "work", "me", "through", "the", "rollback", "plan"],
-					missIndex: 2,
-					verdict: "Missed 1 word",
-					pre: "Can you ",
-					miss: "walk",
-					post: " me through the rollback plan?",
-						note: "“walk” → added as listening evidence, then woven into a later sentence.",
-				},
-			},
-			derive: {
-				title: "Derive new conversations — one thread becomes many",
-				body: "Reached a good moment? Branch it. From any point you can spin off a fresh conversation — harder or easier, roles reversed, a new scene, or picked up again the next day. The original stays right where it was.",
-				points: [
-					"Continue from here — branch off without losing the original.",
-					"Make it harder or easier — same situation, retuned to your level.",
-					"Swap roles, change the scene, or continue the next day.",
-				],
-				mock: {
-					cap: "From this conversation…",
-					actions: [
-						{ icon: "branch", label: "Continue from here" },
-						{ icon: "harder", label: "Make it harder" },
-						{ icon: "easier", label: "Make it easier" },
-						{ icon: "swap", label: "Swap roles" },
-						{ icon: "scene", label: "Change scene" },
-						{ icon: "calendar", label: "Continue next day" },
-					],
-				},
-			},
-			drills: {
-				title: "Focused drills — a training center around your weak spots",
-				body: "Open the Practice Center and pick a drill — scenario practice, dictation, or a weak-spot quickfire. Each one builds a session around what's due for review. Or write your own and export it as a single file.",
-				points: [
-					"Scenario drills — respond inside concrete, on-topic situations.",
-					"Weak-spot quickfire — your due items, turned into production tasks.",
-					"Write a custom drill and share it as one file.",
-				],
-				mock: {
-					title: "Practice Center",
-					drills: [
-						{ icon: "zap", name: "Scenario drills", desc: "Respond inside concrete situations" },
-						{ icon: "pen", name: "Dictation", desc: "Type exactly what you hear" },
-						{ icon: "target", name: "Weak-spot drill", desc: "Your due items as quick tasks", badge: "6 due" },
-					],
-				},
-			},
-			flow: {
-				kicker: "Under the hood",
-				heading: "What happens in one turn",
-				intro:
-					"Two agents run on every sentence — one keeps the conversation natural and hands you help the moment you're stuck, the other grades and explains in the background. What they find becomes one learning memory, reused across your conversations, reviews, and every practice mode.",
-				inParallel: "in parallel",
-				signals: "signals",
-				whenDue: "reused",
-				input: {
-					title: "You write or speak",
-					body: "A sentence in your target language — typed, or spoken and transcribed on the spot.",
-				},
-				convAgent: {
-					tag: "Conversation agent",
-					title: "A natural reply — plus help on tap",
-					body: "In character and at your level, so the talk keeps moving. Stuck? It offers a draft, the natural phrasing, or a few words — and any reply can go bilingual or fully explained.",
-				},
-				tutorAgent: {
-					tag: "Tutor agent",
-					title: "Correction & explanation, in-line",
-					body: "On the exact sentence you wrote: error span, the fix, a natural rewrite, grammar on tap — and any text you select gets explained too.",
-				},
-				memory: {
-					title: "Local learning memory",
-					body: "Each turn records discrete signals — error · used correctly · expression gap · newly introduced — gathered into one memory on your device.",
-				},
-				review: {
-					title: "One memory, called on everywhere",
-					body: "Due items weave back into your next conversation — and wait for you in review, dictation, listening, and focused drills. The same memory powers every mode.",
-				},
-				loopback: "↺ and the loop repeats — each turn a little sharper",
-			},
-			showcase: {
-				kicker: "In the conversation",
-				heading: "The conversation is the interface",
-				intro:
-					"Correction, natural phrasing, help composing your turn, bilingual reading, and explanation all live where the learning moment happens — inside the conversation.",
 				correction: {
-					title: "Correction stays attached to what you wrote",
-					body: "The exact error is marked in place. The fix sits beside it, a more natural version appears underneath, and the grammar explanation stays one layer away — no separate report to decode.",
-					naturalLabel: "Natural version",
+					title: "One correction, up close",
+					note: "Cropped to a single learner turn and its Coach feedback. The error span, the full correction, the natural alternative, and the explanation all have to be readable without opening the image.",
+					meta: "macOS · 1400×900",
 				},
-				slash: {
-					title: "Stuck for words? Help is right where you type",
-						body: "When your turn stalls, help begins in the composer. Type “/” on desktop for precise keyboard commands; on iPhone and iPad, simply ask for a topic, simpler wording, a roleplay, a recap, or the natural way to say what you mean.",
-					inputPlaceholder: 'Type a message, or "/" for help…',
-						foot: "Desktop adds keyboard commands; mobile keeps the same help available through natural conversation and voice",
-					rows: [
-						{ name: "topic", desc: "Suggest a topic and start the next turn" },
-						{ name: "simpler", desc: "Ask your partner to say it more simply" },
-						{ name: "roleplay", desc: "Move into a concrete scene and role" },
-						{ name: "recap", desc: "Summarise what mattered in this thread" },
-						{ name: "how", args: "<what you mean>", desc: "Show the natural way to say it" },
-					],
+				group: {
+					title: "Group chat with partners",
+					note: "A named 2–4 member group conversation mid-thread, with @Name routing visible and two partners having distinct identities. Show the primary speaker and at least one second perspective.",
+					meta: "macOS · 1400×900",
 				},
-				selection: {
-					title: "Select anything — explained, not just translated",
-					body: "Highlight a word or phrase anywhere in the app and a small island floats up: Analyze, Read aloud, or Add to your learning data. Analyze tells you why the phrase works — the nuance, and how you'd reuse it — then one click saves it to memory for review.",
-					actions: { analyze: "Analyze", speak: "Read aloud", add: "Add" },
-					sourcePre: "Did QA ",
-					sourceHl: "sign off",
-					sourcePost: " before we shipped the fix?",
-					analysis:
-						"A phrasal verb for giving formal approval — here QA “signs off,” i.e. officially OKs the release before it goes out. Stronger than just “agree.” Reuse it: “Can you sign off on this?”",
+				evidence: {
+					title: "Evidence timeline for a weak point",
+					note: "The learning data view opened on one recurring mastery item, showing its evidence events over time — error, correct, introduced — with the derived status visible.",
+					meta: "macOS · 1400×900",
 				},
-				reply: {
-					title: "Every reply — in two languages, or fully explained",
-					body: "Only half-get a reply? Turn on Bilingual reading and each sentence keeps its original text with your native translation tucked underneath — auto-open it on every turn, or toggle it per reply. Or tap Explain for a breakdown pitched to what you’ve already mastered. Both live on the reply itself — never a separate tab.",
-					bubble: [
-						{ target: "Nice work.", native: "干得漂亮。" },
-						{ target: "Did QA sign off before you shipped it?", native: "QA 在你上线之前签字确认了吗？" },
-					],
-					actions: { speak: "Read aloud", explain: "Explain", bilingual: "Bilingual" },
-					explainLabel: "Explanation",
-					explainBody:
-						"“sign off” = give formal approval. You already use “ship”, so the new piece here is sign off (on) — the official OK before a release goes out.",
+				training: {
+					title: "Training Center, populated",
+					note: "Scenario practice, dictation, and weak-item quick-drill cards side by side, with a real due count on the quick-drill card.",
+					meta: "macOS · 1400×900",
+				},
+				palette: {
+					title: "Command palette open",
+					note: "The command palette over a conversation with a fuzzy query typed and several actions matched. Proves the keyboard-first side of the desktop build.",
+					meta: "macOS · 1400×900",
 				},
 			},
-			featuresKicker: "Local-first & open",
-			featuresHeading: "And the system behind it",
-			featuresIntro:
-				"The conversation is the star — but everything around it is built to stay private, inspectable, and yours.",
-			features: [
-				{
-					title: "Inline correction",
-					body: "No separate report to decode. The wrong span is struck through and the fix sits right beside it, with grammar details and natural rewrites one tap away.",
-				},
-				{
-					title: "Learning memory",
-					body: "Every slip, win, and gap becomes a signal in local memory, so due reviews resurface inside your next conversation.",
-				},
-				{
-					title: "Expression gaps",
-					body: "Stuck mid-sentence? Type in your own language and get the natural target-language phrasing — explained, not just translated.",
-				},
-				{
-					title: "Capability library",
-					body: "See every capability the AI runs, switch any on or off, nudge it with your own instructions, or build a new one — and share it as a single file.",
-				},
-				{
-					title: "Bring your own model",
-					body: "OpenAI-compatible, Anthropic, Gemini, or supported subscription login. macOS is available now; mobile and Windows builds are in development.",
-				},
-				{
-					title: "Local-first & private",
-					body: "No Converloop account. Learning data stays on your device by default; remote providers receive only the content needed for each request. Backups are readable and portable.",
-				},
+			pillarsKicker: "What the desktop build is for",
+			pillarsHeading: "Room to actually look at your learning.",
+			pillarsBody: "A big screen buys you two things a phone can't: several surfaces at once, and the patience to inspect a record instead of just trusting it.",
+			pillars: [
+				{ title: "Conversation and Coach together", body: "The reply streams first so practice still feels like a conversation; the tutor works in parallel and its feedback lands beside the turn, not after it." },
+				{ title: "An auditable record", body: "Mastery items, their evidence events, and the derived status all sit in local SQLite — open them, inspect them, correct them by hand." },
+				{ title: "Plans, not just drills", body: "Turn interview prep or a recurring expression gap into a learning project with observable can-do goals and lesson drafts." },
 			],
+			partners: {
+				kicker: "Conversation partners",
+				heading: "Practice with people, not a blank chatbot.",
+				body:
+					"Choose a distinct partner for an ordinary conversation, or bring 2–4 of them into a group chat with @Name routing, a primary speaker, mute, and leave controls. Each keeps their own identity, voice, accent, register, and pace — while sharing one learning-only profile. No partner builds a private relationship history.",
+				points: [
+					"Editable built-in partners plus your own, with persistent voice and register",
+					"Named 2–4 member group chats with @Name routing and a primary speaker",
+					"Shared mastery across every partner; no retained personal facts",
+				],
+			},
+			memory: {
+				kicker: "Evidence, not mysterious AI memory",
+				heading: "The model observes. Code decides.",
+				body:
+					"Converloop keeps structured mastery records and the evidence behind them in local SQLite. The model can observe and propose; deterministic code owns counts, state changes, review selection, and persistence. Marking an item known records an explicit override — it does not invent a successful attempt or rewrite the evidence.",
+				points: [
+					{ title: "Traceable evidence", body: "Error, correct, introduced, and gap events are all recorded with modality, assistance, elicitation, self-repair, and response latency." },
+					{ title: "Review that reads the record", body: "Due items come from weakness plus an event-derived FSRS-lite stability and difficulty model, then weave back into conversation and training." },
+					{ title: "Editable by hand", body: "Inspect evidence, edit records directly, preview natural-language edits before writeback, and merge likely duplicate keys on confirmation." },
+					{ title: "Known items as scaffolds", body: "What you already own gets reused for explanation and transfer, so the system isn't only pointed at your mistakes." },
+				],
+			},
+			training: {
+				kicker: "Training and projects",
+				heading: "Turn weak spots into the next activity.",
+				body:
+					"Review is woven back into use rather than parked in a separate tab. Tap a recurring grammar point to diagnose and practise it in chat, run scenario practice, or build listening and dictation out of your own material with Conversation Replay.",
+				items: [
+					{ title: "Focused lessons", body: "Teacher-style sessions around grammar, an expression gap, daily review, or a goal you define yourself." },
+					{ title: "Learning projects", body: "The Task Agent turns interview prep or a business-email need into a project with can-do goals, a first-attempt task, and a transfer task." },
+					{ title: "Material import", body: "Bring in text, Markdown, CSV, JSON, or PDF locally to ground a project in a real task you actually have to do." },
+					{ title: "Custom drills", body: "Write a drill as a `converloop/drill@1` Markdown document — frontmatter defines mechanics, body sections define prompts — then share it as one file." },
+				],
+			},
+			capabilities: {
+				kicker: "Capabilities",
+				heading: "Shape the tutor, then audit what it did.",
+				body:
+					"Every built-in capability — correction, explanation, bilingual reading, selection analysis, conversation actions — can be enabled, extended, or replaced. Write your own observers, conversation actions, and reply transformers, with proposal-based access to long-term memory and auditable runs.",
+				points: [
+					"Enable, disable, or nudge any built-in capability with your own instructions",
+					"Custom observers, actions, and reply transformers with guarded memory writes",
+					"Every run is auditable; memory writes stay proposals until code confirms them",
+				],
+			},
+			craftKicker: "Desktop craft",
+			craftHeading: "Built like a desktop app.",
+			craft: [
+				{ title: "Command palette", body: "Fuzzy-find any action without leaving the keyboard." },
+				{ title: "Editable shortcuts", body: "Rebind what you use; the defaults stay out of the way." },
+				{ title: "Themes and accents", body: "Light, dark, and an accent colour that isn't mine." },
+				{ title: "English and Chinese", body: "Full UI in both, including onboarding." },
+			],
+			providers: {
+				kicker: "Bring your own intelligence",
+				heading: "You choose the model. It isn't chosen for you.",
+				body: "Configure a provider once and it stays separate from your learning data. Local speech options can keep supported workflows on device.",
+				rows: [
+					{ label: "Models", body: "OpenAI-compatible endpoints, Anthropic, Gemini, plus Claude and ChatGPT subscription sign-in paths." },
+					{ label: "Speech in", body: "Soniox streaming, OpenAI-compatible transcription, and local Parakeet or Qwen3-ASR." },
+					{ label: "Speech out", body: "Edge Read Aloud and MiMo TTS, with per-partner voices." },
+					{ label: "Credentials", body: "Device-bound encrypted storage. API keys and OAuth tokens never enter a backup." },
+				],
+			},
+			data: {
+				kicker: "Local-first by design",
+				heading: "Your learning history stays inspectable.",
+				points: [
+					"Conversations, mastery evidence, profiles, and non-secret settings live on your device",
+					"Backup and restore as readable JSON; retired personal memories are never exported",
+					"Network use is explicit — only what a request needs goes to the provider you configured",
+					"AGPL-3.0, so the correction logic and memory boundary can be checked rather than trusted",
+				],
+			},
+			release: {
+				kicker: "Get it",
+				heading: "macOS today, Windows from source.",
+				body: "Packaged releases currently provide macOS builds for Apple Silicon and Intel. Windows is validated in CI and can be run from source.",
+				macTitle: "macOS v0.1.1",
+				macBody: "Pick the Apple Silicon or Intel disk image from the latest release.",
+				winTitle: "Windows",
+				winBody: "Validated in CI; build and run from the repository while packaged installers are in progress.",
+			},
+			final: {
+				heading: "Open it beside whatever you're already doing.",
+				body: "Free, open source, and yours to inspect.",
+			},
 		},
 		legal: {
 			privacyTitle: "Privacy Policy — Peelday",
@@ -429,401 +328,302 @@ export const ui = {
 			dark: "深色",
 			system: "跟随系统",
 		},
+		footer: {
+			blurb: "在塔斯马尼亚霍巴特的独立开发者。做小而私密、本地优先的应用。",
+			appsTitle: "应用",
+			moreTitle: "更多",
+			legalTitle: "法律",
+			converloopDesktop: "Converloop 桌面端",
+			converloopIos: "Converloop iPhone 端",
+			source: "GitHub 源代码",
+			email: "邮件",
+		},
 		home: {
-			greeting: "你好，我是 jovidalao",
-			intro: "base 在霍巴特的独立开发者。我在做有意思的应用，偶尔写写学习和构建的过程。",
-			appsHeading: "我开发的应用",
-			peeldayBadge: "App Store 已上线",
-			peeldayTitle: "贴贴手账",
-			peeldayDescription:
-				"贴贴手账是一款离线优先的视觉日记，带有票根美学。每天一页，收集照片、贴纸和文字——只属于你自己的纸张。",
-			peeldayCta: "了解更多",
-			converloopBadge: "macOS 现已提供 · 更多平台开发中",
-			converloopTitle: "Converloop",
-			converloopDescription:
-				"一款本地优先的 AI 语言导师，提供就地纠错与纯语言学习记忆：记住你怎样使用语言，而不是你的个人生活。",
-			converloopCta: "了解更多",
+			greeting: "jovidalao",
+			intro: "在塔斯马尼亚霍巴特的独立开发者。",
+			body: "我做的应用都把数据留在你自己的设备上——一本不需要注册的纸质手账，和一个只记住你怎么用语言、不记住你是谁的语言导师。",
+			productsKicker: "应用",
+			productsHeading: "两个产品，三个版本。",
+			productsBody: "一切先在本地跑。不用注册、不做分析统计，应用用不到的东西一概不收集。",
+			products: {
+				peelday: {
+					name: "贴贴手账",
+					platform: "iPhone",
+					status: "App Store 已上线",
+					live: true,
+					body: "离线优先的视觉日记，带票根美学。每天一页点阵纸——照片在设备上抠好，配上贴纸、文字和天气。",
+				},
+				converloopDesktop: {
+					name: "Converloop 桌面端",
+					platform: "macOS · Windows",
+					status: "macOS 现已提供",
+					live: true,
+					body: "完整的学习工作区。对话伙伴与群聊、可查可改的证据时间线、学习项目和自定义训练，全部跑在本地 SQLite 上。",
+				},
+				converloopIos: {
+					name: "Converloop iPhone 与 iPad 端",
+					platform: "iOS · iPadOS",
+					status: "即将上架 App Store",
+					live: false,
+					body: "原生 SwiftUI 的 AI 外语陪练。每一句当场批改，54 个真实场景演对手戏，再用你自己说过的句子练听力和听写。",
+				},
+			},
+			cta: "了解更多",
+			aboutKicker: "别处",
+			aboutHeading: "打个招呼。",
+			aboutBody: "每条我都会看。邮件最快；源代码和没做完的东西都在 GitHub 上。",
+		},
+		blog: {
+			kicker: "写作",
+			heading: "关于学习与构建的笔记",
+			body: "不定期更新，中英文都有。",
+			empty: "还没有发布的文章。",
+			back: "← 全部文章",
+			updated: "更新于",
 		},
 		peelday: {
 			name: "贴贴手账",
 			tagline: "记录日常小确幸的视觉手账",
 			metaDescription:
-				"贴贴手账（Peelday）— 离线优先的 iOS 视觉日记。每日贴纸页、智能抠图、日历浏览、小组件，以及可选的 iCloud 同步。",
-			heroSubtitle:
-				"记录日常小确幸。照片、贴纸和笔记——保存在只属于你自己的纸张上。",
-			heroImageAlt: "贴贴手账应用截图",
+				"贴贴手账（Peelday）— 离线优先的 iPhone 视觉日记。每日贴纸页、设备端抠图、票根 OCR、日历浏览、主屏幕小组件，以及可选的 iCloud 同步。",
+			status: "App Store 已上线 · iPhone · 一次买断",
+			heroEyebrow: "离线优先的视觉手账",
+			heroTitle: "把今天，",
+			heroAccent: "贴成一页。",
+			heroBody:
+				"记录日常小事的手账。照片、票根和文字，亲手排在只属于你的点阵纸上。不用注册、没有信息流，也没有别人在看。",
 			download: "在 App Store 下载",
-			comingSoon: "即将登陆 App Store",
-			featuresHeading: "你可以做什么",
-			features: [
-				{
-					title: "每日画布",
-					body: "在点阵纸上自由摆放贴纸——印章、抠图、票根、文字和天气。",
+			downloadNote: "iPhone · 需要 iOS 18 或更高版本",
+			heroChecks: ["无需账号、无广告、不做分析统计", "抠图与票根 OCR 都在设备上完成", "iCloud 同步需手动开启，用你自己的容器"],
+			shots: {
+				hero: {
+					title: "贴满内容的今日页",
+					note: "点阵纸上一张已完成的日页：两张抠图照片、一张票根、一个手写风格的文字贴纸和天气印章。要贴得满，不要空页。",
+					meta: "iPhone · 竖屏 · 1290×2796",
+					alt: "贴贴手账的日页，点阵纸上贴着抠图照片、贴纸和文字",
 				},
-				{
-					title: "智能创作",
-					body: "拍照或导入图片，Vision 自动抠图，票根 OCR，以及拍立得、印章等模板。",
+				creator: {
+					title: "正在抠图的贴纸创作页",
+					note: "创作面板中，一张照片的主体刚被 Vision 抠出来，下方能看到拍立得／印章／票根的模板行。",
+					meta: "iPhone · 竖屏 · 1290×2796",
 				},
-				{
-					title: "批量添加",
-					body: "一次拖入多张照片，自动抠图并排列到页面上。",
+				ticket: {
+					title: "票根扫描与 OCR",
+					note: "扫描一张电影票或演出票，识别出的标题和日期已经自动填进贴纸字段里。",
+					meta: "iPhone · 竖屏 · 1290×2796",
 				},
-				{
-					title: "日历与小组件",
-					body: "在日历中浏览过往日子，把今日页面钉到主屏幕小组件。",
+				calendar: {
+					title: "日历浏览",
+					note: "月视图，有记录的日子显示页面缩略图，让一整年看起来像一面贴满页面的墙。",
+					meta: "iPhone · 竖屏 · 1290×2796",
 				},
-				{
-					title: "默认私密",
-					body: "无需账号、无广告、无分析。日记保存在本地——iCloud 同步可选。",
+				widget: {
+					title: "主屏幕小组件",
+					note: "iPhone 主屏幕上，贴贴手账小组件显示今天的页面，周围是普通的 App 图标。",
+					meta: "iPhone · 竖屏 · 1290×2796",
 				},
-				{
-					title: "一次买断",
-					body: "额外样式、完整贴纸库、分享与家庭共享，一次购买永久拥有。",
-				},
+			},
+			makeKicker: "一页是怎么来的",
+			makeHeading: "拍下来、抠出来、贴上去。",
+			makeBody: "每一张贴纸都在你的设备上做好。没有任何东西被上传去处理，所以在飞机上、隧道里、关掉 Wi-Fi 都能用。",
+			makeSteps: [
+				{ number: "01", title: "拍或导入", body: "现拍一张，或者从相册里挑。一次拖进来一整批也行，贴贴手账会一起处理。" },
+				{ number: "02", title: "抠出来", body: "Vision 在设备上把主体从背景里提出来。票根还会走 OCR，标题和日期自己填好。" },
+				{ number: "03", title: "贴上去", body: "拖动、旋转、叠放到今天的点阵页上，再配上印章、文字和天气。" },
 			],
+			featuresKicker: "你可以做什么",
+			featuresHeading: "一页纸装得下的全部。",
+			features: [
+				{ title: "每日画布", body: "在点阵纸上自由摆放贴纸——印章、抠图、票根、文字和天气。" },
+				{ title: "智能创作", body: "拍照或导入图片，Vision 自动抠图，票根 OCR，以及拍立得、印章等模板。" },
+				{ title: "批量添加", body: "一次拖入多张照片，自动抠图并排列到页面上。" },
+				{ title: "日历浏览", body: "把一整年当成一本页面日历往回翻，随时重新打开留下的任何一天。" },
+				{ title: "主屏幕小组件", body: "把今天的页面钉到主屏幕，点一下直接进去继续贴。" },
+				{ title: "可选的 iCloud", body: "同步默认关着。打开后，页面走的是你自己的 iCloud，不是我的服务器。" },
+			],
+			spotlights: {
+				calendar: {
+					eyebrow: "浏览",
+					title: "一整年，就是一本页面日历。",
+					body: "你留下的每一页都还在原来的位置。打开日历，月份会被缩略图填满——贴过的日子一眼就能认出来，空着的安静地待着。点开任意一天，就能接着往下贴。",
+					points: ["月视图里，每张做过的页面都有缩略图", "随时重新打开过去的某一天继续编辑", "不会被归档收起，也不会被藏在付费墙后面"],
+				},
+				widget: {
+					eyebrow: "主屏幕",
+					title: "今天，只差一次点击。",
+					body: "手账只有足够好拿，才会真的被用起来。小组件直接显示今天这一页当前的样子，记录变成一眼就能看到的事，而不是一件要专门去做的事——点一下直接进入今天，不用先过一层菜单。",
+					points: ["今天的页面，实时显示在主屏幕上", "点一下直达今天，不用导航", "页面有更新，小组件跟着更新"],
+				},
+			},
+			privacyKicker: "默认私密",
+			privacyHeading: "它根本没有地方可去。",
+			privacyBody:
+				"贴贴手账没有账号系统，所以没有什么可以注册，也没有什么可以登录。你的页面就存在 iPhone 上应用自己的存储里。照片抠图和票根 OCR 都在设备上跑，图片不会被上传去处理。",
+			privacyPoints: [
+				"无需账号、无广告、不接分析 SDK",
+				"抠图与 OCR 都在设备上完成——图片不会上传",
+				"iCloud 同步需手动开启，用的是你自己的 iCloud 容器",
+				"贴纸图片会包含在设备备份里",
+			],
+			priceKicker: "价格",
+			priceHeading: "买一次，永远是你的。",
+			priceBody:
+				"手账本身免费。一次解锁带来完整贴纸库、更多页面样式、分享和 iCloud 同步——买一次，家庭共享，不再收费。",
+			pricePoints: ["完整贴纸库与更多页面样式", "分享与导出", "可选的 iCloud 同步", "支持家庭共享"],
+			finalHeading: "把小事留下来。",
+			finalBody: "免费开始。一天一页就够了。",
 			legal: {
 				privacy: "隐私政策",
 				terms: "用户协议",
 				contact: "联系我们",
 			},
 		},
-		converloop: {
+		converloopDesktop: {
+			name: "Converloop 桌面端",
+			tagline: "面向 macOS 与 Windows 的完整学习工作区",
 			metaDescription:
-				"Converloop 是一款本地优先的 AI 语言导师，提供就地纠错、地道改写、输入提示与纯语言学习记忆：记住你如何使用语言，而不是你的个人生活。",
-			tagline: "本地优先的 AI 语言导师 · macOS 现已提供",
-			launch: {
-				status: "macOS 现已提供 · iPhone、iPad 与 Windows 正在开发",
-				heroEyebrow: "让你的每次对话，都成为下一次学习的素材",
-				heroTitle: "表达。发现。记\u2060住。",
-				heroAccent: "再用出来。",
-				heroBody:
-					"Converloop 让练习像真实对话一样自然推进，在语境里纠正你，并把语言缺口——而不是个人生活——变成会在恰当时机再次出现的学习记忆。",
-				download: "下载 macOS 版",
-				downloadNote: "Apple 芯片 + Intel · v0.1.1",
-				source: "查看源代码",
-				trust: "免费开源 · 只记语言学习 · 学习数据可迁移",
-				preview: {
-					realScreenshotAlt: "Converloop 在 macOS 与 iPhone 上运行真实对话的界面",
-					desktopScreenshotAlt: "Converloop macOS 对话真实截图，展示行内纠错、地道改写、输入提示和学习教练",
-					mobileScreenshotAlt: "Converloop iPhone 对话真实截图，展示肯定反馈、表达引导、行内纠错和地道改写",
-					realScreenshotLabel: "真实 macOS + iPhone 对话 · 当前版本",
+				"Converloop 桌面端 — 面向 macOS 与 Windows 的本地优先 AI 语言导师。对话伙伴、群聊、可审阅的证据时间线、学习项目和自定义 Markdown 训练，全部跑在本地 SQLite 上。",
+			status: "macOS 现已提供 · Windows 已在 CI 验证",
+			heroEyebrow: "macOS · Windows",
+			heroTitle: "工作旁边的",
+			heroAccent: "一位语言教练。",
+			heroBody:
+				"更宽敞的那一版。适合长时间练习、对照查看，也让你真正能打开、能审阅自己的学习记录，并把一个模糊的目标变成具体的练习计划。",
+			download: "下载 macOS 版",
+			downloadNote: "Apple 芯片 + Intel · v0.1.1",
+			source: "查看源代码",
+			heroChecks: ["免费开源，AGPL-3.0", "掌握证据存在本地 SQLite", "自选模型与 API 密钥"],
+			shots: {
+				// 网站自己会画 macOS 窗口，所以截图不要带 App 自身的标题栏。
+				chromeHint: "只截 App 内容——窗口由网站绘制",
+				hero: {
+					title: "对话工作区",
+					note: "一段有内容的普通对话，三个界面同时可见：中间是对话历史，学习者的某一轮上有行内纠错，右侧是学习教练面板。用真实的学习内容，不要空状态或设置页。",
+					meta: "macOS · 1600×1000",
+					alt: "Converloop macOS 界面，展示对话、行内纠错、地道改写和学习教练",
 				},
-				loop: {
-					kicker: "一套学习闭环",
-					heading: "一段对话里真正有用的部分，不会聊完就消失",
-					body: "每个平台都遵循同一套四步逻辑；界面会适应设备，但学习方法不需要重新摸索。",
-					steps: [
-						{ number: "01", title: "表达", body: "自然地写或说。需要推动时，随时要一个话题、简化表达、进入角色扮演或回顾重点。" },
-						{ number: "02", title: "发现", body: "直接看到需要改进的片段、地道改写，以及紧贴原句的解释。" },
-						{ number: "03", title: "记住", body: "错误、正确运用、表达缺口和听力遗漏，会成为结构化的学习信号。" },
-						{ number: "04", title: "再用", body: "到期内容会回到对话、复习、听写、听力和专项练习里。" },
-						],
-					},
-					platforms: {
-					kicker: "同一个产品，各自原生的节奏",
-					heading: "逻辑始终熟悉，体验真正适合当前屏幕",
-					body: "换设备不应该等于重新学习产品。学习模型保持一致，导航、输入方式和信息密度则顺应平台。",
-					items: [
-						{
-							tag: "macOS · 现已提供",
-							title: "工作旁边的一位语言教练",
-							body: "宽阔的对话工作区适合长时间练习、对照查看、配置和数据迁移。",
-							points: ["键盘优先的导航与斜杠命令", "持续可见的对话上下文和学习详情", "完整本地备份，以及跨平台便携导出"],
-						},
-						{
-							tag: "iPhone · 正在开发",
-							title: "把一天里的碎片时间变成练习",
-							body: "快速进入、拇指友好的操作和语音输入，让转瞬即逝的空档也足够完成有价值的一轮。",
-								points: ["「新对话」直接开始表达或进入常错语法教学", "滑动、长按、听写和语音播放", "后台音频支持听力与跟读"],
-						},
-						{
-							tag: "iPad · 正在开发",
-							title: "一张专注学习的桌面",
-							body: "常驻分栏让对话列表一直可见，更大的画布则承载更专注的练习。",
-							points: ["侧边栏与当前对话同时可见", "外接键盘快捷键延续桌面端心智模型", "拿开键盘后，触控依然是完整的一等体验"],
-						},
-					],
-				},
-				features: {
-					kicker: "围绕真实练习设计",
-					heading: "支撑每段对话的完整学习系统",
-					items: [
-						{ title: "就地纠错", body: "错误片段、正确写法和地道改写，都紧贴在你真正写出的那句话上。" },
-					{ title: "纯语言学习记忆", body: "应用会记住学习目标、练习偏好、强项、缺口与复习状态；不会保存身份、关系、日常安排或生活事件。" },
-						{ title: "听力与听写", body: "把你自己的对话变成听力材料，再针对真正听错的词继续练习。" },
-						{ title: "角色与分支", body: "换场景、交换角色、调节难度，或从任意节点分支，又不丢掉原对话。" },
-						{ title: "模型选择自由", body: "使用受支持的远程服务或兼容的本地端点，让模型选择与学习数据彼此独立。" },
-						{ title: "可读、可迁移的数据", body: "导出桌面端与移动端都能理解的 JSON 备份，同时保留各平台自己的原生细节。" },
-					],
-				},
-				continuity: {
-					kicker: "带走学习，不带走阻力",
-					heading: "一份学习历史，在每台设备上恰当呈现",
-					body: "Converloop 的便携备份让跨平台共享的学习模型保持稳定。当前迁移由你明确发起和控制，并不是藏在背后的云同步。",
-					file: "converloop-backup.json",
-					points: [
-						{ title: "共享核心", body: "对话、消息、纠错、学习项、复习状态和可迁移偏好会一起移动。" },
-						{ title: "安全适配", body: "桌面端专属工具和移动端专属设置会留在原平台，不会被压平或静默删除。" },
-						{ title: "导入前预览", body: "先看来源平台和导入范围，再确认替换或合并行为，然后才真正改变数据。" },
-					],
-				},
-				privacy: {
-					badge: "边界明确的记忆",
-					heading: "记住你怎样学语言，而不是你是谁",
-					body: "一段对话可以在自己的会话里保持连贯，但其中的个人细节不会被提升为跨会话记忆。学习数据默认留在设备上；远程服务商只会收到完成当次请求所需的内容。",
-					points: ["无需 Converloop 账号", "服务凭据保存在系统安全存储中", "凭据不会写入便携备份"],
-					keptTitle: "会成为学习记忆",
-					kept: ["语言、水平、学习目标与练习偏好", "错误、正确运用、表达缺口与听力遗漏", "掌握信号、复习状态与沟通技能表现"],
-					privateTitle: "不会变成长期记忆",
-					private: ["姓名、年龄、职业、学校、地点或身份", "家人、关系、兴趣、作息、日常活动或购买", "健康、信仰、财务、旅行、计划或生活事件"],
-				},
-				release: {
-					kicker: "获取 Converloop",
-					heading: "现在就从 macOS 开始",
-					body: "当前公开版本为 Apple 芯片与 Intel Mac 提供下载文件。源代码完全开放，欢迎检查、贡献或自行构建实验。",
-					macTitle: "macOS v0.1.1",
-					macBody: "在最新发布页选择 Apple 芯片版或 Intel 版磁盘映像。",
-					roadTitle: "iPhone、iPad 与 Windows",
-					roadBody: "原生体验正在积极开发，目前尚未提供公开安装包。",
-				},
-				faq: {
-					heading: "开始前你可能想知道",
-					items: [
-						{ title: "Converloop 会记住什么？", body: "只记语言学习状态：学习语言与水平、学习目标、练习偏好、掌握信号、反复错误、表达缺口和复习进度。个人事实和关系历史不会作为跨会话记忆保留。" },
-						{ title: "Converloop 会自动同步吗？", body: "目前不会。你可以通过便携备份在受支持的版本间迁移共享学习数据，导入前会先显示预览。" },
-						{ title: "所有内容都完全离线吗？", body: "数据库默认保存在本地。调用远程 AI 或语音服务时，会发送完成该次请求所需的内容。" },
-						{ title: "需要注册 Converloop 账号吗？", body: "不需要。你可以自行选择和配置想使用的模型或语音服务。" },
-					],
-				},
-				final: {
-					heading: "让每次对话，都为下一次学习服务。",
-					body: "下载 macOS 版，或在开源仓库中关注开发进展。",
-				},
-			},
-			heroTitleHtml: '对话。纠错。<span class="cl-accent">记住。</span>循环。',
-			heroSubtitle:
-				"一个 AI 语言导师：和你对话、就在原句上纠错，只记住语言缺口而不记个人生活——于是下一次练习能接着真正的弱项继续。",
-			viewOnGithub: "在 GitHub 查看",
-			heroNote: "免费开源 · AGPL-3.0 · 自选服务提供商 · 数据默认保存在本地",
-			demo: {
-				convo: "对话 · 英语 b2",
-				aiOpen: "How did the demo go?",
-				userPre: "It went great — I ",
-				userDel: "have fix",
-				userIns: "fixed",
-				userPost: " the login bug.",
-				natural: "It went great — I nailed the login bug.",
-				issueCat: "语法",
-				issueSev: "轻微",
-				issueExp: "已完成的动作用一般过去式：“fixed”，而不是“have fix”。",
-				reply: "Nice work — did QA sign off before you shipped it?",
-			},
-			intro: {
-				kicker: "这是什么",
-				heading: "一个为学语言而生的聊天应用",
-				body: "Converloop 不是套了层学习皮的通用聊天机器人。它从对话出发，又把每一次对话都变成精准的学习——既是为语言学习而生的聊天伙伴，也是一个 AI 原生的学习 app。",
-				pillars: [
-					{
-						title: "对话原生的语言学习",
-						body: "和它聊天，就是在学。纠错就落在你刚写的句子上，回复能双语对照或彻底讲透，任意文本选中即解释，卡住时输入框还会提示你怎么往下说——辅助都藏在对话里，从不打断你。",
-					},
-					{
-						title: "AI 原生的学习 app",
-						body: "它记得你。每个错误、每次说对、每个表达缺口都被精准记下，拼出你到底弱在哪；到期的内容会自己编回对话和练习里——越聊越懂你。",
-					},
-				],
-			},
-			methodsKicker: "练习方式",
-			methodsHeading: "不止聊天：多种学习方式",
-			methodsIntro:
-				"对话只是起点。下面每一种方式都连着同一份学习记忆——听力、听写、衍生对话和专项训练，强化的都是你在对话里暴露出来的那些缺口。",
-			listening: {
-				title: "磨耳朵——素材就是你自己的对话",
-				body: "每段对话都能变成听力素材。AI 的回复，加上你自己句子被润色后的版本，按顺序播放——你练的是真正用过的语言，而不是泛泛的题库。",
-				points: [
-					"逐句重复、放慢、设一个间隔来跟读，还能循环。",
-					"先用耳朵抓，准备好了再显示文字。",
-					"素材来自你挑的对话——你的话、你的话题。",
-				],
-				mock: {
-					source: "来自 2 段对话 · 14 句",
-					side: "对话",
-					line: "Did QA sign off before we shipped the fix?",
-					showText: "显示文字",
-					repeatLabel: "每句重复",
-					repeatVal: "2 遍",
-					speedLabel: "语速",
-					speedVal: "0.9×",
-					gapLabel: "间隔",
-					gapVal: "2 秒",
-					loopLabel: "循环",
-				},
-			},
-			dictation: {
-				title: "听写——听一句、打出来、看看漏了什么",
-				body: "选一个主题，Converloop 一句一句念给你听。把听到的原样打出来，然后它拿你的转写和真正的句子逐词对比、讲清楚差在哪——没有选择题，每个词都得自己打出来。",
-				points: [
-					"可正常重听，也能放慢到 0.7×——想听几遍听几遍。",
-					"你重听的次数会悄悄调节下一句的难度。",
-						"听错的词会作为听力证据写进同一份学习记录，再编回后面的句子里考你。",
-				],
-				mock: {
-					prompt: "听一句，把听到的打出来",
-					rate: "0.7×",
-					typed: ["Can", "you", "work", "me", "through", "the", "rollback", "plan"],
-					missIndex: 2,
-					verdict: "漏了 1 个词",
-					pre: "Can you ",
-					miss: "walk",
-					post: " me through the rollback plan?",
-						note: "“walk” → 记为听力证据，过会儿编回某句话里再考你。",
-				},
-			},
-			derive: {
-				title: "衍生新对话——一条线索，长出很多段",
-				body: "聊到一个好节点？把它分支出去。你可以从任意位置另起一段新对话——更难或更简单、互换角色、换个场景，或者第二天接着聊。原来那段原封不动留在那儿。",
-				points: [
-					"从这里继续——分支出去，又不丢原来那段。",
-					"更难或更简单——同一个情境，按你的水平重新调。",
-					"互换角色、切换场景，或者第二天接着聊。",
-				],
-				mock: {
-					cap: "从这段对话…",
-					actions: [
-						{ icon: "branch", label: "从这里继续" },
-						{ icon: "harder", label: "更难一点" },
-						{ icon: "easier", label: "更简单一点" },
-						{ icon: "swap", label: "互换角色" },
-						{ icon: "scene", label: "换个场景" },
-						{ icon: "calendar", label: "第二天继续" },
-					],
-				},
-			},
-			drills: {
-				title: "专项训练——一个围着你弱项转的训练中心",
-				body: "打开训练中心，挑一个训练——情景演练、听写，或者弱项闪练。每一种都会围绕你的到期复习项开一段。也可以写你自己的，导出成一个文件就能分享。",
-				points: [
-					"情景演练——在具体、贴题的情境里应对。",
-					"弱项闪练——把到期项变成要主动产出的小任务。",
-					"写一个自定义训练，一个文件就能分享。",
-				],
-				mock: {
-					title: "训练中心",
-					drills: [
-						{ icon: "zap", name: "情景演练", desc: "在具体情境里应对" },
-						{ icon: "pen", name: "听写", desc: "把听到的原样打出来" },
-						{ icon: "target", name: "弱项闪练", desc: "把到期项变成小任务", badge: "6 项到期" },
-					],
-				},
-			},
-			flow: {
-				kicker: "工作原理",
-				heading: "一轮对话里发生了什么",
-				intro:
-					"每一句话，两个 agent 一起跑——一个让对话自然继续、卡住时随手递上帮助，一个在背后批改讲解。它们的发现汇成一份学习记忆，之后在对话、复习和每一种练习里反复调用。",
-				inParallel: "并行",
-				signals: "信号",
-				whenDue: "调用",
-				input: {
-					title: "你写，或说",
-					body: "用目标语言写一句话，或者直接说出来、当场转写。",
-				},
-				convAgent: {
-					tag: "对话 agent",
-					title: "一句自然的回复，外加随手的帮助",
-					body: "保持角色、贴合你的水平，让对话继续。卡住时随手递上草稿、地道说法、可用的词；回复还能双语对照或讲透。",
-				},
-				tutorAgent: {
-					tag: "导师 agent",
-					title: "就地纠错与讲解",
-					body: "就落在你写的那句上：错误片段、修正、地道改写、随手点开语法；选中任意文本也能即时解释。",
-				},
-				memory: {
-					title: "本地学习记忆",
-					body: "每一轮都记下离散信号——出错 · 用对了 · 表达缺口 · 新引入——汇成你设备上的一份记忆。",
-				},
-				review: {
-					title: "一份记忆，处处调用",
-					body: "到期内容编回你的下一段对话，也在复习、听写、听力和专项训练里等着你——同一份记忆，驱动每一种练习。",
-				},
-				loopback: "↺ 然后循环重来——每一轮都更锋利一点",
-			},
-			showcase: {
-				kicker: "对话之中",
-				heading: "对话本身，就是学习界面",
-				intro:
-					"就地纠错、地道表达、接话提示、双语阅读与详细解释，都留在学习真正发生的地方——对话之中。",
 				correction: {
-					title: "纠错始终贴着你真正写出的那句话",
-					body: "错误片段被原地标出，正确写法就在旁边，更地道的版本紧随其后，语法解释则只隔一层——不用离开对话去读另一份报告。",
-					naturalLabel: "地道版本",
+					title: "一次纠错的特写",
+					note: "只裁一轮学习者发言和对应的教练反馈。错误片段、完整订正、地道说法和解释，都要不用点开大图就能看清。",
+					meta: "macOS · 1400×900",
 				},
-				slash: {
-					title: "不知道怎么接话？提示就在你打字的地方",
-						body: "轮到你却卡住时，帮助直接从输入框开始。桌面端输入“/”可精准调用键盘命令；在 iPhone 与 iPad 上，直接自然地说出需求：开始一个话题、说简单些、进入角色扮演、回顾对话，或询问最地道的说法。",
-					inputPlaceholder: "输入消息，或按“/”看提示…",
-						foot: "桌面端提供键盘命令；移动端通过自然对话与语音提供同样的帮助",
-					rows: [
-						{ name: "topic", desc: "建议一个话题，开始下一轮" },
-						{ name: "simpler", desc: "让对方说得更简单些" },
-						{ name: "roleplay", desc: "进入一个具体场景与角色" },
-						{ name: "recap", desc: "总结这段对话里真正重要的内容" },
-						{ name: "how", args: "<你想表达的意思>", desc: "给出最地道的说法" },
-					],
+				group: {
+					title: "多伙伴群聊",
+					note: "一个已命名的 2–4 人群聊进行中，能看到 @Name 路由，两位伙伴身份明显不同。展示主要发言者和至少一个第二视角。",
+					meta: "macOS · 1400×900",
 				},
-				selection: {
-					title: "选中任意文本——解释，而不只是翻译",
-					body: "在 App 里任何地方选中一个词或短语，一个小岛就浮出来：解释、朗读，或加进你的学习数据。“解释”会告诉你这么说为什么成立——语感在哪、以后怎么照着用——点一下就存进记忆，等着复习。",
-					actions: { analyze: "解释", speak: "朗读", add: "添加" },
-					sourcePre: "Did QA ",
-					sourceHl: "sign off",
-					sourcePost: " before we shipped the fix?",
-					analysis:
-						"一个表示“正式批准”的动词短语——这里 QA “sign off”就是在上线前正式点头放行，比单纯的“同意”更重。你也能这么用：“Can you sign off on this?”",
+				evidence: {
+					title: "某个弱项的证据时间线",
+					note: "学习数据视图打开某一条反复出现的掌握项，按时间展示它的证据事件——出错、用对、新引入——并能看到推导出的状态。",
+					meta: "macOS · 1400×900",
 				},
-				reply: {
-					title: "每一句回复——双语对照，或彻底讲透",
-					body: "回复只看懂一半？打开「双语对照」，每句话都保留原文，母语翻译就贴在下面一行——可以设成每轮自动展开，也可以单条切换。或者点「详细解释」，按你已经掌握的程度拆给你看。两个都长在回复本身上——不用切到别处。",
-					bubble: [
-						{ target: "Nice work.", native: "干得漂亮。" },
-						{ target: "Did QA sign off before you shipped it?", native: "QA 在你上线之前签字确认了吗？" },
-					],
-					actions: { speak: "朗读", explain: "详细解释", bilingual: "双语对照" },
-					explainLabel: "详细解释",
-					explainBody:
-						"“sign off” = 正式点头放行。你已经会用 “ship” 了，这里新的点是 sign off (on)——发布前那一下官方批准。",
+				training: {
+					title: "有内容的训练中心",
+					note: "情景演练、听写和弱项闪练的卡片并排，弱项闪练卡上带一个真实的到期数量。",
+					meta: "macOS · 1400×900",
+				},
+				palette: {
+					title: "打开的命令面板",
+					note: "命令面板浮在对话上方，已经输入了模糊查询并匹配出若干动作。用来证明桌面端键盘优先的那一面。",
+					meta: "macOS · 1400×900",
 				},
 			},
-			featuresKicker: "本地优先 · 开源",
-			featuresHeading: "支撑这一切的系统",
-			featuresIntro:
-				"对话是主角——但它周围的一切，都为私密、可查、归你所有而设计。",
-			features: [
-				{
-					title: "内联纠错",
-					body: "没有另一份要解读的报告。错误片段被划掉，正确写法就紧挨在旁、就在气泡里——语法详解和地道改写，都只差一下点击。",
-				},
-				{
-					title: "学习记忆",
-					body: "每个错误、每次说对、每个缺口都成为本地记忆里的信号，到期复习会回到你的下一段对话里。",
-				},
-				{
-					title: "表达缺口",
-					body: "话说到一半卡住了？用母语写，直接拿到目标语言的地道说法——讲解，而不只是翻译。",
-				},
-				{
-					title: "能力库",
-					body: "AI 运行的每一项能力都看得见：任意开关、用你自己的话微调，或者从头造一个——还能导出成一个文件分享。",
-				},
-				{
-					title: "接入任意模型",
-					body: "OpenAI 兼容、Anthropic、Gemini，或受支持的订阅登录。macOS 现已提供，移动端与 Windows 版正在开发。",
-				},
-				{
-					title: "本地优先，私密",
-					body: "无需 Converloop 账号。学习数据默认留在设备上；远程服务商只会收到完成当次请求所需的内容。备份可读、可迁移。",
-				},
+			pillarsKicker: "桌面端是干什么的",
+			pillarsHeading: "有地方真正看清自己的学习。",
+			pillarsBody: "大屏幕带来两样手机给不了的东西：多个界面同时在场，以及愿意花时间去查一条记录，而不只是相信它。",
+			pillars: [
+				{ title: "对话与教练同时在场", body: "回复先流出来，练习依然像对话；导师在旁边并行工作，反馈落在那一轮旁边，而不是等聊完再给。" },
+				{ title: "可审阅的记录", body: "掌握项、它们的证据事件和推导状态都在本地 SQLite 里——能打开、能查、能手动改。" },
+				{ title: "是计划，不只是刷题", body: "把面试准备或某个反复出现的表达缺口，变成一个带可观察 can-do 目标和课程草稿的学习项目。" },
 			],
+			partners: {
+				kicker: "对话伙伴",
+				heading: "跟具体的人练，而不是空白的聊天机器人。",
+				body:
+					"普通对话里挑一位伙伴，或者把 2–4 位拉进群聊，支持 @Name 路由、主要发言者、静音和退出。每位伙伴保有自己的身份、声音、口音、语域和语速——同时共用同一份纯学习档案。没有伙伴会攒下私人关系历史。",
+				points: [
+					"内置伙伴可编辑，也可以自己建，声音与语域会持续保持",
+					"已命名的 2–4 人群聊，支持 @Name 路由和主要发言者",
+					"掌握度在所有伙伴之间共享；不保留任何个人事实",
+				],
+			},
+			memory: {
+				kicker: "是证据，不是玄学 AI 记忆",
+				heading: "模型负责观察，代码负责决定。",
+				body:
+					"Converloop 把结构化的掌握记录和背后的证据存在本地 SQLite 里。模型可以观察和提议；计数、状态变化、复习选取和持久化都由确定性的代码说了算。把某项标为「已掌握」记录的是一次显式覆盖——不会伪造一次正确作答，也不会改写底层证据。",
+				points: [
+					{ title: "可追溯的证据", body: "出错、用对、新引入和缺口事件都会记录下来，并带上模态、辅助程度、引出方式、自我修正和反应时长。" },
+					{ title: "读得懂记录的复习", body: "到期项来自弱项，加上由事件推导的 FSRS-lite 稳定性与难度模型，然后编回对话和训练里。" },
+					{ title: "可以手动修", body: "查看证据、直接改记录、用自然语言编辑并先预览再写回，确认后合并疑似重复的条目。" },
+					{ title: "已掌握的当脚手架", body: "你已经会的东西会被拿来支撑解释和迁移，系统不会只盯着你的错误。" },
+				],
+			},
+			training: {
+				kicker: "训练与项目",
+				heading: "把弱项变成下一个活动。",
+				body:
+					"复习被编回使用场景里，而不是停在另一个标签页。点一下反复出错的语法点，就在对话里诊断和练习；也可以跑情景演练，或用「对话回放」把你自己的材料做成听力和听写。",
+				items: [
+					{ title: "专项课", body: "围绕语法、某个表达缺口、每日复习，或你自己定义的目标，开一段老师式的课。" },
+					{ title: "学习项目", body: "任务 Agent 把面试准备或商务邮件这类需求，变成带 can-do 目标、首次尝试任务和迁移任务的项目。" },
+					{ title: "材料导入", body: "在本地导入文本、Markdown、CSV、JSON 或 PDF，让项目扎在你真正要做的那件事上。" },
+					{ title: "自定义训练", body: "用 `converloop/drill@1` Markdown 文档写训练——frontmatter 定义机制，正文小节定义题目——然后一个文件就能分享。" },
+				],
+			},
+			capabilities: {
+				kicker: "能力库",
+				heading: "调教这位导师，然后审阅它做了什么。",
+				body:
+					"每一项内置能力——纠错、解释、双语阅读、选中分析、对话动作——都能开关、扩展或替换。你也可以写自己的观察者、对话动作和回复转换器；它们对长期记忆只有提议权，每次运行都可审阅。",
+				points: [
+					"任意开关内置能力，或用你自己的话去微调它",
+					"自定义观察者、动作与回复转换器，记忆写入受守卫",
+					"每次运行可审阅；记忆写入在代码确认之前都只是提议",
+				],
+			},
+			craftKicker: "桌面端的讲究",
+			craftHeading: "按桌面应用的标准做。",
+			craft: [
+				{ title: "命令面板", body: "不离开键盘，模糊搜索任何动作。" },
+				{ title: "可改快捷键", body: "常用的自己绑；默认值不碍事。" },
+				{ title: "主题与强调色", body: "浅色、深色，以及一个不是我定的强调色。" },
+				{ title: "中英文界面", body: "两种语言完整覆盖，包括引导流程。" },
+			],
+			providers: {
+				kicker: "自带智能",
+				heading: "模型你自己选，不是替你选好。",
+				body: "配置一次服务商，它就和你的学习数据彼此独立。本地语音方案还能让受支持的流程留在设备上。",
+				rows: [
+					{ label: "模型", body: "OpenAI 兼容端点、Anthropic、Gemini，以及 Claude 和 ChatGPT 的订阅登录路径。" },
+					{ label: "语音输入", body: "Soniox 流式、OpenAI 兼容转写，以及本地 Parakeet 或 Qwen3-ASR。" },
+					{ label: "语音输出", body: "Edge 朗读与 MiMo TTS，可为每位伙伴配不同声音。" },
+					{ label: "凭据", body: "设备绑定的加密存储。API 密钥和 OAuth token 永远不进备份。" },
+				],
+			},
+			data: {
+				kicker: "本地优先的设计",
+				heading: "你的学习历史始终可查。",
+				points: [
+					"对话、掌握证据、档案和非敏感设置都留在你的设备上",
+					"备份和恢复都是可读的 JSON；已废弃的个人记忆永远不会被导出",
+					"网络使用是明确的——只有请求需要的内容会发给你配置的服务商",
+					"AGPL-3.0，纠错逻辑和记忆边界可以查，而不用只靠相信",
+				],
+			},
+			release: {
+				kicker: "获取",
+				heading: "macOS 今天就能用，Windows 从源码跑。",
+				body: "当前打包发布提供 Apple 芯片和 Intel 的 macOS 版本。Windows 已在 CI 中验证，可以从源码构建运行。",
+				macTitle: "macOS v0.1.1",
+				macBody: "在最新发布页选择 Apple 芯片版或 Intel 版磁盘映像。",
+				winTitle: "Windows",
+				winBody: "已在 CI 验证；打包安装程序仍在推进中，目前可从仓库构建运行。",
+			},
+			final: {
+				heading: "就开在你手头那件事旁边。",
+				body: "免费、开源，随你查看。",
+			},
 		},
 		legal: {
 			privacyTitle: "隐私政策 — 贴贴手账",

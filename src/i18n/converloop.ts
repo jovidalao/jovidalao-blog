@@ -1,0 +1,638 @@
+import type { Locale } from "./ui";
+
+/**
+ * Copy for the Converloop product page, which now leads with the iPhone & iPad app.
+ *
+ * Every claim here is checked against the iOS repo's PRODUCT_DESIGN.md — the UI labels
+ * quoted in the mock-ups ("Weak", "Why this one", "Session Review"…) are the app's own
+ * strings, so the page and the App Store screenshots read as the same product.
+ */
+
+/** The 54 built-in scenes, in the app's shelf order (TrainingSceneLibrary.swift). */
+export const converloopScenes = [
+	{ c: "daily", e: "☕️", en: "Coffee Shop Order", zh: "咖啡店点单" },
+	{ c: "daily", e: "🛒", en: "A Snag at the Supermarket Till", zh: "超市结账时出了岔子" },
+	{ c: "daily", e: "💊", en: "Describing Symptoms at a Pharmacy", zh: "在药店说清自己的症状" },
+	{ c: "daily", e: "📦", en: "Posting Something Fragile", zh: "寄一件怕摔的东西" },
+	{ c: "daily", e: "✂️", en: "Explaining the Haircut You Want", zh: "把想要的发型说清楚" },
+	{ c: "daily", e: "🧾", en: "Returning Something That Does Not Fit", zh: "退掉一件不合适的东西" },
+	{ c: "dining", e: "🍽️", en: "A Menu You Cannot Read", zh: "看不懂的菜单" },
+	{ c: "dining", e: "📅", en: "Changing a Reservation", zh: "改一个已经订好的位子" },
+	{ c: "dining", e: "🍜", en: "The Dish You Did Not Order", zh: "上错的那道菜" },
+	{ c: "dining", e: "💳", en: "Who Is Paying for This One", zh: "这顿谁来买单" },
+	{ c: "dining", e: "🛵", en: "The Delivery Is Missing an Item", zh: "外卖少了一样东西" },
+	{ c: "dining", e: "🏠", en: "First Dinner at a Friend's Place", zh: "第一次去朋友家吃饭" },
+	{ c: "travel", e: "✈️", en: "Airport Check-in", zh: "机场值机" },
+	{ c: "travel", e: "🏨", en: "Hotel Check-in", zh: "酒店入住" },
+	{ c: "travel", e: "🗺️", en: "Asking the Way in a Strange Neighbourhood", zh: "在陌生街区问路" },
+	{ c: "travel", e: "🚕", en: "Sorting Out the Route Once You Are In", zh: "上车之后说清怎么走" },
+	{ c: "travel", e: "🧳", en: "Your Bag Did Not Arrive", zh: "行李没跟着到" },
+	{ c: "travel", e: "🎫", en: "A Ticket Problem at the Gate", zh: "景点门口的票务问题" },
+	{ c: "work", e: "💼", en: "Job Interview", zh: "求职面试" },
+	{ c: "work", e: "📊", en: "Work Meeting", zh: "工作会议" },
+	{ c: "work", e: "📈", en: "Asking for a Raise", zh: "开口谈加薪" },
+	{ c: "work", e: "🚪", en: "Handing In Your Notice", zh: "提出离职" },
+	{ c: "work", e: "🙅", en: "Turning Down Work You Cannot Take", zh: "把接不下的活推回去" },
+	{ c: "work", e: "📞", en: "Taking a Complaint Call", zh: "接住一通投诉电话" },
+	{ c: "campus", e: "🙋", en: "Asking the Question in Class", zh: "课上把没懂的问出来" },
+	{ c: "campus", e: "📚", en: "Chasing Up Feedback", zh: "找老师问一份反馈" },
+	{ c: "campus", e: "👥", en: "Dividing Up Group Work", zh: "小组作业里的分工" },
+	{ c: "campus", e: "🎓", en: "Sorting Out Your Course Choices", zh: "选课与转课咨询" },
+	{ c: "campus", e: "⏰", en: "Asking for an Extension", zh: "申请延期交作业" },
+	{ c: "campus", e: "🛂", en: "A Student Visa Interview", zh: "留学签证面谈" },
+	{ c: "social", e: "👋", en: "Meeting Someone New", zh: "初次见面" },
+	{ c: "social", e: "🙇", en: "Turning Down an Invitation", zh: "婉拒一次邀请" },
+	{ c: "social", e: "📱", en: "Turning Let's Grab Lunch into a Date", zh: "把“改天吃饭”约成一个日子" },
+	{ c: "social", e: "🏘️", en: "First Words with a Neighbour", zh: "和邻居的第一次搭话" },
+	{ c: "social", e: "🎉", en: "Someone You Have Not Seen in Years", zh: "好几年没见的人" },
+	{ c: "social", e: "🎁", en: "After Someone Gives You a Gift", zh: "收到礼物之后" },
+	{ c: "feelings", e: "🕊️", en: "Apologising for Something Real", zh: "为一件事道歉" },
+	{ c: "feelings", e: "🤗", en: "Sitting With Someone Upset", zh: "安慰一个难过的人" },
+	{ c: "feelings", e: "💐", en: "Saying You Like Someone", zh: "把喜欢说出口" },
+	{ c: "feelings", e: "😤", en: "Naming What Bothered You", zh: "说出被冒犯的地方" },
+	{ c: "feelings", e: "🚧", en: "Drawing a Line", zh: "划一条界线" },
+	{ c: "feelings", e: "⚖️", en: "A Disagreement That Stays Civil", zh: "一次谈得下去的意见不合" },
+	{ c: "life", e: "🩺", en: "Telling a Doctor What Is Wrong", zh: "跟医生说清哪里不舒服" },
+	{ c: "life", e: "🦷", en: "Talking in the Dentist's Chair", zh: "牙医椅上的沟通" },
+	{ c: "life", e: "🔑", en: "The Questions to Ask at a Viewing", zh: "看房时该问的那些问题" },
+	{ c: "life", e: "🔧", en: "Getting the Landlord to Fix It", zh: "让房东把东西修好" },
+	{ c: "life", e: "🏦", en: "A Bank Errand That Is Hard to Explain", zh: "在银行办一件说不清的事" },
+	{ c: "life", e: "🚨", en: "Reporting Something Lost", zh: "东西丢了去挂失" },
+	{ c: "ideas", e: "🎬", en: "Recommending Something You Love", zh: "推荐一部你喜欢的片子" },
+	{ c: "ideas", e: "📰", en: "Talking About the Story Everyone Is Discussing", zh: "聊一条大家都在说的新闻" },
+	{ c: "ideas", e: "🧭", en: "Explaining a Choice People Question", zh: "为自己的选择说明理由" },
+	{ c: "ideas", e: "🎙️", en: "Being Asked to Talk About Yourself", zh: "被问到“说说你自己”" },
+	{ c: "ideas", e: "📖", en: "Telling the Whole Story", zh: "把一件事讲完整" },
+	{ c: "ideas", e: "🔁", en: "Changing Someone's Mind", zh: "说服对方改一个主意" },
+] as const;
+
+const content = {
+	en: {
+		meta: {
+			title: "Converloop — AI conversation practice for iPhone & iPad",
+			description:
+				"Converloop is an AI language partner for iPhone and iPad. Chat by text or voice and every sentence is corrected inline with a natural rewrite; role-play 54 real-life scenes; turn your own sentences into listening and dictation practice. Learning-only memory, no account.",
+		},
+		status: "Coming soon to the App Store",
+		appStore: "Download on the App Store",
+		appStoreSoon: "Coming soon on the App Store",
+		howItWorks: "See how it works",
+		requirement: "iPhone & iPad · iOS 26 or later",
+		hero: {
+			lead: "Talk your way into",
+			words: ["English", "Japanese", "French", "Spanish", "Korean"],
+			wordSuffix: ".",
+			tail: "",
+			bodyBefore: "An AI conversation partner for iPhone and iPad. Type or speak, and every sentence comes back ",
+			bodyMark: "corrected inline, then said the way a native speaker would",
+			bodyAfter: ". What you get wrong returns in scenes, listening and dictation — until it sticks.",
+			strip: [
+				{ icon: "correct", title: "Corrected inline", body: "Every sentence, as you say it" },
+				{ icon: "target", title: "54 real-life scenes", body: "Role-play what you'll actually face" },
+				{ icon: "headphones", title: "Listening & dictation", body: "Built from your own sentences" },
+				{ icon: "shield", title: "Learning-only memory", body: "Your language, never your life" },
+			],
+			shots: {
+				conversation: "A Converloop conversation on iPhone: an inline correction marked in red and green, a polished rewrite, and a question asked in Chinese answered in English",
+				scenes: "The Scene Training tab on iPhone, with the Listening Center, Dictation Review and the Scene Library",
+				detail: "The detail sheet for the Coffee Shop Order scene, with its setting and a Start Training button",
+			},
+			chipCorrection: "Correction",
+			chipReview: "Session Review",
+			chipStats: [
+				{ n: "12", label: "your turns" },
+				{ n: "5", label: "corrected" },
+				{ n: "3", label: "polished" },
+			],
+		},
+		why: {
+			kicker: "Why Converloop?",
+			text: "Most AI chats answer the sentence in front of them, then forget it. Converloop notices what that sentence says about your language — never about your life — and brings it back in your next conversation, your next scene, your next round of dictation.",
+		},
+		loop: {
+			heading: "From a first try to second nature.",
+			flow: ["Express", "Notice", "Remember", "Reuse"],
+			steps: [
+				{
+					label: "Express",
+					title: "Say it your way.",
+					body: "Type, or hold the mic and talk. Stuck on a word? Ask in your own language — the answer comes back in the language you're learning, ready to say out loud.",
+				},
+				{
+					label: "Notice",
+					title: "See exactly what to fix.",
+					body: "Mistakes are marked inside your own sentence: struck through in red, fixed in green. Underneath, a polished version in the style you choose — standard written, standard spoken, street talk, Australian spoken, or your own prompt.",
+				},
+				{
+					label: "Remember",
+					title: "Every slip goes on the record.",
+					body: "Errors, correct uses and the expressions you looked up are written to a learning record on your device. Marking something as mastered is an explicit override — it never fakes a right answer.",
+				},
+				{
+					label: "Reuse",
+					title: "It comes back until it sticks.",
+					body: "What you still get wrong returns — as the reason behind a recommended scene, and as lines in your Listening Center and dictation — until you say it right without thinking.",
+				},
+			],
+			express: {
+				ask: "我想说“这个安排太内卷了”，用英语怎么讲？",
+				askAnswer: "This whole setup feels like a rat race.",
+				reply: "You could say: “This whole setup feels like a rat race.” Want to try it in a sentence?",
+				caption: "Ask in your own language",
+			},
+			notice: {
+				styles: ["Standard written", "Standard spoken", "Street talk", "Australian spoken", "Custom"],
+				selected: 1,
+			},
+			remember: {
+				title: "Learning Items",
+				rows: [
+					{ key: "Irregular past tense", example: "goed → went", status: "Weak", tone: "weak", pips: "xxxv" },
+					{ key: "Plural nouns", example: "two book → two books", status: "Newly Learned", tone: "new", pips: "x" },
+					{ key: "rat race", example: "Looked up · saved automatically", status: "Looked up", tone: "lookup", pips: "" },
+					{ key: "pick up", example: "Used correctly 4 times", status: "Mastery", tone: "known", pips: "vvvv" },
+				],
+			},
+			reuse: {
+				shelf: "For You",
+				scene: { emoji: "📖", title: "Telling the Whole Story", hint: "You and whoever is listening" },
+				why: "Why this one",
+				reason: "Irregular past tense is due for review",
+				listening: "Listening Center",
+				listeningMeta: "24 sentences",
+				dictation: "Dictation Review",
+				dictationMeta: "6 to go",
+			},
+		},
+		scenes: {
+			kicker: "Scene training",
+			heading: "54 moments you'll have to talk your way through.",
+			body: "From a snag at the supermarket till to asking for a raise: nine shelves of ready-written scenes, each with the roles, a goal, common phrases and a sample exchange. Or describe your own situation and the AI plays the other side.",
+			points: [
+				{ title: "For You", body: "Scenes chosen around what you're working on — and why, in one line." },
+				{ title: "Scene Library", body: "54 built-in scenes across nine shelves, from errands to hard conversations." },
+				{ title: "Your own", body: "Describe a place, two roles and a goal. Save it, then start whenever you like." },
+			],
+			ipadAlt: "Converloop's Scene Training on iPad, with the scene library in a two-column grid",
+			ipadNote: "Also on iPad: a readable column that never stretches across the screen, and ⌘N · ⌘F · ⌘, with a keyboard.",
+		},
+		toolkit: {
+			kicker: "On every message",
+			heading: "Help lives on the message. No tab-switching.",
+			body: "Tap under any reply, or select a few words. Answers stream in as they're written, so you're reading before they're finished.",
+			lookup: {
+				title: "Look Up in Context",
+				body: "Select any words to see what they mean right here, with collocations, near-synonyms and fresh examples. Every lookup is saved to your Looked-up Expressions automatically.",
+				card: {
+					category: "Idiom",
+					term: "rat race",
+					meaningLabel: "Here it means",
+					meaning: "an exhausting, competitive routine that never seems to get you anywhere",
+					collocationsLabel: "Common pairings",
+					collocations: ["escape the rat race", "stuck in the rat race"],
+					exampleLabel: "In another setting",
+					example: "She quit the rat race and opened a café by the sea.",
+				},
+			},
+			items: [
+				{ icon: "translate", title: "Bilingual reading", body: "Sentence-by-sentence translation under any reply — or have every reply open with it." },
+				{ icon: "book", title: "Explanation", body: "A structured card: what the sentence is doing, the pieces worth knowing, one thing to take away." },
+				{ icon: "chat", title: "Ways to reply", body: "Not sure what to say next? Get a few directions to take it — not a script." },
+				{ icon: "headphones", title: "Read Aloud", body: "Hear the reply and your polished sentence, in Apple voices or Converloop AI's natural voices — free." },
+			],
+			review: {
+				title: "Session Review",
+				body: "Finish a conversation and get a recap card: the app counts what happened, the model names the pattern behind it and one next step.",
+				stats: [
+					{ n: "12", label: "your turns" },
+					{ n: "5", label: "corrected" },
+					{ n: "3", label: "polished" },
+				],
+				patternLabel: "Pattern",
+				pattern: "Irregular past tense — went, bought, caught",
+				nextLabel: "Next step",
+				next: "Tell the story of your weekend, start to finish.",
+			},
+		},
+		listen: {
+			kicker: "Listening Center & Dictation Review",
+			heading: "Your own sentences, turned into ear training.",
+			body: "Both are built from material you've already produced — there's no stock audio and no second learner profile.",
+			listening: {
+				title: "Listening Center",
+				body: "Replay the sentences you've practised as a playlist, with translations, gaps between lines, a sleep timer, background audio and lock-screen controls.",
+				now: "Yesterday I stopped by the library and picked up two books.",
+				nowTranslation: "昨天我顺路去了趟图书馆，拿了两本书。",
+				queue: ["This whole setup feels like a rat race.", "Do you have any plans to get outside?"],
+				chips: ["Translation", "Gap 2s", "Sleep Timer 15 min"],
+			},
+			dictation: {
+				title: "Dictation Review",
+				body: "Hear a sentence, write it down, see what you missed — marked like a teacher's red pen, right on top of what you wrote.",
+				result: "Missed 1 word · 2 words written wrong",
+				actions: ["Try Again", "Explanation"],
+			},
+			note: "Lines in your native language, fragments under three words and teaching asides never make the queue. Swipe away anything else.",
+		},
+		memory: {
+			kicker: "A memory with a boundary",
+			heading: "It remembers how you learn — not who you are.",
+			body: "A conversation stays coherent within its own thread, but personal details are never promoted into memory that follows you from chat to chat.",
+			keptTitle: "Kept as learning memory",
+			kept: [
+				"Your languages, level, goals and practice preferences",
+				"Errors, correct uses and the expressions you looked up",
+				"Mastery state and review history, with the evidence behind them",
+			],
+			neverTitle: "Never turned into memory",
+			never: [
+				"Your name, age, job, school or where you live",
+				"Family, relationships, routines or plans",
+				"Health, beliefs, money or life events",
+			],
+			facts: [
+				{ icon: "database", text: "Learning records live on your device" },
+				{ icon: "cloud", text: "iCloud syncs your learner profile only" },
+				{ icon: "key", text: "API keys stay in the Keychain, never in backups" },
+				{ icon: "download", text: "Export everything as a portable JSON backup" },
+			],
+		},
+		models: {
+			kicker: "Choose your AI",
+			heading: "Apple Intelligence, your own key, or ours.",
+			body: "Pick a model service during setup and switch any time in Settings. There's no Converloop account either way.",
+			options: [
+				{
+					name: "Apple Intelligence",
+					tag: "No key needed",
+					body: "On-device and Private Cloud Compute, switched automatically. On-device requests never leave your iPhone; Private Cloud Compute is handled by Apple.",
+				},
+				{
+					name: "Your own API key",
+					tag: "Bring your provider",
+					body: "OpenAI-compatible, Anthropic, Gemini, DeepSeek, OpenRouter, Qwen, Kimi or GLM. Requests go straight from your device to the provider; the key stays in your Keychain.",
+				},
+				{
+					name: "Converloop AI",
+					tag: "Nothing to set up",
+					body: "We host the model, so it works right away. Nothing is sent until you agree, and who receives it is named before you do.",
+				},
+			],
+			voices: "Voices: Apple (offline), Converloop AI's natural voices (free), or your own key — OpenAI, ElevenLabs, Gemini, MiniMax and more. Speech recognition runs on device with Apple by default.",
+			orbitInner: ["Apple Intelligence", "Your own key", "Converloop AI"],
+			orbitOuter: ["OpenAI", "Anthropic", "Gemini", "DeepSeek", "OpenRouter", "Qwen", "Kimi", "GLM"],
+		},
+		pricing: {
+			kicker: "Pricing",
+			heading: "Try everything free for 7 days.",
+			body: "Then choose the plan that matches how you run the AI. No ads, no account.",
+			plans: [
+				{
+					name: "Converloop Full",
+					price: "US$19.99",
+					unit: "one-time",
+					for: "For Apple Intelligence or your own API key",
+					points: ["Every feature, unlocked for good", "7-day free trial, no automatic charge", "Restore on your other iPhone and iPad"],
+					featured: true,
+				},
+				{
+					name: "Converloop AI",
+					price: "Yearly",
+					unit: "subscription",
+					for: "We host the model — nothing to configure",
+					points: ["Ready as soon as you agree to send", "Renews yearly; cancel any time in the App Store", "For when you'd rather not manage keys"],
+					featured: false,
+				},
+			],
+			note: "Converloop AI voices are free for everyone. Final prices are shown in the App Store for your region.",
+		},
+		faq: {
+			heading: "Before you start, you might want to know.",
+			body: "About languages, privacy, devices and price.",
+			email: "Email me",
+			support: "Support",
+			items: [
+				{
+					q: "Which languages can I learn?",
+					a: "Seventeen are built in — English, Chinese (Simplified and Traditional), Cantonese, Japanese, Korean, French, German, Spanish, Italian, Portuguese, Russian, Thai, Vietnamese, Indonesian, Arabic and Hindi — and you can type in another. The app itself is in English and Simplified Chinese.",
+				},
+				{
+					q: "Do I need an account?",
+					a: "No. There's no Converloop account. If you use Converloop AI, the app registers a service ID for your device instead — there's nothing to sign up for.",
+				},
+				{
+					q: "What does it remember about me?",
+					a: "Only learning state: your languages and level, goals, practice preferences, errors, expression gaps and review progress. Personal details from your conversations are never kept as memory across chats.",
+				},
+				{
+					q: "Does anything leave my device?",
+					a: "It depends on what you choose. Apple Intelligence's on-device model keeps requests on your iPhone; Private Cloud Compute is processed by Apple. With your own key, text goes straight to that provider; with Converloop AI, it goes to our service after you agree. Converloop AI voices send the text to be spoken to Xiaomi MiMo. Your learning records stay on the device.",
+				},
+				{
+					q: "Which devices are supported?",
+					a: "iPhone and iPad on iOS or iPadOS 26 or later. Apple Intelligence also needs a device and region where it's available; if yours isn't one, use your own key or Converloop AI.",
+				},
+				{
+					q: "How much does it cost?",
+					a: "Every feature is free for 7 days. After that, Converloop Full is a one-time purchase for use with Apple Intelligence or your own key, and Converloop AI is a yearly subscription. Converloop AI voices are free.",
+				},
+				{
+					q: "Is there a desktop version?",
+					a: "Yes — Converloop for Desktop is a separate, free and open-source app for macOS, with its own codebase and features.",
+					link: "About Converloop for Desktop",
+				},
+				{
+					q: "When can I get it?",
+					a: "Converloop is in TestFlight now and coming to the App Store soon. Email me if you'd like to hear when it's out.",
+				},
+			],
+		},
+		final: {
+			heading: "Make every conversation teach the next one.",
+			body: "Coming soon to the App Store, for iPhone and iPad.",
+		},
+		legal: { privacy: "Privacy Policy", support: "Support", desktop: "Converloop for Desktop" },
+	},
+	zh: {
+		meta: {
+			title: "Converloop — iPhone 与 iPad 上的 AI 外语陪练",
+			description:
+				"Converloop 是 iPhone 与 iPad 上的 AI 外语陪练。打字或语音聊天，每一句当场批改并给出母语者的说法；在 54 个真实场景里演对手戏；把你说过的句子变成听力和听写练习。只记语言的学习记忆，无需账号。",
+		},
+		status: "即将上架 App Store",
+		appStore: "在 App Store 下载",
+		appStoreSoon: "即将上架 App Store",
+		howItWorks: "看看怎么用",
+		requirement: "iPhone 与 iPad · iOS 26 及以上",
+		hero: {
+			lead: "",
+			words: ["英语", "日语", "法语", "韩语", "德语"],
+			wordSuffix: "",
+			tail: "，是聊出来的。",
+			bodyBefore: "iPhone 与 iPad 上的 AI 外语陪练。打字或开口说，每一句都",
+			bodyMark: "当场批改，再给你一句母语者的说法",
+			bodyAfter: "；说错的地方，会在场景、听力和听写里反复回来，直到你真的会了。",
+			strip: [
+				{ icon: "correct", title: "当场批改", body: "每一句都改给你看" },
+				{ icon: "target", title: "54 个真实场景", body: "在对手戏里开口" },
+				{ icon: "headphones", title: "听力与听写", body: "用你自己说过的句子" },
+				{ icon: "shield", title: "只记语言的记忆", body: "记住你的语言，不记你的生活" },
+			],
+			shots: {
+				conversation: "iPhone 上的 Converloop 对话：句子里用红绿标出的批改、润色后的说法，以及用中文提问、用英文作答",
+				scenes: "iPhone 上的「训练」页：听力中心、听写复盘和场景库",
+				detail: "「咖啡店点单」场景的详情弹窗，带情境说明和「开始训练」按钮",
+			},
+			chipCorrection: "批改",
+			chipReview: "本次复盘",
+			chipStats: [
+				{ n: "12", label: "你说的话" },
+				{ n: "5", label: "纠正" },
+				{ n: "3", label: "润色" },
+			],
+		},
+		why: {
+			kicker: "为什么是 Converloop？",
+			text: "大多数 AI 聊天回答完眼前这一句，就把它忘了。Converloop 会留意这句话暴露出的语言问题——只关于语言，从不关于你的生活——然后在下一场对话、下一个场景、下一轮听写里，把它带回来。",
+		},
+		loop: {
+			heading: "从说出口，到脱口而出。",
+			flow: ["表达", "注意", "记录", "复用"],
+			steps: [
+				{
+					label: "表达",
+					title: "用你的方式说出来。",
+					body: "打字，或者按住麦克风直接说。卡在一个词上？用母语问就行——答案用你在学的语言给出，拿来就能开口。",
+				},
+				{
+					label: "注意",
+					title: "一眼看清哪里要改。",
+					body: "错误直接标在你自己的句子里：红色划掉，绿色改正。下面再给一句润色后的版本，风格你来定——标准书面、标准口语、街头口语、澳式口语，或者你自己写的 Prompt。",
+				},
+				{
+					label: "记录",
+					title: "每次说错，都记在账上。",
+					body: "错误、用对的地方、查过的表达，都写进你设备上的学习记录。手动标记「掌握」是一次明确的覆盖，不会假装你答对过。",
+				},
+				{
+					label: "复用",
+					title: "反复回来，直到记住。",
+					body: "还没掌握的东西会回来——成为推荐场景背后的理由，成为听力中心和听写里的句子——直到你不假思索就能说对。",
+				},
+			],
+			express: {
+				ask: "我想说“这个安排太内卷了”，用英语怎么讲？",
+				askAnswer: "This whole setup feels like a rat race.",
+				reply: "You could say: “This whole setup feels like a rat race.” Want to try it in a sentence?",
+				caption: "用母语问也可以",
+			},
+			notice: {
+				styles: ["标准书面", "标准口语", "街头口语", "澳式口语", "自定义"],
+				selected: 1,
+			},
+			remember: {
+				title: "错题与知识点",
+				rows: [
+					{ key: "不规则过去式", example: "goed → went", status: "薄弱", tone: "weak", pips: "xxxv" },
+					{ key: "名词复数", example: "two book → two books", status: "新学", tone: "new", pips: "x" },
+					{ key: "rat race", example: "查过的表达 · 已自动保存", status: "查过", tone: "lookup", pips: "" },
+					{ key: "pick up", example: "用对 4 次", status: "掌握", tone: "known", pips: "vvvv" },
+				],
+			},
+			reuse: {
+				shelf: "为你准备",
+				scene: { emoji: "📖", title: "把一件事讲完整", hint: "你与听故事的人" },
+				why: "为什么推荐给你",
+				reason: "不规则过去式到了该复习的时候",
+				listening: "听力中心",
+				listeningMeta: "24 句",
+				dictation: "听写复盘",
+				dictationMeta: "还剩 6 句",
+			},
+		},
+		scenes: {
+			kicker: "场景训练",
+			heading: "54 个迟早要开口的时刻。",
+			body: "从超市结账出岔子，到开口谈加薪：九类写好的场景，每一个都配好角色、目标、常用说法和对话示范。也可以描述你自己的情境，让 AI 来演对手。",
+			points: [
+				{ title: "为你准备", body: "围绕你正在练的东西挑场景，并用一句话告诉你为什么。" },
+				{ title: "场景库", body: "九类 54 个内置场景，从日常小事到把话说开。" },
+				{ title: "自己写", body: "说清地点、双方角色和目标，存下来，想练的时候再开始。" },
+			],
+			ipadAlt: "iPad 上 Converloop 的场景训练页，场景库以两列网格排列",
+			ipadNote: "iPad 上同样好用：内容保持易读的栏宽，不会横跨整块屏幕；接上键盘还有 ⌘N · ⌘F · ⌘,。",
+		},
+		toolkit: {
+			kicker: "每条消息上",
+			heading: "帮助就长在消息上，不用切出去查。",
+			body: "点回复下面的按钮，或者划选几个词。内容边生成边出现，不用等它写完就能开始读。",
+			lookup: {
+				title: "语境查词",
+				body: "划选任意几个词，看它们在这句里是什么意思，附常用搭配、意思相近的说法和换个场合的例句。查过的自动收进「查过的表达」。",
+				card: {
+					category: "习语",
+					term: "rat race",
+					meaningLabel: "在这里的意思",
+					meaning: "没完没了、你争我抢却原地打转的忙碌，接近“内卷”",
+					collocationsLabel: "常见搭配",
+					collocations: ["escape the rat race", "stuck in the rat race"],
+					exampleLabel: "换个场合",
+					example: "She quit the rat race and opened a café by the sea.",
+				},
+			},
+			items: [
+				{ icon: "translate", title: "双语阅读", body: "任意回复下面逐句对照翻译，也可以设成每条自动展开。" },
+				{ icon: "book", title: "讲解", body: "一张结构化讲解卡：这句话在做什么、值得记的片段，再给你一句拿去就能用的。" },
+				{ icon: "chat", title: "回复思路", body: "不知道接下来说什么？给你几个可以接的方向，而不是一份台词。" },
+				{ icon: "headphones", title: "朗读", body: "听 AI 的回复，也听你润色后的那句。Apple 系统声音，或免费的 Converloop AI 自然人声。" },
+			],
+			review: {
+				title: "本次复盘",
+				body: "聊完一场，拿到一张结算卡：数字由 App 如实统计，模型负责指出背后的规律和下一步练什么。",
+				stats: [
+					{ n: "12", label: "你说的话" },
+					{ n: "5", label: "纠正" },
+					{ n: "3", label: "润色" },
+				],
+				patternLabel: "规律",
+				pattern: "不规则过去式——went、bought、caught",
+				nextLabel: "下一步",
+				next: "把你的周末从头到尾讲一遍。",
+			},
+		},
+		listen: {
+			kicker: "听力中心与听写复盘",
+			heading: "把你练过的句子，变成听力课。",
+			body: "两者都用你自己产出过的内容：没有罐头录音，也没有第二份学习档案。",
+			listening: {
+				title: "听力中心",
+				body: "把练过的句子当播放列表反复听：可看翻译、调句间停顿、定时关闭，支持后台播放和锁屏控制。",
+				now: "Yesterday I stopped by the library and picked up two books.",
+				nowTranslation: "昨天我顺路去了趟图书馆，拿了两本书。",
+				queue: ["This whole setup feels like a rat race.", "Do you have any plans to get outside?"],
+				chips: ["翻译", "间隔 2 秒", "定时关闭 15 分钟"],
+			},
+			dictation: {
+				title: "听写复盘",
+				body: "听一句、写一句，再看漏了什么——像老师的红笔，直接批在你写的那行字上。",
+				result: "漏听 1 个词 · 写错 2 个词",
+				actions: ["再试一次", "讲解"],
+			},
+			note: "母语句子、不到三个词的碎片和教学旁白不会进队列；其余不想练的，左滑移除。",
+		},
+		memory: {
+			kicker: "有边界的记忆",
+			heading: "它记住你怎么学，不记住你是谁。",
+			body: "一场对话在自己的线程里保持连贯，但个人信息永远不会变成跟着你跨对话走的记忆。",
+			keptTitle: "会作为学习记忆保留",
+			kept: ["学习语言、等级、目标和练习偏好", "错误、用对的地方和查过的表达", "掌握状态和复习记录，以及背后的证据"],
+			neverTitle: "永远不会变成记忆",
+			never: ["姓名、年龄、工作、学校、住在哪里", "家人、感情、日常作息和计划", "健康、信仰、财务和人生大事"],
+			facts: [
+				{ icon: "database", text: "学习记录存在你的设备上" },
+				{ icon: "cloud", text: "iCloud 只同步学习档案" },
+				{ icon: "key", text: "API 密钥存在钥匙串，不进任何备份" },
+				{ icon: "download", text: "全部数据可导出为便携 JSON 备份" },
+			],
+		},
+		models: {
+			kicker: "选择你的 AI",
+			heading: "Apple 智能、自带密钥，或者用我们的。",
+			body: "在引导里选一个模型服务，之后随时可以在设置里换。不管选哪个，都不需要 Converloop 账号。",
+			options: [
+				{
+					name: "Apple 智能",
+					tag: "无需密钥",
+					body: "本机模型与私有云计算，自动切换。本机请求不离开你的设备；私有云计算由 Apple 处理。",
+				},
+				{
+					name: "自带 API 密钥",
+					tag: "用你自己的服务商",
+					body: "OpenAI 兼容接口、Anthropic、Gemini、DeepSeek、OpenRouter、通义千问、Kimi、智谱 GLM。请求从你的设备直接发给服务商，密钥留在钥匙串里。",
+				},
+				{
+					name: "Converloop AI",
+					tag: "什么都不用配",
+					body: "我们托管模型，打开就能用。在你同意之前什么都不会发送，接收方是谁也会提前写明。",
+				},
+			],
+			voices: "朗读声音：Apple 系统朗读（离线）、Converloop AI 自然人声（免费），或自带密钥——OpenAI、ElevenLabs、Gemini、MiniMax 等。语音识别默认用 Apple 本机识别。",
+			orbitInner: ["Apple 智能", "自带密钥", "Converloop AI"],
+			orbitOuter: ["OpenAI", "Anthropic", "Gemini", "DeepSeek", "OpenRouter", "通义千问", "Kimi", "智谱 GLM"],
+		},
+		pricing: {
+			kicker: "价格",
+			heading: "全部功能，免费试用 7 天。",
+			body: "之后按你用 AI 的方式选一种方案。没有广告，也不需要账号。",
+			plans: [
+				{
+					name: "Converloop 完整版",
+					price: "¥99",
+					unit: "一次买断",
+					for: "配合 Apple 智能或自带 API 密钥使用",
+					points: ["全部功能，一次解锁", "7 天免费试用，到期不会自动扣费", "同一 Apple 账户的 iPhone 与 iPad 可恢复购买"],
+					featured: true,
+				},
+				{
+					name: "Converloop AI",
+					price: "¥299",
+					unit: "/ 年",
+					for: "我们托管模型，什么都不用配",
+					points: ["同意发送后即可使用", "按年自动续订，可随时在 App Store 取消", "适合不想自己配置密钥的人"],
+					featured: false,
+				},
+			],
+			note: "Converloop AI 朗读声音对所有人免费。最终价格以 App Store 各地区显示为准。",
+		},
+		faq: {
+			heading: "开始之前，你可能想知道。",
+			body: "关于语言、隐私、设备和价格。",
+			email: "给我写邮件",
+			support: "支持页面",
+			items: [
+				{
+					q: "可以学哪些语言？",
+					a: "内置 17 种：英语、简体中文、繁体中文、粤语、日语、韩语、法语、德语、西班牙语、意大利语、葡萄牙语、俄语、泰语、越南语、印尼语、阿拉伯语、印地语，也可以自己填一种。App 界面目前支持英文和简体中文。",
+				},
+				{
+					q: "需要注册账号吗？",
+					a: "不需要，没有 Converloop 账号。使用 Converloop AI 时，App 会为这台设备登记一个服务身份来代替账号，你什么都不用填。",
+				},
+				{
+					q: "它会记住我的哪些信息？",
+					a: "只记学习状态：语言和等级、目标、练习偏好、错误、表达缺口和复习进度。对话里出现的个人信息，不会变成跨对话的记忆。",
+				},
+				{
+					q: "我的内容会离开设备吗？",
+					a: "取决于你的选择。Apple 智能的本机模型不离开设备；私有云计算由 Apple 处理。自带密钥时，文字直接发给那家服务商；用 Converloop AI 时，在你同意后发给我们的服务。Converloop AI 朗读会把要读的文字发给小米 MiMo。你的学习记录留在本机。",
+				},
+				{
+					q: "支持哪些设备？",
+					a: "iOS / iPadOS 26 及以上的 iPhone 和 iPad。Apple 智能还需要设备和所在地区都支持；用不了的话，可以选自带密钥或 Converloop AI。",
+				},
+				{
+					q: "多少钱？",
+					a: "全部功能可免费试用 7 天。之后，配合 Apple 智能或自带密钥使用的「Converloop 完整版」一次买断 ¥99；Converloop AI 按年订阅 ¥299。Converloop AI 朗读免费。",
+				},
+				{
+					q: "有桌面版吗？",
+					a: "有。Converloop 桌面端是另一款免费开源的 macOS 应用，代码和功能都是独立的。",
+					link: "了解 Converloop 桌面端",
+				},
+				{
+					q: "什么时候能用上？",
+					a: "目前在 TestFlight 测试，即将上架 App Store。想第一时间知道，可以给我发邮件。",
+				},
+			],
+		},
+		final: {
+			heading: "让每一次对话，都教会你下一次。",
+			body: "即将上架 App Store，支持 iPhone 与 iPad。",
+		},
+		legal: { privacy: "隐私政策", support: "支持", desktop: "Converloop 桌面端" },
+	},
+} as const;
+
+export function getConverloop(locale: Locale | string | undefined) {
+	return content[locale === "zh" ? "zh" : "en"];
+}

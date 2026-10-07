@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { BlogList } from "@/components/BlogList";
 import { SiteShell } from "@/components/SiteShell";
 import { getAllPosts } from "@/lib/blog";
-import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import { getUi } from "@/i18n";
 
 export const metadata: Metadata = {
-  title: { absolute: SITE_TITLE },
-  description: SITE_DESCRIPTION,
+  title: getUi("zh").blog.heading,
+  description: "jovidalao 关于学习与构建的笔记。",
   alternates: { canonical: "/zh/blog", languages: { en: "/blog", zh: "/zh/blog" } },
 };
 
