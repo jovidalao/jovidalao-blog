@@ -24,7 +24,7 @@ export const CONVERLOOP = {
 	releaseUrl: "https://github.com/jovidalao/Converloop/releases/latest",
 	version: "0.1.1",
 	contactEmail: "jovidalao@gmail.com",
-	lastUpdated: "August 1, 2026",
+	lastUpdated: "October 7, 2026",
 	// A date is copy too: "最后更新：August 1, 2026" reads as a half-translated page.
-	lastUpdatedZh: "2026 年 8 月 1 日",
+	lastUpdatedZh: "2026 年 10 月 7 日",
 } as const;
