@@ -69,7 +69,7 @@ export function Header({ locale }: { locale: Locale }) {
         <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`} id="nav-menu">
           {links.map((link) => {
             const active = link.exact ? pathname === link.href : pathname === link.href || pathname.startsWith(`${link.href}/`);
-            return <Link key={link.href} href={link.href} className={`${styles.link} ${active ? styles.linkActive : ""}`}>{link.label}</Link>;
+            return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} className={`${styles.link} ${active ? styles.linkActive : ""}`}>{link.label}</Link>;
           })}
         </div>
 
