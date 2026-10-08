@@ -44,6 +44,10 @@ export function Header({ locale }: { locale: Locale }) {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   function applyTheme(value: Theme) {
     const dark = value === "dark" || (value === "system" && matchMedia("(prefers-color-scheme: dark)").matches);
     const root = document.documentElement;

@@ -2,14 +2,17 @@
   "name": "jovidalao-blog",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "pnpm@10.11.1",
   "engines": {
-    "node": ">=20.9.0"
+    "node": "22.x"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "preview": "pnpm check:static && wrangler pages dev out --ip 127.0.0.1",
+    "start": "pnpm preview",
+    "typecheck": "tsc --noEmit",
+    "check:static": "node scripts/verify-static.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
@@ -23,6 +26,7 @@
     "@types/node": "^22.18.3",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "wrangler": "4.148.0"
   }
 }

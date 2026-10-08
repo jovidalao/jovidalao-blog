@@ -7,43 +7,72 @@ Personal site and product home for [Converloop](https://jovidalao.com/converloop
 - React + Next.js App Router + TypeScript
 - CSS Modules
 - Local Markdown content rendered at build time
-- Cloudflare Pages deployment, with Vercel support
+- Static export deployed to Cloudflare Pages
 
 The site intentionally has no account system, authentication, database, or runtime content API because the original product is a public, read-only personal site.
 
 ## Local development
 
+Use Node **22.22.2** (see `.node-version`) and pnpm **10.11.1** (see `packageManager` in `package.json`). Activate those versions with your preferred version manager before installing dependencies.
+
 ```sh
-pnpm install
+pnpm install --frozen-lockfile
 pnpm dev
-pnpm build
 ```
 
-Blog posts live in `content/blog/en` and `content/blog/zh`. Images referenced by posts live in `public/blog`.
+Blog posts live in `content/blog/en` and `content/blog/zh`. Images referenced by posts live in `public/blog`. Adding or changing content requires a new build and deployment.
+
+## Build and preview
+
+Every build exports the site to `out`, regardless of hosting provider or `CF_PAGES`:
+
+```sh
+pnpm typecheck
+pnpm build
+pnpm check:static
+pnpm preview
+```
+
+The static checker derives page routes from the App Router and article paths from Markdown files. It checks nonempty HTML, 404, RSS, sitemap, robots, local resources referenced by HTML, and the absence of the server-only `/_next/image` endpoint. It does not test browser interactions or every resource inside CSS.
+
+Preview uses the pinned Cloudflare Wrangler development tool to serve `out` at `http://127.0.0.1:8788`. It verifies the export before starting. `pnpm start` is an alias for the same static preview. Neither command rebuilds the site: run `pnpm build` after editing content or code. `next start` is not used with static export.
+
+Use `pnpm dev` for hot-reload development; verify the exported files and a Pages branch preview before publishing. Test deep links, refreshes, 404 status codes, English/Chinese navigation, themes, images and mobile layout.
 
 ## Routes
 
 - `/` and `/zh`
 - `/blog` and `/zh/blog`
 - `/converloop` and `/zh/converloop`
+- Converloop desktop, support and privacy pages in both languages
 - `/peelday` and `/zh/peelday`
 - Peelday privacy and terms pages in both languages
 - `/rss.xml`, `/sitemap.xml`, and `/robots.txt`
 
 ## Deployment
 
-The production domain is hosted on Cloudflare Pages. Keep the production branch set to `main`, the build command set to `npm run build`, the build output directory set to `out`, and the root directory set to the repository root.
+The production domain is hosted on Cloudflare Pages. Use the same build mode and tool versions for production and branch previews:
 
-Cloudflare automatically provides `CF_PAGES=1`. Only in that environment, `next.config.ts` enables Next.js static export and serves the blog's existing images directly, without the server-only image optimization endpoint. App Router pages, Server Components rendered at build time, client-side navigation, themes, and locale switching are preserved. RSS, robots.txt, and sitemap.xml are generated as static files too.
+| Setting | Value |
+| --- | --- |
+| Production branch | `main` |
+| Build command | `pnpm build` |
+| Build output directory | `out` |
+| Root directory | Repository root |
+| Node version | `22.22.2` via `.node-version`; any `NODE_VERSION` override must match |
+| pnpm version | `PNPM_VERSION=10.11.1`, matching `packageManager` |
+| Branch previews | Enabled for non-production branches |
 
-To verify the Pages build locally:
+Cloudflare automatically installs dependencies using pnpm and the committed lockfile. Check the actual installation versions in deployment logs. A framework preset is optional with these explicit settings; **Next.js (Static HTML Export)** is also suitable. Deploy `out`, not `.next` or the former Astro `dist` directory.
 
-```sh
-CF_PAGES=1 npm run build
-```
+`next.config.ts` always enables `output: "export"` and `images.unoptimized`. App Router pages and Server Components render at build time; client-side navigation, themes and locale switching remain interactive. RSS, robots and sitemap are generated as static files. `CF_PAGES` no longer selects a different build mode.
 
-Every route should have an HTML file under `out`, alongside `_next` assets and public images. Deploy `out`, not `.next` or the former Astro `dist` directory. A framework preset is optional with these explicit build settings; **Next.js (Static HTML Export)** is also suitable. The lockfile still makes Cloudflare install dependencies with pnpm before running the build script.
+Images are served directly. This does not compress images or generate responsive variants; resize and compress new assets before publishing. Request-time features such as Server Actions, cookies, SSR and ISR require a runtime deployment and a separate architecture decision.
 
-Vercel remains supported via `vercel.json`; without `CF_PAGES=1`, the project uses its standard Next.js build and image optimization. No account system, database, or application environment variables are required on either platform. Future request-time features such as Server Actions, cookies, or SSR would require a runtime deployment rather than Pages static export.
+`vercel.json` retains the same build command, which now also produces a static export. Vercel deployment is not part of the verification scope for this change. Moving to another static host requires checking clean URLs, redirects, 404 responses, headers and the custom domain.
+
+After a branch preview succeeds, verify its pages and interactions before merging. After publishing to `main`, wait for the Pages deployment to succeed and check the production domain. A successful push or local build alone does not confirm publication. Record the previous successful production deployment and build settings so they can be restored if needed.
+
+The implementation scope and validation record are documented in [the static deployment plan](docs/STATIC_DEPLOYMENT_PLAN.md).
 
 The Converloop landing page keeps the product contract documented by the original project: inline correction, natural expression, composing help, bilingual reading, text selection analysis, learning-only memory, conversation replay, portable backup, and the local-first privacy boundary.
