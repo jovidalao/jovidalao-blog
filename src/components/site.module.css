@@ -522,6 +522,17 @@
 	background: var(--card);
 }
 
+/* Clip the complete device, so a partial screen never gets a false bottom bezel. */
+.phoneCrop {
+	width: 100%;
+	max-width: 268px;
+	overflow: hidden;
+}
+
+.phoneCrop > .phone {
+	max-width: none;
+}
+
 .phoneIsland {
 	position: absolute;
 	top: 10px;

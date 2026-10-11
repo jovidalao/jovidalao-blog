@@ -8,7 +8,7 @@ import p from "./PeeldayPage.module.css";
 import { ShotSlot } from "./Shot";
 import site from "./site.module.css";
 
-/** Simulator captures of the Debug build, Dynamic Island already painted in, so frames skip their own. */
+/** Real app captures; see public/peelday/SCREENSHOTS.md for sources. Status bars include the island. */
 const shot = (name: string) => `/peelday/${name}.webp`;
 
 export function PeeldayPage({ locale }: { locale: Locale }) {
@@ -28,17 +28,8 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 	);
 
 	const visuals = [
-		<div className={`${s.app} ${p.menu}`} aria-hidden="true" key="pick">
-			<div className={p.menuList}>
-				<p className={p.menuTitle}>{c.make.menuTitle}</p>
-				{c.make.menu.map((item) => (
-					<span className={p.menuItem} key={item.label}>
-						{item.label}
-						<Icon name={item.icon} />
-					</span>
-				))}
-			</div>
-			<span className={p.plus} />
+		<div className={p.peek} key="pick">
+			<ShotSlot index="01" title={zh ? "空白日记页与添加贴纸按钮" : "An empty diary page with the add sticker button"} frame="phone" ratio="9 / 12" crop island={false} src={shot("empty")} />
 		</div>,
 		<div className={p.peek} key="style">
 			<ShotSlot index="02" title={hero.shots.maker} frame="phone" ratio="9 / 12" crop island={false} src={shot("maker")} />
@@ -46,9 +37,8 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 		<div className={p.peek} key="read">
 			<ShotSlot index="03" title={hero.shots.ticket} frame="phone" ratio="9 / 12" crop island={false} src={shot("ticket")} />
 		</div>,
-		<div className={p.sheet} key="place">
-			{/* eslint-disable-next-line @next/next/no-img-element */}
-			<img src={shot("page")} alt={hero.shots.page} loading="lazy" />
+		<div className={p.peek} key="place">
+			<ShotSlot index="04" title={hero.shots.page} frame="phone" ratio="9 / 12" crop island={false} src={shot("page")} />
 		</div>,
 	];
 
@@ -120,19 +110,6 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 						<ShotSlot index="03" title={hero.shots.ticket} frame="phone" crop island={false} src={shot("ticket")} />
 					</div>
 
-					<div className={`${s.chip} ${s.chipCorrection}`} aria-hidden="true">
-						<span className={s.chipLabel}>{hero.chipTicket.label}</span>
-						<span className={p.miniTicket}>
-							<b>{hero.chipTicket.title}</b>
-							<small>{hero.chipTicket.meta}</small>
-						</span>
-					</div>
-					<div className={`${s.chip} ${s.chipReview}`} aria-hidden="true">
-						<span className={s.chipLabel}>{hero.chipPage.label}</span>
-						<span className={`${s.app} ${s.chipStats}`}>
-							{hero.chipPage.stats.map((stat) => <span key={stat.label}><b>{stat.n}</b>{stat.label}</span>)}
-						</span>
-					</div>
 				</div>
 			</section>
 

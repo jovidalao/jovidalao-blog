@@ -84,7 +84,7 @@ export type ShotSlotProps = {
 	src?: string;
 	alt?: string;
 	priority?: boolean;
-	/** Crops a tall screenshot to the frame instead of letting it set the height. */
+	/** Crops to the requested ratio; phone crops clip the screen and device together. */
 	crop?: boolean;
 	/** Set false when the screenshot already includes iOS's own status bar and island. */
 	island?: boolean;
@@ -126,14 +126,15 @@ export function ShotSlot({
 	className,
 }: ShotSlotProps) {
 	const screenRatio = ratio ?? frameRatio[frame];
+	const cropPhone = frame === "phone" && crop && ratio !== undefined && src !== undefined;
 
 	const screen = src ? (
 		// eslint-disable-next-line @next/next/no-img-element
 		<img
-			className={crop ? styles.screenImgCrop : styles.screenImg}
+			className={crop && !cropPhone ? styles.screenImgCrop : styles.screenImg}
 			src={src}
 			alt={alt ?? title}
-			style={crop ? { aspectRatio: screenRatio } : undefined}
+			style={crop && !cropPhone ? { aspectRatio: screenRatio } : undefined}
 			loading={priority ? "eager" : "lazy"}
 			fetchPriority={priority ? "high" : undefined}
 		/>
@@ -159,14 +160,19 @@ export function ShotSlot({
 	}
 
 	if (frame === "phone") {
-		return (
-			<div className={[styles.phone, className].filter(Boolean).join(" ")}>
+		const phone = (
+			<div className={[styles.phone, !cropPhone && className].filter(Boolean).join(" ")}>
 				<div className={styles.phoneScreen}>
 					{island ? <span className={styles.phoneIsland} aria-hidden="true" /> : null}
 					{screen}
 				</div>
 			</div>
 		);
+		return cropPhone ? (
+			<div className={[styles.phoneCrop, className].filter(Boolean).join(" ")} style={{ aspectRatio: screenRatio }}>
+				{phone}
+			</div>
+		) : phone;
 	}
 
 	if (frame === "ipad") {

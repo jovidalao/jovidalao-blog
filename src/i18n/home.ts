@@ -33,9 +33,9 @@ const content = {
 			},
 			converloop: {
 				status: "Coming soon · in TestFlight",
-				tagline: "AI conversation practice for iPhone & iPad",
-				body: "Type or speak and every sentence comes back corrected inline, then said the way a native speaker would. Your mistakes return in 54 role-play scenes, listening and dictation.",
-				facts: ["iPhone & iPad · iOS 26+", "7-day free trial", "Learning-only memory · no account"],
+				tagline: "Cross-platform AI conversation partner",
+				body: "Type or speak and every sentence comes back corrected inline, with natural, native phrasing. It identifies misunderstandings to provide targeted explanations and drills.",
+				facts: ["iPhone & iPad · iOS 26+", "7-day free trial", "Contextual explanation · no account"],
 				cta: "Explore Converloop",
 			},
 			desktop: {
@@ -103,9 +103,9 @@ const content = {
 			},
 			converloop: {
 				status: "即将上架 · TestFlight 测试中",
-				tagline: "iPhone 与 iPad 上的 AI 外语陪练",
-				body: "打字或开口说，每一句都当场批改，再给你一句母语者的说法。说错的地方会在 54 个情景对练、听力和听写里反复回来。",
-				facts: ["iPhone 与 iPad · iOS 26+", "7 天免费试用", "只记语言的记忆 · 无需账号"],
+				tagline: "跨平台 AI 外语陪练",
+				body: "打字或开口聊，每一句都当场批改，教你超地道的说法。它会记录你对语言理解的误区，给出针对性的讲解与训练。",
+				facts: ["iPhone 与 iPad · iOS 26+", "7 天免费试用", "语境即时讲解 · 无需账号"],
 				cta: "了解 Converloop",
 			},
 			desktop: {

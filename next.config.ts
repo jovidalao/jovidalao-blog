@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
@@ -7,4 +8,8 @@ const nextConfig: NextConfig = {
   images: { unoptimized: true },
 };
 
-export default nextConfig;
+export default (phase: string): NextConfig => ({
+  ...nextConfig,
+  // Builds must not overwrite the modules used by a running dev server.
+  distDir: phase === PHASE_DEVELOPMENT_SERVER ? ".next-dev" : ".next",
+});

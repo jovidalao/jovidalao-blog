@@ -99,9 +99,9 @@ const content = {
 				{ icon: "shield", title: "No account", body: "Your pages stay on your iPhone" },
 			],
 			shots: {
-				page: "A Peelday page for 7 October: photos in stamp and frame styles, a Sunny weather stamp, a cinema ticket, emoji and a text sticker on dotted paper",
-				maker: "Make Sticker with a photo in the Photo Frame style, the Rectangle, Cutout and Ticket modes, and more styles below",
-				ticket: "A cinema ticket read on device: Perfect Days, State Cinema Hobart, 07/10/2026 19:30, filled into a ticket card",
+				page: "A Peelday page for 28 May: photos, drink and animal cutouts, a Sunny weather stamp, a Metropolis cinema ticket and a text sticker on dotted paper",
+				maker: "Make Sticker in Cutout mode with drink and photo cutouts, colored border styles and outline colors",
+				ticket: "Make Sticker in Ticket mode with a dark ticket preview, ticket styles and editable ticket information",
 			},
 			chipTicket: { label: "Read on device", title: "PERFECT DAYS", meta: "State Cinema Hobart · 19:30" },
 			chipPage: {
@@ -166,7 +166,7 @@ const content = {
 				{ title: "Nothing lost by accident", body: "Deleted stickers wait 30 days before they're gone." },
 			],
 			shots: {
-				calendar: "The calendar sheet for October 2026, with dots on the days that have stickers",
+				calendar: "The calendar sheet for May 2026, open over a diary page",
 				search: "Diary search for “Metro” finding the Metropolis ticket on Wednesday 7 October",
 			},
 		},
@@ -179,7 +179,7 @@ const content = {
 				"Today's date and sticker count on the Lock Screen",
 				"Capture a moment in Control Center opens the camera on today",
 			],
-			shot: "An iPhone Home Screen with the medium Today's Stub widget showing today's croissant, popcorn and photo stickers",
+			shot: "An iPhone Home Screen with small and medium Peelday widgets showing drink cutouts and photo stickers",
 		},
 		privacy: {
 			kicker: "Private by default",
@@ -295,9 +295,9 @@ const content = {
 				{ icon: "shield", title: "无需账号", body: "页面只存在你的 iPhone 上" },
 			],
 			shots: {
-				page: "贴贴手帐 10 月 7 日的一页：邮票和相框风格的照片、“晴”天气贴纸、电影票、Emoji 和文字贴纸，贴在点阵纸上",
-				maker: "「制作贴纸」界面：照片套用了照片相框样式，下方是矩形、抠图、票据三种模式和更多样式",
-				ticket: "在设备上识别的电影票：Perfect Days、State Cinema Hobart、07/10/2026 19:30，已填进票据卡片",
+				page: "贴贴手帐 5 月 28 日的一页：照片、饮料和动物抠图、“晴”天气贴纸、Metropolis 电影票和文字贴纸，贴在点阵纸上",
+				maker: "「制作贴纸」的抠图模式：饮料和照片抠图，下方可选择彩色边框样式与轮廓颜色",
+				ticket: "「制作贴纸」的票据模式：深色票据预览、票据样式和可编辑的票据信息",
 			},
 			chipTicket: { label: "设备上识别", title: "PERFECT DAYS", meta: "State Cinema Hobart · 19:30" },
 			chipPage: {
@@ -362,7 +362,7 @@ const content = {
 				{ title: "误删也不怕", body: "删掉的贴纸会保留 30 天才真正消失。" },
 			],
 			shots: {
-				calendar: "2026 年 10 月的日历面板，贴过贴纸的日子带着小圆点",
+				calendar: "日记页面上展开的 2026 年 5 月日历面板",
 				search: "在日记里搜索“Metro”，找到 10 月 7 日周三的 Metropolis 电影票",
 			},
 		},
@@ -371,7 +371,7 @@ const content = {
 			heading: "今天这一页，抬眼就能看到。",
 			body: "添加「今日贴纸」小组件，今天最新的几张贴纸就待在你的 App 中间；点一下直接回到今天这一页。手帐只有足够好拿，才会真的被用起来。",
 			points: ["主屏幕的小号和中号小组件", "锁定屏幕显示今天的日期和贴纸数", "控制中心的「拍下此刻」一键打开相机，贴到今天"],
-			shot: "iPhone 主屏幕上的中号「今日贴纸」小组件，显示今天的可颂、爆米花和照片贴纸",
+			shot: "iPhone 主屏幕上的小号和中号 Peelday 小组件，显示饮料抠图和照片贴纸",
 		},
 		privacy: {
 			kicker: "默认私密",

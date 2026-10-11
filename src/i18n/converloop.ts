@@ -69,9 +69,9 @@ export const converloopScenes = [
 const content = {
 	en: {
 		meta: {
-			title: "Converloop — AI conversation practice for iPhone & iPad",
+			title: "Converloop — Cross-platform AI language tutor",
 			description:
-				"Converloop is an AI language partner for iPhone and iPad. Chat by text or voice and every sentence is corrected inline with a natural rewrite; role-play 54 real-life scenes; turn your own sentences into listening and dictation practice. Learning-only memory, no account.",
+				"Converloop is a cross-platform AI language partner. Chat by text or voice and every sentence is corrected inline with natural, native phrasing; it pinpoints your misunderstandings to deliver targeted explanations and drills; role-play 54 real-life scenes; turn your own sentences into listening and dictation practice. No account needed.",
 		},
 		status: "Coming soon to the App Store",
 		appStore: "Download on the App Store",
@@ -83,14 +83,14 @@ const content = {
 			words: ["English", "Japanese", "French", "Spanish", "Korean"],
 			wordSuffix: ".",
 			tail: "",
-			bodyBefore: "An AI conversation partner for iPhone and iPad. Type or speak, and every sentence comes back ",
-			bodyMark: "corrected inline, then said the way a native speaker would",
-			bodyAfter: ". What you get wrong returns in scenes, listening and dictation — until it sticks.",
+			bodyBefore: "A cross-platform AI conversation partner. Type or speak, and every sentence comes back ",
+			bodyMark: "corrected inline, with natural, native phrasing",
+			bodyAfter: ". It identifies gaps in your language understanding, giving you targeted explanations and practice.",
 			strip: [
-				{ icon: "correct", title: "Corrected inline", body: "Every sentence, as you say it" },
-				{ icon: "target", title: "54 real-life scenes", body: "Role-play what you'll actually face" },
-				{ icon: "headphones", title: "Listening & dictation", body: "Built from your own sentences" },
-				{ icon: "shield", title: "Learning-only memory", body: "Your language, never your life" },
+				{ icon: "correct", title: "Corrected inline" },
+				{ icon: "target", title: "54 real-life scenes" },
+				{ icon: "headphones", title: "Listening & dictation" },
+				{ icon: "book", title: "Contextual explanation" },
 			],
 			shots: {
 				conversation: "A Converloop conversation on iPhone: an inline correction marked in red and green, a polished rewrite, and a question asked in Chinese answered in English",
@@ -107,7 +107,7 @@ const content = {
 		},
 		why: {
 			kicker: "Why Converloop?",
-			text: "Most AI chats answer the sentence in front of them, then forget it. Converloop notices what that sentence says about your language — never about your life — and brings it back in your next conversation, your next scene, your next round of dictation.",
+			text: "More than just an AI partner — it's a complete learning loop. In every chat, get instant corrections, native polishing, and contextual explanations, backed by in-context vocabulary lookup, bilingual reading, natural AI voice, and smart reply hints; then turn your real conversations into targeted listening and dictation drills until it becomes second nature.",
 		},
 		loop: {
 			heading: "From a first try to second nature.",
@@ -116,22 +116,22 @@ const content = {
 				{
 					label: "Express",
 					title: "Say it your way.",
-					body: "Type, or hold the mic and talk. Stuck on a word? Ask in your own language — the answer comes back in the language you're learning, ready to say out loud.",
+					body: "Type, or hold the mic and talk. Stuck on a word? Ask in your own language — the answer comes back in natural phrasing, ready to keep the conversation going.",
 				},
 				{
 					label: "Notice",
 					title: "See exactly what to fix.",
-					body: "Mistakes are marked inside your own sentence: struck through in red, fixed in green. Underneath, a polished version in the style you choose — standard written, standard spoken, street talk, Australian spoken, or your own prompt.",
+					body: "Mistakes are marked inside your own sentence: struck through in red, fixed in green. Right below, learn natural native phrasing in the style you choose — casual spoken, street talk, business, or your own custom prompt.",
 				},
 				{
 					label: "Remember",
 					title: "Every slip goes on the record.",
-					body: "Errors, correct uses and the expressions you looked up are written to a learning record on your device. Marking something as mastered is an explicit override — it never fakes a right answer.",
+					body: "Pinpoints your blind spots and misunderstandings. Slips, native uses and expressions you looked up are saved to your learning record on device, targeting weak points with no guesswork.",
 				},
 				{
 					label: "Reuse",
 					title: "It comes back until it sticks.",
-					body: "What you still get wrong returns — as the reason behind a recommended scene, and as lines in your Listening Center and dictation — until you say it right without thinking.",
+					body: "Targeted drills designed around your gaps. Concepts you haven't mastered yet return as recommended scenes, listening lines, and dictation — until they become second nature.",
 				},
 			],
 			express: {
@@ -196,7 +196,7 @@ const content = {
 			},
 			items: [
 				{ icon: "translate", title: "Bilingual reading", body: "Sentence-by-sentence translation under any reply — or have every reply open with it." },
-				{ icon: "book", title: "Explanation", body: "A structured card: what the sentence is doing, the pieces worth knowing, one thing to take away." },
+				{ icon: "book", title: "Explanation", body: "In-depth explanation in context: break down what the sentence is doing, analyze natural collocations, and give you a practical example ready to reuse." },
 				{ icon: "chat", title: "Ways to reply", body: "Not sure what to say next? Get a few directions to take it — not a script." },
 				{ icon: "headphones", title: "Read Aloud", body: "Hear the reply and your polished sentence, in Apple voices or Converloop AI's natural voices — free." },
 			],
@@ -217,7 +217,7 @@ const content = {
 		listen: {
 			kicker: "Listening Center & Dictation Review",
 			heading: "Your own sentences, turned into ear training.",
-			body: "Both are built from material you've already produced — there's no stock audio and no second learner profile.",
+			body: "Built entirely from sentences you've actually used — no stock recordings, just the language you really need.",
 			listening: {
 				title: "Listening Center",
 				body: "Replay the sentences you've practised as a playlist, with translations, gaps between lines, a sleep timer, background audio and lock-screen controls.",
@@ -237,7 +237,7 @@ const content = {
 		memory: {
 			kicker: "A memory with a boundary",
 			heading: "It remembers how you learn — not who you are.",
-			body: "A conversation stays coherent within its own thread, but personal details are never promoted into memory that follows you from chat to chat.",
+			body: "A conversation stays coherent within its own thread, but your personal life is never tracked across chats or turned into long-term memory.",
 			keptTitle: "Kept as learning memory",
 			kept: [
 				"Your languages, level, goals and practice preferences",
@@ -355,9 +355,9 @@ const content = {
 	},
 	zh: {
 		meta: {
-			title: "Converloop — iPhone 与 iPad 上的 AI 外语陪练",
+			title: "Converloop — 跨平台 AI 外语陪练",
 			description:
-				"Converloop 是 iPhone 与 iPad 上的 AI 外语陪练。打字或语音聊天，每一句当场批改并给出母语者的说法；在 54 个真实场景里演对手戏；把你说过的句子变成听力和听写练习。只记语言的学习记忆，无需账号。",
+				"Converloop 是跨平台 AI 外语陪练。打字或开口聊，每一句当场批改并教你超地道的说法；它会记录你对语言理解的误区，给出针对性的讲解与训练；在 54 个真实场景里演对手戏；把你说过的句子变成听力和听写练习。无需账号。",
 		},
 		status: "即将上架 App Store",
 		appStore: "在 App Store 下载",
@@ -369,14 +369,14 @@ const content = {
 			words: ["英语", "日语", "法语", "韩语", "德语"],
 			wordSuffix: "",
 			tail: "，是聊出来的。",
-			bodyBefore: "iPhone 与 iPad 上的 AI 外语陪练。打字或开口说，每一句都",
-			bodyMark: "当场批改，再给你一句母语者的说法",
-			bodyAfter: "；说错的地方，会在场景、听力和听写里反复回来，直到你真的会了。",
+			bodyBefore: "跨平台 AI 外语陪练。打字或开口聊，每一句都",
+			bodyMark: "当场批改，教你超地道的说法",
+			bodyAfter: "；它会记录你对语言理解的误区，给出针对性的讲解与训练。",
 			strip: [
-				{ icon: "correct", title: "当场批改", body: "每一句都改给你看" },
-				{ icon: "target", title: "54 个真实场景", body: "在对手戏里开口" },
-				{ icon: "headphones", title: "听力与听写", body: "用你自己说过的句子" },
-				{ icon: "shield", title: "只记语言的记忆", body: "记住你的语言，不记你的生活" },
+				{ icon: "correct", title: "当场批改" },
+				{ icon: "target", title: "54 个真实场景" },
+				{ icon: "headphones", title: "听力与听写" },
+				{ icon: "book", title: "语境即时讲解" },
 			],
 			shots: {
 				conversation: "iPhone 上的 Converloop 对话：句子里用红绿标出的批改、润色后的说法，以及用中文提问、用英文作答",
@@ -393,7 +393,7 @@ const content = {
 		},
 		why: {
 			kicker: "为什么是 Converloop？",
-			text: "大多数 AI 聊天回答完眼前这一句，就把它忘了。Converloop 会留意这句话暴露出的语言问题——只关于语言，从不关于你的生活——然后在下一场对话、下一个场景、下一轮听写里，把它带回来。",
+			text: "它不只是陪练，更是一整套学习闭环。对话时即时纠错、地道润色与深度讲解，配合语境查词、双语阅读、AI 朗读与回复提示，让你敢说更能聊；聊完后，更把你练过的真实句子转化为专属听力与听写练习，直到彻底掌握。",
 		},
 		loop: {
 			heading: "从说出口，到脱口而出。",
@@ -402,22 +402,22 @@ const content = {
 				{
 					label: "表达",
 					title: "用你的方式说出来。",
-					body: "打字，或者按住麦克风直接说。卡在一个词上？用母语问就行——答案用你在学的语言给出，拿来就能开口。",
+					body: "打字或按住麦克风直接聊。卡壳不知道怎么说？直接用母语问——AI 马上教你最自然的说法，拿来就能顺畅接着说。",
 				},
 				{
 					label: "注意",
 					title: "一眼看清哪里要改。",
-					body: "错误直接标在你自己的句子里：红色划掉，绿色改正。下面再给一句润色后的版本，风格你来定——标准书面、标准口语、街头口语、澳式口语，或者你自己写的 Prompt。",
+					body: "错误直接在原句中对比标注：红线划掉，绿字改写。紧接着教你超地道的说法，风格由你定——日常口语、地道俚语、商务正规，或者自定义专属提示词。",
 				},
 				{
 					label: "记录",
 					title: "每次说错，都记在账上。",
-					body: "错误、用对的地方、查过的表达，都写进你设备上的学习记录。手动标记「掌握」是一次明确的覆盖，不会假装你答对过。",
+					body: "摸清你的薄弱盲区与理解误区。说错的地方、地道用法、查过的词句，都会整理成你的专属学习记录，针对性攻克薄弱点，绝不含糊过关。",
 				},
 				{
 					label: "复用",
 					title: "反复回来，直到记住。",
-					body: "还没掌握的东西会回来——成为推荐场景背后的理由，成为听力中心和听写里的句子——直到你不假思索就能说对。",
+					body: "量身定制的针对性强化。还没吃透的难点与误区，会化作推荐场景的演练重点，融入听力和听写练习——直到形成语感，脱口而出。",
 				},
 			],
 			express: {
@@ -482,7 +482,7 @@ const content = {
 			},
 			items: [
 				{ icon: "translate", title: "双语阅读", body: "任意回复下面逐句对照翻译，也可以设成每条自动展开。" },
-				{ icon: "book", title: "讲解", body: "一张结构化讲解卡：这句话在做什么、值得记的片段，再给你一句拿去就能用的。" },
+				{ icon: "book", title: "语境讲解", body: "结合语境深度讲解：剖析句式背后的语境意图、拆解地道词组搭配，再给出一句能直接套用的实用例句，知其然更知其所以然。" },
 				{ icon: "chat", title: "回复思路", body: "不知道接下来说什么？给你几个可以接的方向，而不是一份台词。" },
 				{ icon: "headphones", title: "朗读", body: "听 AI 的回复，也听你润色后的那句。Apple 系统声音，或免费的 Converloop AI 自然人声。" },
 			],
@@ -503,7 +503,7 @@ const content = {
 		listen: {
 			kicker: "听力中心与听写复盘",
 			heading: "把你练过的句子，变成听力课。",
-			body: "两者都用你自己产出过的内容：没有罐头录音，也没有第二份学习档案。",
+			body: "全部取材于你亲口聊过、练过的真实句子，告别千篇一律的枯燥预设录音，只练你真正用得上的语言。",
 			listening: {
 				title: "听力中心",
 				body: "把练过的句子当播放列表反复听：可看翻译、调句间停顿、定时关闭，支持后台播放和锁屏控制。",
@@ -523,7 +523,7 @@ const content = {
 		memory: {
 			kicker: "有边界的记忆",
 			heading: "它记住你怎么学，不记住你是谁。",
-			body: "一场对话在自己的线程里保持连贯，但个人信息永远不会变成跟着你跨对话走的记忆。",
+			body: "对话在当前会话中自然连贯，但你的个人生活细节绝不会被跨会话追踪，更不会沉淀为长期记忆。",
 			keptTitle: "会作为学习记忆保留",
 			kept: ["学习语言、等级、目标和练习偏好", "错误、用对的地方和查过的表达", "掌握状态和复习记录，以及背后的证据"],
 			neverTitle: "永远不会变成记忆",

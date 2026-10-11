@@ -188,10 +188,7 @@ export function ConverloopPage({ locale }: { locale: Locale }) {
 						{c.hero.strip.map((item) => (
 							<li key={item.title}>
 								<span className={s.stripIcon}><Icon name={item.icon} /></span>
-								<span>
-									<b>{item.title}</b>
-									<small>{item.body}</small>
-								</span>
+								<b>{item.title}</b>
 							</li>
 						))}
 					</ul>

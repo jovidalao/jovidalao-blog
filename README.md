@@ -22,6 +22,8 @@ pnpm dev
 
 Blog posts live in `content/blog/en` and `content/blog/zh`. Images referenced by posts live in `public/blog`. Adding or changing content requires a new build and deployment.
 
+Development uses `.next-dev`; production builds use `.next` and export to `out`. Keeping these separate lets `pnpm build` run while `pnpm dev` is open without overwriting its Webpack modules. Restart dev once after changing this configuration, then reload any tabs that still hold the old modules.
+
 ## Build and preview
 
 Every build exports the site to `out`, regardless of hosting provider or `CF_PAGES`:
