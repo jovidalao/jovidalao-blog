@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
+import { BLOG_PUBLISHED, CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
 import { getConverloop, getHome, getUi, localeBase, type Locale } from "@/i18n";
 import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/date";
@@ -27,7 +27,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 		{ lang: "it", text: "Ciao" },
 		{ lang: "ar", text: "مرحبًا" },
 	];
-	const posts = (await getAllPosts(locale)).slice(0, 3);
+	const posts = BLOG_PUBLISHED ? (await getAllPosts(locale)).slice(0, 3) : [];
 	const { peelday, converloop, desktop } = c.apps;
 	const desktopAlt = ui.converloopDesktop.shots.hero.alt;
 	const conversationAlt = getConverloop(locale).hero.shots.conversation;
@@ -69,7 +69,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 							{c.seeApps}
 							<Arrow down />
 						</a>
-						<Link className={`${site.btn} ${site.btnGhost}`} href={`${base}/blog`}>{c.writing}</Link>
+						{BLOG_PUBLISHED ? <Link className={`${site.btn} ${site.btnGhost}`} href={`${base}/blog`}>{c.writing}</Link> : null}
 					</div>
 				</div>
 

@@ -30,6 +30,9 @@ async function verify() {
     await requireFile(file, "Required export");
   }
 
+  const consts = await readFile(path.join(root, "src/consts.ts"), "utf8");
+  const blogPublished = /export const BLOG_PUBLISHED = true\b/.test(consts);
+
   // Match the existing App Router pages and Markdown-based catch-all routes.
   const pages = await readdir(path.join(root, "src/app"), { recursive: true });
   for (const file of pages) {
@@ -37,11 +40,13 @@ async function verify() {
     const parts = path.dirname(file).split(path.sep).filter((part) => part !== "." && !part.startsWith("("));
     const route = `/${parts.join("/")}`;
     if (!route.includes("[")) {
+      if (!blogPublished && (route === "/blog" || route === "/zh/blog")) continue;
       routes.add(route);
       continue;
     }
 
     const blog = route.match(/^(\/zh)?\/blog\/\[\.\.\.slug\]$/);
+    if (blog && !blogPublished) continue;
     if (!blog) {
       failures.push(`Add static verification for dynamic route ${route}`);
       continue;

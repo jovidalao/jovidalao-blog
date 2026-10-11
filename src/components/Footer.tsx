@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
+import { BLOG_PUBLISHED, CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
 import { getUi, localeBase, type Locale } from "@/i18n";
 import styles from "./Footer.module.css";
 
@@ -28,7 +28,7 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className={styles.col}>
           <p className={styles.colTitle}>{f.moreTitle}</p>
           <ul>
-            <li><Link href={`${base}/blog`}>{f.writing}</Link></li>
+            {BLOG_PUBLISHED ? <li><Link href={`${base}/blog`}>{f.writing}</Link></li> : null}
             <li><a href={CONVERLOOP.repoUrl} target="_blank" rel="noreferrer">{f.source}</a></li>
             <li><a href={`mailto:${PEELDAY.contactEmail}`}>{f.email}</a></li>
           </ul>

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/unpublish-blog.mjs",
     "preview": "pnpm check:static && wrangler pages dev out --ip 127.0.0.1",
     "start": "pnpm preview",
     "typecheck": "tsc --noEmit",
