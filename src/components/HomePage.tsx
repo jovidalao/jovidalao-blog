@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
 import { getConverloop, getHome, getUi, localeBase, type Locale } from "@/i18n";
 import { getAllPosts } from "@/lib/blog";
@@ -15,6 +16,16 @@ export async function HomePage({ locale }: { locale: Locale }) {
 	const ui = getUi(locale);
 	const base = localeBase(locale);
 	const zh = locale === "zh";
+	const greetings = [
+		{ lang: locale, text: zh ? "你好" : "Hello" },
+		{ lang: zh ? "en" : "zh", text: zh ? "Hello" : "你好" },
+		{ lang: "ja", text: "こんにちは" },
+		{ lang: "ko", text: "안녕하세요" },
+		{ lang: "fr", text: "Bonjour" },
+		{ lang: "es", text: "Hola" },
+		{ lang: "it", text: "Ciao" },
+		{ lang: "ar", text: "مرحبًا" },
+	];
 	const posts = (await getAllPosts(locale)).slice(0, 3);
 	const { peelday, converloop, desktop } = c.apps;
 	const desktopAlt = ui.converloopDesktop.shots.hero.alt;
@@ -34,9 +45,14 @@ export async function HomePage({ locale }: { locale: Locale }) {
 					</p>
 
 					<h1 className={s.heroTitle}>
-						{c.titleLead}
-						<br />
-						<span className={h.accent}>{c.titleAccent}</span>
+						<span className="sr-only">{greetings[0].text}</span>
+						<span className={h.greetings} aria-hidden="true">
+							{greetings.map((greeting, i) => (
+								<span key={greeting.lang} className={h.accent} lang={greeting.lang} dir="auto" style={{ "--i": i } as CSSProperties}>
+									{greeting.text}
+								</span>
+							))}
+						</span>
 					</h1>
 
 					<p className={s.heroBody}>

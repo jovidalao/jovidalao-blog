@@ -29,6 +29,35 @@
 	background-image: linear-gradient(100deg, #6aa8ff 0%, #b69cff 52%, #ef7d74 100%);
 }
 
+/* Reserve the largest greeting's space so language changes never move the hero. */
+.greetings {
+	display: inline-grid;
+	line-height: 1.4;
+	letter-spacing: 0;
+}
+
+.greetings > span {
+	grid-area: 1 / 1;
+	align-self: center;
+	justify-self: center;
+	white-space: nowrap;
+	opacity: 0;
+	animation: greetingCycle 24s infinite;
+	animation-delay: calc((var(--i) - 8) * 3s);
+}
+
+@keyframes greetingCycle {
+	0%, 10% { opacity: 1; transform: translateY(0); }
+	12.5% { opacity: 0; transform: translateY(-0.12em); }
+	98% { opacity: 0; transform: translateY(0.12em); }
+	100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.greetings > span { animation: none; }
+	.greetings > span:first-child { opacity: 1; }
+}
+
 /* Peelday's name gets Peelday's red; Converloop keeps the page blue. */
 .peel {
 	--blue: #c84b45;

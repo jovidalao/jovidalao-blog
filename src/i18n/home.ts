@@ -8,8 +8,6 @@ import type { Locale } from "./ui";
 const content = {
 	en: {
 		pill: "Hobart, Tasmania",
-		titleLead: "Small apps",
-		titleAccent: "that stay yours.",
 		bodyBefore: "I'm jovidalao, an indie developer. I make ",
 		bodyMark: "Peelday",
 		bodyMiddle: ", a sticker diary for iPhone, and ",
@@ -80,8 +78,6 @@ const content = {
 	},
 	zh: {
 		pill: "塔斯马尼亚 · 霍巴特",
-		titleLead: "小小的 App，",
-		titleAccent: "始终属于你。",
 		bodyBefore: "我是 jovidalao，一名独立开发者。我做了",
 		bodyMark: "贴贴手帐",
 		bodyMiddle: "——iPhone 上的贴纸手帐，还有",
