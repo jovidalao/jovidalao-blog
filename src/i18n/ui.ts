@@ -26,6 +26,7 @@ export const ui = {
 			peeldayPrivacy: "Peelday Privacy",
 			peeldayTerms: "Peelday Terms",
 			converloopPrivacy: "Converloop Privacy",
+			converloopTerms: "Converloop Terms",
 		},
 		blog: {
 			kicker: "Writing",
@@ -221,6 +222,7 @@ export const ui = {
 			peeldayPrivacy: "贴贴手帐隐私政策",
 			peeldayTerms: "贴贴手帐用户协议",
 			converloopPrivacy: "Converloop 隐私政策",
+			converloopTerms: "Converloop 使用条款",
 		},
 		blog: {
 			kicker: "写作",

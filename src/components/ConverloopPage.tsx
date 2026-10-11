@@ -553,6 +553,7 @@ export function ConverloopPage({ locale }: { locale: Locale }) {
 					<p className={s.wordmark} aria-hidden="true">{CONVERLOOP.name}</p>
 					<nav className={s.legal} aria-label={CONVERLOOP.name}>
 						<Link href={`${base}/converloop/privacy`}>{c.legal.privacy}</Link>
+						<Link href={`${base}/converloop/terms`}>{c.legal.terms}</Link>
 						<Link href={`${base}/converloop/support`}>{c.legal.support}</Link>
 						<Link href={`${base}/converloop/desktop`}>{c.legal.desktop}</Link>
 					</nav>

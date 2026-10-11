@@ -351,7 +351,7 @@ const content = {
 			heading: "Make every conversation teach the next one.",
 			body: "Coming soon to the App Store, for iPhone and iPad.",
 		},
-		legal: { privacy: "Privacy Policy", support: "Support", desktop: "Converloop for Desktop" },
+		legal: { privacy: "Privacy Policy", terms: "Terms of Use", support: "Support", desktop: "Converloop for Desktop" },
 	},
 	zh: {
 		meta: {
@@ -629,7 +629,7 @@ const content = {
 			heading: "让每一次对话，都教会你下一次。",
 			body: "即将上架 App Store，支持 iPhone 与 iPad。",
 		},
-		legal: { privacy: "隐私政策", support: "支持", desktop: "Converloop 桌面端" },
+		legal: { privacy: "隐私政策", terms: "使用条款", support: "支持", desktop: "Converloop 桌面端" },
 	},
 } as const;
 

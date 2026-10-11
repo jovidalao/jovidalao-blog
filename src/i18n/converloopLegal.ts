@@ -335,21 +335,177 @@ export const converloopSupport = {
 	},
 } as const;
 
+/**
+ * Converloop's terms of use, linked from the About page and from every screen
+ * that sells a plan, as App Review asks of apps with auto-renewable
+ * subscriptions (3.1.2). They supplement Apple's standard EULA rather than
+ * replace it: App Store Connect keeps the standard licence agreement, and these
+ * add only what is Converloop's own — the trial and the purchases, the
+ * Converloop AI subscription, AI-generated content, and acceptable use. Plan
+ * facts mirror the iOS repo's docs/PRODUCT_DESIGN.md (购买与权益).
+ */
+export const converloopTerms = {
+	en: {
+		intro:
+			"These terms cover Converloop for iPhone and iPad and Converloop AI, the model service we run. By downloading or using Converloop, you agree to them. Please read them together with the Privacy Policy, which explains what is sent where.",
+		sections: [
+			{
+				title: "Apple's Standard EULA",
+				body: "Converloop is licensed to you, not sold, under Apple's Licensed Application End User License Agreement. These terms add what is specific to Converloop. Where the two differ on your licence to use the app itself, Apple's agreement governs.",
+				link: {
+					label: "Apple's Licensed Application End User License Agreement",
+					href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+				},
+			},
+			{
+				title: "Free Trial and Purchases",
+				bullets: [
+					"Converloop is free to download. Conversations, scene practice, corrections, explanations, and other AI features are unlocked by the 7-day free trial, by Converloop Lifetime, or by an active Converloop AI subscription.",
+					"The free trial starts when you tap to start it and ends by itself after 7 days. It never charges you and never turns into a purchase. It is available once per Apple Account: restoring it on another device or reinstalling does not start it again.",
+					"Converloop Lifetime is a one-time purchase that keeps the app's features unlocked for good when you use Apple Intelligence or your own API key. It does not include Converloop AI, and it can be shared with your Family Sharing group.",
+					"Prices are shown in the app and the App Store before you pay. All payments are processed by Apple, and refunds are handled by Apple under its own policies.",
+					"Whatever you decide, your conversations, learning records, and backup export stay available.",
+				],
+			},
+			{
+				title: "Converloop AI Subscription",
+				bullets: [
+					"Converloop AI is an auto-renewable yearly subscription. It includes the whole app and the use of Converloop AI, with no API key of your own; each AI request uses part of the allowance that comes with it, and the Converloop AI page in Settings shows what is left.",
+					"Payment is charged to your Apple Account when you confirm the purchase. The subscription renews automatically each year at the price then in effect unless you turn off auto-renewal at least 24 hours before the end of the current period; your account is charged for the renewal within the 24 hours before that period ends.",
+					"You can manage or cancel the subscription at any time in your App Store account settings (iOS Settings → your name → Subscriptions). Cancelling stops the next renewal; you keep Converloop AI until the end of the period you have paid for. Deleting the app does not cancel the subscription.",
+					"Converloop AI sends nothing for processing until you agree, and you can withdraw that permission at any time; the Privacy Policy explains what is sent and to whom.",
+				],
+			},
+			{
+				title: "AI-Generated Content",
+				body: "Replies, corrections, polished versions, explanations, translations, and lookups are written by AI models — Apple's, those of a provider you choose, or those behind Converloop AI. They can be wrong, incomplete, or unnatural, and their quality varies between services. Treat them as a learning aid, not as an authority on the language or as legal, medical, financial, or other professional advice.",
+			},
+			{
+				title: "Your Content and Acceptable Use",
+				bullets: [
+					"You keep all rights in what you write or say in Converloop. It is processed only to provide the features you use, as the Privacy Policy describes.",
+					"Do not use Converloop to create or send content that is unlawful, infringes the rights of others, harasses anyone, or sexualises minors.",
+					"Do not try to disrupt, overload, reverse-engineer, or get around the limits of Converloop AI — for example by automating requests or using it for anything other than your own language learning.",
+					"Keep sensitive personal details about yourself or others out of your conversations.",
+				],
+			},
+			{
+				title: "Your Own API Key and Other Services",
+				body: "If you use your own API key, requests go from your device straight to that provider, under the provider's own terms and prices; your account with them and any charges it incurs are yours. Apple Intelligence is provided by Apple under Apple's terms. We are not responsible for the availability, content, or charges of services we do not run.",
+			},
+			{
+				title: "Availability and Changes",
+				body: "We work to keep Converloop AI running, but it depends on network and model providers outside our control, so we cannot promise it will always be available or free of errors. We may update the app and change how Converloop AI is provided, including which model providers it uses; before your data goes to a recipient the Privacy Policy does not name, we will update it and ask for your permission again.",
+			},
+			{
+				title: "Disclaimer and Limitation of Liability",
+				body: 'Converloop is provided "as is", without warranties of accuracy, availability, or fitness for a particular purpose. To the maximum extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of, or inability to use, Converloop. Nothing in these terms limits rights you have under consumer protection laws that cannot be excluded.',
+			},
+			{
+				title: "Termination",
+				body: "You can stop using Converloop at any time by deleting it; cancel any subscription separately in the App Store. If you seriously or repeatedly break these terms, in particular by abusing Converloop AI, we may suspend this device's access to Converloop AI.",
+			},
+			{
+				title: "Changes to These Terms",
+				body: 'If these terms change, we will update the "Last updated" date on this page, and note material changes in the release notes of the new version. Continuing to use Converloop after a change means you accept the updated terms.',
+			},
+			{
+				title: "Contact Us",
+				body: "For any question about these terms, please email jovidalao@gmail.com.",
+			},
+		],
+	},
+	zh: {
+		intro:
+			"本条款适用于 Converloop（iPhone 与 iPad 版）以及我们运行的模型服务 Converloop AI。下载或使用 Converloop，即表示你同意本条款。请与隐私政策一起阅读，那里写明了什么内容会发往哪里。",
+		sections: [
+			{
+				title: "Apple 标准最终用户许可协议",
+				body: "Converloop 以许可而非出售的方式提供给你，适用 Apple 的《许可应用程序最终用户许可协议》（标准 EULA）。本条款只补充 Converloop 自己的部分；在你使用 App 本身的许可上，两者如有不同，以 Apple 的协议为准。",
+				link: {
+					label: "Apple《许可应用程序最终用户许可协议》",
+					href: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+				},
+			},
+			{
+				title: "免费试用与购买",
+				bullets: [
+					"Converloop 可以免费下载。对话、场景训练、批改、讲解等 AI 功能，需要 7 天免费试用、「Converloop 完整版」或有效的 Converloop AI 订阅才能使用。",
+					"免费试用在你点开始时开始，7 天后自动结束，不会扣费，也不会自动转为购买。每个 Apple 账户只能试用一次：在别的设备上恢复或重装 App 都不会重新开始。",
+					"「Converloop 完整版」是一次买断，买断后搭配 Apple 智能或自带 API 密钥一直可用；它不含 Converloop AI，可以通过家庭共享与家人共用。",
+					"价格在付款前显示在 App 和 App Store 里。所有付款都由 Apple 处理，退款按 Apple 的政策办理。",
+					"无论是否购买，你已有的对话、学习记录和备份导出都可以照常使用。",
+				],
+			},
+			{
+				title: "Converloop AI 订阅",
+				bullets: [
+					"Converloop AI 是按年自动续订的订阅，订阅期内 App 全部可用，并可以使用 Converloop AI 的模型服务，不需要自己的 API 密钥。每次 AI 请求会用掉订阅附带的一部分额度，剩余额度显示在「设置」的 Converloop AI 页。",
+					"确认购买时，费用从你的 Apple 账户扣除。除非你在当前订阅期结束前至少 24 小时关闭自动续订，订阅会按届时的价格每年自动续订；续订费用会在当前订阅期结束前 24 小时内扣除。",
+					"你可以随时在 App Store 的账户设置（系统「设置 → 你的名字 → 订阅」）里管理或取消订阅。取消后不再续订，已付费的期限内仍可使用 Converloop AI。删除 App 不会取消订阅。",
+					"在你同意之前，Converloop AI 不会发送任何内容去处理，你也可以随时撤回同意；发送什么、发给谁，见隐私政策。",
+				],
+			},
+			{
+				title: "AI 生成的内容",
+				body: "回复、批改、润色、讲解、翻译和查词都由 AI 模型生成——来自 Apple、你选择的服务商，或 Converloop AI 背后的模型服务商。它们可能出错、不完整或不够地道，不同服务的质量也不一样。请把它们当作学习辅助，而不是语言上的权威，也不是法律、医疗、财务或其他专业意见。",
+			},
+			{
+				title: "你的内容与使用规范",
+				bullets: [
+					"你在 Converloop 里写下或说出的内容，权利都归你。这些内容只会按隐私政策所述，用于提供你正在使用的功能。",
+					"请勿用 Converloop 创作或发送违法、侵犯他人权利、骚扰他人或涉及未成年人色情的内容。",
+					"请勿干扰、过载、逆向工程或绕过 Converloop AI 的限制——例如自动化批量请求，或把它用于你自己学语言以外的用途。",
+					"请不要在对话里填写你自己或他人的敏感个人信息。",
+				],
+			},
+			{
+				title: "自带 API 密钥与其他服务",
+				body: "如果你使用自己的 API 密钥，请求会从设备直接发给该服务商，适用该服务商自己的条款和价格；你在那里的账户以及由此产生的费用由你负责。Apple 智能由 Apple 按其条款提供。对于不由我们运行的服务，其可用性、内容和收费我们不承担责任。",
+			},
+			{
+				title: "服务可用性与变更",
+				body: "我们会尽力让 Converloop AI 稳定运行，但它依赖我们无法控制的网络和模型服务商，因此无法保证始终可用或没有错误。我们可能更新 App，并调整 Converloop AI 的提供方式，包括所使用的模型服务商；在你的数据发往隐私政策未列出的接收方之前，我们会先更新隐私政策并重新征求你的同意。",
+			},
+			{
+				title: "免责声明与责任限制",
+				body: "Converloop 按「现状」提供，不对准确性、可用性或特定用途适用性作任何保证。在法律允许的最大范围内，我们不对因使用或无法使用 Converloop 而产生的任何间接、附带或后果性损害承担责任。本条款不限制你依据消费者保护法享有的、不可排除的权利。",
+			},
+			{
+				title: "终止",
+				body: "你可以随时删除 App 停止使用；订阅需要另外在 App Store 里取消。如果你严重或反复违反本条款，尤其是滥用 Converloop AI，我们可能暂停这台设备使用 Converloop AI。",
+			},
+			{
+				title: "条款变更",
+				body: "本条款如有变更，我们会更新本页的「最后更新」日期；实质性变更会在新版本的更新说明里提示。变更后继续使用 Converloop，即表示你接受更新后的条款。",
+			},
+			{
+				title: "联系我们",
+				body: "对本条款有任何疑问，请发送邮件至 jovidalao@gmail.com。",
+			},
+		],
+	},
+} as const;
+
 /** Page chrome, kept beside the documents so Converloop's legal pages are one file. */
 export const converloopLegalUi = {
 	en: {
 		privacyTitle: "Privacy Policy — Converloop",
+		termsTitle: "Terms of Use — Converloop",
 		supportTitle: "Support — Converloop",
 		back: "← Back to Converloop",
 		privacy: "Privacy Policy",
+		terms: "Terms of Use",
 		support: "Support",
 		contact: "Contact",
 	},
 	zh: {
 		privacyTitle: "隐私政策 — Converloop",
+		termsTitle: "使用条款 — Converloop",
 		supportTitle: "支持 — Converloop",
 		back: "← 返回 Converloop",
 		privacy: "隐私政策",
+		terms: "使用条款",
 		support: "支持",
 		contact: "联系我们",
 	},
@@ -359,6 +515,7 @@ export function getConverloopLegal(locale: Locale | string | undefined) {
 	const key = locale === "zh" ? "zh" : "en";
 	return {
 		privacy: converloopPrivacy[key],
+		terms: converloopTerms[key],
 		support: converloopSupport[key],
 		ui: converloopLegalUi[key],
 	};

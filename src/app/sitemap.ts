@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/peelday/terms", "/zh/peelday/terms",
     "/converloop", "/zh/converloop",
     "/converloop/privacy", "/zh/converloop/privacy",
+    "/converloop/terms", "/zh/converloop/terms",
     "/converloop/support", "/zh/converloop/support",
     "/converloop/desktop", "/zh/converloop/desktop",
   ];

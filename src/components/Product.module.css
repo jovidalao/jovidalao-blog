@@ -342,6 +342,14 @@
 	color: var(--ink-2);
 }
 
+/* The site strips link styling globally; inside a legal text a link has to
+   read as one. */
+.legalSection a {
+	color: var(--ink);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
 /* ---------- responsive ---------- */
 
 @media (max-width: 980px) {

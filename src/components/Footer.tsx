@@ -40,6 +40,7 @@ export function Footer({ locale }: { locale: Locale }) {
             <li><Link href={`${base}/peelday/privacy`}>{f.peeldayPrivacy}</Link></li>
             <li><Link href={`${base}/peelday/terms`}>{f.peeldayTerms}</Link></li>
             <li><Link href={`${base}/converloop/privacy`}>{f.converloopPrivacy}</Link></li>
+            <li><Link href={`${base}/converloop/terms`}>{f.converloopTerms}</Link></li>
           </ul>
         </div>
       </div>
