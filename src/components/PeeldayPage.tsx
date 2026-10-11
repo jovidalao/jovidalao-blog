@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { PEELDAY } from "@/consts";
 import { getPeelday, getUi, localeBase, peeldayLibrary, type Locale } from "@/i18n";
+import { peeldayShots } from "@/lib/peelday-shots";
 import { Arrow, pad, revealWords, vars } from "./ConverloopPage";
 import s from "./ConverloopPage.module.css";
 import { Icon } from "./Icon";
 import p from "./PeeldayPage.module.css";
 import { ShotSlot } from "./Shot";
 import site from "./site.module.css";
-
-/** Real app captures; see public/peelday/SCREENSHOTS.md for sources. Status bars include the island. */
-const shot = (name: string) => `/peelday/${name}.webp`;
 
 export function PeeldayPage({ locale }: { locale: Locale }) {
 	const c = getPeelday(locale);
@@ -29,16 +27,16 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 
 	const visuals = [
 		<div className={p.peek} key="pick">
-			<ShotSlot index="01" title={zh ? "空白日记页与添加贴纸按钮" : "An empty diary page with the add sticker button"} frame="phone" ratio="9 / 12" crop island={false} src={shot("empty")} />
+			<ShotSlot index="01" title={zh ? "空白日记页与添加贴纸按钮" : "An empty diary page with the add sticker button"} frame="phone" ratio="9 / 12" crop island={false} src={peeldayShots.empty} />
 		</div>,
 		<div className={p.peek} key="style">
-			<ShotSlot index="02" title={hero.shots.maker} frame="phone" ratio="9 / 12" crop island={false} src={shot("maker")} />
+			<ShotSlot index="02" title={hero.shots.maker} frame="phone" ratio="9 / 12" crop island={false} src={peeldayShots.maker} />
 		</div>,
 		<div className={p.peek} key="read">
-			<ShotSlot index="03" title={hero.shots.ticket} frame="phone" ratio="9 / 12" crop island={false} src={shot("ticket")} />
+			<ShotSlot index="03" title={hero.shots.ticket} frame="phone" ratio="9 / 12" crop island={false} src={peeldayShots.ticket} />
 		</div>,
 		<div className={p.peek} key="place">
-			<ShotSlot index="04" title={hero.shots.page} frame="phone" ratio="9 / 12" crop island={false} src={shot("page")} />
+			<ShotSlot index="04" title={hero.shots.page} frame="phone" ratio="9 / 12" crop island={false} src={peeldayShots.page} />
 		</div>,
 	];
 
@@ -101,13 +99,13 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 
 				<div className={s.stage}>
 					<div className={`${s.stagePhone} ${s.stageSide} ${s.stageLeft}`}>
-						<ShotSlot index="02" title={hero.shots.maker} frame="phone" crop island={false} src={shot("maker")} />
+						<ShotSlot index="02" title={hero.shots.maker} frame="phone" crop island={false} src={peeldayShots.maker} />
 					</div>
 					<div className={`${s.stagePhone} ${s.stageCenter}`}>
-						<ShotSlot index="01" title={hero.shots.page} frame="phone" crop island={false} priority src={shot("page")} />
+						<ShotSlot index="01" title={hero.shots.page} frame="phone" crop island={false} priority src={peeldayShots.page} />
 					</div>
 					<div className={`${s.stagePhone} ${s.stageSide} ${s.stageRight}`}>
-						<ShotSlot index="03" title={hero.shots.ticket} frame="phone" crop island={false} src={shot("ticket")} />
+						<ShotSlot index="03" title={hero.shots.ticket} frame="phone" crop island={false} src={peeldayShots.ticket} />
 					</div>
 
 				</div>
@@ -196,10 +194,10 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 					</div>
 					<div className={`${p.pair} ${s.rise}`}>
 						<div>
-							<ShotSlot index="04" title={c.find.shots.calendar} frame="phone" crop island={false} src={shot("calendar")} />
+							<ShotSlot index="04" title={c.find.shots.calendar} frame="phone" crop island={false} src={peeldayShots.calendar} />
 						</div>
 						<div>
-							<ShotSlot index="05" title={c.find.shots.search} frame="phone" crop island={false} src={shot("search")} />
+							<ShotSlot index="05" title={c.find.shots.search} frame="phone" crop island={false} src={peeldayShots.search} />
 						</div>
 					</div>
 				</div>
@@ -217,7 +215,7 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 						</ul>
 					</div>
 					<div className={`${p.solo} ${s.rise}`}>
-						<ShotSlot index="06" title={c.widget.shot} frame="phone" ratio="9 / 15" crop island={false} src={shot("widget")} />
+						<ShotSlot index="06" title={c.widget.shot} frame="phone" ratio="9 / 15" crop island={false} src={peeldayShots.widget} />
 					</div>
 				</div>
 			</section>

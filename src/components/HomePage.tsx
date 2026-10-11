@@ -4,6 +4,7 @@ import { CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
 import { getConverloop, getHome, getUi, localeBase, type Locale } from "@/i18n";
 import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/date";
+import { peeldayShots } from "@/lib/peelday-shots";
 import { Arrow } from "./ConverloopPage";
 import s from "./ConverloopPage.module.css";
 import h from "./Home.module.css";
@@ -78,7 +79,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 						<img src="/converloop-desktop-conversation.jpg" alt={desktopAlt} width={1040} height={720} fetchPriority="high" />
 					</div>
 					<div className={`${h.phone} ${h.phoneLeft}`}>
-						<ShotSlot index="01" title={c.shots.peelday} frame="phone" crop island={false} priority src="/peelday/page.webp" />
+						<ShotSlot index="01" title={c.shots.peelday} frame="phone" crop island={false} priority src={peeldayShots.page} />
 					</div>
 					<div className={`${h.phone} ${h.phoneRight}`}>
 						<ShotSlot index="02" title={c.shots.converloop} frame="phone" crop priority src="/converloop/conversation.webp" />
@@ -111,7 +112,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 								<a className={`${site.btn} ${site.btnGhost}`} href={PEELDAY.appStoreUrl} target="_blank" rel="noreferrer">{peelday.store}</a>
 							</div>
 							<div className={h.appShot}>
-								<ShotSlot index="01" title={c.shots.peelday} frame="phone" crop island={false} src="/peelday/page.webp" />
+								<ShotSlot index="01" title={c.shots.peelday} frame="phone" crop island={false} src={peeldayShots.page} />
 							</div>
 						</article>
 

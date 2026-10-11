@@ -15,3 +15,6 @@ Images are resized to 750 × 1630 and encoded as WebP at quality 88, without cha
 
 `search.webp` retains the existing October 2026 simulator capture because this directory has no search screenshot.
 Screenshots show the app language at capture time and are shared across website locales.
+
+Pages import these captures through `src/lib/peelday-shots.ts`. Next.js emits content-hashed
+`/_next/static/media/` URLs, so replacing an image also changes its URL and avoids stale browser caches.
