@@ -24,7 +24,7 @@ export const converloopPrivacy = {
 		sections: [
 			{
 				title: "What We Do Not Collect",
-				body: "There are no ads, no analytics or telemetry SDK, and no third-party tracking, and we never sell your data. The app never asks for your name, email address, phone number, or Apple Account, and we collect no advertising identifier, location, contacts, calendar, or health data. We keep no copy of your conversation history, corrections, mastery records, or learner profile; a Converloop AI request carries only the part a task needs, as described below. If you use Apple Intelligence or your own API key and never connect Converloop AI, the app sends nothing to our server.",
+				body: "There are no ads, no analytics or telemetry SDK, and no third-party tracking, and we never sell your data. The app never asks for your name, email address, phone number, or Apple Account (we see your email address only if you email us), and we collect no advertising identifier, location, contacts, calendar, or health data. We keep no copy of your conversation history, corrections, mastery records, or learner profile; a Converloop AI request carries only the part a task needs, as described below. If you use Apple Intelligence or your own API key and never connect Converloop AI, the app sends nothing to our server.",
 			},
 			{
 				title: "Where Your Data Lives",
@@ -50,8 +50,8 @@ export const converloopPrivacy = {
 				bullets: [
 					"Connecting: when you tap Connect this device, Apple's App Attest confirms the request comes from a genuine copy of the app. Our server then creates a service identity for this device — a random ID — and stores it with the identifier and public key of this installation's App Attest key. No name, email address, or Apple Account is involved, and no conversation content is sent when you connect.",
 					"Permission first: Converloop AI sends nothing for processing until you agree — in setup, where the recipients are named before you connect, or with Allow AI data processing on the Converloop AI page in Settings. From then on, each request carries the text and learning context described above, over HTTPS, to our server at api-converloop.617005.xyz.",
-					"On the way: requests reach our server through Cloudflare, which runs the secure entry point to it and so handles the traffic in transit. Our server then sends each request through our relay to whichever model provider answers it: OpenAI, Google, Anthropic, or Moonshot (Kimi). When the relay fails, the request goes to DeepSeek's own API instead. These providers handle the data under their own terms, and we do not promise that they keep none of it. They operate internationally, so your text may be processed outside your country: in the United States when OpenAI, Google, or Anthropic handles it, and in China when Moonshot or DeepSeek handles it. Like any internet request, it also reveals your device's IP address to Cloudflare and to our server, which uses it only to deliver the response and keep the service secure.",
-					"What our server keeps: your service identity and App Attest key; whether you allowed data processing, and which version of the disclosure you agreed to; your allowance and, if you subscribe, your subscription record (see Purchases); and, for each request, a usage record — request ID, task type, time, duration, tokens used, and allowance charged. It does not keep the text of your requests or of the replies once a request has finished. We use these records only to run Converloop AI: to verify the device, count allowance, check subscriptions, keep the service secure, and answer your support requests.",
+					"On the way: requests reach our server through Cloudflare, which runs the secure entry point to it and so handles the traffic in transit. Our server then sends each request through our relay to whichever model provider answers it: OpenAI, Google, Anthropic, or Moonshot (Kimi). When the relay fails, the request goes to DeepSeek's own API instead. These providers handle the data under their own terms, and we do not promise that they keep none of it. Our relay reaches them through accounts we hold with each provider, and under those accounts' terms a provider may keep the content and may use it to improve its models; we cannot turn that off for you, so do not send through Converloop AI anything you would not share with these providers. They operate internationally, so your text may be processed outside your country: in the United States when OpenAI, Google, or Anthropic handles it, and in China when Moonshot or DeepSeek handles it. Like any internet request, it also reveals your device's IP address to Cloudflare and to our server, which uses it only to deliver the response and keep the service secure.",
+					"What our server keeps: your service identity and App Attest key; whether you allowed data processing, and which version of the disclosure you agreed to; your allowance and, if you subscribe, your subscription record (see Purchases); and, for each request, a usage record — request ID, task type, which model answered, time, duration, tokens used, and allowance charged. It does not keep the text of your requests or of the replies once a request has finished, with one exception: when a request fails inside our relay, the relay keeps a copy of that request, including its text, for troubleshooting. Only the 10 most recent failed requests are kept; each new failure deletes the oldest. We use these records only to run Converloop AI: to verify the device, count allowance, check subscriptions, keep the service secure, and answer your support requests.",
 					"How long: these records are kept while your service identity exists. If you ask us to delete it (see Your Controls), we delete the identity, its usage records, and its consent record, keeping only the minimum subscription transaction records we are required to retain. Our server backups are overwritten after 14 days, so deleted data leaves them within that time.",
 					"Turning it off: switch off Allow AI data processing (Settings → AI Services → Language Model → Converloop AI) at any time. The app stops sending immediately, cancels requests in progress, and records the withdrawal on our server. You can keep using Converloop with Apple Intelligence or your own key.",
 					"Speech is separate: Converloop AI's model service does not process audio. Recording and reading aloud keep their own settings, described below.",
@@ -59,7 +59,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "Purchases",
-				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Converloop Lifetime purchase are checked on your device, and the app sends nothing about them to our server. The Converloop AI yearly subscription is linked to this device's service identity: when you subscribe, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status in order to provide the service. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
+				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Converloop Lifetime Access purchase are checked on your device, and the app sends nothing about them to our server. The Converloop AI yearly subscription is linked to this device's service identity: when you subscribe, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status in order to provide the service. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
 			},
 			{
 				title: "Voice Input and Speech",
@@ -77,7 +77,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "Diagnostic Reports",
-				body: "iOS records Converloop's own crashes and hangs. Those reports are kept on your device, at most fourteen of them, and are never uploaded automatically. To share them, turn on Developer Mode by tapping the app icon five times under Settings → Support → About, then open Diagnostic Reports in the same Support section and tap Share; where they go is entirely your choice in the system share sheet. The reports contain Apple-generated call stacks and system information — no conversation text, learning records, or API keys. Developer Mode also shows a log of your recent AI requests, which can include excerpts of requests that failed; it stays on your device unless you copy it out yourself.",
+				body: "iOS records Converloop's own crashes and hangs. Those reports are kept on your device, at most fourteen of them, and are never uploaded automatically. To share them, tap Send Feedback under Settings → Support: the email draft it opens carries them as an attachment, which you can remove before sending. The reports contain Apple-generated call stacks and system information — no conversation text, learning records, or API keys. Developer Mode also shows a log of your recent AI requests, which can include excerpts of requests that failed; it stays on your device unless you copy it out yourself.",
 			},
 			{
 				title: "Children",
@@ -89,7 +89,7 @@ export const converloopPrivacy = {
 					"Export: Settings → Data and Backup → Backup and Transfer → Export Backup produces a JSON file with all your learning data; API keys and other credentials are excluded.",
 					"Delete on your device: you can delete individual conversations, learning records, and diagnostic reports inside the app, and deleting the app removes its local data. iOS may keep an app's Keychain entries, such as your API keys, after the app is deleted, so clear your keys in Settings first if you want them gone too.",
 					"Stop Converloop AI: turn off Allow AI data processing on the Converloop AI page. Nothing more is sent, and requests in progress are cancelled.",
-					"Delete your Converloop AI data: email us your service identity — turn on Developer Mode (see Diagnostic Reports), then on the Converloop AI page open Developer Options → Share service identity. We will delete the identity and the records linked to it as described above.",
+					"Delete your Converloop AI data: email us from Settings → Support → Send Feedback, which includes this device's service identity when it is connected to Converloop AI. We will delete the identity and the records linked to it as described above.",
 					"Keep AI and speech on your device: choose Apple Intelligence with the On-device model, Apple's speech recognition, and Apple's voices.",
 					"Third-party data: anything already sent to Apple, to a provider you configured, to Xiaomi MiMo, or to the model providers behind Converloop AI is handled under that provider's policy — we have no ability to delete it on your behalf.",
 				],
@@ -97,6 +97,10 @@ export const converloopPrivacy = {
 			{
 				title: "Changes to This Policy",
 				body: 'If this policy changes materially, we will update the "Last updated" date on this page and note it in the release notes of the new version. Before Converloop AI sends your data to any recipient not named here, we will update this page and the disclosure in the app and ask for your permission again.',
+			},
+			{
+				title: "Feedback and Support Email",
+				body: "Send Feedback (Settings → Support) and Report This Problem (on an error) open an email draft to us in your own mail app. Below the space for your message, the draft lists: the app and iOS versions and the device model; the app language, the language you are learning, your level, and your native language; the model and voice services you use, their model names, and the host name of any address you entered; if this device is connected to Converloop AI, its service identity and last request ID; and the time, task, error message, and log ID of up to five recent failed AI requests. Crash reports kept on the device are attached. It contains no conversation text, nothing that was sent to a model, and no API keys. The app sends nothing itself: you can edit or delete any of it, and only what you send reaches us. If the service identity is included, your email address becomes linked to that device's Converloop AI records, which is what lets us answer subscription and deletion requests. We keep support email in our mailbox to answer you, and delete it on request.",
 			},
 			{
 				title: "Contact Us",
@@ -110,7 +114,7 @@ export const converloopPrivacy = {
 		sections: [
 			{
 				title: "我们不收集什么",
-				body: "没有广告、没有埋点或分析 SDK、没有第三方追踪，我们也从不出售你的数据。App 从不索要你的姓名、邮箱、电话或 Apple 账户；我们不收集广告标识符、位置、通讯录、日历或健康数据。我们不保存你的对话记录、纠错记录、掌握度或学习档案的副本；Converloop AI 的每次请求只带上那项任务需要的部分，详见下文。如果你只用 Apple 智能或自带密钥、从不连接 Converloop AI，App 不会向我们的服务器发送任何东西。",
+				body: "没有广告、没有埋点或分析 SDK、没有第三方追踪，我们也从不出售你的数据。App 从不索要你的姓名、邮箱、电话或 Apple 账户（只有你给我们发邮件时，我们才会看到你的邮箱地址）；我们不收集广告标识符、位置、通讯录、日历或健康数据。我们不保存你的对话记录、纠错记录、掌握度或学习档案的副本；Converloop AI 的每次请求只带上那项任务需要的部分，详见下文。如果你只用 Apple 智能或自带密钥、从不连接 Converloop AI，App 不会向我们的服务器发送任何东西。",
 			},
 			{
 				title: "数据保存在哪里",
@@ -136,8 +140,8 @@ export const converloopPrivacy = {
 				bullets: [
 					"连接设备：点「连接此设备」时，Apple 的 App Attest 会证明请求来自正版 App。我们的服务器随后为这台设备生成一个服务身份（一串随机 ID），并与这次安装的 App Attest 密钥的标识和公钥一起保存。整个过程不涉及姓名、邮箱或 Apple 账户，连接时也不发送任何对话内容。",
 					"先同意，再发送：在你同意之前，Converloop AI 不会发送任何内容去处理——引导里会在你连接之前写明接收方，设置里的 Converloop AI 页则有「允许 AI 处理学习内容」开关。同意之后，每次请求都会通过 HTTPS 把上文所说的文字和学习上下文发送到我们的服务器 api-converloop.617005.xyz。",
-					"经过谁：请求经 Cloudflare 到达我们的服务器；Cloudflare 运营通往服务器的加密入口，因此会经手传输中的数据。服务器再把每个请求经中转发给当时作答的模型服务商：OpenAI、Google、Anthropic 或月之暗面（Kimi）。中转失败时改用 DeepSeek 自己的接口。这些服务商按各自的条款处理数据，我们不承诺它们不留存任何内容。它们在多个国家和地区运营，你的文字可能在你所在地之外被处理：由 OpenAI、Google 或 Anthropic 处理时在美国，由月之暗面或 DeepSeek 处理时在中国。和任何联网请求一样，你设备的 IP 地址也会被 Cloudflare 和我们的服务器看到，服务器只用它来送回结果和保障服务安全。",
-					"我们保存什么：服务身份与 App Attest 密钥；你是否同意处理数据，以及你同意的是哪一版说明；额度，以及订阅后的订阅记录（见「购买」）；每次请求的用量记录——请求 ID、任务类型、时间、耗时、Token 数和扣除的额度。请求完成后，服务器不保存你的请求原文，也不保存回复内容。这些记录只用于运行 Converloop AI：验证设备、计算额度、核对订阅、保障服务安全，以及处理你的支持请求。",
+					"经过谁：请求经 Cloudflare 到达我们的服务器；Cloudflare 运营通往服务器的加密入口，因此会经手传输中的数据。服务器再把每个请求经中转发给当时作答的模型服务商：OpenAI、Google、Anthropic 或月之暗面（Kimi）。中转失败时改用 DeepSeek 自己的接口。这些服务商按各自的条款处理数据，我们不承诺它们不留存任何内容。中转通过我们在各家服务商持有的账号访问它们，按这些账号适用的条款，服务商可能保存内容，并可能用来改进模型；我们无法替你关闭这一点，所以不愿让这些服务商看到的内容，请不要通过 Converloop AI 发送。它们在多个国家和地区运营，你的文字可能在你所在地之外被处理：由 OpenAI、Google 或 Anthropic 处理时在美国，由月之暗面或 DeepSeek 处理时在中国。和任何联网请求一样，你设备的 IP 地址也会被 Cloudflare 和我们的服务器看到，服务器只用它来送回结果和保障服务安全。",
+					"我们保存什么：服务身份与 App Attest 密钥；你是否同意处理数据，以及你同意的是哪一版说明；额度，以及订阅后的订阅记录（见「购买」）；每次请求的用量记录——请求 ID、任务类型、作答的模型、时间、耗时、Token 数和扣除的额度。请求完成后，服务器不保存你的请求原文，也不保存回复内容，只有一个例外：请求在中转环节失败时，中转会保留这次请求的副本（包括其中的文字）用于排查，只保留最近 10 次失败，每新增一次就删除最早的一次。这些记录只用于运行 Converloop AI：验证设备、计算额度、核对订阅、保障服务安全，以及处理你的支持请求。",
 					"保存多久：这些记录在你的服务身份存在期间一直保留。你要求删除时（见「你的控制权」），我们会删除服务身份、用量记录和同意记录，只保留我们依规必须保留的最少订阅交易记录。服务器备份 14 天后覆盖，已删除的数据最迟在这段时间内从备份中消失。",
 					"随时关闭：在「设置 → AI 服务 → 语言模型 → Converloop AI」里关掉「允许 AI 处理学习内容」，App 会立即停止发送、取消正在进行的请求，并在服务器上记下你已撤回同意。之后你仍然可以用 Apple 智能或自带密钥继续使用 Converloop。",
 					"语音另行处理：Converloop AI 的模型服务不处理音频。录音和朗读有各自的设置，见下文。",
@@ -145,7 +149,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "购买",
-				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「Converloop 完整版」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。Converloop AI 年订阅则与这台设备的服务身份关联：订阅时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对 Apple 的签名后保存商品、交易标识、日期和订阅状态，用于提供服务；订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
+				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「Converloop 永久解锁」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。Converloop AI 年订阅则与这台设备的服务身份关联：订阅时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对 Apple 的签名后保存商品、交易标识、日期和订阅状态，用于提供服务；订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
 			},
 			{
 				title: "语音输入与朗读",
@@ -163,7 +167,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "诊断报告",
-				body: "iOS 会记录 Converloop 自身的崩溃与卡顿。这些报告保存在设备本地，最多 14 份，不会自动上传。要分享报告，先在「设置 → 支持 → 关于」里连点五次 App 图标开启开发者模式，再打开同一组里的「诊断报告」点分享；发给谁完全由你在系统分享面板里决定。报告内容是 Apple 生成的调用栈与系统信息，不包含对话内容、学习记录或 API 密钥。开发者模式还会显示最近 AI 请求的运行日志，其中可能有失败请求的片段；它同样只保存在本机，除非你自己复制出去。",
+				body: "iOS 会记录 Converloop 自身的崩溃与卡顿。这些报告保存在设备本地，最多 14 份，不会自动上传。要分享报告，在「设置 → 支持」里点「反馈问题」：它打开的邮件草稿会把报告作为附件带上，发送前你可以删掉。报告内容是 Apple 生成的调用栈与系统信息，不包含对话内容、学习记录或 API 密钥。开发者模式还会显示最近 AI 请求的运行日志，其中可能有失败请求的片段；它同样只保存在本机，除非你自己复制出去。",
 			},
 			{
 				title: "儿童",
@@ -175,7 +179,7 @@ export const converloopPrivacy = {
 					"导出：设置 → 数据与备份 → 备份与迁移 → 导出备份，得到一个包含你全部学习数据的 JSON 文件（不含 API 密钥和其他凭据）。",
 					"删除本机数据：你可以在应用内单独删除对话、学习记录和诊断报告；删除 App 即清除它的本地数据。iOS 可能在删除 App 后保留它的钥匙串条目（例如 API 密钥），如果希望一并清除，请先在设置里删掉密钥。",
 					"停止 Converloop AI：在 Converloop AI 页关掉「允许 AI 处理学习内容」，之后不再发送任何内容，正在进行的请求也会被取消。",
-					"删除 Converloop AI 数据：把你的服务身份发邮件给我们——先开启开发者模式（见「诊断报告」），再在 Converloop AI 页打开「开发者选项 → 分享服务身份」。我们会按上文所述删除服务身份及与之关联的记录。",
+					"删除 Converloop AI 数据：在「设置 → 支持 → 反馈问题」里给我们发邮件——这台设备连接了 Converloop AI 时，邮件会自动带上它的服务身份。我们会按上文所述删除服务身份及与之关联的记录。",
 					"让 AI 和语音都留在本机：选择 Apple 智能的「本机模型」、Apple 系统语音识别和 Apple 系统朗读。",
 					"第三方数据：已经发送给 Apple、你配置的服务商、小米 MiMo 或 Converloop AI 背后模型服务商的内容，按各自的政策处理，我们没有能力代为删除。",
 				],
@@ -183,6 +187,10 @@ export const converloopPrivacy = {
 			{
 				title: "政策变更",
 				body: "如果本政策发生实质变化，我们会更新本页顶部的「最后更新」日期，并在新版本的更新说明中提示。在 Converloop AI 把你的数据发送给本页未列出的接收方之前，我们会先更新本页和 App 内的说明，并重新征求你的同意。",
+			},
+			{
+				title: "反馈与支持邮件",
+				body: "「反馈问题」（设置 → 支持）和出错时的「报告这个问题」会在你自己的邮件 App 里打开一封发给我们的草稿。在留给你描述问题的位置下方，草稿会列出：App 与 iOS 版本、设备型号；界面语言、学习语言、水平与母语；你在用的模型与语音服务、模型名称，以及你自填接口地址的主机名；这台设备连接了 Converloop AI 时，它的服务身份和最近一次请求 ID；最近最多五次失败 AI 请求的时间、任务、错误信息和日志编号。设备上保存的崩溃报告会作为附件。草稿不含对话内容、发给模型的内容和任何 API 密钥。App 自己不会发送任何东西：你可以修改或删掉其中任何部分，只有你发出的内容才会到达我们。如果邮件里带有服务身份，你的邮箱地址就会与那台设备的 Converloop AI 记录关联起来，这正是我们处理订阅和删除请求所需要的。支持邮件保存在我们的邮箱里用于回复你，你要求时我们会删除。",
 			},
 			{
 				title: "联系我们",
@@ -195,11 +203,11 @@ export const converloopPrivacy = {
 export const converloopSupport = {
 	en: {
 		intro:
-			"Email jovidalao@gmail.com with your device model, iOS version, app version (Settings → Support → About), the model service you use, and roughly how to reproduce the problem.",
+			"In the app, tap Settings → Support → Send Feedback, or Report This Problem on an error: it opens an email to us with your app version, device, the services you use, and recent errors already filled in, so all you need to add is what happened. Without the app at hand, email jovidalao@gmail.com.",
 		sections: [
 			{
 				title: "Getting Started",
-				body: "During setup you choose a model service: Apple Intelligence (free and keyless on supported devices), your own API key from a provider such as OpenAI or Anthropic, or Converloop AI, the service we run. Then you choose a voice for reading aloud: Apple's voices, the free Converloop AI voices, or your own key. You can change both at any time under Settings → AI Services. With Apple Intelligence or your own key, start the 7-day free trial, then buy Converloop Lifetime once to keep using it; Converloop AI is a yearly subscription that includes the whole app.",
+				body: "During setup you choose a model service: Apple Intelligence (free and keyless on supported devices), your own API key from a provider such as OpenAI or Anthropic, or Converloop AI, the service we run. Then you choose a voice for reading aloud: Apple's voices, the free Converloop AI voices, or your own key. You can change both at any time under Settings → AI Services. With Apple Intelligence or your own key, start the 7-day free trial, then buy Converloop Lifetime Access once to keep using it; Converloop AI is a yearly subscription that includes the whole app.",
 			},
 			{
 				title: "Apple Intelligence Is Greyed Out",
@@ -207,15 +215,15 @@ export const converloopSupport = {
 			},
 			{
 				title: "AI Features Ask Me to Start a Free Trial or Buy",
-				body: "AI features need an active trial, Converloop Lifetime, or an active Converloop AI subscription. Tap Free Trial or Buy, or open Converloop Lifetime at the top of Settings. Your conversations, learning records, and backup export stay available whatever you decide.",
+				body: "AI features need an active trial, Converloop Lifetime Access, or an active Converloop AI subscription. Tap Free Trial or Buy, or open Converloop Lifetime Access at the top of Settings. Your conversations, learning records, and backup export stay available whatever you decide.",
 			},
 			{
 				title: "Restoring Purchases on Another Device",
-				body: "Tap Restore Purchases on the Converloop Lifetime page. Purchases restore on every device signed in to the same Apple Account; reinstalling does not restart the free trial. Converloop AI is linked to the service identity of the device you subscribed on, so if it doesn't show as active on another device after you connect it and tap Restore Purchases on the Converloop AI page, email us.",
+				body: "Tap Restore Purchases on the Converloop Lifetime Access page. Purchases restore on every device signed in to the same Apple Account; reinstalling does not restart the free trial. Converloop AI is linked to the service identity of the device you subscribed on, so if it doesn't show as active on another device after you connect it and tap Restore Purchases on the Converloop AI page, email us.",
 			},
 			{
 				title: "Converloop AI Will Not Connect",
-				body: "Connecting uses Apple's App Attest, which works only on a real iPhone or iPad with a connection to both Apple and our service. Wait a moment and try again; if it keeps failing, tap Reconnect this device on the Converloop AI page and email us the error code it shows.",
+				body: "Connecting uses Apple's App Attest, which works only on a real iPhone or iPad with a connection to both Apple and our service. Wait a moment and try again; if it keeps failing, tap Reconnect this device on the Converloop AI page, and if the error comes back, open View Details on it and tap Report This Problem.",
 			},
 			{
 				title: "It Says This Device Has No Allowance Yet",
@@ -251,25 +259,25 @@ export const converloopSupport = {
 			},
 			{
 				title: "Sending a Crash Report",
-				body: "Open Settings → Support → About and tap the app icon five times to turn on Developer Mode. Then open Settings → Support → Diagnostic Reports and tap Share at the top right. Reports leave your device only when you share them, and contain no conversation text, learning records, or API keys. You can turn Developer Mode off again at the bottom of the About page.",
+				body: "Tap Settings → Support → Send Feedback. Crash reports iOS kept on your device are attached to the email draft; they leave your device only if you send it, and contain no conversation text, learning records, or API keys.",
 			},
 			{
 				title: "Deleting Everything",
-				body: "Deleting the app removes its local data. If you used Converloop AI, email us your service identity (with Developer Mode on: Converloop AI page → Developer Options → Share service identity) and we will delete the data linked to it. Anything already sent to a third-party provider must be deleted through that provider under their policy, and a Converloop AI subscription must be cancelled separately in the App Store.",
+				body: "Deleting the app removes its local data. If you used Converloop AI, email us from Settings → Support → Send Feedback on that device (the draft includes its service identity) and we will delete the data linked to it. Anything already sent to a third-party provider must be deleted through that provider under their policy, and a Converloop AI subscription must be cancelled separately in the App Store.",
 			},
 			{
 				title: "Feedback",
-				body: "Feature requests, translation problems, and UI bugs are all welcome at jovidalao@gmail.com.",
+				body: "Feature requests, translation problems, and UI bugs are all welcome through Send Feedback in the app, or at jovidalao@gmail.com.",
 			},
 		],
 	},
 	zh: {
 		intro:
-			"遇到问题请发邮件到 jovidalao@gmail.com，写清楚你用的机型、系统版本、App 版本（设置 → 支持 → 关于）、在用哪种模型服务，以及大致的复现步骤。",
+			"在 App 里点「设置 → 支持 → 反馈问题」，或在出错的地方点「报告这个问题」：它会打开一封发给我们的邮件，App 版本、设备、在用的服务和最近的错误都已写好，你只需补充发生了什么。手边没有 App 时，也可以直接发邮件到 jovidalao@gmail.com。",
 		sections: [
 			{
 				title: "开始使用",
-				body: "引导里会先请你选择模型服务：Apple 智能（支持的设备上免费、无需密钥）、自带 API 密钥（如 OpenAI、Anthropic），或者我们运行的 Converloop AI；再选择朗读声音：Apple 系统朗读、免费的 Converloop AI 声音，或自带密钥。两者之后都可以在「设置 → AI 服务」里随时更改。用 Apple 智能或自带密钥时，可以先开始 7 天免费试用，之后一次买断「Converloop 完整版」；Converloop AI 是年订阅，订阅期内 App 全部可用。",
+				body: "引导里会先请你选择模型服务：Apple 智能（支持的设备上免费、无需密钥）、自带 API 密钥（如 OpenAI、Anthropic），或者我们运行的 Converloop AI；再选择朗读声音：Apple 系统朗读、免费的 Converloop AI 声音，或自带密钥。两者之后都可以在「设置 → AI 服务」里随时更改。用 Apple 智能或自带密钥时，可以先开始 7 天免费试用，之后一次买断「Converloop 永久解锁」；Converloop AI 是年订阅，订阅期内 App 全部可用。",
 			},
 			{
 				title: "Apple 智能是灰的、选不了",
@@ -277,15 +285,15 @@ export const converloopSupport = {
 			},
 			{
 				title: "AI 功能提示「免费试用或买断」",
-				body: "AI 功能需要试用期内、已买断「Converloop 完整版」，或 Converloop AI 订阅有效。点「免费试用或买断」，或打开设置顶部的「Converloop 完整版」，即可开始试用或买断。无论是否购买，已有的对话、学习记录和备份导出都可以照常使用。",
+				body: "AI 功能需要试用期内、已买断「Converloop 永久解锁」，或 Converloop AI 订阅有效。点「免费试用或买断」，或打开设置顶部的「Converloop 永久解锁」，即可开始试用或买断。无论是否购买，已有的对话、学习记录和备份导出都可以照常使用。",
 			},
 			{
 				title: "换设备后怎么恢复购买",
-				body: "在「Converloop 完整版」页点「恢复购买」。登录同一 Apple 账户的设备都能恢复；重装不会重新开始免费试用。Converloop AI 与订阅时那台设备的服务身份关联：如果在另一台设备上连接并在 Converloop AI 页点「恢复购买」后仍未生效，请发邮件给我们。",
+				body: "在「Converloop 永久解锁」页点「恢复购买」。登录同一 Apple 账户的设备都能恢复；重装不会重新开始免费试用。Converloop AI 与订阅时那台设备的服务身份关联：如果在另一台设备上连接并在 Converloop AI 页点「恢复购买」后仍未生效，请发邮件给我们。",
 			},
 			{
 				title: "Converloop AI 连接失败",
-				body: "连接使用 Apple 的 App Attest，只能在 iPhone 或 iPad 真机上进行，并且需要能同时连上 Apple 和我们的服务。请稍后重试；如果一直失败，在 Converloop AI 页点「重新连接这台设备」，并把显示的错误码发邮件给我们。",
+				body: "连接使用 Apple 的 App Attest，只能在 iPhone 或 iPad 真机上进行，并且需要能同时连上 Apple 和我们的服务。请稍后重试；如果一直失败，在 Converloop AI 页点「重新连接这台设备」；还是出错的话，展开错误上的「查看详情」，点「报告这个问题」。",
 			},
 			{
 				title: "提示「这台设备还没有额度」",
@@ -317,19 +325,19 @@ export const converloopSupport = {
 			},
 			{
 				title: "启动时提示「上次的学习数据没能打开」",
-				body: "说明本机数据库损坏了。App 已经用一个空数据库启动，原来的数据没有被删除，而是完整保留在应用容器里。如果你之前导出过备份，可以直接导入恢复。请把这个情况连同诊断报告（见下一条）发给我们。",
+				body: "说明本机数据库损坏了。App 已经用一个空数据库启动，原来的数据没有被删除，而是完整保留在应用容器里。如果你之前导出过备份，可以直接导入恢复。请通过「反馈问题」把这个情况告诉我们，诊断报告会一并附上。",
 			},
 			{
 				title: "怎么把崩溃报告发给你们",
-				body: "打开「设置 → 支持 → 关于」，连点五次 App 图标开启开发者模式；再打开「设置 → 支持 → 诊断报告」，点右上角分享。报告只在你点分享时才会离开设备，内容不含对话内容、学习记录或 API 密钥。之后可以在关于页底部关闭开发者模式。",
+				body: "点「设置 → 支持 → 反馈问题」。iOS 保存在设备上的崩溃报告会作为附件带在邮件草稿里；只有你发出邮件，报告才会离开设备，内容不含对话内容、学习记录或 API 密钥。",
 			},
 			{
 				title: "怎么彻底删除我的数据",
-				body: "删除 App 即可清除设备上的本地数据。如果你用过 Converloop AI，请把服务身份（开启开发者模式后，在 Converloop AI 页 → 开发者选项 → 分享服务身份）发邮件给我们，我们会删除与它关联的数据。已经发送给第三方服务商的内容，需要按该服务商的政策向他们申请删除；Converloop AI 订阅需要另外在 App Store 里取消。",
+				body: "删除 App 即可清除设备上的本地数据。如果你用过 Converloop AI，请在那台设备上通过「设置 → 支持 → 反馈问题」给我们发邮件（草稿里带有它的服务身份），我们会删除与它关联的数据。已经发送给第三方服务商的内容，需要按该服务商的政策向他们申请删除；Converloop AI 订阅需要另外在 App Store 里取消。",
 			},
 			{
 				title: "反馈与建议",
-				body: "功能建议、翻译问题、界面 bug 都欢迎发到 jovidalao@gmail.com。",
+				body: "功能建议、翻译问题、界面 bug 都欢迎通过 App 里的「反馈问题」告诉我们，或发到 jovidalao@gmail.com。",
 			},
 		],
 	},
@@ -360,9 +368,9 @@ export const converloopTerms = {
 			{
 				title: "Free Trial and Purchases",
 				bullets: [
-					"Converloop is free to download. Conversations, scene practice, corrections, explanations, and other AI features are unlocked by the 7-day free trial, by Converloop Lifetime, or by an active Converloop AI subscription.",
+					"Converloop is free to download. Conversations, scene practice, corrections, explanations, and other AI features are unlocked by the 7-day free trial, by Converloop Lifetime Access, or by an active Converloop AI subscription.",
 					"The free trial starts when you tap to start it and ends by itself after 7 days. It never charges you and never turns into a purchase. It is available once per Apple Account: restoring it on another device or reinstalling does not start it again.",
-					"Converloop Lifetime is a one-time purchase that keeps the app's features unlocked for good when you use Apple Intelligence or your own API key. It does not include Converloop AI, and it can be shared with your Family Sharing group.",
+					"Converloop Lifetime Access is a one-time purchase that keeps the app's features unlocked for good when you use Apple Intelligence or your own API key. It does not include Converloop AI, and it can be shared with your Family Sharing group.",
 					"Prices are shown in the app and the App Store before you pay. All payments are processed by Apple, and refunds are handled by Apple under its own policies.",
 					"Whatever you decide, your conversations, learning records, and backup export stay available.",
 				],
@@ -370,7 +378,7 @@ export const converloopTerms = {
 			{
 				title: "Converloop AI Subscription",
 				bullets: [
-					"Converloop AI is an auto-renewable yearly subscription. It includes the whole app and the use of Converloop AI, with no API key of your own; each AI request uses part of the allowance that comes with it, and the Converloop AI page in Settings shows what is left.",
+					"Converloop AI is an auto-renewable yearly subscription. It includes the whole app and the use of Converloop AI, with no API key of your own; AI requests draw on the allowance that comes with it, and the Converloop AI page in Settings shows what is left.",
 					"Payment is charged to your Apple Account when you confirm the purchase. The subscription renews automatically each year at the price then in effect unless you turn off auto-renewal at least 24 hours before the end of the current period; your account is charged for the renewal within the 24 hours before that period ends.",
 					"You can manage or cancel the subscription at any time in your App Store account settings (iOS Settings → your name → Subscriptions). Cancelling stops the next renewal; you keep Converloop AI until the end of the period you have paid for. Deleting the app does not cancel the subscription.",
 					"Converloop AI sends nothing for processing until you agree, and you can withdraw that permission at any time; the Privacy Policy explains what is sent and to whom.",
@@ -430,9 +438,9 @@ export const converloopTerms = {
 			{
 				title: "免费试用与购买",
 				bullets: [
-					"Converloop 可以免费下载。对话、场景训练、批改、讲解等 AI 功能，需要 7 天免费试用、「Converloop 完整版」或有效的 Converloop AI 订阅才能使用。",
+					"Converloop 可以免费下载。对话、场景训练、批改、讲解等 AI 功能，需要 7 天免费试用、「Converloop 永久解锁」或有效的 Converloop AI 订阅才能使用。",
 					"免费试用在你点开始时开始，7 天后自动结束，不会扣费，也不会自动转为购买。每个 Apple 账户只能试用一次：在别的设备上恢复或重装 App 都不会重新开始。",
-					"「Converloop 完整版」是一次买断，买断后搭配 Apple 智能或自带 API 密钥一直可用；它不含 Converloop AI，可以通过家庭共享与家人共用。",
+					"「Converloop 永久解锁」是一次买断，买断后搭配 Apple 智能或自带 API 密钥一直可用；它不含 Converloop AI，可以通过家庭共享与家人共用。",
 					"价格在付款前显示在 App 和 App Store 里。所有付款都由 Apple 处理，退款按 Apple 的政策办理。",
 					"无论是否购买，你已有的对话、学习记录和备份导出都可以照常使用。",
 				],
@@ -440,7 +448,7 @@ export const converloopTerms = {
 			{
 				title: "Converloop AI 订阅",
 				bullets: [
-					"Converloop AI 是按年自动续订的订阅，订阅期内 App 全部可用，并可以使用 Converloop AI 的模型服务，不需要自己的 API 密钥。每次 AI 请求会用掉订阅附带的一部分额度，剩余额度显示在「设置」的 Converloop AI 页。",
+					"Converloop AI 是按年自动续订的订阅，订阅期内 App 全部可用，并可以使用 Converloop AI 的模型服务，不需要自己的 API 密钥。AI 请求会使用订阅附带的额度，剩余额度显示在「设置」的 Converloop AI 页。",
 					"确认购买时，费用从你的 Apple 账户扣除。除非你在当前订阅期结束前至少 24 小时关闭自动续订，订阅会按届时的价格每年自动续订；续订费用会在当前订阅期结束前 24 小时内扣除。",
 					"你可以随时在 App Store 的账户设置（系统「设置 → 你的名字 → 订阅」）里管理或取消订阅。取消后不再续订，已付费的期限内仍可使用 Converloop AI。删除 App 不会取消订阅。",
 					"在你同意之前，Converloop AI 不会发送任何内容去处理，你也可以随时撤回同意；发送什么、发给谁，见隐私政策。",
