@@ -59,7 +59,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "Purchases",
-				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Converloop Lifetime Access purchase are checked on your device, and the app sends nothing about them to our server. The Converloop AI yearly subscription is linked to this device's service identity: when you subscribe, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status in order to provide the service. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
+				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Lifetime Full Version purchase are checked on your device, and the app sends nothing about them to our server. The Converloop AI yearly subscription is linked to this device's service identity: when you subscribe, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status in order to provide the service. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
 			},
 			{
 				title: "Voice Input and Speech",
@@ -149,7 +149,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "购买",
-				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「Converloop 永久解锁」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。Converloop AI 年订阅则与这台设备的服务身份关联：订阅时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对 Apple 的签名后保存商品、交易标识、日期和订阅状态，用于提供服务；订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
+				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「永久解锁完整版」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。Converloop AI 年订阅则与这台设备的服务身份关联：订阅时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对 Apple 的签名后保存商品、交易标识、日期和订阅状态，用于提供服务；订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
 			},
 			{
 				title: "语音输入与朗读",
@@ -207,7 +207,7 @@ export const converloopSupport = {
 		sections: [
 			{
 				title: "Getting Started",
-				body: "During setup you choose a model service: Apple Intelligence (free and keyless on supported devices), your own API key from a provider such as OpenAI or Anthropic, or Converloop AI, the service we run. Then you choose a voice for reading aloud: Apple's voices, the free Converloop AI voices, or your own key. You can change both at any time under Settings → AI Services. With Apple Intelligence or your own key, start the 7-day free trial, then buy Converloop Lifetime Access once to keep using it; Converloop AI is a yearly subscription that includes the whole app.",
+				body: "During setup, choose Converloop AI or Lifetime Full Version. Converloop AI is a yearly subscription that includes all learning features and hosted AI. Lifetime Full Version is a one-time purchase for use with Apple Intelligence on supported devices or your own AI service key, and has a separate 7-day app trial. The final setup action can enable the free Converloop AI reading voices after showing the data disclosure; you can choose Apple voices or your own voice service under Settings → AI Services. Model and voice choices can be changed there at any time.",
 			},
 			{
 				title: "Apple Intelligence Is Greyed Out",
@@ -215,11 +215,11 @@ export const converloopSupport = {
 			},
 			{
 				title: "AI Features Ask Me to Start a Free Trial or Buy",
-				body: "AI features need an active trial, Converloop Lifetime Access, or an active Converloop AI subscription. Tap Free Trial or Buy, or open Converloop Lifetime Access at the top of Settings. Your conversations, learning records, and backup export stay available whatever you decide.",
+				body: "AI features need an active trial, Lifetime Full Version, or an active Converloop AI subscription. Tap Free Trial or Buy, or open Lifetime Full Version at the top of Settings. Your conversations, learning records, and backup export stay available whatever you decide.",
 			},
 			{
 				title: "Restoring Purchases on Another Device",
-				body: "Tap Restore Purchases on the Converloop Lifetime Access page. Purchases restore on every device signed in to the same Apple Account; reinstalling does not restart the free trial. Converloop AI is linked to the service identity of the device you subscribed on, so if it doesn't show as active on another device after you connect it and tap Restore Purchases on the Converloop AI page, email us.",
+				body: "Tap Restore Purchases on the Lifetime Full Version page. Purchases restore on every device signed in to the same Apple Account; reinstalling does not restart the free trial. Converloop AI is linked to the service identity of the device you subscribed on, so if it doesn't show as active on another device after you connect it and tap Restore Purchases on the Converloop AI page, email us.",
 			},
 			{
 				title: "Converloop AI Will Not Connect",
@@ -277,7 +277,7 @@ export const converloopSupport = {
 		sections: [
 			{
 				title: "开始使用",
-				body: "引导里会先请你选择模型服务：Apple 智能（支持的设备上免费、无需密钥）、自带 API 密钥（如 OpenAI、Anthropic），或者我们运行的 Converloop AI；再选择朗读声音：Apple 系统朗读、免费的 Converloop AI 声音，或自带密钥。两者之后都可以在「设置 → AI 服务」里随时更改。用 Apple 智能或自带密钥时，可以先开始 7 天免费试用，之后一次买断「Converloop 永久解锁」；Converloop AI 是年订阅，订阅期内 App 全部可用。",
+				body: "引导里可以选择 Converloop AI 或永久解锁完整版。Converloop AI 是年订阅，包含全部学习功能和托管 AI；永久解锁完整版是一次买断，搭配支持设备上的 Apple 智能或你自己的 AI 服务密钥使用，也提供独立的 7 天 App 免费试用。引导最后的操作会在显示数据说明后启用免费的 Converloop AI 朗读；之后可以在「设置 → AI 服务」里换成 Apple 系统朗读或自己的语音服务，模型与声音都能随时更改。",
 			},
 			{
 				title: "Apple 智能是灰的、选不了",
@@ -285,11 +285,11 @@ export const converloopSupport = {
 			},
 			{
 				title: "AI 功能提示「免费试用或买断」",
-				body: "AI 功能需要试用期内、已买断「Converloop 永久解锁」，或 Converloop AI 订阅有效。点「免费试用或买断」，或打开设置顶部的「Converloop 永久解锁」，即可开始试用或买断。无论是否购买，已有的对话、学习记录和备份导出都可以照常使用。",
+				body: "AI 功能需要试用期内、已买断「永久解锁完整版」，或 Converloop AI 订阅有效。点「免费试用或买断」，或打开设置顶部的「永久解锁完整版」，即可开始试用或买断。无论是否购买，已有的对话、学习记录和备份导出都可以照常使用。",
 			},
 			{
 				title: "换设备后怎么恢复购买",
-				body: "在「Converloop 永久解锁」页点「恢复购买」。登录同一 Apple 账户的设备都能恢复；重装不会重新开始免费试用。Converloop AI 与订阅时那台设备的服务身份关联：如果在另一台设备上连接并在 Converloop AI 页点「恢复购买」后仍未生效，请发邮件给我们。",
+				body: "在「永久解锁完整版」页点「恢复购买」。登录同一 Apple 账户的设备都能恢复；重装不会重新开始免费试用。Converloop AI 与订阅时那台设备的服务身份关联：如果在另一台设备上连接并在 Converloop AI 页点「恢复购买」后仍未生效，请发邮件给我们。",
 			},
 			{
 				title: "Converloop AI 连接失败",
@@ -368,9 +368,9 @@ export const converloopTerms = {
 			{
 				title: "Free Trial and Purchases",
 				bullets: [
-					"Converloop is free to download. Conversations, scene practice, corrections, explanations, and other AI features are unlocked by the 7-day free trial, by Converloop Lifetime Access, or by an active Converloop AI subscription.",
-					"The free trial starts when you tap to start it and ends by itself after 7 days. It never charges you and never turns into a purchase. It is available once per Apple Account: restoring it on another device or reinstalling does not start it again.",
-					"Converloop Lifetime Access is a one-time purchase that keeps the app's features unlocked for good when you use Apple Intelligence or your own API key. It does not include Converloop AI, and it can be shared with your Family Sharing group.",
+					"Converloop is free to download. Conversations, scene practice, corrections, explanations, and other AI features are unlocked by the 7-day free trial, by Lifetime Full Version, or by an active Converloop AI subscription.",
+					"The separate 7-day app trial for Lifetime Full Version starts when you tap to start it and ends by itself after 7 days. It never charges you and never turns into a purchase. It is available once per Apple Account: restoring it on another device or reinstalling does not start it again.",
+					"Lifetime Full Version is a one-time purchase that keeps the app's features unlocked for good when you use Apple Intelligence or your own API key. It does not include Converloop AI, and it can be shared with your Family Sharing group.",
 					"Prices are shown in the app and the App Store before you pay. All payments are processed by Apple, and refunds are handled by Apple under its own policies.",
 					"Whatever you decide, your conversations, learning records, and backup export stay available.",
 				],
@@ -379,7 +379,7 @@ export const converloopTerms = {
 				title: "Converloop AI Subscription",
 				bullets: [
 					"Converloop AI is an auto-renewable yearly subscription. It includes the whole app and the use of Converloop AI, with no API key of your own; AI requests draw on the allowance that comes with it, and the Converloop AI page in Settings shows what is left.",
-					"Payment is charged to your Apple Account when you confirm the purchase. The subscription renews automatically each year at the price then in effect unless you turn off auto-renewal at least 24 hours before the end of the current period; your account is charged for the renewal within the 24 hours before that period ends.",
+					"If the App Store confirms that you are eligible, Converloop AI starts with a 7-day free trial. It then becomes a paid yearly subscription at the price shown before purchase unless you cancel at least 24 hours before the trial ends. Without an introductory trial, payment is charged to your Apple Account when you confirm the purchase. The subscription renews automatically each year at the price then in effect unless you turn off auto-renewal at least 24 hours before the end of the current period; your account is charged for renewal within the 24 hours before that period ends.",
 					"You can manage or cancel the subscription at any time in your App Store account settings (iOS Settings → your name → Subscriptions). Cancelling stops the next renewal; you keep Converloop AI until the end of the period you have paid for. Deleting the app does not cancel the subscription.",
 					"Converloop AI sends nothing for processing until you agree, and you can withdraw that permission at any time; the Privacy Policy explains what is sent and to whom.",
 				],
@@ -438,9 +438,9 @@ export const converloopTerms = {
 			{
 				title: "免费试用与购买",
 				bullets: [
-					"Converloop 可以免费下载。对话、场景训练、批改、讲解等 AI 功能，需要 7 天免费试用、「Converloop 永久解锁」或有效的 Converloop AI 订阅才能使用。",
-					"免费试用在你点开始时开始，7 天后自动结束，不会扣费，也不会自动转为购买。每个 Apple 账户只能试用一次：在别的设备上恢复或重装 App 都不会重新开始。",
-					"「Converloop 永久解锁」是一次买断，买断后搭配 Apple 智能或自带 API 密钥一直可用；它不含 Converloop AI，可以通过家庭共享与家人共用。",
+					"Converloop 可以免费下载。对话、场景训练、批改、讲解等 AI 功能，需要 7 天免费试用、「永久解锁完整版」或有效的 Converloop AI 订阅才能使用。",
+					"永久解锁完整版的独立 App 免费试用在你点开始时开始，7 天后自动结束，不会扣费，也不会自动转为购买。每个 Apple 账户只能试用一次：在别的设备上恢复或重装 App 都不会重新开始。",
+					"「永久解锁完整版」是一次买断，买断后搭配 Apple 智能或自带 API 密钥一直可用；它不含 Converloop AI，可以通过家庭共享与家人共用。",
 					"价格在付款前显示在 App 和 App Store 里。所有付款都由 Apple 处理，退款按 Apple 的政策办理。",
 					"无论是否购买，你已有的对话、学习记录和备份导出都可以照常使用。",
 				],
@@ -449,7 +449,7 @@ export const converloopTerms = {
 				title: "Converloop AI 订阅",
 				bullets: [
 					"Converloop AI 是按年自动续订的订阅，订阅期内 App 全部可用，并可以使用 Converloop AI 的模型服务，不需要自己的 API 密钥。AI 请求会使用订阅附带的额度，剩余额度显示在「设置」的 Converloop AI 页。",
-					"确认购买时，费用从你的 Apple 账户扣除。除非你在当前订阅期结束前至少 24 小时关闭自动续订，订阅会按届时的价格每年自动续订；续订费用会在当前订阅期结束前 24 小时内扣除。",
+					"如果 App Store 确认你有推介试用资格，Converloop AI 的首 7 天免费；除非在试用结束前至少 24 小时取消，之后会按购买前显示的价格转为付费年订阅。没有推介试用时，确认购买即从你的 Apple 账户扣费。除非在当前订阅期结束前至少 24 小时关闭自动续订，订阅会按届时的价格每年自动续订；续订费用会在当前订阅期结束前 24 小时内扣除。",
 					"你可以随时在 App Store 的账户设置（系统「设置 → 你的名字 → 订阅」）里管理或取消订阅。取消后不再续订，已付费的期限内仍可使用 Converloop AI。删除 App 不会取消订阅。",
 					"在你同意之前，Converloop AI 不会发送任何内容去处理，你也可以随时撤回同意；发送什么、发给谁，见隐私政策。",
 				],
