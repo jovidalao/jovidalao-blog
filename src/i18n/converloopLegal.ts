@@ -59,7 +59,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "Purchases",
-				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Lifetime Full Version purchase are checked on your device, and the app sends nothing about them to our server. The Converloop AI yearly subscription is linked to this device's service identity: when you subscribe, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status in order to provide the service. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
+				body: "Purchases are processed by Apple under the App Store's terms; we never see your payment details or your Apple Account. The 7-day free trial and the one-time Lifetime Full Version purchase are checked on your device, and the app sends nothing about them to our server. When you subscribe to Converloop AI, the app sends Apple's signed record of the transaction to our server, which checks Apple's signature and stores the product, transaction identifiers, dates, and subscription status to provide the service. Restoring with the same Apple Account on another installation sends its signed transaction too, and links that installation to the original subscription and shared allowance without granting the allowance again. Each installation keeps its own device identity, processing consent and request records; restoring a purchase does not give consent to send learning content. Apple also notifies our server when the subscription renews, ends, or is refunded. You can cancel or manage it at any time in your App Store subscriptions.",
 			},
 			{
 				title: "Voice Input and Speech",
@@ -149,7 +149,7 @@ export const converloopPrivacy = {
 			},
 			{
 				title: "购买",
-				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「永久解锁完整版」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。Converloop AI 年订阅则与这台设备的服务身份关联：订阅时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对 Apple 的签名后保存商品、交易标识、日期和订阅状态，用于提供服务；订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
+				body: "所有购买都由 Apple 按 App Store 的条款处理，我们看不到你的付款信息或 Apple 账户。7 天免费试用和「永久解锁完整版」一次买断只在设备上校验，App 不会把它们发送给我们的服务器。订阅 Converloop AI 时，App 会把 Apple 签名的交易记录发送给我们的服务器，服务器核对签名后保存商品、交易标识、日期和订阅状态，用于提供服务。在另一台设备或重装后的 App 上，用同一 Apple 账户恢复购买时，也会发送签名交易，将这次安装关联到原订阅及共享余额，不会重复发放额度。每次安装的设备身份、处理同意和请求记录保持独立；恢复购买不会自动同意发送学习内容。订阅续期、到期或退款时，Apple 也会通知我们的服务器。你可以随时在 App Store 的订阅管理中取消或管理订阅。",
 			},
 			{
 				title: "语音输入与朗读",
@@ -219,7 +219,7 @@ export const converloopSupport = {
 			},
 			{
 				title: "Restoring Purchases on Another Device",
-				body: "Tap Restore Purchases on the Lifetime Full Version page. Purchases restore on every device signed in to the same Apple Account; reinstalling does not restart the free trial. Converloop AI is linked to the service identity of the device you subscribed on, so if it doesn't show as active on another device after you connect it and tap Restore Purchases on the Converloop AI page, email us.",
+				body: "Tap Restore Purchases on the Lifetime Full Version page or during setup. Use the Apple Account that made the purchase; reinstalling does not restart the trial. For Converloop AI, restoring connects this installation to the original subscription and shared allowance, without granting credits again. Restoring does not authorize AI processing: read the data notice and choose Start using Converloop during setup, or turn on Allow AI data processing in Settings → AI Services → Language Model → Converloop AI. If the service is temporarily unavailable, use Check again on the purchase page. You can also restore from the Converloop AI settings page after connecting the device. Contact us if a verified purchase still does not appear.",
 			},
 			{
 				title: "Converloop AI Will Not Connect",
@@ -289,7 +289,7 @@ export const converloopSupport = {
 			},
 			{
 				title: "换设备后怎么恢复购买",
-				body: "在「永久解锁完整版」页点「恢复购买」。登录同一 Apple 账户的设备都能恢复；重装不会重新开始免费试用。Converloop AI 与订阅时那台设备的服务身份关联：如果在另一台设备上连接并在 Converloop AI 页点「恢复购买」后仍未生效，请发邮件给我们。",
+				body: "在「永久解锁完整版」页或引导中点「恢复购买」，使用当初购买的 Apple 账户；重装不会重新开始试用。恢复 Converloop AI 时，会把这次安装关联到原订阅和共享余额，不会再次发放额度。恢复购买不会自动授权 AI 处理：请先阅读资料说明，再在引导中点「开始使用」，或到「设置 → AI 服务 → 语言模型 → Converloop AI」打开「允许 AI 处理学习内容」。服务暂时不可用时，可在购买页点「再查一次」；连接设备后，也可从 Converloop AI 设置页恢复。购买已验证却仍未显示时，请联系我们。",
 			},
 			{
 				title: "Converloop AI 连接失败",
