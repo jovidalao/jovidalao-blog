@@ -1,0 +1,28 @@
+# Converloop moved to its own domain; Peelday to a subdomain. Old links in the
+# apps, the App Store and search results land on the same page there.
+# Pages only, not splats: the home page still serves images under /converloop/ and /peelday/.
+/converloop                  https://converloopai.com/                     301
+/converloop/desktop          https://converloopai.com/desktop              301
+/converloop/privacy          https://converloopai.com/privacy              301
+/converloop/terms            https://converloopai.com/terms                301
+/converloop/support          https://converloopai.com/support              301
+/zh/converloop               https://converloopai.com/zh                   301
+/zh/converloop/desktop       https://converloopai.com/zh/desktop           301
+/zh/converloop/privacy       https://converloopai.com/zh/privacy           301
+/zh/converloop/terms         https://converloopai.com/zh/terms             301
+/zh/converloop/support       https://converloopai.com/zh/support           301
+/peelday                     https://peelday.jovidalao.com/                301
+/peelday/privacy             https://peelday.jovidalao.com/privacy         301
+/peelday/terms               https://peelday.jovidalao.com/terms           301
+/zh/peelday                  https://peelday.jovidalao.com/zh              301
+/zh/peelday/privacy          https://peelday.jovidalao.com/zh/privacy      301
+/zh/peelday/terms            https://peelday.jovidalao.com/zh/terms        301
+# Pages used to 308 a trailing slash to the page; keep those URLs working too.
+/converloop/                 https://converloopai.com/                     301
+/converloop/:page/           https://converloopai.com/:page                301
+/zh/converloop/              https://converloopai.com/zh                   301
+/zh/converloop/:page/        https://converloopai.com/zh/:page             301
+/peelday/                    https://peelday.jovidalao.com/                301
+/peelday/:page/              https://peelday.jovidalao.com/:page           301
+/zh/peelday/                 https://peelday.jovidalao.com/zh              301
+/zh/peelday/:page/           https://peelday.jovidalao.com/zh/:page        301

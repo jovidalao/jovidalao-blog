@@ -18,6 +18,7 @@ const content = {
 		shots: {
 			peelday: "A Peelday diary page with photo, ticket, weather and emoji stickers",
 			converloop: "A Converloop conversation with an inline correction",
+			desktop: "Converloop on macOS showing a conversation with inline corrections, a natural rewrite, and the learning coach",
 		},
 		apps: {
 			kicker: "Apps",
@@ -41,6 +42,7 @@ const content = {
 			desktop: {
 				status: "v0.1.1 for macOS",
 				tagline: "Converloop for Desktop",
+				heading: "The full learning workspace for macOS and Windows",
 				body: "The open-source learning workspace: inline corrections, an evidence timeline you can inspect and edit, focused lessons and drills, and the model provider of your choice.",
 				facts: ["macOS · Windows from source", "Free · AGPL-3.0", "Records in local SQLite"],
 				cta: "About the desktop app",
@@ -88,6 +90,7 @@ const content = {
 		shots: {
 			peelday: "贴贴手帐的一页，贴着照片、票据、天气和 Emoji 贴纸",
 			converloop: "Converloop 对话，句子里带着当场批改",
+			desktop: "Converloop macOS 界面，展示对话、行内纠错、地道改写和学习教练",
 		},
 		apps: {
 			kicker: "应用",
@@ -111,6 +114,7 @@ const content = {
 			desktop: {
 				status: "macOS 版 v0.1.1",
 				tagline: "Converloop 桌面端",
+				heading: "面向 macOS 与 Windows 的完整学习工作区",
 				body: "开源的学习工作区：行内纠错、能查能改的证据时间线、专项课和训练，模型服务商由你自己选。",
 				facts: ["macOS · Windows 可从源码运行", "免费 · AGPL-3.0", "记录存在本地 SQLite"],
 				cta: "了解桌面端",

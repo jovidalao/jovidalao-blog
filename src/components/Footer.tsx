@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { BLOG_PUBLISHED, CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
+import { BLOG_PUBLISHED, CONVERLOOP, PEELDAY, SITE_TITLE, SITE_URL, type Site } from "@/consts";
 import { getUi, localeBase, type Locale } from "@/i18n";
 import styles from "./Footer.module.css";
 
-export function Footer({ locale }: { locale: Locale }) {
+export function Footer({ locale, site }: { locale: Locale; site: Site }) {
   const t = getUi(locale);
   const f = t.footer;
   const base = localeBase(locale);
+  // Each site links to the others by absolute URL.
+  const home = site === "home" ? base : `${SITE_URL}${base}`;
+  const peelday = site === "peelday" ? base : `${PEELDAY.url}${base}`;
+  const converloop = `${CONVERLOOP.url}${base}`;
 
   return (
     <footer className={styles.footer}>
@@ -19,16 +23,16 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className={styles.col}>
           <p className={styles.colTitle}>{f.appsTitle}</p>
           <ul>
-            <li><Link href={`${base}/peelday`}>{t.peelday.name}</Link></li>
-            <li><Link href={`${base}/converloop`}>{f.converloopIos}</Link></li>
-            <li><Link href={`${base}/converloop/desktop`}>{f.converloopDesktop}</Link></li>
+            <li><Link href={peelday || "/"}>{t.peelday.name}</Link></li>
+            <li><a href={converloop}>{f.converloopIos}</a></li>
+            <li><a href={`${converloop}/desktop`}>{f.converloopDesktop}</a></li>
           </ul>
         </div>
 
         <div className={styles.col}>
           <p className={styles.colTitle}>{f.moreTitle}</p>
           <ul>
-            {BLOG_PUBLISHED ? <li><Link href={`${base}/blog`}>{f.writing}</Link></li> : null}
+            {BLOG_PUBLISHED ? <li><Link href={`${home}/blog`}>{f.writing}</Link></li> : null}
             <li><a href={CONVERLOOP.repoUrl} target="_blank" rel="noreferrer">{f.source}</a></li>
             <li><a href={`mailto:${PEELDAY.contactEmail}`}>{f.email}</a></li>
           </ul>
@@ -37,10 +41,10 @@ export function Footer({ locale }: { locale: Locale }) {
         <div className={styles.col}>
           <p className={styles.colTitle}>{f.legalTitle}</p>
           <ul>
-            <li><Link href={`${base}/peelday/privacy`}>{f.peeldayPrivacy}</Link></li>
-            <li><Link href={`${base}/peelday/terms`}>{f.peeldayTerms}</Link></li>
-            <li><Link href={`${base}/converloop/privacy`}>{f.converloopPrivacy}</Link></li>
-            <li><Link href={`${base}/converloop/terms`}>{f.converloopTerms}</Link></li>
+            <li><Link href={`${peelday}/privacy`}>{f.peeldayPrivacy}</Link></li>
+            <li><Link href={`${peelday}/terms`}>{f.peeldayTerms}</Link></li>
+            <li><a href={`${converloop}/privacy`}>{f.converloopPrivacy}</a></li>
+            <li><a href={`${converloop}/terms`}>{f.converloopTerms}</a></li>
           </ul>
         </div>
       </div>

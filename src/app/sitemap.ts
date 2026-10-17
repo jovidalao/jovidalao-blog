@@ -1,21 +1,11 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/consts";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://jovidalao.com";
-  const staticPaths = [
-    "", "/zh",
-    "/peelday", "/zh/peelday",
-    "/peelday/privacy", "/zh/peelday/privacy",
-    "/peelday/terms", "/zh/peelday/terms",
-    "/converloop", "/zh/converloop",
-    "/converloop/privacy", "/zh/converloop/privacy",
-    "/converloop/terms", "/zh/converloop/terms",
-    "/converloop/support", "/zh/converloop/support",
-    "/converloop/desktop", "/zh/converloop/desktop",
-  ];
+  const staticPaths = ["", "/zh"];
   return [
-    ...staticPaths.map((path) => ({ url: `${baseUrl}${path}` })),
+    ...staticPaths.map((path) => ({ url: `${SITE_URL}${path}` })),
   ];
 }

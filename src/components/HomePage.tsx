@@ -1,12 +1,12 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { BLOG_PUBLISHED, CONVERLOOP, PEELDAY, SITE_TITLE } from "@/consts";
-import { getConverloop, getHome, getUi, localeBase, type Locale } from "@/i18n";
+import { getHome, getUi, localeBase, type Locale } from "@/i18n";
 import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/date";
 import { peeldayShots } from "@/lib/peelday-shots";
-import { Arrow } from "./ConverloopPage";
-import s from "./ConverloopPage.module.css";
+import { Arrow } from "./Showcase";
+import s from "./Showcase.module.css";
 import h from "./Home.module.css";
 import { Icon } from "./Icon";
 import { ShotSlot } from "./Shot";
@@ -29,8 +29,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 	];
 	const posts = BLOG_PUBLISHED ? (await getAllPosts(locale)).slice(0, 3) : [];
 	const { peelday, converloop, desktop } = c.apps;
-	const desktopAlt = ui.converloopDesktop.shots.hero.alt;
-	const conversationAlt = getConverloop(locale).hero.shots.conversation;
+	const desktopAlt = c.shots.desktop;
 
 	return (
 		<main className={`${s.page} ${zh ? s.zh : ""}`}>
@@ -58,9 +57,9 @@ export async function HomePage({ locale }: { locale: Locale }) {
 
 					<p className={s.heroBody}>
 						{c.bodyBefore}
-						<Link href={`${base}/peelday`}><mark className={`${s.marker} ${h.peel}`}>{c.bodyMark}</mark></Link>
+						<Link href={`${PEELDAY.url}${base}`}><mark className={`${s.marker} ${h.peel}`}>{c.bodyMark}</mark></Link>
 						{c.bodyMiddle}
-						<Link href={`${base}/converloop`}><mark className={s.marker}>{c.bodyMark2}</mark></Link>
+						<Link href={`${CONVERLOOP.url}${base}`}><mark className={s.marker}>{c.bodyMark2}</mark></Link>
 						{c.bodyAfter}
 					</p>
 
@@ -108,7 +107,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 							<p>{peelday.body}</p>
 							<ul className={h.facts}>{peelday.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
 							<div className={h.appActions}>
-								<Link className={`${site.btn} ${s.btnInk}`} href={`${base}/peelday`}>{peelday.cta}<Arrow /></Link>
+								<Link className={`${site.btn} ${s.btnInk}`} href={`${PEELDAY.url}${base}`}>{peelday.cta}<Arrow /></Link>
 								<a className={`${site.btn} ${site.btnGhost}`} href={PEELDAY.appStoreUrl} target="_blank" rel="noreferrer">{peelday.store}</a>
 							</div>
 							<div className={h.appShot}>
@@ -127,7 +126,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
 							<p>{converloop.body}</p>
 							<ul className={h.facts}>{converloop.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
 							<div className={h.appActions}>
-								<Link className={`${site.btn} ${s.btnInk}`} href={`${base}/converloop`}>{converloop.cta}<Arrow /></Link>
+								<Link className={`${site.btn} ${s.btnInk}`} href={`${CONVERLOOP.url}${base}`}>{converloop.cta}<Arrow /></Link>
 							</div>
 							<div className={h.appShot}>
 								<ShotSlot index="02" title={c.shots.converloop} frame="phone" crop src="/converloop/conversation.webp" />
@@ -142,11 +141,11 @@ export async function HomePage({ locale }: { locale: Locale }) {
 									<span className={h.appName}>{desktop.tagline}</span>
 									<span className={`${h.status} ${h.desktop}`}>{desktop.status}</span>
 								</div>
-								<h3>{ui.converloopDesktop.tagline}</h3>
+								<h3>{desktop.heading}</h3>
 								<p>{desktop.body}</p>
 								<ul className={h.facts}>{desktop.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
 								<div className={h.appActions}>
-									<Link className={`${site.btn} ${s.btnInk}`} href={`${base}/converloop/desktop`}>{desktop.cta}<Arrow /></Link>
+									<Link className={`${site.btn} ${s.btnInk}`} href={`${CONVERLOOP.url}${base}/desktop`}>{desktop.cta}<Arrow /></Link>
 									<a className={`${site.btn} ${site.btnGhost}`} href={CONVERLOOP.releaseUrl} target="_blank" rel="noreferrer">{desktop.download}</a>
 								</div>
 							</div>

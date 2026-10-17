@@ -1,9 +1,10 @@
 /*
-  Converloop product page. Built on the site tokens so the theme toggle still works;
-  the extra tokens below are the brand ribbon blue and the iOS colours the in-page
-  mock-ups borrow from the app (light and dark, as specified in PRODUCT_DESIGN.md).
-  The home and Peelday pages reuse the section primitives here (hero, strip, stage, why,
-  loop, marquee, boundary, plans, faq, closing) and re-point the tokens to their own palette.
+  Section primitives for the home and Peelday pages (hero, strip, stage, why, loop,
+  marquee, boundary, plans, faq, closing). They began as the Converloop product page,
+  which now lives on converloopai.com; each page re-points the tokens to its own palette.
+  Built on the site tokens so the theme toggle still works.
+  ponytail: Converloop-only rules (mock-ups, scenes, orbit) are still in here; prune them
+  when this file next needs real work.
 */
 
 .page {

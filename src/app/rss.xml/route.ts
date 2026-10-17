@@ -1,4 +1,4 @@
-import { BLOG_PUBLISHED, SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import { BLOG_PUBLISHED, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/consts";
 import { getAllPosts } from "@/lib/blog";
 
 export const dynamic = "force-static";
@@ -8,7 +8,7 @@ function escapeXml(value: string) {
 }
 
 export async function GET() {
-  const baseUrl = "https://jovidalao.com";
+  const baseUrl = SITE_URL;
   const [englishPosts, chinesePosts] = BLOG_PUBLISHED
     ? await Promise.all([getAllPosts("en"), getAllPosts("zh")])
     : [[], []];

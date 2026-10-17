@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
-import { SITE_DESCRIPTION, SITE_TITLE } from "@/consts";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/consts";
 import "./globals.css";
 
 // Both faces carry Latin only; the CJK fallbacks handle the /zh pages.
@@ -21,10 +21,8 @@ const mono = IBM_Plex_Mono({
   fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "PingFang SC", "Microsoft YaHei", "monospace"],
 });
 
-const siteUrl = "https://jovidalao.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(SITE_URL),
   title: { default: SITE_TITLE, template: `%s · ${SITE_TITLE}` },
   description: SITE_DESCRIPTION,
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }] },

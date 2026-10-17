@@ -4,7 +4,10 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const output = path.join(root, "out");
-const origin = "https://jovidalao.com";
+// SITE=peelday checks the peelday.jovidalao.com export, built from *.peelday.tsx routes.
+const peelday = process.env.SITE === "peelday";
+const origin = peelday ? "https://peelday.jovidalao.com" : "https://jovidalao.com";
+const pageFile = peelday ? "page.peelday.tsx" : "page.tsx";
 
 async function verify() {
   try {
@@ -26,7 +29,7 @@ async function verify() {
     }
   }
 
-  for (const file of ["404.html", "robots.txt", "sitemap.xml", "rss.xml"]) {
+  for (const file of ["404.html", "robots.txt", "sitemap.xml", ...(peelday ? [] : ["rss.xml", "_redirects"])]) {
     await requireFile(file, "Required export");
   }
 
@@ -36,7 +39,7 @@ async function verify() {
   // Match the existing App Router pages and Markdown-based catch-all routes.
   const pages = await readdir(path.join(root, "src/app"), { recursive: true });
   for (const file of pages) {
-    if (path.basename(file) !== "page.tsx") continue;
+    if (path.basename(file) !== pageFile) continue;
     const parts = path.dirname(file).split(path.sep).filter((part) => part !== "." && !part.startsWith("("));
     const route = `/${parts.join("/")}`;
     if (!route.includes("[")) {
@@ -97,7 +100,7 @@ async function verify() {
 
   for (const asset of assets) await requireFile(asset, "Local resource");
   if (failures.length) throw new Error(failures.join("\n"));
-  console.log(`Static export verified: ${routes.size} page routes, ${htmlFiles.length} HTML files, ${assets.size} local resources, RSS, sitemap, robots and 404.`);
+  console.log(`Static export verified: ${routes.size} page routes, ${htmlFiles.length} HTML files, ${assets.size} local resources, ${peelday ? "" : "RSS, redirects, "}sitemap, robots and 404 for ${origin}.`);
 }
 
 verify().catch((error) => {

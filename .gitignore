@@ -5,6 +5,7 @@ node_modules/
 # Next.js output and TypeScript cache
 .next/
 .next-dev/
+.next-dev-peelday/
 out/
 tsconfig.tsbuildinfo
 

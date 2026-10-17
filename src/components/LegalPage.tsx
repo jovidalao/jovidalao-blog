@@ -14,7 +14,7 @@ export function LegalPage({ locale, type }: { locale: Locale; type: "privacy" | 
     <main className={site.page}>
       <section className={site.shell}>
         <article className={product.legalDoc}>
-          <Link className={product.legalBack} href={`${base}/peelday`}>{t.legal.backToPeelday}</Link>
+          <Link className={product.legalBack} href={base || "/"}>{t.legal.backToPeelday}</Link>
           <h1>{type === "privacy" ? t.legal.privacyTitle : t.legal.termsTitle}</h1>
           <p className={product.legalMeta}>
             {locale === "zh" ? "最后更新：" : "Last updated: "}{PEELDAY.lastUpdated}
@@ -33,8 +33,8 @@ export function LegalPage({ locale, type }: { locale: Locale; type: "privacy" | 
         </article>
 
         <nav className={product.legalBar} aria-label="Legal">
-          <Link href={`${base}/peelday/privacy`}>{t.peelday.legal.privacy}</Link>
-          <Link href={`${base}/peelday/terms`}>{t.peelday.legal.terms}</Link>
+          <Link href={`${base}/privacy`}>{t.peelday.legal.privacy}</Link>
+          <Link href={`${base}/terms`}>{t.peelday.legal.terms}</Link>
           <a href={`mailto:${PEELDAY.contactEmail}`}>{t.peelday.legal.contact}</a>
         </nav>
       </section>

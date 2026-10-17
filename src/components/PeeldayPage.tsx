@@ -2,8 +2,8 @@ import Link from "next/link";
 import { PEELDAY } from "@/consts";
 import { getPeelday, getUi, localeBase, peeldayLibrary, type Locale } from "@/i18n";
 import { peeldayShots } from "@/lib/peelday-shots";
-import { Arrow, pad, revealWords, vars } from "./ConverloopPage";
-import s from "./ConverloopPage.module.css";
+import { Arrow, pad, revealWords, vars } from "./Showcase";
+import s from "./Showcase.module.css";
 import { Icon } from "./Icon";
 import p from "./PeeldayPage.module.css";
 import { ShotSlot } from "./Shot";
@@ -278,7 +278,7 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 						<p className={s.lede}>{c.faq.body}</p>
 						<div className={`${s.actions} ${s.actionsStart}`}>
 							<a className={`${site.btn} ${s.btnInk}`} href={mail}>{c.faq.email}</a>
-							<Link className={`${site.btn} ${site.btnGhost}`} href={`${base}/peelday/privacy`}>{legal.privacy}</Link>
+							<Link className={`${site.btn} ${site.btnGhost}`} href={`${base}/privacy`}>{legal.privacy}</Link>
 						</div>
 					</div>
 					<div className={s.faqList}>
@@ -311,8 +311,8 @@ export function PeeldayPage({ locale }: { locale: Locale }) {
 					</div>
 					<p className={s.wordmark} aria-hidden="true">{name}</p>
 					<nav className={s.legal} aria-label={name}>
-						<Link href={`${base}/peelday/privacy`}>{legal.privacy}</Link>
-						<Link href={`${base}/peelday/terms`}>{legal.terms}</Link>
+						<Link href={`${base}/privacy`}>{legal.privacy}</Link>
+						<Link href={`${base}/terms`}>{legal.terms}</Link>
 						<a href={mail}>{legal.contact}</a>
 					</nav>
 				</div>

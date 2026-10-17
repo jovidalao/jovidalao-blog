@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getUi, localeBase, type Locale } from "@/i18n";
-import { SITE_TITLE } from "@/consts";
+import { CONVERLOOP, PEELDAY, SITE_TITLE, SITE_URL, type Site } from "@/consts";
 import styles from "./Header.module.css";
 
 type Theme = "light" | "dark" | "system";
@@ -24,7 +24,7 @@ function ThemeIcon({ theme }: { theme: Theme }) {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2" /><path d="M9 21h6M12 17v4" /></svg>;
 }
 
-export function Header({ locale }: { locale: Locale }) {
+export function Header({ locale, site }: { locale: Locale; site: Site }) {
   const pathname = usePathname() ?? "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState<Theme>("system");
@@ -59,22 +59,23 @@ export function Header({ locale }: { locale: Locale }) {
     setTheme(value);
   }
 
+  // Each site links to the others by absolute URL.
+  const home = site === "home" ? base || "/" : `${SITE_URL}${base}`;
   const links = [
-    { href: base || "/", label: t.nav.home, exact: true },
-    { href: `${base}/peelday`, label: t.nav.peelday, exact: false },
-    { href: `${base}/converloop`, label: t.nav.converloop, exact: false },
+    { href: home, label: t.nav.home, active: site === "home" && pathname === home },
+    { href: site === "peelday" ? base || "/" : `${PEELDAY.url}${base}`, label: t.nav.peelday, active: site === "peelday" },
+    { href: `${CONVERLOOP.url}${base}`, label: t.nav.converloop, active: false },
   ];
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label={t.nav.menu}>
-        <h2 className={styles.brand}><Link href={base || "/"}>{SITE_TITLE}</Link></h2>
+        <h2 className={styles.brand}><Link href={home}>{SITE_TITLE}</Link></h2>
 
         <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`} id="nav-menu">
-          {links.map((link) => {
-            const active = link.exact ? pathname === link.href : pathname === link.href || pathname.startsWith(`${link.href}/`);
-            return <Link key={link.href} href={link.href} aria-current={active ? "page" : undefined} className={`${styles.link} ${active ? styles.linkActive : ""}`}>{link.label}</Link>;
-          })}
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} aria-current={link.active ? "page" : undefined} className={`${styles.link} ${link.active ? styles.linkActive : ""}`}>{link.label}</Link>
+          ))}
         </div>
 
         <div className={styles.tools}>

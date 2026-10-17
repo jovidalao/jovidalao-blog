@@ -8,9 +8,19 @@ export const SITE_TITLE = "jovidalao";
 export const SITE_DESCRIPTION =
 	"Personal homepage of jovidalao — a Hobart-based indie developer building Peelday and Converloop.";
 
+export const SITE_URL = "https://jovidalao.com";
+
+/**
+ * This repo builds two sites: jovidalao.com by default, and peelday.jovidalao.com
+ * with SITE=peelday (see next.config.ts). Converloop has its own site and repo.
+ * Links between sites are absolute; links within one stay relative.
+ */
+export type Site = "home" | "peelday";
+
 export const PEELDAY = {
 	name: "Peelday",
 	tagline: "A visual diary for everyday joy",
+	url: "https://peelday.jovidalao.com",
 	// Storefront-neutral URL lets Apple route visitors to their local App Store.
 	appStoreUrl: "https://apps.apple.com/app/id6774051647",
 	contactEmail: "jovidalao@gmail.com",
@@ -19,19 +29,7 @@ export const PEELDAY = {
 
 export const CONVERLOOP = {
 	name: "Converloop",
-	tagline: "A local-first AI language tutor",
-	// Empty until the iOS app is live; then "https://apps.apple.com/app/id6788364286"
-	// turns every "Coming soon" on /converloop into a download button.
-	appStoreUrl: "",
+	url: "https://converloopai.com",
 	repoUrl: "https://github.com/jovidalao/Converloop",
 	releaseUrl: "https://github.com/jovidalao/Converloop/releases/latest",
-	version: "0.1.1",
-	contactEmail: "jovidalao@gmail.com",
-	lastUpdated: "October 16, 2026",
-	// A date is copy too: "最后更新：August 1, 2026" reads as a half-translated page.
-	lastUpdatedZh: "2026 年 10 月 16 日",
-	// The terms are dated on their own, so a change to one document does not
-	// re-date the other.
-	termsLastUpdated: "October 14, 2026",
-	termsLastUpdatedZh: "2026 年 10 月 14 日",
 } as const;
