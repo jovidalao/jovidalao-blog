@@ -83,7 +83,7 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 						{c.hero.title[0]}<br />
 						{c.hero.title[1]}
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img className={s.heroIcon} src={`${assetBase}/icon.webp`} alt="" width={64} height={64} />
+						<img className={s.heroIcon} src={`${assetBase}/icon.webp?v=20261027`} alt="" width={64} height={64} />
 					</h1>
 					<p className={s.heroBody}>{c.hero.body}</p>
 					<div className={s.actions}>{primary}{secondary}</div>
@@ -403,7 +403,7 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 					<div className={s.finalCard}>
 						<Mark className={s.finalMark} />
 						{/* eslint-disable-next-line @next/next/no-img-element */}
-						<img className={s.finalIcon} src={`${assetBase}/icon.webp`} alt="" width={72} height={72} loading="lazy" />
+						<img className={s.finalIcon} src={`${assetBase}/icon.webp?v=20261027`} alt="" width={72} height={72} loading="lazy" />
 						<h2>{c.final.heading}</h2>
 						<p>{c.final.body}</p>
 						<div className={s.actions}>

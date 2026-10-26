@@ -6,6 +6,7 @@ import { getAllPosts } from "@/lib/blog";
 import { formatDate } from "@/lib/date";
 import { peeldayShots } from "@/lib/peelday-shots";
 import { converloopShots } from "@/lib/converloop-shots";
+import converloopIcon from "../../public/converloop/icon.webp";
 import { Arrow } from "./Showcase";
 import { Icon } from "./Icon";
 import { ShotSlot } from "./converloop/Shot";
@@ -76,7 +77,7 @@ export async function HomePage({ locale }: { locale: Locale }) {
               <div className={h.appCopy}>
                 <div className={h.appHead}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="/converloop/icon.webp" alt="" width={44} height={44} loading="lazy" />
+                  <img src={converloopIcon.src} alt="" width={44} height={44} loading="lazy" />
                   <span>{CONVERLOOP.name}</span><small>{converloop.status}</small>
                 </div>
                 <h3>{converloop.tagline}</h3><p>{converloop.body}</p>
