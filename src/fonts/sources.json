@@ -1,0 +1,38 @@
+[
+  {
+    "file": "hanken-grotesk/HankenGrotesk[wght].ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/hankengrotesk/HankenGrotesk%5Bwght%5D.ttf",
+    "sha256": "813b3f8fa0965405669a89b38e51bbefd95eef6b8e20d1cb2d8c10cce062662f",
+    "bytes": 132892
+  },
+  {
+    "file": "hanken-grotesk/OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/hankengrotesk/OFL.txt",
+    "sha256": "e02ccb89a86839b22feff7872ff5cc355cc0f58318d29eee20e2cf83a612f16d",
+    "bytes": 4402
+  },
+  {
+    "file": "ibm-plex-mono/IBMPlexMono-Regular.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Regular.ttf",
+    "sha256": "6a3412f058c7d8dfd9170c41e85ade48e5156ecb89356110ca57a0a27734af46",
+    "bytes": 135580
+  },
+  {
+    "file": "ibm-plex-mono/IBMPlexMono-Medium.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-Medium.ttf",
+    "sha256": "a9b4c49bb299e05b5f6c481e7fb5e78943d2793249a0c8874ab574a2d1ea6755",
+    "bytes": 136704
+  },
+  {
+    "file": "ibm-plex-mono/IBMPlexMono-SemiBold.ttf",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/IBMPlexMono-SemiBold.ttf",
+    "sha256": "d3c38e55c78f5b0f28009fddba4834ec503278936a5986032424c9bd2d23aa46",
+    "bytes": 140216
+  },
+  {
+    "file": "ibm-plex-mono/OFL.txt",
+    "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexmono/OFL.txt",
+    "sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da",
+    "bytes": 4456
+  }
+]

@@ -11,6 +11,8 @@ Personal site of jovidalao, plus the Peelday site at [peelday.jovidalao.com](htt
 
 The site intentionally has no account system, authentication, database, or runtime content API because the original product is a public, read-only personal site.
 
+Hanken Grotesk and IBM Plex Mono are bundled in `src/fonts` with their SIL Open Font License files and source hashes. `next/font/local` serves them from the static export; builds do not fetch Google Fonts. Keep the font files, licenses and `sources.json` together when updating typography.
+
 ## Local development
 
 Use Node **22.22.2** (see `.node-version`) and pnpm **10.11.1** (see `packageManager` in `package.json`). Activate those versions with your preferred version manager before installing dependencies.

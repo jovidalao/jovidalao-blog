@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/consts";
 import "./globals.css";
 
-// Both faces carry Latin only; the CJK fallbacks handle the /zh pages.
-// next/font requires these option objects to be inline literals.
-const sans = Hanken_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+// Bundle the same fonts so cloud builds never depend on Google Fonts responses.
+// The CJK fallbacks continue to handle the /zh pages.
+const sans = localFont({
+  src: [{ path: "../fonts/hanken-grotesk/HankenGrotesk[wght].ttf", weight: "400 800", style: "normal" }],
   variable: "--font-sans",
   display: "swap",
   fallback: ["-apple-system", "BlinkMacSystemFont", "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "sans-serif"],
 });
 
-const mono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const mono = localFont({
+  src: [
+    { path: "../fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../fonts/ibm-plex-mono/IBMPlexMono-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../fonts/ibm-plex-mono/IBMPlexMono-SemiBold.ttf", weight: "600", style: "normal" },
+  ],
   variable: "--font-mono",
   display: "swap",
   fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "PingFang SC", "Microsoft YaHei", "monospace"],
