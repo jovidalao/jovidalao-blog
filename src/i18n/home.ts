@@ -22,7 +22,7 @@ const content = {
 		},
 		apps: {
 			kicker: "Apps",
-			heading: "Two products, three ways in.",
+			heading: "Small apps, made with care.",
 			body: "One keeps your days, one helps you speak. Each is built to do that one thing well.",
 			peelday: {
 				status: "On the App Store",
@@ -34,8 +34,8 @@ const content = {
 			},
 			converloop: {
 				status: "Coming soon · in TestFlight",
-				tagline: "Cross-platform AI conversation partner",
-				body: "Type or speak and every sentence comes back corrected inline, with natural, native phrasing. It identifies misunderstandings to provide targeted explanations and drills.",
+				tagline: "An AI partner for language practice",
+				body: "Chat by text or voice, get corrections and explanations in context, then practise again with your own sentences.",
 				facts: ["iPhone & iPad · iOS 26+", "7-day free trial", "Contextual explanation · no account"],
 				cta: "Explore Converloop",
 			},
@@ -94,7 +94,7 @@ const content = {
 		},
 		apps: {
 			kicker: "应用",
-			heading: "两个产品，三种用法。",
+			heading: "把日常的小事，认真做好。",
 			body: "一个帮你留住日子，一个帮你开口说话。每个都只把一件事做好。",
 			peelday: {
 				status: "App Store 已上架",
@@ -106,8 +106,8 @@ const content = {
 			},
 			converloop: {
 				status: "即将上架 · TestFlight 测试中",
-				tagline: "跨平台 AI 外语陪练",
-				body: "打字或开口聊，每一句都当场批改，教你超地道的说法。它会记录你对语言理解的误区，给出针对性的讲解与训练。",
+				tagline: "陪你开口，也陪你练熟。",
+				body: "打字或开口聊，纠正与讲解就在对话身边。聊过的句子，还能接着练听力和听写。",
 				facts: ["iPhone 与 iPad · iOS 26+", "7 天免费试用", "语境即时讲解 · 无需账号"],
 				cta: "了解 Converloop",
 			},

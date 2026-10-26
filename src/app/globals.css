@@ -1,90 +1,88 @@
 /*
-  Design system for jovidalao.com.
-  Light, Apple-flavoured product marketing: near-white page, white cards on hairline
-  borders, one blue accent, and headings that carry the page.
+  Shared visual foundations for jovidalao and Converloop: calm surfaces, blue accents,
+  readable headings, and consistent spacing. Peelday retains its own page palette.
 */
 
 :root {
 	color-scheme: light;
 
 	/* Surfaces */
-	--bg: #fbfbfd;
-	--paper: #f5f5f7;
+	--bg: #ffffff;
+	--paper: #f4f6f9;
 	--card: #ffffff;
-	--card-soft: #fbfbfd;
+	--card-soft: #fafbfc;
 
-	/* Ink */
-	--ink: #1d1d1f;
-	--ink-2: #51515a;
-	--ink-3: #86868b;
+	/* Ink: the store artwork's navy, not pure black */
+	--ink: #141a2e;
+	--ink-2: #596273;
+	--ink-3: #8a92a0;
 
 	/* Lines */
-	--line: #e8e8ed;
-	--line-strong: #d9d9e0;
+	--line: #e6e9ef;
+	--line-strong: #d5dae3;
 
-	/* Accent */
-	--blue: #0071e3;
-	--blue-deep: #0058c2;
-	--blue-tint: #eaf2ff;
-	--green: #237a4b;
-
-	/* Product tints behind screenshots */
+	/* Accent: the app icon */
+	--blue: #345be8;
+	--blue-deep: #2646c4;
+	--blue-tint: #edf1fe;
+	--ivory: #faf8f4;
 	--tint-peelday: #f6f0e6;
 	--tint-desktop: #eef3f9;
 	--tint-ios: #f0eef8;
 	--tint-neutral: #f5f5f7;
+	--green: #237a4b;
 
 	--shadow-card: 0 1px 2px rgba(20, 30, 60, 0.04), 0 14px 36px -20px rgba(20, 30, 60, 0.16);
 	--shadow-pop: 0 2px 6px rgba(20, 30, 60, 0.05), 0 28px 64px -28px rgba(20, 30, 60, 0.25);
 	--shadow-device: 0 2px 8px rgba(20, 30, 60, 0.06), 0 40px 80px -32px rgba(20, 30, 60, 0.32);
 
 	/* Type */
-	--fs-h1: clamp(34px, 4.6vw, 52px);
-	--fs-h2: clamp(28px, 3.4vw, 44px);
+	--fs-h1: clamp(38px, 5.4vw, 64px);
+	--fs-h2: clamp(30px, 3.8vw, 48px);
 	--fs-h3: 17px;
-	--fs-lead: 16.5px;
+	--fs-lead: 17px;
 	--fs-body: 15px;
 	--fs-small: 14.5px;
 	--fs-label: 11px;
 
-	--wt-display: 780;
-	--wt-heading: 750;
-	--wt-strong: 700;
+	--wt-display: 700;
+	--wt-heading: 680;
+	--wt-strong: 650;
 	--wt-medium: 600;
 
 	/* Rhythm */
-	--wrap: 1120px;
+	--wrap: 1200px;
 	--wrap-narrow: 760px;
-	--gap-section: 104px;
+	--gap-section: 120px;
 	--rad: 18px;
-	--rad-lg: 24px;
+	--rad-lg: 28px;
 	--rad-sm: 12px;
 }
 
 :root[data-theme="dark"] {
 	color-scheme: dark;
 
-	--bg: #0b0b10;
-	--paper: #141419;
-	--card: #17171d;
-	--card-soft: #121217;
+	--bg: #0b0d13;
+	--paper: #141720;
+	--card: #1a1e29;
+	--card-soft: #12151d;
 
-	--ink: #f5f5f7;
-	--ink-2: #a9a9b4;
-	--ink-3: #7c7c88;
+	--ink: #f2f4f9;
+	--ink-2: #a5acba;
+	--ink-3: #79818f;
 
-	--line: #26262e;
-	--line-strong: #33333d;
+	--line: #252a36;
+	--line-strong: #323847;
 
-	--blue: #2e97ff;
-	--blue-deep: #66b4ff;
-	--blue-tint: rgba(46, 151, 255, 0.14);
-	--green: #4ec98a;
-
+	--blue: #6d8cff;
+	--blue-deep: #98aeff;
+	--blue-tint: rgba(109, 140, 255, 0.14);
+	--ivory: #faf8f4;
 	--tint-peelday: #1e1a13;
 	--tint-desktop: #111820;
 	--tint-ios: #16141d;
 	--tint-neutral: #141419;
+	--green: #4ec98a;
 
 	--shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 14px 36px -20px rgba(0, 0, 0, 0.7);
 	--shadow-pop: 0 2px 6px rgba(0, 0, 0, 0.5), 0 28px 64px -28px rgba(0, 0, 0, 0.85);
@@ -122,8 +120,8 @@ h5,
 h6 {
 	margin: 0;
 	color: var(--ink);
-	letter-spacing: -0.028em;
-	line-height: 1.08;
+	letter-spacing: -0.035em;
+	line-height: 1.1;
 	font-weight: var(--wt-heading);
 }
 
@@ -190,7 +188,7 @@ pre {
 
 @media (max-width: 720px) {
 	:root {
-		--gap-section: 72px;
+		--gap-section: 80px;
 	}
 }
 

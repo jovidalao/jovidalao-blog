@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getUi, localeBase, type Locale } from "@/i18n";
-import { CONVERLOOP, PEELDAY, SITE_TITLE, SITE_URL, type Site } from "@/consts";
-import styles from "./Header.module.css";
+import { PEELDAY, SITE_TITLE, SITE_URL, type Site } from "@/consts";
+import styles from "./converloop/Header.module.css";
 
 type Theme = "light" | "dark" | "system";
 
@@ -59,22 +59,24 @@ export function Header({ locale, site }: { locale: Locale; site: Site }) {
     setTheme(value);
   }
 
-  // Each site links to the others by absolute URL.
+  // Converloop has a local showcase on the personal site.
   const home = site === "home" ? base || "/" : `${SITE_URL}${base}`;
+  const converloop = `${site === "home" ? "" : SITE_URL}${base}/converloop`;
   const links = [
     { href: home, label: t.nav.home, active: site === "home" && pathname === home },
     { href: site === "peelday" ? base || "/" : `${PEELDAY.url}${base}`, label: t.nav.peelday, active: site === "peelday" },
-    { href: `${CONVERLOOP.url}${base}`, label: t.nav.converloop, active: false },
+    { href: converloop, label: t.nav.converloop, active: site === "home" && pathname === `${base}/converloop` },
   ];
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav} aria-label={t.nav.menu}>
-        <h2 className={styles.brand}><Link href={home}>{SITE_TITLE}</Link></h2>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <h2 className={styles.brand}><Link href={home}><img src="/brand-mark.svg" alt="" width={28} height={28} />{SITE_TITLE}</Link></h2>
 
         <div className={`${styles.links} ${menuOpen ? styles.linksOpen : ""}`} id="nav-menu">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} aria-current={link.active ? "page" : undefined} className={`${styles.link} ${link.active ? styles.linkActive : ""}`}>{link.label}</Link>
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)} aria-current={link.active ? "page" : undefined} className={`${styles.link} ${link.active ? styles.linkActive : ""}`}>{link.label}</Link>
           ))}
         </div>
 
@@ -101,10 +103,7 @@ export function Header({ locale, site }: { locale: Locale; site: Site }) {
             </div>
           </details>
 
-          <div className={styles.icons}>
-            <a href="https://x.com/jovidalao" target="_blank" rel="noreferrer" aria-label="X"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.6.75Z" /></svg></a>
-            <a href="https://github.com/jovidalao" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 16 16"><path fill="currentColor" d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.49c-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 8 0Z" /></svg></a>
-          </div>
+          <Link className={styles.cta} href={`${home}#apps`}>{t.nav.apps}</Link>
 
           <button className={styles.menuButton} type="button" aria-expanded={menuOpen} aria-controls="nav-menu" aria-label={t.nav.menu} onClick={() => setMenuOpen((open) => !open)}>
             {menuOpen

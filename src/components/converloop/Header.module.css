@@ -1,7 +1,17 @@
+/* Synced from converloopai; update with pnpm sync:converloop. */
 .header {
 	position: sticky;
 	top: 0;
 	z-index: 50;
+}
+
+/* The bar's glass sits on a layer of its own: a header with a backdrop-filter would
+   become the backdrop root, and the floating nav below could no longer blur the page. */
+.header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
 	background: color-mix(in srgb, var(--bg) 82%, transparent);
 	backdrop-filter: saturate(180%) blur(16px);
 	-webkit-backdrop-filter: saturate(180%) blur(16px);
@@ -16,9 +26,45 @@
 	padding: 0 24px;
 	min-height: 64px;
 	display: grid;
-	grid-template-columns: minmax(0, 1fr) auto auto;
+	grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
 	align-items: center;
 	gap: 18px;
+}
+
+/* Past the top, the bar lifts into a floating capsule (after Lumno). Driven by the
+   scroll position, so no script; without scroll timelines the flat bar stays. */
+@supports (animation-timeline: scroll()) {
+	@media (min-width: 56.01rem) and (prefers-reduced-motion: no-preference) {
+		.header::before,
+		.nav {
+			animation: barFade linear both;
+			animation-timeline: scroll(root);
+			animation-range: 0 120px;
+		}
+
+		.nav {
+			animation-name: navFloat;
+		}
+	}
+}
+
+@keyframes barFade {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes navFloat {
+	to {
+		max-width: 1040px;
+		padding-inline: 20px 12px;
+		transform: translateY(12px);
+		border-radius: 100px;
+		background-color: color-mix(in srgb, var(--card) 78%, transparent);
+		box-shadow: 0 0 0 1px var(--line), 0 16px 36px -16px rgba(20, 30, 60, 0.22);
+		backdrop-filter: saturate(180%) blur(18px);
+		-webkit-backdrop-filter: saturate(180%) blur(18px);
+	}
 }
 
 .brand {
@@ -27,6 +73,16 @@
 	letter-spacing: -0.03em;
 	margin: 0;
 	min-width: 0;
+}
+
+.brand a {
+	display: inline-flex;
+	align-items: center;
+	gap: 9px;
+}
+
+.brand img {
+	border-radius: 7px;
 }
 
 .links {
@@ -61,11 +117,34 @@
 .tools {
 	display: flex;
 	align-items: center;
+	justify-self: end;
 	gap: 4px;
-	margin-left: 8px;
-	padding-left: 12px;
-	border-left: 1px solid var(--line);
 	white-space: nowrap;
+}
+
+/* The one filled control in the bar (Lumno's install button). */
+.cta {
+	display: inline-flex;
+	align-items: center;
+	height: 36px;
+	margin-left: 6px;
+	padding-inline: 16px;
+	border-radius: 100px;
+	font-size: 13.5px;
+	font-weight: var(--wt-medium);
+	color: #fff;
+	background: linear-gradient(#404859, #273042);
+	box-shadow: 0 2px 5px rgba(15, 23, 42, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.18), inset 0 -1px 0 rgba(0, 0, 0, 0.36);
+	transition: filter 0.16s ease;
+}
+
+.cta:hover {
+	filter: brightness(1.15);
+}
+
+:global(:root[data-theme="dark"]) .cta {
+	color: #141a2e;
+	background: linear-gradient(#ffffff, #e4e8f0);
 }
 
 .dropdown {
@@ -148,33 +227,6 @@
 	background: var(--blue-tint);
 }
 
-.icons {
-	display: flex;
-	align-items: center;
-	gap: 2px;
-}
-
-.icons a {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 36px;
-	height: 36px;
-	border-radius: 100px;
-	color: var(--ink-2);
-	transition: color 0.16s ease, background-color 0.16s ease;
-}
-
-.icons a:hover {
-	color: var(--ink);
-	background: var(--paper);
-}
-
-.icons svg {
-	width: 15px;
-	height: 15px;
-}
-
 .menuButton {
 	display: none;
 	width: 44px;
@@ -214,10 +266,6 @@
 		padding-left: 0;
 	}
 
-	.icons {
-		display: none;
-	}
-
 	.menuButton {
 		display: inline-flex;
 	}
@@ -248,5 +296,11 @@
 		height: 44px;
 		border-radius: 10px;
 		font-size: var(--fs-body);
+	}
+}
+
+@media (max-width: 30rem) {
+	.cta {
+		display: none;
 	}
 }

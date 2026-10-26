@@ -1,6 +1,6 @@
 # jovidalao.com
 
-Personal site of jovidalao, plus the Peelday site at [peelday.jovidalao.com](https://peelday.jovidalao.com), rebuilt with Next.js while preserving the original Astro site's pages, content, and interactions. Converloop moved to its own site and repository, [converloopai.com](https://converloopai.com).
+Personal site of jovidalao, plus the Peelday site at [peelday.jovidalao.com](https://peelday.jovidalao.com), rebuilt with Next.js while preserving the original Astro site's pages, content, and interactions. Converloop also has an independent site and repository, [converloopai.com](https://converloopai.com); the same showcase is available inside the personal site at `/converloop` and `/zh/converloop`.
 
 ## Stack
 
@@ -31,8 +31,8 @@ Development uses `.next-dev`; production builds use `.next` and export to `out`.
 Every build exports the site to `out`, regardless of hosting provider or `CF_PAGES`:
 
 ```sh
-pnpm typecheck
 pnpm build
+pnpm typecheck
 pnpm check:static
 pnpm preview
 ```
@@ -52,6 +52,7 @@ Use `pnpm dev` for hot-reload development; verify the exported files and a Pages
 jovidalao.com:
 
 - `/` and `/zh`
+- `/converloop` and `/zh/converloop` — the product showcase inside the personal-site navigation
 - `/blog` and `/zh/blog` (unpublished while `BLOG_PUBLISHED` is false)
 - `/rss.xml`, `/sitemap.xml`, and `/robots.txt`
 
@@ -61,7 +62,7 @@ peelday.jovidalao.com:
 - `/privacy`, `/terms` and their `/zh` versions — the Peelday app and App Store listing link here
 - `/sitemap.xml` and `/robots.txt`
 
-`public/_redirects` sends the old `/converloop/*` and `/peelday/*` pages, in both languages, to the same page on converloopai.com and peelday.jovidalao.com with a 301. The rules list pages one by one rather than splats, because the home page still loads images from `/converloop/` and `/peelday/`.
+`public/_redirects` keeps the Converloop showcase local, redirects its legacy desktop paths to that showcase, and sends Converloop legal/support links and Peelday links to their product domains. The rules list pages one by one rather than splats, because the home page still loads images from `/converloop/` and `/peelday/`.
 
 ## Deployment
 
@@ -90,3 +91,33 @@ Images are served directly. This does not compress images or generate responsive
 After a branch preview succeeds, verify its pages and interactions before merging. After publishing to `main`, wait for the Pages deployment to succeed and check the production domain. A successful push or local build alone does not confirm publication. Record the previous successful production deployment and build settings so they can be restored if needed.
 
 The implementation scope and validation record are documented in [the static deployment plan](docs/STATIC_DEPLOYMENT_PLAN.md).
+
+## Keeping the Converloop showcase in sync
+
+The blog renders the same Server Components, translated copy and product assets as the
+standalone website, with the blog Header/Footer and an explicit official-site button.
+It does not embed the live website or depend on another checkout during deployment.
+
+After editing the source in the sibling `converloopai` checkout, run:
+
+```sh
+pnpm sync:converloop
+# Or: pnpm sync:converloop /absolute/path/to/converloopai
+pnpm build
+pnpm typecheck
+pnpm check:static
+```
+
+The sync command updates only `src/components/converloop`, product assets under
+`public/converloop`, and the device-artwork attribution document. Import adaptations
+are checked explicitly; review the sync script if an upstream import changes. Do not
+edit the generated components directly. Route metadata, blog navigation, and the
+shared blog design tokens remain owned by this repository. Header and Footer use the
+canonical Converloop CSS modules directly; the home page uses its section and card
+styles. Product captures on home are static imports with content-hashed URLs.
+
+## Documentation
+
+[AGENTS.md](AGENTS.md) owns agent routing and project constraints; [REVIEW.md](REVIEW.md) lists concrete review risks. `CLAUDE.md` imports the same agent guidance. The README owns current setup and deployment; the static deployment plan is a historical report. Only read its dated details when investigating that migration.
+
+The copied device-artwork guide records paths in the upstream `converloopai` repository; generated assets here live under `public/converloop/` and components under `src/components/converloop/`. Refresh it from the upstream guide through the sync workflow when updating the showcase. For documentation-only changes, check sources, links and commands and run `git diff --check`; a new app build is unnecessary.

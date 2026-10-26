@@ -4,7 +4,7 @@ import { SITE_URL } from "@/consts";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/zh"];
+  const staticPaths = ["", "/zh", "/converloop", "/zh/converloop"];
   return [
     ...staticPaths.map((path) => ({ url: `${SITE_URL}${path}` })),
   ];

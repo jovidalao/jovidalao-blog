@@ -62,6 +62,14 @@ async function verify() {
     }
   }
 
+  if (!peelday) {
+    const redirects = await readFile(path.join(output, "_redirects"), "utf8");
+    for (const line of redirects.split("\n")) {
+      const [from, , status] = line.trim().split(/\s+/);
+      if (routes.has(from) && /^3\d\d$/.test(status ?? "")) failures.push(`Exported route ${from} is shadowed by a redirect`);
+    }
+  }
+
   for (const route of routes) {
     const file = route === "/" ? "index.html" : `${route.slice(1)}.html`;
     await requireFile(file, `Route ${route}`);

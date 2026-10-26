@@ -4,6 +4,7 @@ export const ui = {
 	en: {
 		nav: {
 			home: "Home",
+			apps: "See the apps",
 			peelday: "Peelday",
 			converloop: "Converloop",
 			menu: "Menu",
@@ -16,9 +17,11 @@ export const ui = {
 		footer: {
 			blurb: "Indie developer in Hobart, Tasmania. I build small, private, local-first apps.",
 			appsTitle: "Apps",
+			supportTitle: "Support",
 			moreTitle: "More",
 			legalTitle: "Legal",
 			converloopDesktop: "Converloop for Desktop",
+			converloopWebsite: "Converloop website",
 			converloopIos: "Converloop for iPhone & iPad",
 			writing: "Writing",
 			source: "Converloop on GitHub",
@@ -53,6 +56,7 @@ export const ui = {
 	zh: {
 		nav: {
 			home: "首页",
+			apps: "看看应用",
 			peelday: "贴贴手帐",
 			converloop: "Converloop",
 			menu: "菜单",
@@ -65,9 +69,11 @@ export const ui = {
 		footer: {
 			blurb: "在塔斯马尼亚霍巴特的独立开发者。做小而私密、本地优先的应用。",
 			appsTitle: "应用",
+			supportTitle: "支持",
 			moreTitle: "更多",
 			legalTitle: "法律",
 			converloopDesktop: "Converloop 桌面端",
+			converloopWebsite: "Converloop 官网",
 			converloopIos: "Converloop iPhone 与 iPad 版",
 			writing: "写作",
 			source: "Converloop 源代码",

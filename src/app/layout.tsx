@@ -25,10 +25,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_TITLE, template: `%s · ${SITE_TITLE}` },
   description: SITE_DESCRIPTION,
-  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }] },
+  icons: { icon: [{ url: "/brand-mark.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }] },
   alternates: { types: { "application/rss+xml": "/rss.xml" } },
-  openGraph: { type: "website", siteName: SITE_TITLE, title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/blog-placeholder.jpg"] },
-  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/blog-placeholder.jpg"] },
+  openGraph: { type: "website", siteName: SITE_TITLE, title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/brand-mark.png"] },
+  twitter: { card: "summary", title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/brand-mark.png"] },
 };
 
 const themeScript = `

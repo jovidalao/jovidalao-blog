@@ -12,7 +12,8 @@
     "preview": "pnpm check:static && wrangler pages dev out --ip 127.0.0.1",
     "start": "pnpm preview",
     "typecheck": "tsc --noEmit",
-    "check:static": "node scripts/verify-static.mjs"
+    "check:static": "node scripts/verify-static.mjs",
+    "sync:converloop": "node scripts/sync-converloop.mjs"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
