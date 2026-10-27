@@ -10,6 +10,7 @@ import converloopIcon from "../../public/converloop/icon.webp";
 import { Arrow } from "./Showcase";
 import { Icon } from "./Icon";
 import { ShotSlot } from "./converloop/Shot";
+import { CONVERLOOP as CONVERLOOP_APP } from "./converloop/consts";
 import s from "./converloop/ConverloopPage.module.css";
 import site from "./converloop/site.module.css";
 import h from "./Home.module.css";
@@ -81,7 +82,10 @@ export async function HomePage({ locale }: { locale: Locale }) {
                   <span>{CONVERLOOP.name}</span><small>{converloop.status}</small>
                 </div>
                 <h3>{converloop.tagline}</h3><p>{converloop.body}</p>
-                <div className={h.appActions}><Link className={`${site.btn} ${s.btnInk}`} href={`${base}/converloop`}>{converloop.cta}<Arrow /></Link></div>
+                <div className={h.appActions}>
+                  <Link className={`${site.btn} ${s.btnInk}`} href={`${base}/converloop`}>{converloop.cta}<Arrow /></Link>
+                  <a className={`${site.btn} ${site.btnGhost}`} href={CONVERLOOP_APP.appStoreUrl} target="_blank" rel="noreferrer">{converloop.store}</a>
+                </div>
               </div>
               <div className={h.appShot}><ShotSlot index="02" title={c.shots.converloop} frame="phone" src={converloopShots[locale].conversation} assetBase="/converloop" /></div>
             </article>

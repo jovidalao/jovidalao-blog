@@ -9,9 +9,8 @@ export const MAKER = { name: "jovidalao", url: "https://jovidalao.com" } as cons
 
 export const CONVERLOOP = {
 	name: "Converloop",
-	// Empty until the iOS app is live; then "https://apps.apple.com/app/id6788364286"
-	// turns every "Coming soon" on the home page into a download button.
-	appStoreUrl: "",
+	// Let the App Store select the visitor's country or region.
+	appStoreUrl: "https://apps.apple.com/app/converloop/id6788364286",
 	contactEmail: "jovidalao@gmail.com",
 	lastUpdated: "October 19, 2026",
 	// A date is copy too: "最后更新：August 1, 2026" reads as a half-translated page.

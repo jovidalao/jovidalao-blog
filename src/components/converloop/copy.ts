@@ -75,7 +75,7 @@ const content = {
 			description:
 				"Converloop is an AI partner for practising a language on iPhone and iPad. Chat by text or voice with inline corrections, natural phrasing, explanations and reply ideas right beside the conversation; role-play everyday scenes, and turn your own sentences into listening and dictation practice. No account needed.",
 		},
-		status: "Coming soon to the App Store",
+		status: "Available on the App Store",
 		appStore: "Download on the App Store",
 		appStoreSoon: "Coming soon",
 		howItWorks: "See how it works",
@@ -325,14 +325,14 @@ const content = {
 					a: "Every feature is free for 7 days. After that, the Lifetime Full Version is a one-time purchase for use with Apple Intelligence or your own key, and Converloop AI is a yearly subscription that includes every feature. Converloop AI voices are free.",
 				},
 				{
-					q: "When can I get it?",
-					a: "Converloop is in TestFlight now and coming to the App Store soon.",
+					q: "Where can I download it?",
+					a: "Converloop is available on the App Store for iPhone and iPad. Use any download button on this page to get it.",
 				},
 			],
 		},
 		final: {
 			heading: "Make every conversation teach the next one.",
-			body: "Coming soon to the App Store, for iPhone and iPad.",
+			body: "Available now on the App Store, for iPhone and iPad.",
 		},
 		legal: { privacy: "Privacy Policy", terms: "Terms of Use", support: "Support" },
 	},
@@ -342,7 +342,7 @@ const content = {
 			description:
 				"Converloop 是陪你练外语的 AI，支持 iPhone 与 iPad。打字或开口聊，纠正润色、句子讲解、回复思路和语境查词都在对话身边；常用场景点开就能演；说过的句子还能拿来练听力和听写。不用注册账号。",
 		},
-		status: "即将上架 App Store",
+		status: "已上架 App Store",
 		appStore: "在 App Store 下载",
 		appStoreSoon: "即将上架",
 		howItWorks: "看看怎么用",
@@ -592,14 +592,14 @@ const content = {
 					a: "全部功能可免费试用 7 天。之后，配合 Apple 智能或自带密钥使用的「永久解锁完整版」一次买断 ¥99；Converloop AI 按年订阅 ¥299，包含全部功能。Converloop AI 朗读免费。",
 				},
 				{
-					q: "什么时候能用上？",
-					a: "目前在 TestFlight 测试，即将上架 App Store。",
+					q: "在哪里下载？",
+					a: "Converloop 已上架 App Store，支持 iPhone 与 iPad。点击本页的下载按钮即可前往下载。",
 				},
 			],
 		},
 		final: {
 			heading: "让每一次对话，都教会你下一次。",
-			body: "即将上架 App Store，支持 iPhone 与 iPad。",
+			body: "现已上架 App Store，支持 iPhone 与 iPad。",
 		},
 		legal: { privacy: "隐私政策", terms: "使用条款", support: "支持" },
 	},

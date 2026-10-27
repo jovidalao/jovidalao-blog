@@ -2,8 +2,8 @@ import type { Locale } from "./ui";
 
 /**
  * Copy for the home page. Product facts mirror the product pages and the apps
- * themselves — Peelday 1.0.3 on the App Store, Converloop for iPhone & iPad in
- * TestFlight, and the open-source desktop build at v0.1.1 — so keep them in step.
+ * themselves — Peelday and Converloop for iPhone & iPad are on the App Store.
+ * Keep availability and download copy in both languages in step with releases.
  */
 const content = {
 	en: {
@@ -33,11 +33,12 @@ const content = {
 				store: "App Store",
 			},
 			converloop: {
-				status: "Coming soon · in TestFlight",
+				status: "On the App Store",
 				tagline: "An AI partner for language practice",
 				body: "Chat by text or voice, get corrections and explanations in context, then practise again with your own sentences.",
 				facts: ["iPhone & iPad · iOS 26+", "7-day free trial", "Contextual explanation · no account"],
 				cta: "Explore Converloop",
+				store: "App Store",
 			},
 			desktop: {
 				status: "v0.1.1 for macOS",
@@ -105,11 +106,12 @@ const content = {
 				store: "App Store",
 			},
 			converloop: {
-				status: "即将上架 · TestFlight 测试中",
+				status: "App Store 已上架",
 				tagline: "陪你开口，也陪你练熟。",
 				body: "打字或开口聊，纠正与讲解就在对话身边。聊过的句子，还能接着练听力和听写。",
 				facts: ["iPhone 与 iPad · iOS 26+", "7 天免费试用", "语境即时讲解 · 无需账号"],
 				cta: "了解 Converloop",
+				store: "App Store",
 			},
 			desktop: {
 				status: "macOS 版 v0.1.1",

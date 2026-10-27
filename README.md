@@ -117,6 +117,10 @@ edit the generated components directly. Route metadata, blog navigation, and the
 shared blog design tokens remain owned by this repository. Header and Footer use the
 canonical Converloop CSS modules directly; the home page uses its section and card
 styles. Product captures on home are static imports with content-hashed URLs.
+The home page's Converloop App Store button also uses the synced product
+configuration, keeping its country-neutral download URL identical to the showcase
+and official site. Update the home page's English and Chinese availability labels
+in `src/i18n/home.ts` when the product's release status changes.
 
 ## Documentation
 
