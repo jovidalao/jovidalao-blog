@@ -9,7 +9,7 @@ const source = path.resolve(root, process.argv[2] ?? "../converloopai");
 const destination = path.join(root, "src/components/converloop");
 const files = [
   "components/ConverloopPage.tsx", "components/ConverloopPage.module.css",
-  "components/ProductPreviews.tsx", "components/ProductPreviews.module.css",
+  "components/ProductPreviews.tsx", "components/ProductPreviews.module.css", "components/HeroStage.tsx",
   "components/Shot.tsx", "components/Icon.tsx", "components/site.module.css",
   "components/Header.module.css", "components/Footer.module.css",
   "consts.ts", "productMedia.json", "i18n/converloop.ts",

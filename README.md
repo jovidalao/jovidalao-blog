@@ -13,6 +13,8 @@ The site intentionally has no account system, authentication, database, or runti
 
 Hanken Grotesk and IBM Plex Mono are bundled in `src/fonts` with their SIL Open Font License files and source hashes. `next/font/local` serves them from the static export; builds do not fetch Google Fonts. Keep the font files, licenses and `sources.json` together when updating typography.
 
+The jovidalao.com share images `public/og-{en,zh}.png` are rendered from `scripts/og-image.html` with headless Chrome (the command is in the file). Re-render them when the home copy or app screenshots change, and bump the `?v=` revision in `src/app/layout.tsx` and `src/app/zh/page.tsx`. The Peelday build keeps its own metadata.
+
 ## Local development
 
 Use Node **22.22.2** (see `.node-version`) and pnpm **10.11.1** (see `packageManager` in `package.json`). Activate those versions with your preferred version manager before installing dependencies.
@@ -120,7 +122,8 @@ styles. Product captures on home are static imports with content-hashed URLs.
 The home page's Converloop App Store button also uses the synced product
 configuration, keeping its country-neutral download URL identical to the showcase
 and official site. Update the home page's English and Chinese availability labels
-in `src/i18n/home.ts` when the product's release status changes.
+in `src/i18n/home.ts` when the product's release status changes, and add the
+release to the home page's dated "Lately" list in the same file.
 
 ## Documentation
 

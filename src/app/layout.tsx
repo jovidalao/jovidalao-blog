@@ -29,8 +29,9 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   icons: { icon: [{ url: "/brand-mark.svg", type: "image/svg+xml" }, { url: "/favicon.ico" }] },
   alternates: { types: { "application/rss+xml": "/rss.xml" } },
-  openGraph: { type: "website", siteName: SITE_TITLE, title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/brand-mark.png"] },
-  twitter: { card: "summary", title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/brand-mark.png"] },
+  // scripts/og-image.html renders the share images; bump ?v= when they change.
+  openGraph: { type: "website", siteName: SITE_TITLE, title: SITE_TITLE, description: SITE_DESCRIPTION, images: [{ url: "/og-en.png?v=20261031", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: SITE_TITLE, description: SITE_DESCRIPTION, images: ["/og-en.png?v=20261031"] },
 };
 
 const themeScript = `

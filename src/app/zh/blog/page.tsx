@@ -9,7 +9,7 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: getUi("zh").blog.heading,
   description: "jovidalao 关于学习与构建的笔记。",
-  alternates: { canonical: "/zh/blog", languages: { en: "/blog", zh: "/zh/blog" } },
+  alternates: { canonical: "/zh/blog", languages: { en: "/blog", zh: "/zh/blog", "x-default": "/blog" } },
 };
 
 export default async function Page() {

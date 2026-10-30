@@ -9,7 +9,7 @@ import { getAllPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: getUi("en").blog.heading,
   description: SITE_DESCRIPTION,
-  alternates: { canonical: "/blog", languages: { en: "/blog", zh: "/zh/blog" } },
+  alternates: { canonical: "/blog", languages: { en: "/blog", zh: "/zh/blog", "x-default": "/blog" } },
 };
 
 export default async function Page() {

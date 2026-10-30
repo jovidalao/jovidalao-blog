@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: p.meta.description,
   openGraph: { images: ["/peelday/app-icon.png"] },
   twitter: { card: "summary", images: ["/peelday/app-icon.png"] },
-  alternates: { canonical: "/zh", languages: { en: "/", zh: "/zh" } },
+  alternates: { canonical: "/zh", languages: { en: "/", zh: "/zh", "x-default": "/" } },
 };
 
 export default function Page() {

@@ -85,10 +85,11 @@ const content = {
 		hero: {
 			title: ["Something to say?", "Start a conversation."],
 			body: "Practise a language with an AI partner. Get help as you chat, then turn your own conversations into listening and dictation practice.",
+			tabs: "Converloop features",
 			features: [
-				{ kind: "correction", title: "Say it. Then make it natural.", body: "See the correction in your own sentence, with a more natural way to say it below." },
-				{ kind: "explanation", title: "Understand the words you meet.", body: "Find out what a phrase means here, and why it fits this conversation." },
-				{ kind: "scene", title: "A little practice for real life.", body: "Pick a situation and a role. Your AI partner plays the other side." },
+				{ kind: "correction", tab: "Corrections", title: "Say it. Then make it natural.", body: "See the correction in your own sentence, with a more natural way to say it below." },
+				{ kind: "explanation", tab: "Explanations", title: "Understand the words you meet.", body: "Find out what a phrase means here, and why it fits this conversation." },
+				{ kind: "scene", tab: "Scenes", title: "A little practice for real life.", body: "Pick a situation and a role. Your AI partner plays the other side." },
 			],
 		},
 		preview: {
@@ -334,6 +335,29 @@ const content = {
 			heading: "Make every conversation teach the next one.",
 			body: "Available now on the App Store, for iPhone and iPad.",
 		},
+		// Newest first. Versions and dates come from the App Store listing (iTunes lookup);
+		// notes describe only what that release shipped.
+		changelog: {
+			pill: "What's new",
+			title: "What's new",
+			description: "Converloop releases for iPhone and iPad.",
+			releases: [
+				{
+					version: "1.0.1",
+					date: "2026-10",
+					label: "October 2026",
+					title: "Converloop arrives on the App Store",
+					notes: [
+						"Chat by text or voice, with corrections and a more natural phrasing beside your own message.",
+						"Read any reply sentence by sentence with translation, explanations and in-context lookup.",
+						"Role-play everyday and work scenes, or create your own.",
+						"Replay your own conversations for listening practice and line-by-line dictation.",
+						"Use Apple Intelligence, Converloop AI or your own AI provider.",
+						"Every feature is free for 7 days.",
+					],
+				},
+			],
+		},
 		legal: { privacy: "Privacy Policy", terms: "Terms of Use", support: "Support" },
 	},
 	zh: {
@@ -352,10 +376,11 @@ const content = {
 		hero: {
 			title: ["有话想说，", "就从这里开口。"],
 			body: "和 AI 聊外语，随时纠正、讲解。聊过的句子，还能接着练听力和听写。",
+			tabs: "Converloop 功能演示",
 			features: [
-				{ kind: "correction", title: "先说出来，再说得自然。", body: "原句上直接标出改法，下方再给你一句更自然的表达。" },
-				{ kind: "explanation", title: "弄懂一句，学会一种说法。", body: "结合这段对话，讲清习语的意思和用词的原因。" },
-				{ kind: "scene", title: "真实场景，先练一遍。", body: "选好情境和角色，让 AI 陪你把要说的话练熟。" },
+				{ kind: "correction", tab: "纠正润色", title: "先说出来，再说得自然。", body: "原句上直接标出改法，下方再给你一句更自然的表达。" },
+				{ kind: "explanation", tab: "句子讲解", title: "弄懂一句，学会一种说法。", body: "结合这段对话，讲清习语的意思和用词的原因。" },
+				{ kind: "scene", tab: "场景练习", title: "真实场景，先练一遍。", body: "选好情境和角色，让 AI 陪你把要说的话练熟。" },
 			],
 		},
 		preview: {
@@ -600,6 +625,27 @@ const content = {
 		final: {
 			heading: "让每一次对话，都教会你下一次。",
 			body: "现已上架 App Store，支持 iPhone 与 iPad。",
+		},
+		changelog: {
+			pill: "更新了什么",
+			title: "更新日志",
+			description: "Converloop iPhone 与 iPad 版的历次更新。",
+			releases: [
+				{
+					version: "1.0.1",
+					date: "2026-10",
+					label: "2026 年 10 月",
+					title: "Converloop 上架 App Store",
+					notes: [
+						"打字或开口聊，原句上直接标出纠正，旁边给出更自然的说法。",
+						"每条回复都能逐句翻译、讲解，还能在语境里查词。",
+						"日常和工作场景点开就能演，也可以写你自己的场景。",
+						"聊过的对话拿来练听力，再逐句听写。",
+						"可选 Apple 智能、Converloop AI 或你自己的 AI 服务。",
+						"所有功能免费试用 7 天。",
+					],
+				},
+			],
 		},
 		legal: { privacy: "隐私政策", terms: "使用条款", support: "支持" },
 	},

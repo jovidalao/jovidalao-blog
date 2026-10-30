@@ -1,10 +1,11 @@
 /* Synced from converloopai; update with pnpm sync:converloop. */
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { CONVERLOOP } from "./consts";
+import { CONVERLOOP, MAKER, SITE_URL } from "./consts";
 import { converloopScenes, getConverloop } from "./copy";
 import { localeBase, type Locale } from "@/i18n";
 import s from "./ConverloopPage.module.css";
+import { HeroStage } from "./HeroStage";
 import { Icon } from "./Icon";
 import { CorrectionPreview, DictationPreview, ExplanationPreview, ExpressionPreview, LearningPreview, ListeningPreview, SceneLibraryPreview, ScenePreview } from "./ProductPreviews";
 import { ShotSlot } from "./Shot";
@@ -58,6 +59,31 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 	const mail = `mailto:${CONVERLOOP.contactEmail}`;
 	const sceneRows = [0, 1, 2].map((row) => converloopScenes.slice(row * 18, row * 18 + 18));
 	const { message: m, scenes, listen, learning, devices, models, privacy, pricing, faq } = c;
+	const latest = c.changelog.releases[0];
+	// Search engines should credit the official site, so the personal-site showcase
+	// (which passes officialUrl) leaves structured data out.
+	const jsonLd = officialUrl ? null : {
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "MobileApplication",
+				name: CONVERLOOP.name,
+				description: c.meta.description,
+				url: `${SITE_URL}${base}`,
+				image: `${SITE_URL}/icon.png`,
+				applicationCategory: "EducationalApplication",
+				operatingSystem: "iOS 26.0 or later",
+				softwareVersion: latest.version,
+				installUrl: CONVERLOOP.appStoreUrl,
+				offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+				author: { "@type": "Person", name: MAKER.name, url: MAKER.url },
+			},
+			{
+				"@type": "FAQPage",
+				mainEntity: faq.items.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })),
+			},
+		],
+	};
 
 	const primary = live ? (
 		<a className={`${site.btn} ${s.btnInk}`} href={CONVERLOOP.appStoreUrl} target="_blank" rel="noreferrer">{c.appStore}<Arrow /></a>
@@ -70,6 +96,7 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 
 	return (
 		<main className={`${s.page} ${zh ? s.zh : ""}`}>
+			{jsonLd ? <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} /> : null}
 			{/* ---------- hero ---------- */}
 			<section className={s.hero}>
 				<div className={`${site.shell} ${s.heroCopy}`}>
@@ -90,18 +117,13 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 					<p className={s.requirement}>{c.requirement}</p>
 				</div>
 
-				<div className={s.heroFeatures}>
-					{c.hero.features.map((feature) => {
+				<HeroStage
+					label={c.hero.tabs}
+					items={c.hero.features.map((feature) => {
 						const Preview = heroPreviews[feature.kind];
-						return <article className={s.heroFeature} key={feature.kind}>
-							<div className={s.heroFeatureCopy}>
-								<h2>{feature.title}</h2>
-								<p>{feature.body}</p>
-							</div>
-							<Preview locale={locale} />
-						</article>;
+						return { ...feature, preview: <Preview locale={locale} /> };
 					})}
-				</div>
+				/>
 			</section>
 
 			{/* ---------- on every message ---------- */}
@@ -418,6 +440,12 @@ export function ConverloopPage({ locale, assetBase = "", officialUrl }: { locale
 					</div>
 				</div>
 			</section>
+
+			<Link className={s.versionPill} href={`${base}/changelog`}>
+				{/* eslint-disable-next-line @next/next/no-img-element */}
+				<img src={`${assetBase}/icon.webp?v=20261027`} alt="" width={20} height={20} />
+				<b>v{latest.version}</b>{c.changelog.pill}
+			</Link>
 		</main>
 	);
 }

@@ -1,0 +1,64 @@
+<!doctype html>
+<!--
+  jovidalao.com share image (1200 × 630). Render both locales from the repository root:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --hide-scrollbars --force-device-scale-factor=1 --virtual-time-budget=3000 --window-size=1200,630 --screenshot="$PWD/public/og-en.png" "file://$PWD/scripts/og-image.html?en"
+  Repeat with og-zh.png and ?zh, then bump the ?v= revision in src/app/layout.tsx and src/app/zh/page.tsx.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+	@font-face { font-family: "Hanken Grotesk"; src: url("../src/fonts/hanken-grotesk/HankenGrotesk%5Bwght%5D.ttf"); font-weight: 400 800; }
+	html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+	body {
+		position: relative;
+		background: radial-gradient(60% 80% at 82% 30%, rgba(52, 91, 232, 0.14), transparent 70%), linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%);
+		color: #141a2e;
+		font-family: "Hanken Grotesk", "PingFang SC", sans-serif;
+	}
+	.copy { position: absolute; left: 88px; top: 92px; width: 640px; }
+	.mark { display: block; width: 76px; height: 76px; }
+	h1 { margin: 40px 0 0; font-size: 70px; font-weight: 700; letter-spacing: -0.045em; line-height: 1.06; }
+	h1 span { color: #345be8; }
+	p { margin: 24px 0 0; font-size: 27px; line-height: 1.45; color: #596273; }
+	:lang(zh) h1 { font-size: 58px; letter-spacing: -0.01em; line-height: 1.22; }
+	.apps { position: absolute; left: 88px; bottom: 60px; display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 650; }
+	.apps img { width: 40px; height: 40px; border-radius: 23%; }
+	.apps i { margin: 0 8px; color: #8a92a0; font-style: normal; }
+	.phone { position: absolute; width: 250px; aspect-ratio: 1350 / 2760; filter: drop-shadow(0 26px 30px rgba(20, 40, 110, 0.22)); }
+	.phone.back { right: 260px; top: 120px; transform: rotate(-6deg); }
+	.phone.front { right: 92px; top: 64px; transform: rotate(4deg); }
+	.screen { position: absolute; left: 5.3333%; top: 2.5%; width: 89.3333%; height: 95%; border-radius: 15% / 6.9%; overflow: hidden; background: #fff; }
+	.screen img, .bezel { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+	.bezel { position: absolute; inset: 0; object-fit: contain; }
+</style>
+</head>
+<body>
+	<div class="copy">
+		<img class="mark" src="../public/brand-mark.svg" alt="">
+		<h1 id="title"></h1>
+		<p id="body"></p>
+	</div>
+	<div class="phone back">
+		<div class="screen"><img src="../public/peelday/page.webp" alt=""></div>
+		<img class="bezel" src="../public/converloop/devices/iphone-16-pro-black-titanium.webp" alt="">
+	</div>
+	<div class="phone front">
+		<div class="screen"><img id="shot" alt=""></div>
+		<img class="bezel" src="../public/converloop/devices/iphone-16-pro-black-titanium.webp" alt="">
+	</div>
+	<div class="apps"><img src="../public/peelday/app-icon.png" alt=""><span id="peelday"></span><i>·</i><img src="../public/converloop/icon.webp" alt="">Converloop</div>
+	<script>
+		// Copy follows src/i18n/home.ts and SITE_DESCRIPTION in src/consts.ts.
+		const zh = location.search.includes("zh");
+		const copy = zh
+			? { title: "<span>你好</span>，我是 jovidalao。", body: "住在塔斯马尼亚霍巴特的独立开发者，<br>做贴贴手帐和 Converloop。", peelday: "贴贴手帐" }
+			: { title: "<span>Hello</span>, I'm jovidalao.", body: "An indie developer in Hobart, Tasmania,<br>building Peelday and Converloop.", peelday: "Peelday" };
+		document.documentElement.lang = zh ? "zh" : "en";
+		document.getElementById("title").innerHTML = copy.title;
+		document.getElementById("body").innerHTML = copy.body;
+		document.getElementById("peelday").textContent = copy.peelday;
+		document.getElementById("shot").src = `../public/converloop/shots/${zh ? "zh" : "en"}/iphone-01-conversation.webp`;
+	</script>
+</body>
+</html>

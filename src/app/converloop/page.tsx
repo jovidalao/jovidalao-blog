@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: c.meta.description,
   openGraph: { title: c.meta.title, description: c.meta.description, images: ["/converloop/icon.png"] },
   twitter: { card: "summary", images: ["/converloop/icon.png"] },
-  alternates: { canonical: "/converloop", languages: { en: "/converloop", zh: "/zh/converloop" } },
+  alternates: { canonical: "/converloop", languages: { en: "/converloop", zh: "/zh/converloop", "x-default": "/converloop" } },
 };
 
 export default function Page() {

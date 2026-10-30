@@ -46,26 +46,50 @@ const content = {
 				heading: "The full learning workspace for macOS and Windows",
 				body: "The open-source learning workspace: inline corrections, an evidence timeline you can inspect and edit, focused lessons and drills, and the model provider of your choice.",
 				facts: ["macOS · Windows from source", "Free · AGPL-3.0", "Records in local SQLite"],
-				cta: "About the desktop app",
+				cta: "Source on GitHub",
 				download: "Download",
 			},
+		},
+		about: {
+			heading: "About me.",
+			body: [
+				"I live in Hobart, Tasmania, and work on my own. Every app I make starts with something I need myself.",
+				"Converloop grew out of how I learn English with AI — first prompts saved in Notes, then agent skills, then an agent I practise listening, speaking, reading and writing with. Peelday came from wanting to keep the small, good parts of each day without posting them anywhere.",
+			],
+		},
+		// Newest first. Dates come from the App Store listings and GitHub releases.
+		lately: {
+			heading: "Lately.",
+			items: [
+				{ date: "2026-10", label: "Oct 2026", title: "Converloop arrives on the App Store", body: "The iPhone and iPad app is out, with a 7-day free trial." },
+				{
+					date: "2026-10-06",
+					label: "Oct 6, 2026",
+					title: "Peelday 1.0.3",
+					body: "A new launch animation, smoother calendar browsing and sticker editing, better photo cutouts and ticket text recognition, and more reliable iCloud sync and widgets.",
+				},
+				{ date: "2026-06-29", label: "Jun 29, 2026", title: "Converloop Desktop v0.1.1", body: "The open-source macOS app, with inline corrections and learning records kept on your Mac." },
+			],
 		},
 		principles: {
 			kicker: "How I build",
 			heading: "A few rules every app keeps.",
+			// One row per rule, one cell per app; keep each claim true for that app's released version.
 			items: [
-				{ icon: "key", title: "No sign-up", body: "No accounts, no passwords. Open the app and start." },
+				{ icon: "key", title: "No sign-up", peelday: "No account, no password.", converloop: "No account. Converloop AI registers a device ID instead." },
 				{
 					icon: "database",
 					title: "Your data, on your device",
-					body: "Diary pages and learning records are stored locally. Sync, where offered, runs through your own iCloud.",
+					peelday: "Diary pages stay on your iPhone. iCloud sync is optional.",
+					converloop: "Conversations and learning records stay on your device. Sync goes through your own iCloud.",
 				},
 				{
 					icon: "shield",
 					title: "You decide what leaves",
-					body: "Peelday has no server to send anything to. Converloop sends text only to the AI service you picked, and asks before using its own.",
+					peelday: "There is no Peelday server to send anything to.",
+					converloop: "Text goes only to the AI service you picked; it asks before using its own.",
 				},
-				{ icon: "eye", title: "No ads, no tracking", body: "No ad networks and no third-party trackers, in any of them." },
+				{ icon: "eye", title: "No ads, no tracking", peelday: "No ad networks or third-party trackers.", converloop: "No ad networks or third-party trackers." },
 			],
 		},
 		posts: {
@@ -119,22 +143,48 @@ const content = {
 				heading: "面向 macOS 与 Windows 的完整学习工作区",
 				body: "开源的学习工作区：行内纠错、能查能改的证据时间线、专项课和训练，模型服务商由你自己选。",
 				facts: ["macOS · Windows 可从源码运行", "免费 · AGPL-3.0", "记录存在本地 SQLite"],
-				cta: "了解桌面端",
+				cta: "GitHub 源码",
 				download: "下载",
 			},
+		},
+		about: {
+			heading: "关于我。",
+			body: [
+				"我住在塔斯马尼亚的霍巴特，一个人做独立开发。我做的每个 App，都是从自己的需要开始的。",
+				"Converloop 来自我用 AI 学英语的经历：先是把 Prompt 存在备忘录里，再到 Agent Skills，后来用 Agent 陪我练听说读写。贴贴手帐则是想把每天那些小小的好事留下来，又不必发到任何地方。",
+			],
+		},
+		lately: {
+			heading: "最近。",
+			items: [
+				{ date: "2026-10", label: "2026 年 10 月", title: "Converloop 上架 App Store", body: "iPhone 与 iPad 版正式发布，可免费试用 7 天。" },
+				{
+					date: "2026-10-06",
+					label: "2026 年 10 月 6 日",
+					title: "贴贴手帐 1.0.3",
+					body: "新的启动动画，日历浏览和贴纸编辑更顺滑，照片抠图和票据文字识别更准，iCloud 同步和小组件更新也更可靠。",
+				},
+				{ date: "2026-06-29", label: "2026 年 6 月 29 日", title: "Converloop 桌面端 v0.1.1", body: "开源的 macOS 应用，带行内纠错，学习记录存在你自己的 Mac 上。" },
+			],
 		},
 		principles: {
 			kicker: "我怎么做 App",
 			heading: "每个 App 都守着这几条。",
 			items: [
-				{ icon: "key", title: "不用注册", body: "没有账号，也没有密码。打开就能用。" },
-				{ icon: "database", title: "数据在你的设备上", body: "手帐页面和学习记录都存在本地。需要同步的，走你自己的 iCloud。" },
+				{ icon: "key", title: "不用注册", peelday: "没有账号，也没有密码。", converloop: "没有账号。用 Converloop AI 时只登记一个设备 ID。" },
+				{
+					icon: "database",
+					title: "数据在你的设备上",
+					peelday: "手帐页面存在你的 iPhone 上，iCloud 同步可选。",
+					converloop: "对话和学习记录存在本机，同步走你自己的 iCloud。",
+				},
 				{
 					icon: "shield",
 					title: "发出去什么，由你决定",
-					body: "贴贴手帐没有可以上传的服务器。Converloop 只把文字发给你选的 AI 服务，用我们自己的服务前会先征得你同意。",
+					peelday: "贴贴手帐没有可以上传的服务器。",
+					converloop: "文字只发给你选的 AI 服务，用我们自己的服务前先征得你同意。",
 				},
-				{ icon: "eye", title: "没有广告，没有追踪", body: "不接广告网络，也没有第三方追踪。" },
+				{ icon: "eye", title: "没有广告，没有追踪", peelday: "不接广告网络，没有第三方追踪。", converloop: "不接广告网络，没有第三方追踪。" },
 			],
 		},
 		posts: {

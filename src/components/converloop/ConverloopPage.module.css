@@ -244,55 +244,181 @@
 	color: var(--ink-3);
 }
 
-/* All three features stay visible without a tab or carousel. */
-.heroFeatures {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 16px;
-	width: min(100% - 48px, calc(var(--wrap) - 48px));
-	margin: 48px auto 0;
-}
-
-.heroFeature {
-	position: relative;
+/* One stage with a tab per feature (HeroStage); the tabs sit under the demo. */
+.stage {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	min-width: 0;
-	padding: 28px 20px 20px;
-	overflow: hidden;
-	isolation: isolate;
+	gap: 28px;
+	width: min(100% - 48px, calc(var(--wrap) - 48px));
+	margin: 48px auto 0;
+	padding: clamp(24px, 4vw, 56px) clamp(20px, 4vw, 56px) 24px;
 	border-radius: var(--radius-xl);
-	background: var(--paper);
+	background: var(--stage-bg);
 	box-shadow: inset 0 0 0 1px var(--edge);
-	text-align: center;
 }
 
-.heroFeatureCopy {
-	flex: 1;
-	margin-bottom: 24px;
+.stageTabs {
+	order: 1;
+	display: flex;
+	align-self: center;
+	gap: 4px;
+	max-width: 100%;
+	padding: 4px;
+	overflow-x: auto;
+	border-radius: 100px;
+	background: var(--card);
+	box-shadow: 0 0 0 1px var(--line), 0 1px 3px rgba(20, 30, 60, 0.05);
+	scrollbar-width: none;
 }
 
-.heroFeatureCopy h2 {
-	font-size: 21px;
+.stageTabs button {
+	position: relative;
+	flex: none;
+	height: 36px;
+	padding-inline: 18px;
+	overflow: hidden;
+	border: 0;
+	border-radius: 100px;
+	background: none;
+	font: inherit;
+	font-size: 14px;
+	font-weight: var(--wt-medium);
+	color: var(--ink-3);
+	cursor: pointer;
+	transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.stageTabs button:hover {
+	color: var(--ink);
+}
+
+.stageTabs button[aria-selected="true"] {
+	color: var(--ink);
+	background: var(--paper);
+}
+
+/* The active tab's timer: its animationend advances the stage. */
+.stageProgress {
+	position: absolute;
+	inset: auto 18px 5px;
+	height: 2px;
+	border-radius: 2px;
+	background: var(--blue);
+	transform-origin: left;
+	animation: stageTimer 7s linear both;
+}
+
+.stage:hover .stageProgress,
+.stage:focus-within .stageProgress {
+	animation-play-state: paused;
+}
+
+@keyframes stageTimer {
+	from {
+		transform: scaleX(0);
+	}
+	to {
+		transform: scaleX(1);
+	}
+}
+
+.stagePanels {
+	display: grid;
+}
+
+/* Every panel shares one cell, so the stage keeps the tallest panel's height. */
+.stagePanel {
+	grid-area: 1 / 1;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 460px);
+	align-items: center;
+	gap: clamp(28px, 6vw, 88px);
+	padding-inline: clamp(0px, 3vw, 40px);
+}
+
+.stagePanel[hidden] {
+	visibility: hidden;
+}
+
+.stagePanel:focus-visible {
+	outline: 2px solid var(--blue);
+	outline-offset: 8px;
+	border-radius: 12px;
+}
+
+.stageCopy h2 {
+	font-size: clamp(26px, 2.8vw, 34px);
 	font-weight: var(--wt-heading);
-	letter-spacing: -0.025em;
-	line-height: 1.3;
+	letter-spacing: -0.035em;
+	line-height: 1.2;
 	text-wrap: balance;
 }
 
-.heroFeatureCopy p {
-	max-width: 30ch;
-	margin: 10px auto 0;
-	font-size: 14px;
-	line-height: 1.65;
+.stageCopy p {
+	max-width: 34ch;
+	margin-top: 14px;
+	font-size: 17px;
+	line-height: 1.7;
 	color: var(--ink-2);
 	text-wrap: pretty;
 }
 
-.heroFeature > [role="img"] {
-	flex: none;
+.stageArt > [role="img"] {
 	min-height: 390px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.stagePanel[data-play] .stageCopy {
+		animation: stageRise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/* No timer, so no rotation: the tabs still switch on demand. */
+	.stageProgress {
+		display: none;
+	}
+}
+
+@keyframes stageRise {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+}
+
+/* The floating link to the release notes (Lumno's "what's new" pill). */
+.versionPill {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	z-index: 40;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	height: 40px;
+	padding: 0 16px 0 10px;
+	border-radius: 100px;
+	background: var(--card);
+	box-shadow: 0 0 0 1px var(--line), var(--shadow-pop);
+	font-size: 13px;
+	font-weight: var(--wt-medium);
+	color: var(--ink-2);
+	transition: color 0.16s ease, transform 0.16s ease;
+}
+
+.versionPill:hover {
+	color: var(--ink);
+	transform: translateY(-1px);
+}
+
+.versionPill img {
+	border-radius: 23%;
+}
+
+.versionPill b {
+	font-weight: var(--wt-strong);
+	color: var(--ink);
 }
 
 /* ---------- cards ---------- */
@@ -1186,23 +1312,6 @@
 
 /* ---------- responsive ---------- */
 
-@media (max-width: 1100px) {
-	.heroFeatures {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
-	.heroFeature:first-child {
-		grid-column: 1 / -1;
-		display: grid;
-		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-		align-items: center;
-		gap: 32px;
-		padding: 24px;
-	}
-	.heroFeature:first-child .heroFeatureCopy {
-		margin-bottom: 0;
-	}
-}
-
 @media (max-width: 1000px) {
 	.trio {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1221,21 +1330,33 @@
 }
 
 @media (max-width: 720px) {
-	.heroFeatures {
-		grid-template-columns: minmax(0, 1fr);
+	.stage {
+		gap: 20px;
 		width: calc(100% - 32px);
 		margin-top: 40px;
+		padding: 28px 16px 16px;
 	}
-	.heroFeature:first-child {
-		display: flex;
-		gap: 0;
-		padding: 28px 20px 20px;
+	.stagePanel {
+		grid-template-columns: minmax(0, 1fr);
+		align-items: start;
+		gap: 24px;
+		padding-inline: 4px;
+		text-align: center;
 	}
-	.heroFeature:first-child .heroFeatureCopy {
-		margin-bottom: 24px;
+	.stageCopy p {
+		margin-inline: auto;
+		font-size: 15px;
 	}
-	.heroFeature > [role="img"] {
+	.stageArt > [role="img"] {
 		min-height: 0;
+	}
+	.stageTabs button {
+		padding-inline: 14px;
+		font-size: 13.5px;
+	}
+	.versionPill {
+		right: 12px;
+		bottom: 12px;
 	}
 	.bento,
 	.trio,

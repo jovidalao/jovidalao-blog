@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: { absolute: post.title },
     description: post.description,
     openGraph: post.heroImage ? { images: [post.heroImage] } : undefined,
-    alternates: { canonical: `/blog/${post.slug}`, languages: { en: `/blog/${post.slug}`, zh: `/zh/blog/${post.slug}` } },
+    alternates: { canonical: `/blog/${post.slug}`, languages: { en: `/blog/${post.slug}`, zh: `/zh/blog/${post.slug}`, "x-default": `/blog/${post.slug}` } },
   };
 }
 
