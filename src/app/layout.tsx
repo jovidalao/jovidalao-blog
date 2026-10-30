@@ -44,7 +44,8 @@ const themeScript = `
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
+    // data-site lets the Peelday build re-point the site tokens for its whole shell (globals.css).
+    <html lang="en" data-site={process.env.SITE === "peelday" ? "peelday" : undefined} className={`${sans.variable} ${mono.variable}`} suppressHydrationWarning>
       <head><script dangerouslySetInnerHTML={{ __html: themeScript }} /></head>
       <body>{children}</body>
     </html>
